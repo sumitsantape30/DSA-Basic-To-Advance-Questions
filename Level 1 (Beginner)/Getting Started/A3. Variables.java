@@ -34,3 +34,31 @@ Output:
 150
 1 0 5
 6
+//====================================================== Question===============================================
+What is the output of following code?
+   
+   int a = 10; 
+   int b = 20;
+   a = a + b;
+   b = a - b;
+   a = a - b;
+   
+   System.out.println(a + " " + b);
+                               
+Options
+ 
+10 10
+   
+20 20
+   
+20 10
+    
+10 20
+  
+Answer: 20 10
+int a = 10; // assigns 10 to a
+int b = 20; // assigns 20 to b
+
+a = a + b; // a is now 30;
+b = a - b; // b = 30 - 20, b is now 10 and a stays 30
+a = a - b; // a = 30 - 10, a is now 20 and b stays 10

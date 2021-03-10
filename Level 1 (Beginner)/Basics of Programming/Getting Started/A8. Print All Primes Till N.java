@@ -28,4 +28,48 @@ Sample Output
 
 Code:
 
+package GettingStarted;
+
+import java.util.Scanner;
+
+public class PrintAllPrime {
+	
+	//low se leke high tak ke saare prime numbers hume print karne hai
+	
+	public static void checkPrime( int low, int high) {
+		
+		
+		for( int n= low; n<= high; n++) {
+
+		int count=0; //count yeh btata hai ki kitni bar divide hua agar ek bar bhi divide nhi hua to prime hai aur 1 or 1 se jada bar divide hogya to prime hai
+		
+		for( int div= 2; div*div <= n; div++) {
+			// try to divide n and increase count
+			if(n % div == 0) {
+				count++;
+				break;
+			}
+		}
+
+			if (count == 0) {
+				System.out.println(n);
+			}
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int low= s.nextInt();
+		int high= s.nextInt();
+		
+		checkPrime( low, high);
+		
+	}
+
+}
+
+
 

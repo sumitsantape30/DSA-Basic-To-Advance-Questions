@@ -26,3 +26,40 @@ Sample Output
 3
 
 Code:
+package GettingStarted;
+
+import java.util.Scanner;
+
+public class digitsOfNum {
+	
+	public static void digitsOfNum( int n) {
+		
+		//sabse pehle number of digits count karenge
+		int nod= 0; //number of digits
+		int temp= n;
+		
+		while( temp != 0) { //jabtak yeh temp 0 nhi hojata
+			temp= temp/10; //jab hum kisi number ko 10 se divide karke wapas usime dalte hai to uski last wali digit chali jati hai
+			nod++;
+		}
+		
+		//ab divisor banayenge
+		int div= (int)Math.pow(10, nod-1); //pow hume 100.0 deta hai aur divisor hume integer mai chahiye woh decimal mai deta tha
+		
+		while( div != 0) { //jabtak divison 0 nhi hota tabtak karengr. hum n != 0 yeh condition nhi rakhenge
+			int q= n/div; //quotient agaya ab quotient ko print kardenge
+			System.out.println(q);
+			//ab apne number ko chota krle
+			n= n% div; //754 tha to 754%10 kiya to 7 kat jayega and 54 reh jayega
+			div= div/10; //ab divisor kobhi chota karenge, 100 hogs to 10 bana denge, 10 ka 1 bna denge
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+	}
+
+}

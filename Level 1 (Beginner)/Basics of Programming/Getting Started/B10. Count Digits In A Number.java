@@ -26,9 +26,10 @@ public class CountDigitInNum {
 	public static int countDigit( int n) {
 		
 		int count=0;
-		while( n >0) {
+		while( n != 0) {
+			n= n/10; //n ko 10 se divide karke wapas n mai hi dal denge, n chota hojayega
+			//after every number is decreased from the number we increase count by 1
 			count++;
-			n= n/10;
 		}
 		return count;
 		

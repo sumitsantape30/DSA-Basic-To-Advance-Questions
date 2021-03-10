@@ -49,7 +49,7 @@ public class printPrime {
 			
 			if( n % div == 0) {
 				count++;
-				break; //jaisehi koi divide hua to break kar denge coz woh non prime hi hoga
+				break; //jaisehi koi divide hua to break kar denge coz woh non prime hi hoga hume pura root n tak divide karne ki jarurat nhi hai pura loop chalake fayda nhi
 			}
 		}
 		

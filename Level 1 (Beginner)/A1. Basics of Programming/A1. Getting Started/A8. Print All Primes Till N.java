@@ -41,7 +41,7 @@ public class PrintAllPrime {
 		
 		for( int n= low; n<= high; n++) {
 
-		int count=0; //count yeh btata hai ki kitni bar divide hua agar ek bar bhi divide nhi hua to prime hai aur 1 or 1 se jada bar divide hogya to prime hai
+		int count=0; //count yeh btata hai ki kitni bar divide hua agar ek bar bhi divide nhi hua to prime hai aur 1 or 1 se jada bar divide hogya to prime nhi hai
 		
 		for( int div= 2; div*div <= n; div++) {
 			// try to divide n and increase count

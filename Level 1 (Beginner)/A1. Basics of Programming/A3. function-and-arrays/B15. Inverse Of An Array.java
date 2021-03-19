@@ -29,3 +29,52 @@ Sample Output
 0
 
 Code:
+
+package FunctionsAndArrays;
+
+import java.util.Scanner;
+
+public class InverseOfArray {
+	
+	public static int[] takeInput() {
+		
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i<arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static int[] inverse( int arr[]) {
+		
+		//inverse array declare karenge
+		int inv[]= new int[arr.length];
+		
+		for( int i=0; i< arr.length; i++) {
+			int v= arr[i]; // ith index pe pdi hui value nikal li
+			//ab inverse array mai vth position pr mai i dal dunga
+			inv[v]= i;
+			
+		}
+		
+		return inv;
+	}
+	
+	public static void print(int arr[]) {
+		
+		for( int ele: arr) {
+			System.out.println(ele);
+		}
+	}
+
+	public static void main(String[] args) {
+
+	   int arr[]= takeInput();
+	   int inverse[]= inverse(arr);
+	   print(inverse);
+	   
+	}
+}

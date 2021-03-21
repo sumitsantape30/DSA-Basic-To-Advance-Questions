@@ -34,7 +34,7 @@ public class Pattern5 {
 			}
 			
 			for( int j=1; j<= st; j++) {
-				System.out.println("*\t");
+				System.out.print("*\t");
 			}
 			
 			if( i <= n/2) {
@@ -44,6 +44,7 @@ public class Pattern5 {
 				sp++;
 				st -= 2; //  n/2 ke bad wale mai starts kam ho rhe by 2
 			}
+			System.out.println();
 		}
 	}
 

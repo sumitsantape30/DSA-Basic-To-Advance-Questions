@@ -27,14 +27,13 @@ public class Pattern5 {
 		int sp= n/2; //starting mai spaces n/2 hai, 5 line keliye 2 space ek star
 		int st= 1;
 		
-		
-		for( int i=0; i<= n; i++) {
+		for( int i=1; i<= n; i++) {
 			
-			for( int j=0; j< sp; j++) {
+			for( int j=1; j<= sp; j++) {
 				System.out.print("\t");
 			}
 			
-			for( int j=0; j< st; j++) {
+			for( int j=1; j<= st; j++) {
 				System.out.println("*\t");
 			}
 			

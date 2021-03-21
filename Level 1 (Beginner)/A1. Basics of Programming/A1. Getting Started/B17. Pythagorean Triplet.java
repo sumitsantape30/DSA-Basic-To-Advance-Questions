@@ -33,7 +33,7 @@ public class pythagoreanTriplet {
 		
 		//hume sabse pehle hypotenuse kohi indentify karna hai, hypotenuse sabse badi wali side hoti hai
 		
-		//mai a ko sabse bda man lung
+		//mai a ko sabse bda man lunga
 		int max= a;
 		
 		if( b >= max) { //agar b hara de mere champ ko to mera champ b hojayega

@@ -28,7 +28,7 @@ public class Pattern8 {
 		for( int i=1; i<= n; i++) {
 			for( int j=1 ; j<= n; j++) {
 				
-				if( i+j == n + 1) { //jaha yeh contion true hoti hai waha stars print karenge and baki jagah sirf spaces print karenge
+				if( i+j == n + 1) { //jaha yeh condition true hoti hai waha stars print karenge and baki jagah sirf spaces print karenge
 					System.out.print("*\t");
 				}else {
 					System.out.print("\t"); 

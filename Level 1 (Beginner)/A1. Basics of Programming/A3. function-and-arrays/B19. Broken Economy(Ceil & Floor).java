@@ -54,3 +54,60 @@ Sample Output
 33
 
 Code:
+
+package FunctionsAndArrays;
+
+import java.util.Scanner;
+
+public class floorAndCeil {
+	
+	public static int[] takeInput() {
+		
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void ceilAndFloor( int arr[], int ele) {
+		
+		int start=0;
+		int end= arr.length-1;
+		int ceil=0;
+		int floor= 0;
+		
+		while( start <= end) {
+			
+			int mid= start + ((end - start)/2);
+			
+			if( arr[mid] < ele) { //start move hota hai to floor set hota hai
+				floor= arr[mid];
+				start= mid+1;
+			}else if( arr[mid] > ele) { //end move hota hai to ceil set hota hai
+				ceil= arr[mid];
+				end= mid-1;
+			}else { //agar ele barabr hai mid ke to ceil and floor dono wahi rahega and chize mil gyi to break jarur kare
+				ceil= arr[mid];
+				floor= arr[mid];
+				break;
+			}
+		}
+		System.out.println(ceil);
+		System.out.println(floor);
+	}
+	
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int arr[]= takeInput();
+		int n= s.nextInt();
+		ceilAndFloor(arr, n);
+		
+	}
+
+}

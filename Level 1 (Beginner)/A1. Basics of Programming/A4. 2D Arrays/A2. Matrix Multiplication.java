@@ -63,3 +63,77 @@ Sample Output
 0 20 20 40
   
 Code:
+package TwoDArrays;
+
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+	
+	public static int[][] takeInput(){
+		
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int m= s.nextInt();
+		
+		int arr[][]= new int[n][m];
+		
+		for( int i=0; i< arr.length; i++) {
+			for( int j=0; j< arr[0].length; j++) {
+				arr[i][j]= s.nextInt();
+			}
+		}
+		return arr;
+	}
+	
+	public static void multiply( int one[][], int two[][]){
+		
+		int r1= one.length;
+		int c1= one[0].length;
+		
+		int r2= two.length;
+		int c2= two[0].length;
+		
+		// pehle matrix ka column is not equal to rows of 2nd matrix to multiply ho hi nhi skta coz invalid input to invalid output deke khatam karenge means return karenge
+		if( c1 != r2) {
+			System.out.println("Invalid input");
+			return;
+		}
+		
+		// otherwise hum ek product nam ki matrix banayenge and it's size will be pehle matrix ki rows + and second ke columns
+		int prod[][]= new int[r1][c2];
+		// ab mai product array pe loop chalaunga
+		for( int i=0; i< prod.length; i++) {
+			for( int j=0; j< prod[0].length; j++) {
+				//ab hume product array ko fill krna hai
+				for( int k=0; k< c1; k++) { //yeh k constant hai in both. And as c1 and r2 equal hai so yeh loop tabtak chalega
+					prod[i][j] += one[i][k] * two[k][j]; // one ke andar row wahi rahegi and two ke andar row vary karegi and column wahi rahega
+				   // a21*b13 : so isme jab a mai 1 column hota hai to b mai 1 row hoti hai, a22*b23: isme jab a mai 2 column hota hai to b mai bhi 2 row hota hai so basically woh k hai 
+				}
+			}
+		}
+		
+		//ab print karenge yeh product array
+		
+		for( int i=0; i< prod.length; i++) {
+			for( int j=0; j< prod[0].length; j++) {
+				System.out.print(prod[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+
+		//pehla matrix input lenge
+		int one[][]= takeInput();
+		
+		//dusra matrix
+		int two[][]= takeInput();
+		
+		multiply(one, two);
+		
+	}
+
+}

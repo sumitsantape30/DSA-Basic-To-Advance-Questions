@@ -89,3 +89,57 @@ Sample Output
 14
 
 Code:
+
+package TwoDArrays;
+
+import java.util.Scanner;
+
+public class TheStateOfWakanda1 {
+	
+	public static int[][] takeInput(){
+		
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int m= s.nextInt();
+		int arr[][]= new int[n][m];
+		
+		for( int i=0; i< arr.length; i++) {
+			for( int j= 0; j < arr[0].length; j++) {
+				arr[i][j]= s.nextInt();
+			}
+		}
+		return arr;
+	}
+	
+	public static void waveTravel( int arr[][]) {
+		
+		//columns humesha badhate rhe hai so column ka loop lagega bahar
+		for( int j=0; j< arr[0].length; j++) {
+			//hume ek bar niche ek bar upar aise print karna hai so yeh depend krta hai ki column even hai ya odd
+			
+			if( j % 2 == 0) { //agar column even hai
+				//column even hai to columns badh rhe hai from min to max means upar se niche aayenge
+				for( int i=0; i< arr.length; i++) {
+					System.out.println(arr[i][j]);
+				}
+				
+			}else { //ya column hai odd
+				//agar columns odd hai to max to min ayenge means niche se upar ayenge
+				for( int i= arr.length-1 ; i>=0 ; i--) {
+					System.out.println(arr[i][j]);
+				}
+				
+			}
+			
+		}
+	}
+	
+
+	public static void main(String[] args) {
+
+		int arr[][]= takeInput();
+		waveTravel(arr);
+		
+	}
+
+}

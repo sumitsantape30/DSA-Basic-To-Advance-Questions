@@ -18,3 +18,31 @@ Sample Input
 5
 Sample Output
 32
+
+Code:
+package Recursion;
+
+import java.util.Scanner;
+
+public class PowerLinear {
+	
+	public static int powerLinear(int n, int y) {
+		
+		if( y == 0) {
+			return 1;
+		}
+		
+		int xnm1= powerLinear(n,y-1);
+		int pow= xnm1 * n;
+		return pow;
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int x= s.nextInt();
+		int n= s.nextInt();
+		int result= powerLinear(x,n);
+		System.out.println(result);
+	}
+}

@@ -27,3 +27,30 @@ Sample Output
   
 Code:
 
+package Recursion;
+
+import java.util.Scanner;
+
+public class PrintZigZag {
+	
+	public static void pzz( int n) {
+		if( n == 0) {
+			return;
+		}
+		
+		System.out.print(n+" "); //"pre" samjhne keliye liye the
+		pzz(n-1);
+		System.out.print(n+" "); // "In" samjhne keliye liye the
+		pzz(n-1);
+		System.out.print(n+" "); // "post" samjhne keliye liye the
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		pzz(n);
+	}
+
+}

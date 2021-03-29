@@ -39,3 +39,33 @@ Sample Output
 1[10 -> 11]
 
 Code:
+
+package Recursion;
+
+import java.util.Scanner;
+
+public class TowerOfHanoi {
+	
+	public static void toh( int n, int t1id, int t3id, int t2id ) {
+		if( n == 0) { //agar humare pas 0 disk bachi hai to hum kuch nhi karenge, koi bhi instruction print nhi karenge
+			return;
+		}
+		
+		toh(n-1, t1id, t3id, t2id); // will print the instructions to move n-1 disks from t1 to t3 using t2
+		// jo ek bachi hogi disk usko hum khud move karke instructions print karlenge
+		System.out.println(n+"["+t1id+" -> "+t2id+"]"); //nth ko humne t1 se t2 mai move kardiya
+		toh( n-1, t3id, t2id, t1id); //ab jo humne 3rd tower mai dali thi unko ab nth ke upar means 2nd tower mai dal denge	
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt(); // number of disks
+		int t1d= s.nextInt(); // tower 1 ka nam
+		int t2d= s.nextInt();
+		int t3d= s.nextInt();
+		toh(n, t1d, t2d, t3d);
+		
+	}
+
+}

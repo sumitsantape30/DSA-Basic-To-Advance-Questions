@@ -24,4 +24,66 @@ Sample Output
 
 Code:
 
+package Recursion;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class GetMazePathWithJump {
+	
+	public static ArrayList<String> getMazePaths( int sr, int sc, int dr, int dc){
+		if( sr == dr && sc == dc) { // yahape aaye means hum pohoch gye
+			ArrayList<String> bres= new ArrayList<String>();
+			bres.add("");
+			return bres;
+		}
+		
+		ArrayList<String> paths= new ArrayList<String>(); // hume expectation hai ki sr sc se dr dc ka path denge
+		
+		//faith wali line
+		// pehle dekhte mai kis kis intermeate pe ja skta hu
+		// horizontal move karke (means move ka size kitna hai) 
+		for( int ms= 1; ms <= dc-sc ; ms++) { //(ms: move size) hum kitne horizontal move/jump kr skte hai itermediate pe jane keliye
+			// ab hum lagayenge apna faithm, jahape bhi hum pohochenge wahase aage ke paths hume mil jayenge
+			ArrayList<String> hpaths= getMazePaths(sr, sc+ ms, dr, dc);
+			// move size dc-sc rahega horizontal direction mai
+			
+			//ab inn horizontal paths ko kaise convert kiya jaye ki yeh sr sc se dr sc ke path ban jaye
+			for( String hpath : hpaths) {
+				// jo paths aaye hai unke upar loop lagayenge woh h1/h2 types unke muh pe jod diya
+				paths.add("h"+ ms + hpath);
+			}
+		}
+		
+		//vertical moves
+		for( int ms= 1; ms <= dr - sr; ms++) {
+			ArrayList<String> vpaths= getMazePaths(sr + ms, sc, dr, dc);
+			for( String vpath: vpaths) {
+				paths.add("v"+ ms + vpath); //coz hum vertical effort karke gye hai to v1 v2 v3 aise chipkayenge
+			}
+		}
+		
+		//ab diagonal mai humko dono walls control krti hai isliye dono check lagayenge
+		// woh bottom wall and right wall dono ke andar rehni chahiye
+		for( int ms= 1; ms <= dr - sr && ms <= dc - sc ; ms++) {
+			ArrayList<String> dpaths= getMazePaths(sr + ms, sc + sc, dr, dc);
+			for( String dpath: dpaths) {
+				paths.add("d"+ ms + dpath); 
+			}
+		}
+		
+		return paths;
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int m= s.nextInt();
+		ArrayList<String> paths= getMazePaths(1,1,n,m);
+		System.out.println(paths);
+		
+	}
+
+}
 

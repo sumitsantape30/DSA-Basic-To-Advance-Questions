@@ -25,3 +25,37 @@ yT
 yA
 
 Code:
+
+package Recursion;
+
+import java.util.Scanner;
+
+public class PrintSubsequence {
+	
+	//arraylist mai agar sare subsequence store krte to memory jada lag jati ab hum sare ek sath store nhi krte, ek paida krte hai use print krte hai fir stack mai ek level niche aajate hai
+	// fir dusre ispe jata hai fir dusre ko print krte hai fir niche aajate hai to kisi moment pe stack mai 4 level honge ussa jada kabhi nhi honga, stack mai utne levels hote hai jitne aapke pas number of characters hote hai
+	public static void printSS( String ques, String ans) {
+		if( ques.length() == 0) { // jab question ki length hojayegi 0 to ab kahi nhi ja skte to return karna hoga but usse pehle humm answer ko print karlenge
+			System.out.println(ans);
+			return;
+		}
+		
+		// ke yes ki call lagegi and ek no ki call lagegi
+		// ab mai question ko split karunga
+		char ch= ques.charAt(0);
+		String roq= ques.substring(1);  //rest of the question, 1 ke bad ka question splite karenge
+		printSS(roq, ans + ch); // ab answer mai character dal rhe hai
+
+		printSS(roq, ans +""); // roq pass kiya and answer ke andar character add nhi kiya, character ne no keh diya
+		
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		String str= s.next();
+		printSS(str, ""); // hum ques and answer aise do rakh rhe hai and starting mai answer "" pass kiya gya hai
+		
+	}
+
+}

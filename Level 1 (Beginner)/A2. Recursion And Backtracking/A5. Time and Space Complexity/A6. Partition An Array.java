@@ -32,3 +32,61 @@ Swapping 3 and 4
 -2 1 3 7 4 
 
  Code:
+
+package TimeAnsSpace;
+
+import java.util.Scanner;
+
+public class paritioningAnArray {
+	
+	public static void partition(int arr[], int pivot) {
+		
+		// 0 to j-1 choto ka area hai( <= pivot ) 
+		// j to i-1 humesha bada log rahenge pivot se ( > pivot )
+		//i to end unknowns rahenge
+		int i=0;
+		int j=0;
+		
+		while( i < arr.length) { //jabtak koi bhi unknown hai 
+			if( arr[i] > pivot) { // agar pivot se bda hai to sirf i badhege
+				i++;
+			}else { // agar tum chote ho ya barabr ho
+				//pehle to swap hoga aur uske bad dono badhenge
+				swap(arr, i, j);
+				i++;
+				j++;
+			}
+		}
+	}
+	
+	 // used for swapping ith and jth elements of array
+	  public static void swap(int[] arr, int i, int j) {
+	    System.out.println("Swapping " + arr[i] + " and " + arr[j]);
+	    int temp = arr[i];
+	    arr[i] = arr[j];
+	    arr[j] = temp;
+	  }
+	  
+	  public static void print(int[] arr) {
+		    for (int i = 0; i < arr.length; i++) {
+		      System.out.print(arr[i] + " ");
+		    }
+		    System.out.println();
+		  }
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i<arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		int pivot= s.nextInt();
+		partition(arr, pivot);
+		print(arr);
+	}
+
+}

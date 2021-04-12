@@ -22,3 +22,62 @@ Sample Input
 10
 Sample Output
 55
+
+Code:
+package DP;
+
+import java.util.Scanner;
+
+public class Fibonacci {
+	
+	public static int fibo( int n) {
+		
+		if( n == 0 || n == 1) {
+			return n;
+		}
+		
+		//System.out.println("Hello World"+ n);
+		
+		//hume faith hai ki hume yeh n-1 and n-2 ke fibonacci lake dega
+		int fibnm1 = fibo( n -1);
+		int fibnm2 = fibo(n-2);
+		int fibn = fibnm1 + fibnm2;
+		
+		return fibn;
+	}
+	
+	public static int fibomemoized( int n, int qb[]) { // 1.memoization mai sathme ek question bank bhi bhjenge
+		if( n == 0 || n == 1) {
+			return n;
+		}
+		
+		//5. ek basecase aur extra lagayenge just return karne se pehle and just kam hone se pehle yaha ek basecase lagayenge
+		if( qb[n] != 0) { // woh basecase yeh hai ki kya woh question bank mai yeh question already solved pda hai, 0 nhi hai means it contains the answer already so dont solve it instead return it from the question bank
+			return qb[n];
+		}
+		
+		//3. humne iss fuction mai jo n pass kiya hai woh question hai  and niche jo fibn return kr rhe hai woh answer hai
+		// so question bank mai hum question ki position pe uska answer store kar lenge
+
+        //System.out.println("Hello World"+ n); // 6. isme ab bar bar repeatitive calls nhi hongi
+		
+		//2.yahape bhi wahi call lageyenge
+		int fibnm1 = fibomemoized( n -1, qb);
+		int fibnm2 = fibomemoized(n-2, qb);
+		int fibn = fibnm1 + fibnm2;
+		
+		qb[n]= fibn ; //4. question tha n and answer tha fibn, so n ke samne fibn store kardiya
+		
+		return fibn;
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int qb[]= new int[n+1];
+		int fibn = fibomemoized(n, qb);
+		System.out.println(fibn);
+		
+	}
+}

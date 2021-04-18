@@ -31,3 +31,37 @@ Sample Output
 
 Code:
 
+package DP;
+
+import java.io.*;
+import java.util.*;
+
+public class ClimbingStairsWithVariableJumps {
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n = s.nextInt();
+		
+		int arr[]= new int[n]; //array declare kiya jisme muje lena hai ki kahase kaha kitne dur ja skte hai 
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		
+		int dp[]= new int[n+1]; 
+		// why ? 0 pe store hoga 0 se n jane ke raste. n pe n tak jane ke raste store hoga so 0 se n chahiye to n+1 size ka array banan pdta hai
+		dp[n]= 1; // iska matlab hai n se n jane ka 1 rasta hai means chalo hi mat
+		
+		for( int i= n-1; i>=0; i-- ) {
+			// yeh solve karega, ap[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
+			for( int j=1; j<= arr[i] && i+j < dp.length; j++) {
+				dp[i] += dp[i+j];
+			}
+		}
+		
+		System.out.println(dp[0]);
+		
+	}
+
+}

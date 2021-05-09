@@ -12,3 +12,74 @@ Input is managed for you
 Output Format
 Maximum of each window in separate line
 
+code:
+
+package Stack;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class SlidingWindowMaximum {
+	
+	public static int[] takeInput() {
+		
+		Scanner s=new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static void slidingWindowMax(int arr[], int k) {
+		Stack<Integer> st= new Stack<Integer>();
+		int nge[]= new int[arr.length];
+		
+		st.push(arr.length-1);
+		nge[arr.length-1]= arr.length;
+		
+		for( int i= arr.length-2; i >= 0; i--) {
+			
+			while(st.size() > 0 && arr[i] > arr[st.peek()]) {
+				 st.pop();
+			}
+			
+			if( st.size() == 0) {
+				nge[i]= arr.length;
+			}else {
+				nge[i]=  st.peek();
+			}
+			st.push(i);
+		}
+		
+		int j=0;
+		for( int i= 0; i< arr.length-k; i++) {
+			// enter the loop to find the maximum of window starting at i (i pe jo window start ho rhi hai uska maxi nikalne keliye iss loop mai enter kariye)
+			// arr.length-k tak kyu chalaya? taki last window tak hi chale isliye, i ko aur aage le jane ki jarurat nai hai
+			
+			if( j < i) {
+				//agar j na badh paye aur j i se chota reh jaye tab j ko i ke barabr karlo
+				j=i;
+			}
+			while( nge[j] < i+k) { //agar jo next grater hai j ka woh window ke andar hai to aap next greater pe jate rahiye uchal uchal ke
+				j = nge[j];
+			}
+			
+			//kabtak window ke end point se chota hai tabtak aap jump karke jate jaiye aur last mai jab aap nikalenge to window ke apke bahar hoga to bahar nikalkar print krdo
+			System.out.println(arr[j]);
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner s= new Scanner(System.in);
+		int arr[]= takeInput();
+		int k= s.nextInt();
+		slidingWindowMax(arr, k);
+		
+	}
+
+}
+

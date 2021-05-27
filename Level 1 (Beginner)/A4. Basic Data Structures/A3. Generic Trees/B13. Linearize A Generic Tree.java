@@ -58,7 +58,7 @@ public class LinearizeAGenericTree {
 	}
 	
 	private static Node getTail( Node node) {
-		while(node.children.size() == 1) { // jabtak children ka size 1 nhi hojata tabtak aap node ko niche utarde
+		while(node.children.size() == 1) { // jabtak children ka size 1 hai tabtak aap node ko niche utarde
 			node= node.children.get(0);
 		}
 		

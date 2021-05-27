@@ -24,3 +24,44 @@ Sample Output
 120 110
   
 Code:
+
+ public static void levelOrderLinewiseZZ(Node node){
+
+		 //queue ki jagah isbar stacks use kiye
+		 Stack<Node> ms= new Stack<>(); //main stack
+		 ms.push(node); //main stack mai node ko push kiya
+		 
+		 Stack<Node> cs= new Stack<>(); // fir humne banayi child stack
+		 int level= 1; // shuruwat mai level 1 hai
+		 
+		 while( ms.size() > 0){
+			 node= ms.pop(); //main stack se pop karenge
+			 System.out.println(node.data +" ");
+			 
+			 //ab add children magr depend karega ki level odd wala hai ya nhi
+			 if( level % 2 == 0) {
+				 //agar level odd wala hai to badhta hua loop
+				 for( int i=0; i< node.children.size(); i++) {
+					 Node child= node.children.get(i);
+					 //aur isko child stack mai push karenge
+					 cs.push(child);
+				 }
+			 }else {
+				 // agar odd nhi hai
+				 for( int i= node.children.size()- 1; i>= 0; i--) {
+					 Node child= node.children.get(i);
+					 cs.push(child);
+				 }
+			 }
+			 
+			 //agar child main stack ka size 0 hogya hai 
+			 if( ms.size() == 0) {
+				 ms= cs;
+				 cs= new Stack<>();
+				 //aur level badhaye
+				 level++;
+				 //aur enter jarur mare
+				 System.out.println();
+			 }
+		 }
+ }

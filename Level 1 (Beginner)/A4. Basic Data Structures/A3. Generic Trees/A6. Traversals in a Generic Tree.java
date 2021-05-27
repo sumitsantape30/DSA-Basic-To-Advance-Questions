@@ -50,10 +50,12 @@ Code:
 package GenericTree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
-public class TraversalsInGenericTree {
-
+public class LevelOrderInGenericTree {
+	
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -96,24 +98,25 @@ public class TraversalsInGenericTree {
 		return root;
 	}
 	
-	public static void traversals(Node node) {
-		//area 1
-		// area 1 node ka pre area kaha jata hai 
-		System.out.println("Node Pre"+ node.data); // yahi euler ka left hai. Eulers left, On the way deep in recursion, node's pre area
-		for( Node child : node.children) {
-			// edge pre
-			System.out.println("Edge Pre"+ node.data+"--"+child.data);
-			traversals(child);
-			System.out.println("Edge Post"+ node.data+"--"+child.data); //iss child ke pass se jab node pr wapas aa rhe honge to use bolenge edge post
-			// edge post
+	public static void levelOrder(Node node) {
+		
+		Queue<Node> q= new LinkedList<>(); //ek quee banayi hai
+		q.add(node); //jo bhi node pass hua use queue mai dal denge
+		
+		while( q.size() > 0) { //jabtak queue ka size 0 nhi hota tabtak kam karenge
+			node = q.remove(); // queue mese node nikalenge
+			System.out.println(node.data + " ");
+			
+			//aur fir uske childrens ko add kardenge
+			for( Node child: node.children) {
+				q.add(child);
+			}
 		}
 		
-		//now eulers right, on the way out of recursion, node's post area
-		System.out.println("Node Post"+ node.data);
+		System.out.println(".");
 	}
 
 	public static void main(String[] args) {
-
+	
 	}
-
 }

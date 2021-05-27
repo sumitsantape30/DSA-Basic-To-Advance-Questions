@@ -20,3 +20,30 @@ Sample Output
 110 120
   
 Code:
+
+public static void levelOrderLinewise(Node node){
+		
+		Queue<Node> mq= new LinkedList<>() ; // main queue
+		mq.add(node); // main queue mai maine add kiya node ko
+		
+		Queue<Node> cq= new LinkedList<>(); //child queue
+		
+		while( mq.size() > 0){ 
+			node= mq.remove(); //pehle main queue mese removal karenge
+			 System.out.println(node.data+" "); //dusra kam printing ka
+			 
+			 //ab children add honge
+			 for( Node child: node.children) {
+				 //lekin hum main queue mai add nhi honge woh add honge child queue mai
+				 cq.add(child);
+			 }
+			 
+			 //yeh krne ke bad jab aap bahar aaye
+			 if( mq.size() == 0) { //agar main queue ka size hai 0 means main queue khali hogyi hai to maltab yeh ek level khatam hota hai
+				 mq= cq; //so main queue equal to child queue karde
+				 cq= new LinkedList<>();// aur child queue equal to new karde
+				 
+				 System.out.println(); //ek level khatam hogya hai so enter laga de
+			 }
+		}
+	}

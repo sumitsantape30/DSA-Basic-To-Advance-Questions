@@ -22,3 +22,42 @@ Sample Output
 
 Code:
 
+package GenericTree;
+
+import java.util.ArrayList;
+
+public class removeLeavesFromGenericTree {
+
+	public static class Node {
+		int data;
+		ArrayList<Node> children = new ArrayList<Node>();
+	}
+
+	public static void removeLeaves(Node node) {
+		
+		for (int i= node.children.size()-1; i>= 0 ; i--) {
+			Node child= node.children.get(i);
+			if (child.children.size() == 0) { // agar child ke 0 children hai to node.children ki list se remove karde iss child ko
+				node.children.remove(child);
+			}
+		}
+		//yeh logic pehle likhe taki pehle children uda le aur fir bache hue baccho pe removeLeaves call kare 
+
+		//faith
+		for( Node child: node.children) {
+			removeLeaves(child);
+		}// isse children 20 30 40 ke saare leaves ud jayenge
+		
+//		for( Node child: node.children) {
+//			if( child.children.size() == 0) { //agar child ke 0 children hai to node.children ki list se remove karde iss child ko
+//				node.children.remove(child);
+//			}
+//		} // yeh for each loop nhi laga skte coz usime loop laga rhe hai aur usimese delete karre this doesnt work fine it gives error.
+		
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

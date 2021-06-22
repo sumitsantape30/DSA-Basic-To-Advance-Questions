@@ -45,6 +45,10 @@ public class printPrime {
 		
 	     int count=0;
 		
+	     if( n == 0 || n == 1){ //edge case
+		     System.out.println("Not Prime");
+	     }
+		
 		for( int div= 2;  div*div <= n; div++) { //yeh wala loop root n ke order wala hai means around 10^5 ke aspas so humari complexity is around 10^9
 			
 			if( n % div == 0) {

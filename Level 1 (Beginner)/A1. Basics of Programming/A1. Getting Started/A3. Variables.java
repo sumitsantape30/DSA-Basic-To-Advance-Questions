@@ -21,7 +21,7 @@ public class variables {
 		System.out.println(v1+" "+v2+" "+v3);
 		
 		//Now I want to solve the equation
-		int exp= (x * y) / (x+ y); //yaha * / + - % ki priority same hoti hai yaha BODMAS jaisa kuch nhi hai, so priority barab hone ke karan woh pehle usko solve krta hai jo left hand side pe hota hai
+		int exp= (x * y) / (x+ y); //yaha * / % ki priority same hoti hai and > + - hoti hai aur +- ki priority apas mai same hoti hai ,yaha BODMAS jaisa kuch nhi hai, so priority barabr hone ke karan woh pehle usko solve krta hai jo left hand side pe hota hai
 		//eg.  a*b/c = yahape * sabse pehle hoga and then divide karega so hume brackets lagane honge 
 		System.out.println(exp);
 		

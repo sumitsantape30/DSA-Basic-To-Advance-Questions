@@ -12,7 +12,7 @@ public class printInJava {
 		System.out.println("*****");
 		
 		
-		//we can also print the same trianle using the single print statment, by usnig the back slash which also means newline
+		//we can also print the same trianle using the single print statment, by using the back slash which also means newline
 		
 		System.out.println("*\n**\n***\n****\n*****");
 	}

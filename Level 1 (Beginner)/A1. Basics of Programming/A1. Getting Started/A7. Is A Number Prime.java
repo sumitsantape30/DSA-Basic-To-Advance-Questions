@@ -33,7 +33,7 @@ public class printPrime {
 			}
 		}
 		
-		// agar loop se bahar aane pr count mila 2 to woh mera print number hai
+		// agar loop se bahar aane pr count mila 2 to woh mera prime number hai
 		if( count == 2) {
 			System.out.println("Prime");
 		}else {

@@ -15,7 +15,7 @@ public class incAnddec {
 	    }
 	 
 	    int j = 20;
-	    if(++j == j) //yahape pehlehi j increament hogya to 21 and then 21 compare hua 21 ke sath coz == ke bad ke i ki value bhi 21hogyi hai so condition is false
+	    if(++j == j) //yahape pehlehi j increament hogya to 21 and then 21 compare hua 21 ke sath coz == ke bad ke i ki value bhi 21 hogyi hai so condition is true
 	 	 System.out.println(j + " is good");
 	    else
 	 	 System.out.println(j + " is bad");

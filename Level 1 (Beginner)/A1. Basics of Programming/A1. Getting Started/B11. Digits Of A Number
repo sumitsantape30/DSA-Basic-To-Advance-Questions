@@ -52,7 +52,7 @@ public class digitsOfNum {
 			//ab apne number ko chota krle
 			int r = n % div;
 			n= r; // remainder ki value n mai assign krdo. 754 tha to 754%10 kiya to 7 kat jayega and 54 reh jayega
-			div= div/10; //ab divisor kobhi chota karenge, 100 hoga to 10 bana denge, 10 ka 1 bna denge
+			div= div/10; //ab divisor kobhi reduce karenge, 100 hoga to 10 bana denge, 10 ka 1 bna denge
 		}
 	}
 

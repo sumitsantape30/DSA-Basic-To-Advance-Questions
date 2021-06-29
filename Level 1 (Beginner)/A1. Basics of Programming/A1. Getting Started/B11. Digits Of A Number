@@ -46,7 +46,7 @@ public class digitsOfNum {
 		//ab divisor banayenge
 		int div= (int)Math.pow(10, nod-1); //pow hume 100.0 deta hai aur divisor hume integer mai chahiye woh decimal mai deta tha
 		
-		while( div != 0) { //jabtak divison 0 nhi hota tabtak karengr. hum n != 0 yeh condition nhi rakhenge
+		while( div != 0) { //jabtak divisor 0 nhi hota tabtak karenge. hum n != 0 yeh condition nhi rakhenge
 			int q= n/div; //quotient agaya ab quotient ko print kardenge
 			System.out.println(q);
 			//ab apne number ko chota krle

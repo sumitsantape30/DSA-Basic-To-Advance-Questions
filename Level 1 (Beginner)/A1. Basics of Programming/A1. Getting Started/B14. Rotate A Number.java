@@ -57,7 +57,7 @@ public class rotateANumber {
 		int div= 1;
 		int mult = 1; 
 		for( int i=1; i<= nod; i++) { //1 se leke n tak loop chala rhe
-			// let's say 35618 ko 2 se rotate karna hai to divisor rahega 100 taki 18 mil paye, and multiplier rahega 1000 taki 18 ko isse multpy kar ske
+			// let's say 35618 ko 2 se rotate karna hai to divisor rahega 100 taki 18 mil paye, and multiplier rahega 1000 taki 18 ko isse multply kar ske
 			
 			if( i <= k) { //jabtak i less than equal to hai k ke means jitne se rotate karna hai tabtak divisor mai 10 multiply krte rahiye
 				div= div *10;

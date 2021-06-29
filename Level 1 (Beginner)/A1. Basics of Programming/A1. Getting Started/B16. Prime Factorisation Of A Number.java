@@ -42,6 +42,7 @@ public class primeFactorizationOfANumber {
 		//so agar apke n 1 nhi bana hai means n 1 se bda bach gya hai to yeh only number hai jo root n ke bad ata hai jo n ko divide kr skta hai *open book and see example of number 46*
 	   if( n != 1) {
 		   //agar kat kar 1 nhi kar paye to jo number bacha hua tha jaise 23 bacha tha woh khudme ek prime factor hai to usko print kardenge
+		   // this is a prime factor having value grater than root n and there can be only 1 such factor aur woh number khud hi ho skta hai so usko print krdwado
 		   System.out.println(n);
 	   }
 	}

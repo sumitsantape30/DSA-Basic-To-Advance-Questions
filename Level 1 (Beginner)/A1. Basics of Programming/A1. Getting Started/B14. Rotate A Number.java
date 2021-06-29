@@ -45,13 +45,14 @@ public class rotateANumber {
 			nod++;
 		}
 		//pehle sabse last wala point dekho then yaha aao
+		// k ki value number of digit se badhi hogi to hum k ki value ko reduce karenge
 		k= k % nod;//so koi 253 bar rotate karne bolta hai to hum bolenge nhi actually mai 2 hi bar rotate karna hai
 		// ab koi bolta hai ki -ve number se rotate karo means 3 ko piche bhejna 5618 ke but hum 5618 ko  aage la skte hai tabhi same hi result ayega so humari jo negative rotations hai that can be defined in terms of positive rotation koi bolta hai -2 that's actually +4
 		// so -2 bola means aage se 2 bande piche bhejne hai  that's equivalent to puchese 3 bande aage laye usko positive rotation mai convert kiya ja skta hai
 		// so -ve rotations ko +ve rotations mai convert kr skte hai, how? see below
 		if( k < 0) { //agar k -ve hai to hum bolenge ki instead of -ve uski jagah kuch number of positive rotations kariye
 			k = k + nod; // kisne bola -2 so -2 ki jagah hum +3 rotations kr denge
-		}
+		} //means 1234567 hai aur isko -3 se rotate karna hai to mai bolunga 123 ko choodado aur 4567 ko aage leke aao
 		
 		//initially divisor and multiplier 1 rakh rhe
 		int div= 1;

@@ -43,15 +43,16 @@ public class digitsOfNum {
 			nod++;
 		}
 		
-		//ab divisor banayenge
+		//now set value of divisor for the first time
 		int div= (int)Math.pow(10, nod-1); //pow hume 100.0 deta hai aur divisor hume integer mai chahiye woh decimal mai deta tha
 		
 		while( div != 0) { //jabtak divisor 0 nhi hota tabtak karenge. hum n != 0 yeh condition nhi rakhenge
 			int q= n/div; //quotient agaya ab quotient ko print kardenge
 			System.out.println(q);
 			//ab apne number ko chota krle
-			n= n% div; //754 tha to 754%10 kiya to 7 kat jayega and 54 reh jayega
-			div= div/10; //ab divisor kobhi chota karenge, 100 hogs to 10 bana denge, 10 ka 1 bna denge
+			int r = n % div;
+			n= r; // remainder ki value n mai assign krdo. 754 tha to 754%10 kiya to 7 kat jayega and 54 reh jayega
+			div= div/10; //ab divisor kobhi chota karenge, 100 hoga to 10 bana denge, 10 ka 1 bna denge
 		}
 	}
 

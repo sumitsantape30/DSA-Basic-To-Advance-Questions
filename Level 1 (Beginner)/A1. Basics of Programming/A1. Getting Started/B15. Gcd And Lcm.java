@@ -39,16 +39,19 @@ public class GCDAndLCM {
 		int on1= n1;
 		int on2= n2;
 		
-		while( n1 % n2 != 0) { //jabtak remainder 0 nhi ata tabtak hum un dono number pe kam krte rahenge
+		int div= n1;
+		int dvd= n2;
+		
+		while( div % dvd != 0) { //jabtak remainder 0 nhi ata tabtak hum un dono number pe kam krte rahenge
 			
-			//yad karo: ek divisor tha ek dividend tha, divisor ne divide kiya to remainder aya agli division keliye yeh remainder divisor ban jayega aur divisor dividend ban jayega *book dekho*
-			int rem= n1 % n2;
-			n1= n2;
-			n2= rem; 
+			//yad karo: ek divisor tha ek dividend tha, divisor ne divide kiya to remainder aya agli division keliye yeh remainder divisor ban jayega aur purana divisor dividend ban jayega *book dekho*
+			int rem= dvd % div;
+			dvd = div;
+			div= rem;
 		}
 		
 		//so jis number ne remainder 0 laya woh GCD hota hai means n2 nehi khud divide krke remainder 0 laya tabhi hum loop ke bahar aaye
-		int gcd= n2;	
+		int gcd = div;	//gcd wahi hai jis divisor ke wajah se aakhri remainder 0 aya
 		//lcm keliye property hai, gcd*lcm= n1*n2
 		int lcm= (on1*on2)/gcd; //but yaha n1 and n2 woh number rhe hi nhi jo initially the kyuki woh GCD calculate krte krte chote hogye hai isliye do variables rakhenge jisme original value preserve krke rakhle
 		

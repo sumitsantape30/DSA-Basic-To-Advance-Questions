@@ -36,7 +36,7 @@ public class digitsOfNum {
 		
 		//sabse pehle number of digits count karenge
 		int nod= 0; //number of digits
-		int temp= n;
+		int temp= n; //n ki value temp mai dalenge, number of digits count karne ke bad n ki value 0 hojaygi isliye temp mai dale
 		
 		while( temp != 0) { //jabtak yeh temp 0 nhi hojata
 			temp= temp/10; //jab hum kisi number ko 10 se divide karke wapas usime dalte hai to uski last wali digit chali jati hai

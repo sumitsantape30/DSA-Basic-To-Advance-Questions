@@ -29,7 +29,7 @@ public class CountDigitInNum {
 		while( n != 0) {
 			n= n/10; //n ko 10 se divide karke wapas n mai hi dal denge, n chota hojayega
 			//after every number is decreased from the number we increase count by 1
-			count++;
+			count++; //count yeh denote kr rha hai ki kitne digit hatta diye hai
 		}
 		return count;
 		

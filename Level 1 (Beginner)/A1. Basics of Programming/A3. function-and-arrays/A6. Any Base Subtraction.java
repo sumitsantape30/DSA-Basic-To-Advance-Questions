@@ -31,29 +31,30 @@ public class AnyBaseSubstraction {
 	
 	public static int getDifference(int b, int n1, int n2) {
 
-		int rv= 0;
-		int c= 0;
-		int p=1;
+		int ans= 0;
+		int carry= 0;
+		int power=1;
 		
 		//humara kam tabtak chalega jatbak bada number bacha hua hai
 		while( n2 > 0) {
 			
-			int d1= n1 % 10;
-			// n1 ko chota kardenge
+			// dono mese last digit nikalenge
+			int l1= n1 % 10;
+			int l2= n2 % 10;
+			// n1 and n2 ko chota kardenge
 			n1= n1/10;
-			int d2= n2 % 10;
 			n2= n2/10;
 			
 			//ab hum digit d banana chahte hai so d ko 0 assign karenge
-			int d= 0;
+			int d= 0;  
 			//aur d2 digit ke andar carry add karlenge
 			d2= d2 + c;
 			
 			//ab hum dekhenge kya d2 mai dum hai d1 ko manage karneka
 			if( d2 >= d1){ // agar iss waqt d2 greater or equal hai d1 ke to hume carry ki jarurat nhi hai so carry hoga 0
-				c= 0;
-				// d digit hojayegi d2-d1
-				d= d2- d1;
+			   c= 0;
+			   // d digit hojayegi d2-d1
+			   d= d2- d1;
 			}else {
 			   // agar d2 chota pd gya to carry hojayega 1 actually yeh carry borrow hai to muje -1 ka carry dena padega kyuki hum carry ko add kr rhe hai
 			   c = -1;
@@ -61,7 +62,7 @@ public class AnyBaseSubstraction {
 			}
 			
 			//ab rv ke andar add karenge d* power, power ka kam hai unko dhang se allign karna 
-			rv= rv + d*p;
+			ans= ans + d*power;
 			p= p* 10;
 		}
 		

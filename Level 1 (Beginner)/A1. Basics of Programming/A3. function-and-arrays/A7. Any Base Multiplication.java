@@ -47,7 +47,8 @@ public class AnyBaseMultiplication {
 		
 	 }
 	
-	public static int getProductWithASingleDigit( int b, int n1, int d2) {
+	// n2 single digit number hai yeh mano aur iska code likho
+	public static int getProductWithASingleDigit( int b, int n1, int d2) { // yeh function single digit ke sath multiply karke answer nikalke de dega
 		
 		int rv=0;
 		int c=0;

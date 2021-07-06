@@ -97,7 +97,7 @@ public class AnyBaseMultiplication {
 			 carry= q;
 			 power = power * 10; 
 		 }
-		 return rv;
+		 return ans;
 		 
 	 }
 

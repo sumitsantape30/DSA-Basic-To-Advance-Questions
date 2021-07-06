@@ -31,65 +31,71 @@ public class AnyBaseMultiplication {
 	
 	public static int getProduct(int b, int n1, int n2){
 
-		int rv= 0;
-		int p=1;
+		int ans= 0;
+		int power=1; // pehli bar jo answer ayega woh 10^0 se multiply hoga, dusri bar jo answer ayega woh 10^1 se multiply hoga isliye power chahiye
 		
 		while( n2 > 0) {
-			int d2= n2 % 10;
+			int l2= n2 % 10; //jabtak n2 zero nhi hojata uska aakhri digit nikalte rahenge aur usko reduce bhi karte rahenge
 			n2 = n2 /10;
 			
-			int sprd= getProductWithASingleDigit(b, n1, d2)  ; //single product
-			rv= getSum(b , rv, sprd*p);
-			p= p * 10;
+			int gpwsd= getProductWithASingleDigit(b, n1, l2)  ; //single product, get product with single digit
+			ans = getSum(b , ans, gpwsd*p);
+			power = power * 10;
 		}
 		
-		return rv;
+		return ans;
 		
 	 }
 	
 	// n2 single digit number hai yeh mano aur iska code likho
-	public static int getProductWithASingleDigit( int b, int n1, int d2) { // yeh function single digit ke sath multiply karke answer nikalke de dega
+	public static int getProductWithASingleDigit( int b, int n1, int n2) { // yeh function single digit ke sath multiply karke answer nikalke de dega
 		
-		int rv=0;
-		int c=0;
-		int p= 1;
+		int ans=0;
+		int carry=0;
+		int power= 1;
 		
 		while( n1 > 0 || c > 0) {
-			int d1= n1 % 10;
+			int l1= n1 % 10; //last digit of n1 aur fir n1 ko reduce bhi kar denge
 			n1= n1/10;
 			
-			int d= d1 * d2 + c;
+			int product = l1 * n2 + carry;
 			
-			c= d / b;
-			d = d % b;
+			q= product / b; // quotient
+			rem = product % b; //ramainder
 			
-			rv= rv + d * p;
-			p= p * 10;
+			//remainder ki help se answer update
+			ans= ans + (rem * p);
+			
+			//agli bar keliye carry update with the help of quotient
+			carry= q;
+			power= power * 10;
 		}
 		
-		
-		
-		return rv;
+		return ans;
 	}
 	
 	 public static int getSum(int b, int n1, int n2){
 
-		 int rv=0;
-		 int c= 0; 
-		 int p=1; 
+		 int ans=0;
+		 int carry= 0; 
+		 int power=1; 
+		 
 		 while( n1 > 0 || n2 > 0 || c > 0) {
 			 
-			 int d1= n1 % 10;
-			 int d2= n2% 10; 
+			 int l1= n1 % 10;
+			 int l2= n2% 10; 
 			 
+			 // dono ko reduce kardo
 			 n1= n1 /10;
 			 n2= n2/10; 
 			 
-			 int d= d1+ d2 + c;
-			 c = d/ b; 
-			 d = d % b; 
-			 rv += d* p;
-			 p= p * 10; 
+			 int sum = l1+ l2 + c;
+			 int q = sum/ b; 
+			 int r = sum % b; 
+			 ans += (r* power);
+			 // aur quotient ki help se agli bar keliye carry update karenge
+			 carry= q;
+			 power = power * 10; 
 		 }
 		 return rv;
 		 

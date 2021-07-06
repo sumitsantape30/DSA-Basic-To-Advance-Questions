@@ -36,9 +36,12 @@ public class AnyBaseAddition {
 		 //mera kam tabtak chalega jabtak n1 mai digit bachi hai ya fir n2 mai digit bachi hai ya carry bacha hai
 		 while( n1 > 0 || n2 > 0 || c > 0) {
 			 
+			 //ab n1 aur n2 ki aakhri digit nikalenge
 			 //ab pehli digit nikalenge
 			 int d1= n1 % 10;
 			 int d2= n2% 10; //dusri digit
+			 
+			 //ab donoko chota karenge
 			 //ab n1 ko chota karunga
 			 n1= n1 /10;
 			 n2= n2/10; //n2 kobhi chota karunga
@@ -48,7 +51,7 @@ public class AnyBaseAddition {
 			 //agar inn teeno ko add karke jo number aya woh 8 se chota aya to thik hai, agar woh 8  se bada hai to woh carry chodega aur ayapr spare chodega
 			 // following is the way to do it
 			 c = d/ b; //agar woh 8 ya 8 se bda number chhod rha hai to carry apne aap 1 hojayega aur agar 7 tak ka  number chodata hai to 7/8 is zero
-			 d = d % b; //this is my remaining digit
+			 d = d % b; //this is my remaining digit, remainder
 			 
 			 //ab yeh digit hume use krni hai yeh rv mai add hogi and yeh normal add nhi hogi iske sath ek power multiply hogi
 			 rv += d* p;

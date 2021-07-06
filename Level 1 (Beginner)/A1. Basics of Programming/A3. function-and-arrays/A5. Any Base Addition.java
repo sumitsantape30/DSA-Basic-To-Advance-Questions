@@ -56,7 +56,7 @@ public class AnyBaseAddition {
 			 //ab yeh digit hume use krni hai yeh rv mai add hogi and yeh normal add nhi hogi iske sath ek power multiply hogi
 			 rv += d* p;
 			 //aur power ko 10 se badhe dijiyega
-			 p= p * 10;
+			 p= p * 10; //fir power kobhi update kardo
 			 
 		 }
 		 return rv;

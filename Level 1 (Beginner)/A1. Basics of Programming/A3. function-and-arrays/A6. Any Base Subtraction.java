@@ -50,7 +50,7 @@ public class AnyBaseSubstraction {
 			d2= d2 + c;
 			
 			//ab hum dekhenge kya d2 mai dum hai d1 ko manage karneka
-			if( d2 >= d1){ // agar iss waqt d2 grater or equal hai d1 ke to hume carry ki jarurat nhi hai so carry hoga 0
+			if( d2 >= d1){ // agar iss waqt d2 greater or equal hai d1 ke to hume carry ki jarurat nhi hai so carry hoga 0
 				c= 0;
 				// d digit hojayegi d2-d1
 				d= d2- d1;

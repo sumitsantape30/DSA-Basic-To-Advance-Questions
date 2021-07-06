@@ -61,7 +61,7 @@ public class AnyBaseSubstraction {
 			   d = l2 + b - l1;
 			}
 			
-			//ab rv ke andar add karenge d* power, power ka kam hai unko dhang se allign karna 
+			//ab ans ke andar add karenge d* power, power ka kam hai unko dhang se allign karna 
 			ans= ans + d*power;
 			p= p* 10;
 		}

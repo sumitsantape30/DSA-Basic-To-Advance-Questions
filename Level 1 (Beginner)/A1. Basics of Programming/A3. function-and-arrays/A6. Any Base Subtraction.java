@@ -47,18 +47,18 @@ public class AnyBaseSubstraction {
 			
 			//ab hum digit d banana chahte hai so d ko 0 assign karenge
 			int d= 0;  
-			//aur d2 digit ke andar carry add karlenge
-			d2= d2 + c;
+			//aur l2 digit ke andar carry add karlenge
+			l2= l2 + c;
 			
 			//ab hum dekhenge kya d2 mai dum hai d1 ko manage karneka
-			if( d2 >= d1){ // agar iss waqt d2 greater or equal hai d1 ke to hume carry ki jarurat nhi hai so carry hoga 0
+			if( l2 >= l1){ // agar iss waqt d2 greater or equal hai d1 ke to hume carry ki jarurat nhi hai so carry hoga 0
 			   c= 0;
 			   // d digit hojayegi d2-d1
-			   d= d2- d1;
+			   d= l2- l1;
 			}else {
 			   // agar d2 chota pd gya to carry hojayega 1 actually yeh carry borrow hai to muje -1 ka carry dena padega kyuki hum carry ko add kr rhe hai
 			   c = -1;
-			   d = d2 + b - d1;
+			   d = l2 + b - l1;
 			}
 			
 			//ab rv ke andar add karenge d* power, power ka kam hai unko dhang se allign karna 

@@ -38,7 +38,7 @@ public class AnyBaseToDecimal {
 			n= n /10;
 						
 			//and jo power hongi woh humare base ki hongi
-			rv +=  rem* p;
+			ans +=  rem* p;
 			//humare base ki power hai to woh 20 se multiply hokar badhegi
 			p= p * b;
 			

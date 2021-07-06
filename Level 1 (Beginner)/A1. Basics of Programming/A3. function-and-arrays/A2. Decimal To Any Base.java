@@ -32,7 +32,7 @@ public class DecimaltoanyBase {
 	public static int getValueInitialised( int n, int b) {
 		
 		int ans= 0; //value to be returned
-		int p0w= 1; //10 ki sabse choti power hoti hai 10^0 that's actually 1
+		int pow= 1; //10 ki sabse choti power hoti hai 10^0 that's actually 1
 		
 		while( n > 0) {
 			int rem= n % b;  //jis base mai convert karna hai usase divide karenge

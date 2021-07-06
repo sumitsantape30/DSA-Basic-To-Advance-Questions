@@ -37,7 +37,6 @@ public class AnyBaseAddition {
 		 while( n1 > 0 || n2 > 0 || c > 0) {
 			 
 			 //ab n1 aur n2 ki aakhri digit nikalenge
-			 //ab pehli digit nikalenge
 			 int l1= n1 % 10; //last digit of n1
 			 int l2= n2% 10; //last digit of n2
 			 

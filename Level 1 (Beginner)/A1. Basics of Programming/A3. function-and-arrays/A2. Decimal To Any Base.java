@@ -35,7 +35,7 @@ public class DecimaltoanyBase {
 		int p= 1; //10 ki sabse choti power hoti hai 10^0 that's actually 1
 		
 		while( n > 0) {
-			int dig= n % b;  //jis base mai convert karna hai usase multiply karenge
+			int dig= n % b;  //jis base mai convert karna hai usase divide karenge
 			n= n/b; //number ko chota kardenge
 			
 			//so jo pehle digit se jo pehla remainder aya hai usko sabse right mai bhejna hai to uske 10 ki sabse choti power se mutlipy karenge

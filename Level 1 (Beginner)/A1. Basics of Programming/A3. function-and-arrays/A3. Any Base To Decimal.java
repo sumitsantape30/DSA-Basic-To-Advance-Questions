@@ -33,12 +33,12 @@ public class AnyBaseToDecimal {
 		
 		while( n >0 ) { //hume tabtak kam karna hai jabtak humara number 0 se bda hai
 			
-			int dig= n % 10; //aur hum 10 se divide krke digit nikalenge
+			int rem= n % 10; //aur hum 10 se divide krke digit nikalenge
 			//aur 10 se divide krke chota karenge
 			n= n /10;
 						
 			//and jo power hongi woh humare base ki hongi
-			rv +=  dig* p;
+			rv +=  rem* p;
 			//humare base ki power hai to woh 20 se multiply hokar badhegi
 			p= p * b;
 			

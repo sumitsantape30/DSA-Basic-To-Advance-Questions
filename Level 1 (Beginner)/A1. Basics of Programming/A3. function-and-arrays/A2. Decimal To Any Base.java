@@ -40,7 +40,7 @@ public class DecimaltoanyBase {
 			
 			//so jo pehle digit se jo pehla remainder aya hai usko sabse right mai bhejna hai to uske 10 ki sabse choti power se mutlipy karenge
 		    // 10 ki sabse choti power hoti hai 10^0 that's actually 1
-			ans= ans + (rem*pow); //rv ke purani value mai add karenge
+			ans= ans + (rem*pow); //ans ke purani value mai add karenge. Base ki power se multiply krte rahenge
 			//next ane wale remainder ko 10 ki badi power se multiply karenge taki wo thodase left mai aaye
 			pow= pow * 10;
 		}

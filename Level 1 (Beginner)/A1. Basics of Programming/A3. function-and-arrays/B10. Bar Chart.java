@@ -61,7 +61,7 @@ public class BarChart {
 			}
 		}
 		
-		//max floor se start karengeand first floor tak jayenge
+		//max floor se start karenge and first floor tak jayenge
 		for( int floor= max; floor >= 1; floor--) {
 			//ab har floor keliye har building ko analyse karenge
 			for( int i=0; i< arr.length; i++) {

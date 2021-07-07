@@ -57,7 +57,7 @@ public class DifferenceBetweenTwoArrays {
 	
 	public static void difference( int arr1[], int arr2[], int n1, int n2) {
 		
-		//assumptions mai arr2 value mai bada hai, value mai bada hai matlab ya to dono size mai equal honge ya arr2 length mai bhi bda hoga. So n2 jinta banayenge diff array
+		//assumptions mai arr2 value mai bada hai, value mai bada hai matlab ya to dono size mai equal honge ya arr2 length mai bhi bda hoga. So n2 jitna banayenge diff array
 		int diff[]= new int[n2];
 		int c=0; //carry
 		

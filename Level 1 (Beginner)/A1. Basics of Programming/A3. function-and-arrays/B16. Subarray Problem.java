@@ -54,7 +54,7 @@ public class SubarrayProblem {
 		
 		for( int i=0; i< arr.length; i++) { //yeh wala i starting point hai subarray ka
 			for( int j= i; j< arr.length; j++) { //yeh end point, end point starting point se jada hi hoga isliye i ke badse start ho rha hai
-				for( int k= i; k<= j; k++) { //fir start se leke end tak humara k travel karega aur sabko print karne mai help karega
+				for( int k= i; k<= j; k++) { //fir subarray print karne keliye ek loop lagega so start se leke end tak humara k travel karega aur sabko print karne mai help karega
 					System.out.print(arr[k]+"\t");
 				}
 				//jab ek subarray hojaye to enter jarur lagaye agla subarray start karne se pehle

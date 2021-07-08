@@ -85,10 +85,10 @@ public class floorAndCeil {
 			int mid= start + ((end - start)/2);
 			
 			if( arr[mid] < ele) { //start move hota hai to floor set hota hai
-				floor= arr[mid];
+				floor= arr[mid]; // yeh ele se chota hai to chances hai ki yeh floor ho skta hai so floor pe set kardo
 				start= mid+1;
 			}else if( arr[mid] > ele) { //end move hota hai to ceil set hota hai
-				ceil= arr[mid];
+				ceil= arr[mid]; // yeh data se ele hai to shayad yeh ceil ka answer ho skta hai so ceil pe set kardo
 				end= mid-1;
 			}else { //agar ele barabr hai mid ke to ceil and floor dono wahi rahega and chize mil gyi to break jarur kare
 				ceil= arr[mid];

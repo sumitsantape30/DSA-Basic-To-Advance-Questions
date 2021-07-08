@@ -77,8 +77,8 @@ public class floorAndCeil {
 		
 		int start=0;
 		int end= arr.length-1;
-		int ceil=0;
-		int floor= 0;
+		int ceil=-1;
+		int floor= -1;
 		
 		while( start <= end) {
 			

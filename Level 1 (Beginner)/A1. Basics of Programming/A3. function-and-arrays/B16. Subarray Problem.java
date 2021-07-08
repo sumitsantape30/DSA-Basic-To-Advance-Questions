@@ -57,7 +57,7 @@ public class SubarrayProblem {
 				for( int k= i; k<= j; k++) { //fir subarray print karne keliye ek loop lagega so start se leke end tak humara k travel karega aur sabko print karne mai help karega
 					System.out.print(arr[k]+"\t");
 				}
-				//jab ek subarray hojaye to enter jarur lagaye agla subarray start karne se pehle
+				//jab ek subarray print hojaye to enter jarur lagaye agla subarray start karne se pehle
 				System.out.println();
 			}
 		}

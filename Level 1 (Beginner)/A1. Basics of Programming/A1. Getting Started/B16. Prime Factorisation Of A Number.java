@@ -33,7 +33,7 @@ public class primeFactorizationOfANumber {
 			
 			//jabtak yeh n divide hota rehta hai tabtak divide krte rho means katate rho aur har ek bar apne divisor ko print krte rho
 			while( n % div == 0) {
-				n= n/ 10;
+				n= n/ div;
 				System.out.print(div+" ");
 			}
 		}

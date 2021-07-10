@@ -42,7 +42,7 @@ public class pattern18 {
 				//3. ab upper half ka part vacant karenge
 				//first row ko chhodke and n/2 se pehle ka part vacant karna hai
 				// and sathme hi woh first half ke hone chahiye, first half ke first row se bada hoga and aakri star se chota hoga means st se chota hoga uss area mai hum space print karenge warna hum star print krte rahenge
-				if( i > 1 && i <= n/2 && j >1 && j< st ) { 		
+				if( i > 1 && i <= n/2 && j >1 && j< st ) { //2nd row mai first position and last pe star print hoga so unko chhodna padega 		
 					System.out.print("\t");
 				} else {
 					System.out.print("*\t");

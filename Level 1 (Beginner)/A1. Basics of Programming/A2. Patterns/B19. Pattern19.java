@@ -15,7 +15,7 @@ public class Pattern19 {
 				//hum isko 5 hisso mai divide kar lenge
 				
 				//agar humari row hai first to usko alag way mai treat karenge
-				if( i == 1) { 
+				if( i == 1) { // first row
 					
 					//first row keliye, jab j first half mai hai means n/2+1 th tak hai yafir j last mai hona chahiye to star print karenge otherwise space
 					if(j == n || j <= n/2 +1) { //j ya to aakhri hona chahiye ya to n/2+1th tak hona chahiye to uss case mai hum print karenge star
@@ -25,7 +25,7 @@ public class Pattern19 {
 					}
 				
 				} //nhi agar humari row hai first upper half mai to hum apne columns ko alag way mai treate karenge
-				else if( i <= n/2) { 
+				else if(i> n && i <= n/2) { 
 					
 					if(j == n || j == n/2 +1) {
 						System.out.print("*\t");
@@ -39,7 +39,7 @@ public class Pattern19 {
 						System.out.print("*\t");
 					
 				} // agar humari row hai n/2+1 se badi hai magar n se choti hai (upar wali teeno bat zuti hai to kya yeh sacchi hai)
-				else if( i < n ) {
+				else if( i > n/2 +1 && i< n ) {
 					
 					if(j == 1 || j == n/2 +1) {
 						System.out.print("*\t");
@@ -47,7 +47,7 @@ public class Pattern19 {
 						System.out.print("\t");
 					}
 					  
-				}else { // upar wala sabkuch zuta hai to of course woh nth row hai
+				}else { // upar wala sabkuch zuta hai to of course woh nth row hai, last row
 					
 					if(j == 1 || j >= n/2 +1) {  //jab first ho ya n/2+1 ke bad ho
 						System.out.print("*\t");

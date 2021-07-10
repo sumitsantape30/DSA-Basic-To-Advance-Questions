@@ -45,6 +45,7 @@ public class Pattern16 {
 				System.out.print("\t");
 			}
 			
+			// agar aap abhi last row pe ho to ek start aur value kam kardo taki extra star print na ho
 			//ek star extra print hoga isliye star ki value ek pehlehi kam krdete second half mai jane se pehle
 			if( i == n) { //agar i n ki value ke barabr hogya to star ki value ek se kam kardenge second half se pehle
 				st--;

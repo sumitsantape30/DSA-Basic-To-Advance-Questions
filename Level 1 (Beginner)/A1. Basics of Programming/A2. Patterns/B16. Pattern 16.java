@@ -68,5 +68,49 @@ public class Pattern16 {
 }
 
 
+=============================================================== Easy Approach ===================================
+	
+package Restart;
+
+import java.util.Scanner;
+
+public class Problems {
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int st= 1;
+		int space= 2*n -3;
+		
+		for( int i=1; i<= n; i++) {
+			int val= 1;
+			
+			for( int j=1; j<= st; j++) {
+				System.out.print(j+"\t");
+			}
+			
+			for( int j=1; j<= space; j++) {
+				System.out.print("\t");
+			}
+			
+			if( i == n) { // agar aap abhi last row pe ho to ek star kam kardo taki extra star print na ho
+				st--;
+			}
+			
+			for( int j=st; j>= 1; j--) {
+				System.out.print(j+ "\t");
+			}
+			
+			st++;
+			space -=2;
+			System.out.println();
+			
+		}
+	}
+
+}
+
   
   

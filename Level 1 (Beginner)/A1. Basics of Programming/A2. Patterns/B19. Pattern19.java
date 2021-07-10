@@ -18,7 +18,7 @@ public class Pattern19 {
 				if( i == 1) { 
 					
 					//first row keliye, jab j first half mai hai means n/2+1 th tak hai yafir j last mai hona chahiye to star print karenge otherwise space
-					if(j == n || j <= n/2 +1) { //j ya to aakhi hona chahiye ya to n/2+1th tak hona chahiye to uss case mai hum print karenge star
+					if(j == n || j <= n/2 +1) { //j ya to aakhri hona chahiye ya to n/2+1th tak hona chahiye to uss case mai hum print karenge star
 						System.out.print("*\t");
 					}else {
 						System.out.print("\t");

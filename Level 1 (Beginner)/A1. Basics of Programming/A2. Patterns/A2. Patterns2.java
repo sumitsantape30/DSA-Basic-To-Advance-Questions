@@ -53,3 +53,32 @@ public class Problems {
 		}
 	}
 }
+
+================================================= Approach 3 ============================================
+	
+package Restart;
+
+import java.util.Scanner;
+
+public class Problems {
+	
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int st= n;
+		
+		for( int i=1; i<= n; i++) {
+			
+			for( int j= 1; j <= st; j++) {
+				System.out.print("*\t");
+			}
+			
+			st--;
+			System.out.println();
+			
+		}
+		
+	}
+}

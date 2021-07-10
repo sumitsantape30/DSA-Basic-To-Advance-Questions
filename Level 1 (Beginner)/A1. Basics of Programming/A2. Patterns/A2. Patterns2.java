@@ -33,7 +33,7 @@ public class Pattern2 {
 
 ================================== Approach 2===================================
 	
-	package Restart;
+package Restart;
 
 import java.util.Scanner;
 

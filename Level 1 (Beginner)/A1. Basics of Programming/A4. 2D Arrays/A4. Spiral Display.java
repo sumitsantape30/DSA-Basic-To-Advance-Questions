@@ -90,20 +90,21 @@ public class SpiralTraversal {
 		//4 variable define karenge, minimum row and column aur maximum row and column
 		int minr= 0;
 		int minc= 0;
-		int maxr= arr.length;
-		int maxc= arr[0].length;
+		int maxr= arr.length-1;
+		int maxc= arr[0].length-1;
 		// inn char variable se mai box define kar rha hu sabse outer box
 		
 		//jitne total elements hai utna hi chalenge
 		int tne= arr.length* arr[0].length;
 		int cnt=0; //harbar print karte hi mai count ko bdhaunga
 		
+		//yeh condition yeh control krti hai ki kitni der print karna hai
 		while( cnt < tne) { //while the boxes are there, mai har box print hone ke bad cnt badha rha hu so woh jabtak less rahega total elements se.
 			//ab mai ek ek wall print karunga
 			
 			//left wall
 			//left wall keliye column humara min column hi rahe galekin hum min row se max row ke taraf travel kar rhe hai tabhi humara print hoga
-			for( int i= minr, j= minc; i< maxr && cnt < tne; i++) { //min row se max row tak gya, and J min column hi rahega isliye woh bhi loop mai dal diye
+			for( int i= minr, j= minc; i<= maxr && cnt < tne; i++) { //min row se max row tak gya, and J min column hi rahega isliye woh bhi loop mai dal diye
 				System.out.println(arr[i][j]); //mera bas row vary ho rha tha and column wahi tha
 				cnt++;
 			}

@@ -98,11 +98,11 @@ public class SpiralTraversal {
 		int tne= arr.length* arr[0].length;
 		int cnt=0; //harbar print karte hi mai count ko bdhaunga
 		
-		while( cnt < tne) { //while the boxes are there, mai har box print hone ke bad cnt badha rha hu so woh jatab less rahega total elements se.
-			//ab mai ek ek wall print karenge
+		while( cnt < tne) { //while the boxes are there, mai har box print hone ke bad cnt badha rha hu so woh jabtak less rahega total elements se.
+			//ab mai ek ek wall print karunga
 			
 			//left wall
-			//left wall keliye column humara min column hi rahegalekin hum min row se max row ke taraf travel kar rhe hai tabhi humara print hoga
+			//left wall keliye column humara min column hi rahe galekin hum min row se max row ke taraf travel kar rhe hai tabhi humara print hoga
 			for( int i= minr, j= minc; i< maxr && cnt < tne; i++) { //min row se max row tak gya, and J min column hi rahega isliye woh bhi loop mai dal diye
 				System.out.println(arr[i][j]); //mera bas row vary ho rha tha and column wahi tha
 				cnt++;
@@ -114,7 +114,7 @@ public class SpiralTraversal {
 			//left wall print hone ke bad hume bottom wall print karni hai but agar bottom wall puri print kardi from min column to max column to corner wala element do br hojayega
 			for( int j= minc, i= maxr; j<= maxc && cnt < tne; j++) { //bottom mai row max row pe fix rehti hai
 				System.out.println(arr[i][minr]);
-				cnt++;
+				cnt++; 
 			}
 			maxr--;
 			

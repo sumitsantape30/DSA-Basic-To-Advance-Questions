@@ -107,6 +107,7 @@ public class SpiralTraversal {
 			for( int i= minr, j= minc; i<= maxr && cnt < tne; i++) { //min row se max row tak gya, and J min column hi rahega isliye woh bhi loop mai dal diye
 				System.out.println(arr[i][j]); //mera bas row vary ho rha tha and column wahi tha
 				cnt++;
+				// cnt < tne hay loop mai kyu dala? jo sabse last box(internal last box) hota hai jaruri nhi ki uski 4 bhi walls ho so usme agar yeh check nhi lagayenge to woh kuch elements duplicated print kardega 
 			}
 			//left wall hote hi hum min column ko ++ kar denge
 			minc++; //isliye ++ kiye taki agla box aage se start ho so that corner repeat hone se bache

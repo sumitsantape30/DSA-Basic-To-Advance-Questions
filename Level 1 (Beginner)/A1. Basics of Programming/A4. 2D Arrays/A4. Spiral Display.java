@@ -147,3 +147,78 @@ public class SpiralTraversal {
 	}
 }
 
+=====================================//================================================
+	
+package Restart;
+
+import java.util.Scanner;
+
+public class Problems {
+
+	public static int[][] takeInput() {
+
+		Scanner s = new Scanner(System.in);
+		int row = s.nextInt();
+		int column = s.nextInt();
+
+		int arr[][] = new int[row][column];
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[0].length; j++) {
+				arr[i][j] = s.nextInt();
+			}
+		}
+		return arr;
+	}
+
+	public static void spiral(int arr[][]) {
+
+		int rmin = 0;
+		int cmin = 0;
+		int rmax = arr.length - 1;
+		int cmax = arr[0].length - 1;
+
+		int tne = arr.length * arr[0].length;
+		int counter = 0;
+
+		while (counter < tne) {
+
+			// left coundary
+			for (int row = rmin ; row <= rmax && counter < tne; row++) {
+				System.out.print(arr[row][cmin]);
+				counter++;
+			}
+			cmin++;
+
+			// bottom boundary
+			for (int col = cmin; col <= cmax && counter < tne; col++) {
+				System.out.print(arr[rmax][col]);
+				counter++;
+			}
+			rmax--;
+
+			//right boundary
+			for (int row = rmax; row >= rmin && counter < tne; row--) {
+				System.out.print(arr[row][cmax]);
+				counter++;
+			}
+			cmax--;
+
+			//top boundary
+			for (int col = cmax; col >= cmin && counter < tne; col--) {
+				System.out.print(arr[rmin][col]);
+				counter++;
+			}
+			rmin++;
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		int arr[][] = takeInput();
+		spiral(arr);
+
+	}
+}
+

@@ -115,7 +115,7 @@ public class SpiralTraversal {
 			//bottom wall
 			//left wall print hone ke bad hume bottom wall print karni hai but agar bottom wall puri print kardi from min column to max column to corner wala element do br hojayega
 			for( int j= minc, i= maxr; j<= maxc && cnt < tne; j++) { //bottom mai row max row pe fix rehti hai
-				System.out.println(arr[i][minr]);
+				System.out.println(arr[i][j]);
 				cnt++; 
 			}
 			maxr--;

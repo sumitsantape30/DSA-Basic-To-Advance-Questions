@@ -46,7 +46,7 @@ public class AnyBaseAddition {
 			 n2= n2/10; //n2 kobhi chota karunga
 			 
 			 //ab mai dono digit ka sum nikalta hu aur sathme carry bhi add hota hai
-			 int sum= d1+ d2 + c;
+			 int sum= l1+ l2 + c;
 			 //agar inn teeno ko add karke jo number aya woh 8 se chota aya to thik hai, agar woh 8  se bada hai to woh carry chodega aur ayapr spare chodega
 			 // following is the way to do it
 			 //ab quotient aur remainder nikalenge

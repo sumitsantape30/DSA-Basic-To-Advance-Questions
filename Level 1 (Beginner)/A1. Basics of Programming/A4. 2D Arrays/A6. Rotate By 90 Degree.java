@@ -64,10 +64,10 @@ public class RotateMatrix {
 		}
 		return arr;
 	}
-	
-	//ab hum matrix ka transpose lenge, arr[i][j] mai arr[j][i] dalna hota hai
-	public static int[][] transpose( int arr[][]){
 		
+	public static void ringRotate(int arr[][]) {
+		//1. Transpose
+	//ab hum matrix ka transpose lenge, arr[i][j] mai arr[j][i] dalna hota hai		
 		for( int i=0; i< arr.length; i++) {
 			for( int j=i; j< arr[0].length; j++) { //mai bas upper triangle mai move karunga  isliye j=i kiya taki triangularly move ho. j wala first loop 0 start hoga then next time j 1 se start hoga
 				int temp= arr[i][j]; // upper triangle ko niche wale ke sath swap karenge
@@ -78,24 +78,25 @@ public class RotateMatrix {
 		return arr;
 	}
 	
+	//2. Reasrrange number
 	//transpose hogya ab row by row saari line ko reverse karenge
-	//saari row ko reverse karenge jisse first column last column ban jaye
-	public static int[][] rowbyrowRev( int arr[][]){
-		
-		for( int i=0; i< arr.length; i++) {
-			int li=0; //left index
-			int ri= arr[i].length-1; //right index
+	//saari row ko reverse karenge jisse first column last column ban jaye		
+		// left ko 0th column pe rakha aur right ko last column pe rakha, so left right pe maine do column fix kardiye ab inko apas mai swap karna hai
+			int left= 0;
+			int right= arr[0].length-1;
 			
-			while( li > ri) {
-				//values swap karte jayenge
-				int temp= arr[i][li];
-				arr[i][li]= arr[i][ri];
-				arr[i][ri]= temp;
-				li++;
-				ri--;
+			while( left < right) { // row,left ko swap karenge row, right ke sath
+				
+			   for( int row=0; row < arr.length; row++) { // ab uss row mai traverse karke uss row ke columns ko swap karenge
+
+				int temp = arr[row][left];
+				arr[row][left] = arr[row][right];
+				arr[row][right] = temp;
 			}
+				
+			left++;
+			right--;
 		}
-		return arr;
 	}
 	
 	public static void print( int arr[][]) {
@@ -110,7 +111,7 @@ public class RotateMatrix {
 	public static void main(String[] args) {
 
 		int arr[][]= takeInput();
-		int ans[][]= transpose(arr);
+		int ans[][]= roateby90(arr);
 		print(ans);
 	}
 

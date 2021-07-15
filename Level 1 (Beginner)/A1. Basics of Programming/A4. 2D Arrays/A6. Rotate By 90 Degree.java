@@ -75,8 +75,6 @@ public class RotateMatrix {
 				arr[j][i]= temp;
 			}
 		}
-		return arr;
-	}
 	
 	//2. Reasrrange number
 	//transpose hogya ab row by row saari line ko reverse karenge

@@ -91,17 +91,38 @@ public class DiagonalTraversal {
 		return arr;
 	}
 
-	public static void diagonal(int arr[][]) {
+// 	public static void diagonal(int arr[][]) {
 		
-		// hum 0 gap wala diagonal then 1 gap wala then 2 gap wala then 3 gap wala diagonal print karenge
-		for( int g= 0; g < arr.length; g++) { //jitni row hai utne hi gap ho skti hai isliye g< arr.length
+// 		// hum 0 gap wala diagonal then 1 gap wala then 2 gap wala then 3 gap wala diagonal print karenge
+// 		for( int g= 0; g < arr.length; g++) { //jitni row hai utne hi gap ho skti hai isliye g< arr.length
 			
-			//ab muje koi bhi gap wala print karna hai let's say 2 gap wala print karna hai, humara koi bhi diagonal i ki 0 value ke sath start ho rha hai, agar 2 gap wale kibhi bat kare to woh diagonal i ki value 0 se start ho rha hai and j ki value utni hoti hai jitna gap hota hai
-			// so agar i=0 se start ho rha hai to j gap value se start hoga. Har diagonal ki shuruwat i ki 0 value se hoti hai aur j hota hai gap ke barabr
-			for( int i=0, j= g; j< arr.length; i++,j++) { //i ko humesha 0 se start karenge and j ko gap se start karenge and i and j ek se badhta rahega harbar, regarding condition *open book* for explanation
-				System.out.println(arr[i][j]);
+// 			//ab muje koi bhi gap wala print karna hai let's say 2 gap wala print karna hai, humara koi bhi diagonal i ki 0 value ke sath start ho rha hai, agar 2 gap wale kibhi bat kare to woh diagonal i ki value 0 se start ho rha hai and j ki value utni hoti hai jitna gap hota hai
+// 			// so agar i=0 se start ho rha hai to j gap value se start hoga. Har diagonal ki shuruwat i ki 0 value se hoti hai aur j hota hai gap ke barabr
+// 			for( int i=0, j= g; j< arr.length; i++,j++) { //i ko humesha 0 se start karenge and j ko gap se start karenge and i and j ek se badhta rahega harbar, regarding condition *open book* for explanation
+// 				System.out.println(arr[i][j]);
+// 			}
+// 		}
+// 	}
+	
+	public static void diagonal( int arr[][]) {
+		int n= arr.length;
+		
+		// har diagonal keliye i and j initialise karenge aur dono ek ek se badhate rahenge
+		
+		for( int diag=0; diag< arr.length; diag++) { // total diagonals for n*n are n, aur yeh vary krte hai from 0 to n-1
+			
+			// har diagonal ka i and j, 0 se aur diagonal number se initialise hota hai respectively
+			int i=0;
+			int j= diag;
+			
+			while(  j < n) { // tabtak kam chalega jabtak j range mai rehta hai
+				System.out.print(arr[i][j]);
+				i++; // i and j dono ek ek se badhte rehte hai
+				j++;
 			}
+
 		}
+		
 	}
 	
 	public static void main(String[] args) {

@@ -99,7 +99,7 @@ public class SaddlePoint {
 		
 		for( int i=0; i< n; i++) {
 			
-			//find of every row and also its column number
+			//find min of every row and also its column number
 			// minimum element aur uska column number bhi nikalenge
 			// basically har row ke 0th pe rakhe hue element ko minimum man liya
 			int min= arr[i][0]; // ith row ka 0th element minimun man lenge

@@ -93,6 +93,45 @@ public class SaddlePoint {
 		//agar hum iss loop ke bahar aaye to hum invalid print karte hai ki nhi dhund paye
 		System.out.println("Invalid Input");
 	}
+	
+	public static void saddle( int arr[][]) {
+		int n= arr.length;
+		
+		for( int i=0; i< n; i++) {
+			
+			//find of every row and also its column number
+			// minimum element aur uska column number bhi nikalenge
+			// basically har row ke 0th pe rakhe hue element ko minimum man liya
+			int min= arr[i][0]; // ith row ka 0th element minimun man lenge
+			int colno = 0; // aur column number 0 man lenge
+			
+			for( int col= 1; col < n; col++) {
+				if( arr[i][col] < min) { 
+					min= arr[i][col];
+					colno= col;
+				}
+			}
+			
+			// verification
+			boolean ans= true;
+			for( int row=0; row < n; row++) { 
+				
+				// check karenge uss column mai koi bhi value usse badi milti hai
+				if( arr[row][colno] > min) { //agar uss column mai min se bada koi element mil jata hai to mai bolunga ki yeh mera answer nhi ho skta so break
+					ans= false;
+					break;
+				}
+				
+			}
+			
+			if( ans == true) { //answer agar abhibhi true hai to uss column mai usse bada element koi nhi to yahi apna answer hai
+				System.out.println(min);
+				return ;
+			}	
+		}
+		System.out.print("Invalid Input");
+		
+	}
 
 	public static void main(String[] args) {
 		

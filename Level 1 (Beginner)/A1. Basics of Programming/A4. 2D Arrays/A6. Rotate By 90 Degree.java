@@ -65,7 +65,7 @@ public class RotateMatrix {
 		return arr;
 	}
 		
-	public static void ringRotate(int arr[][]) {
+	public static void roateby90(int arr[][]) {
 		//1. Transpose
 	//ab hum matrix ka transpose lenge, arr[i][j] mai arr[j][i] dalna hota hai		
 		for( int i=0; i< arr.length; i++) {

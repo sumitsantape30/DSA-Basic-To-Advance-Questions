@@ -111,7 +111,7 @@ public class RotateMatrix {
 	public static void main(String[] args) {
 
 		int arr[][]= takeInput();
-		int ans[][]= roateby90(arr);
+		roateby90(arr);
 		print(ans);
 	}
 

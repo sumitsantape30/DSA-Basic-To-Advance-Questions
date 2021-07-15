@@ -77,8 +77,8 @@ public class RotateMatrix {
 		}
 	
 	//2. Reasrrange number
-	//transpose hogya ab row by row saari line ko reverse karenge
-	//saari row ko reverse karenge jisse first column last column ban jaye		
+	//transpose hogya ab column by column sare columns ko swap karenge
+	//saari column ko reverse karenge jisse first column last column ban jaye		
 		// left ko 0th column pe rakha aur right ko last column pe rakha, so left right pe maine do column fix kardiye ab inko apas mai swap karna hai
 			int left= 0;
 			int right= arr[0].length-1;

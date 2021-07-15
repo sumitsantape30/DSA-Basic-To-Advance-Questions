@@ -70,7 +70,7 @@ public class RotateMatrix {
 		
 		for( int i=0; i< arr.length; i++) {
 			for( int j=i; j< arr[0].length; j++) { //mai bas upper triangle mai move karunga  isliye j=i kiya taki triangularly move ho. j wala first loop 0 start hoga then next time j 1 se start hoga
-				int temp= arr[i][j];
+				int temp= arr[i][j]; // upper triangle ko niche wale ke sath swap karenge
 				arr[i][j]= arr[j][i];
 				arr[j][i]= temp;
 			}

@@ -101,7 +101,7 @@ public class ExitPoint {
 				i++; //i negative hogya to i++ krke break kare
 				break;
 			}else if(j < 0) { //ya j negative hojaye
-				i++;
+				j++;
 				break; 
 			}else if(i == arr.length) { //ya humara i row ke length jitna hojaye, last possible value arr.length-1 hoti hai
 				i--; //i arr.length hogya to i-- karke break kare, mean i bahar nikal gya hai to i-- karke break kare

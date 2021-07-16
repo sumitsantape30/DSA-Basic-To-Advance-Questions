@@ -37,7 +37,7 @@ public class StringCompression {
 		
 		//intially output string mai string ka 0th character dal de
 		String s= str.charAt(0)+ ""; // empty string "" add karne se woh pura string mai convert hogya, akela str.charAt(0) rakhte to woh bas character hojate usko character mai hi store karna pdta isliye usko string mai convert kiye
-		
+		// answer mai string ka pehla character as it is add kardenge
 		
 		//ab first character se loop lagayenge
 		for( int i=1; i< str.length(); i++) {
@@ -52,6 +52,22 @@ public class StringCompression {
 			}
 		}
 		return s;
+	}
+	
+	public static String compression1( String str) {
+		String ans= "";
+		ans += str.charAt(0); // answer mai 0th character add karenge
+		
+		//1 se leke last tak loop chalayenge
+		for( int i=1; i< str.length(); i++) {
+			
+			if(str.charAt(i) != ans.charAt(ans.length()-1)) { // string ka ith charcter agar equal nhi hai answer ke last character se to answer mai add karlo string ka ith character
+				ans += str.charAt(i);
+			}
+			
+		}
+		return ans;
+		
 	}
 	
 	public static String Compression2( String str) {

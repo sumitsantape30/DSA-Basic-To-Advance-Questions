@@ -32,6 +32,35 @@ class HelloWorld {
 		return str;
 	}
 	
+	public static void permutations( String str) {
+		// sabse pehle n factorial ki value nikalenge
+		int n= str.length();
+		int nf= 1;
+		for( int i=1; i<= n; i++) {
+			nf = nf*i;
+		}
+		
+		// ab 0 se nf tak loop chalanyenge
+		for( int i=0; i< nf; i++) {
+			
+			StringBuilder sb= new StringBuilder(str); // mai harbar uss string ko string builder mai store kardeta hu
+			
+			//divisor ki value n se start aur dividend ki value i se start hoti hai aur loop tabtal chalega jantak div>0 hai
+			for( int div =n , dvd =i; div > 0; div--) {
+				// ab remainder nikalenge
+				int r= dvd % div;
+				// ab jo remainder aya uss index wale character ko print karke usko delete bhi kar denge
+				System.out.println(sb.charAt(r));
+				sb.deleteCharAt(r);
+				
+				dvd= dvd/ div;
+			}
+			// jaisehi ek permutation print hoti hai enter lagana hai for the next permutation
+			System.out.println();
+		}
+
+	}
+	
 	public static void solution( String str) {
 		
 		int n= str.length();

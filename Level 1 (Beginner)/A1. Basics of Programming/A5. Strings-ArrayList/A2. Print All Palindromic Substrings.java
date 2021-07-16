@@ -51,18 +51,18 @@ public class printAllPalindromicString {
 	
 	public static boolean isPalindrome( String str) {
 		//do pointers lenge ek start pe rahega and ek end pe and dekho agar dono same hai to aage badh jayiye
-		int i=0;
-		int j= str.length()-1;
+		int left=0;
+		int right= str.length()-1;
 		
-		while( i <= j) {
-			char ch1= str.charAt(i); // front se ek character nikalenge
-			char ch2= str.charAt(j); //ek character back se nikalenge
+		while( left < right) {
+			char ch1= str.charAt(left); // front se ek character nikalenge
+			char ch2= str.charAt(right); //ek character back se nikalenge
 			//agar dono barabr hai to koi bat nhi nhi i badhao and j ghatao barabr nhi hai to return false
 			if( ch1 != ch2) {
 				return false;
 			}else {
-				i++;
-				j--;
+				left++;
+				right--;
 			}
 		}
 		//agar sare characters equal hai tabhi yahape ayenge and then return true

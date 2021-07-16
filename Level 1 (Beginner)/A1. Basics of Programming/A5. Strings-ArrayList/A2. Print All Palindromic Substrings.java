@@ -49,6 +49,7 @@ public class printAllPalindromicString {
 		}
 	}
 	
+	// jaisa subarray ka code hai waisahi bas substring mai ei+1 karenge taki ei include hojaye
 	public static void substring2(String str) {
 
 		for (int si = 0; si < str.length(); si++) {

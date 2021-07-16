@@ -54,6 +54,27 @@ class HelloWorld {
 		//return krte waqt mai string builder pe toString method call karke usko string mai convert karlenge 
 		return sb.toString();
 	}
+	
+	public static String togeeleCase( String str) {
+		
+		StringBuilder sb= new StringBuilder();
+		
+		for( int i=0; i< sb.length(); i++) {
+			
+			char ch= str.charAt(i);
+			if( ch >= 'a' && ch <= 'z') {
+				// small case hai to usko append karenge
+				sb.append((char)(ch - 'a' + 'A'));
+				
+			}else { //upper case hota hai to
+				sb.append((char)(ch + 'A' - 'a'));
+				
+			}
+			
+		}
+		
+		return sb.toString();
+	}
     
     public static void main(String[] args) {
         String str= takeInput();

@@ -35,3 +35,33 @@ dello
 deyllo
 dello
 6
+
+//====================================================To count the time required =================================================================
+
+    // String jada time lete hai than string builder so string builder performance wise string builder superior hai
+       //String
+        String s = "hello";
+		
+		long start= System.currentTimeMillis();
+		
+		for( int i= 1; i<= 100000; i++) {
+			s += 'e';
+		}
+		long end= System.currentTimeMillis();
+		
+		long duration= end- start;
+		System.out.println(duration);
+
+
+        //String Builder
+       StringBuilder sb= new StringBuilder("Hello");
+		
+        long start= System.currentTimeMillis();
+		
+		for( int i= 1; i<= 10000; i++) {
+			sb.append('e');
+		}
+		long end= System.currentTimeMillis();
+		
+		long duration= end- start;
+		System.out.println(duration);

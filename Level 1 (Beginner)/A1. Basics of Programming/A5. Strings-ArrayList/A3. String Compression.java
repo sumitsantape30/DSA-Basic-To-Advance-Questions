@@ -33,6 +33,58 @@ public class StringCompression {
 		return str;
 	}
 	
+//===========================Jitu Bhaiyas method==========================
+	
+	public static String compression2( String str) {
+		String ans= "";
+		ans += str.charAt(0); // answer mai 0th character add karenge
+		int count=1;
+		
+		//1 se leke last tak loop chalayenge
+		for( int i=1; i< str.length(); i++) {
+			
+			if(str.charAt(i) == ans.charAt(ans.length()-1)) { // string ka ith character agar equal hai answer ke last character se to count badha do 
+				 count++; //equal hota hai to bas count ko bdha denge
+				 
+			}else {
+				//jab non equal hai to 3 kaam, count ko add karlo uss character ko add karlo aur count ko reset kardo
+				
+				if( count > 1) { //count 1 hoga to add nhi hoga directly woh character add kardenge
+					ans += count;
+					count=1;
+				}
+				ans += str.charAt(i);
+			}
+		}
+		
+		// loop se bahar aane ke bad agar count ki value grater than 1 hai to count add karlenge usme
+		if( count > 1) {
+			ans += count;
+			count=1;
+		}
+		
+		return ans;
+		
+	}
+	
+	public static String compression1( String str) {
+		String ans= "";
+		ans += str.charAt(0); // answer mai 0th character add karenge
+		
+		//1 se leke last tak loop chalayenge
+		for( int i=1; i< str.length(); i++) {
+			
+			if(str.charAt(i) != ans.charAt(ans.length()-1)) { // string ka ith charcter agar equal nhi hai answer ke last character se to answer mai add karlo string ka ith character
+				ans += str.charAt(i);
+			}
+			
+		}
+		return ans;
+		
+	}
+	
+//=========================================================================
+	
 	public static String Compression1( String str) {
 		
 		//intially output string mai string ka 0th character dal de
@@ -54,21 +106,6 @@ public class StringCompression {
 		return s;
 	}
 	
-	public static String compression1( String str) {
-		String ans= "";
-		ans += str.charAt(0); // answer mai 0th character add karenge
-		
-		//1 se leke last tak loop chalayenge
-		for( int i=1; i< str.length(); i++) {
-			
-			if(str.charAt(i) != ans.charAt(ans.length()-1)) { // string ka ith charcter agar equal nhi hai answer ke last character se to answer mai add karlo string ka ith character
-				ans += str.charAt(i);
-			}
-			
-		}
-		return ans;
-		
-	}
 	
 	public static String Compression2( String str) {
 		
@@ -98,6 +135,7 @@ public class StringCompression {
 		}
 		return s;
 	}
+	
 
 	public static void main(String[] args) {
 

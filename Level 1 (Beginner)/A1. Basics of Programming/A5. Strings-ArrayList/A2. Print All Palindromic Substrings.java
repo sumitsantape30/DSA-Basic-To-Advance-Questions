@@ -37,9 +37,10 @@ public class printAllPalindromicString {
 	
 	public static void printPalindromicStrings( String str) {
 		
-		for( int i=0; i< str.length(); i++) { // i 0 se length-1 tak chala tha
-			for( int j= i+1; j<= str.length(); j++) { // j i+1 se leke puri length tak chalega
-				String s= str.substring(i,j); //isme saari substring ajayegi but hume saari substrings nhi print karni hai bas wahi print karenge jo palindrome hai
+		for( int si=0; si< str.length(); si++) { // si 0 se length-1 tak chala tha
+			for( int ei= si; ei< str.length(); ei++) { // end index si se leke puri length tak chalega
+				String s= str.substring(si,ei+1); // end index include hona chahiye isliye +1 likh diya
+				//isme saari substring ajayegi but hume saari substrings nhi print karni hai bas wahi print karenge jo palindrome hai
 			  //so ek function banayenge isPalindrome and usme yeh substring pass karenge agar woh palindrom hai to print karenge
 				if( isPalindrome(s)== true) {
 					System.out.println(s);

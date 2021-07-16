@@ -64,10 +64,10 @@ class HelloWorld {
 			char ch= str.charAt(i);
 			if( ch >= 'a' && ch <= 'z') {
 				// small case hai to usko append karenge
-				sb.append((char)(ch - 'a' + 'A'));
+				sb.append((char)(ch - 'a' + 'A')); // small case hai to small 'a' minus karenge aur capital 'A' add karenge
 				
 			}else { //upper case hota hai to
-				sb.append((char)(ch + 'A' - 'a'));
+				sb.append((char)(ch - 'A' + 'a')); // capital case hai to capital 'A' minus karenge aur small 'a' add karenge
 				
 			}
 			

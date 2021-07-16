@@ -68,11 +68,8 @@ class HelloWorld {
 				
 			}else { //upper case hota hai to
 				sb.append((char)(ch - 'A' + 'a')); // capital case hai to capital 'A' minus karenge aur small 'a' add karenge
-				
 			}
-			
 		}
-		
 		return sb.toString();
 	}
     

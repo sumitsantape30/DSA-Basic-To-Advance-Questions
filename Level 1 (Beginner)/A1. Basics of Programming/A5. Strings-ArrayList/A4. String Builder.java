@@ -22,6 +22,8 @@ class HelloWorld {
         sb.append('g');// last mai add karne keliye
         
         System.out.println(sb.length());
+        
+        //iss string builder ko string mai convert karne keliye tostring function use kr skte hai
     }
 }
 

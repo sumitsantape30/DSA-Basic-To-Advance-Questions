@@ -62,7 +62,7 @@ public class removePrimeFromArrayList {
 			return false;
 		}
 		
-		for( int div= 2; div*div < val; div++) {
+		for( int div= 2; div*div <= val; div++) {
 			if( val % div==0) {
 				return false; //agar division hogya to prime nhi hai
 			}

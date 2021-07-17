@@ -77,4 +77,5 @@ class HelloWorld {
         String str= takeInput();
         System.out.println(toggle(str));
     }
+	
 }

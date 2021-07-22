@@ -28,7 +28,7 @@ public class Problems {
 			
 			// ab woh binary number ke upar traverse karna hai left to right aur decide karna hai woh digit print hoga ya nhi
 			
-			int div= (int)Math.pow(10, arr.length-1 ); //pehi bar keliye diviso ki value hogi
+			int div= (int)Math.pow(10, arr.length-1 ); //pehli bar keliye divisor ki yeh value hogi
 			
 			for( int j=0; j< arr.length; j++) { // yeh loop utni bar chalega jitne array ke elements hai
 				// ab quotient aur remainder nikalunga

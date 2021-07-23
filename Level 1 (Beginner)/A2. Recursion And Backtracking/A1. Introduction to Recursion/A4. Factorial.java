@@ -32,7 +32,7 @@ public class Factorial {
 			return 1;
 		}
 		
-		int fnm1= factorial(n-1); // yeh meri faith wali line hai, ki n-1 se 1 tak ki mutliplication muje iss line se mil jayegi fnm1 ke andar
+		int fnm1= factorial(n-1); // yeh meri faith wali line hai, ki n-1 se 1 tak ki mutliplication muje iss line se mil jayegi fnm1 ke andar. (fn1m : factorial of n minus m)
 		// aur muje banana hai fcatorial of n
 		int fn= n * fnm1; //n* factorial of n minus 1
 		return fn; // mere pura answer isme agya hoga

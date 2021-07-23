@@ -38,7 +38,7 @@ public class printIncreasing {
 			return;
 		}
 
-		//hume socha tha ki printIncreasing kohi dubara bolenge ki 1 se leke n-1 tak ki counting print karde aur jab tune aap kardliya hoga to tere bad n ko hum print kardenge
+		//hume socha tha ki printIncreasing kohi dubara bolenge ki 1 se leke n-1 tak ki counting print karde aur jab tune aapna kardiya hoga to tere bad n ko hum print kardenge
 		printIncreasing(n - 1);
 		System.out.println(n);
 	}

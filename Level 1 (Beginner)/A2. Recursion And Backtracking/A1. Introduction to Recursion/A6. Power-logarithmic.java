@@ -29,7 +29,7 @@ import java.util.Scanner;
 
 public class logarithmicPower {
 
-	public static int Power(int x, int n) {
+	public static int Power(int x, int n) {// yeh optimize solution hai isme boht kam calls lagegi
 		
 		if( n == 0) {
 			return 1;

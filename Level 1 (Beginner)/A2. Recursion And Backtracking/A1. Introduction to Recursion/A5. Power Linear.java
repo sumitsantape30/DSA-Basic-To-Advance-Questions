@@ -26,14 +26,14 @@ import java.util.Scanner;
 
 public class PowerLinear {
 	
-	public static int powerLinear(int n, int y) {
+	public static int powerLinear(int x, int n) {
 		
-		if( y == 0) {
+		if(  == 0) {
 			return 1;
 		}
 		
-		int xnm1= powerLinear(n,y-1);
-		int pow= xnm1 * n;
+		int xnm1= powerLinear(x , n-1);
+		int pow= xnm1 * x;
 		return pow;
 	}
 

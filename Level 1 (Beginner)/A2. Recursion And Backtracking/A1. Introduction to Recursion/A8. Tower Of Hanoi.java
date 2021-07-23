@@ -46,7 +46,7 @@ import java.util.Scanner;
 
 public class TowerOfHanoi {
 	
-	public static void toh( int n, int t1id, int t3id, int t2id ) {
+	public static void toh( int n, int t1id, int t2id, int t3id ) {
 		if( n == 0) { //agar humare pas 0 disk bachi hai to hum kuch nhi karenge, koi bhi instruction print nhi karenge
 			return;
 		}

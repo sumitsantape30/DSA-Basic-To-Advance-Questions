@@ -40,7 +40,7 @@ public class logarithmicPower {
 		int xn= xpnb2* xpnb2;
 		//yeh kaafi hai jab n even hai
 		
-		// but agar yeh odd hai to ek bar x product karna padega
+		// but agar yeh odd hai to ek bar x se multiply karna padega
 		if( x % n == 1) { 
 			xn *= x;
 		}

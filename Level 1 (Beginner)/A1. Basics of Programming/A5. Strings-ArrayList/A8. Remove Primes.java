@@ -49,7 +49,7 @@ public class removePrimeFromArrayList {
 			//arraylist se value get karenge
 			int val= a1.get(i);
 			//ab check karenge kya yeh value prime hai ya nhi
-			if( isPrime(val) == true) { //agar eyh prime hui to isko remove karna hai
+			if( isPrime(val) == true) { //agar yeh prime hui to isko remove karna hai
 				a1.remove(i); //ith index pe jo value hogi usko remove karenge
 			}
 		}

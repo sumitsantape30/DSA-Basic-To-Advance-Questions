@@ -51,10 +51,11 @@ public class TowerOfHanoi {
 			return;
 		}
 		
+		//faith 1
 		toh(n-1, t1id, t3id, t2id); // will print the instructions to move n-1 disks from t1 to t3 using t2
 		// jo ek bachi hogi disk usko hum khud move karke instructions print karlenge
-		System.out.println(n+"["+t1id+" -> "+t2id+"]"); //nth ko humne t1 se t2 mai move kardiya
-		toh( n-1, t3id, t2id, t1id); //ab jo humne 3rd tower mai dali thi unko ab nth ke upar means 2nd tower mai dal denge	
+		System.out.println(n+"["+t1id+" -> "+t2id+"]"); //nth ko humne t1 se t2 mai move kardiya : self
+		toh( n-1, t3id, t2id, t1id); //ab jo humne 3rd tower mai dali thi unko ab nth ke upar means 2nd tower mai dal denge : faith 2	
 	}
 
 	public static void main(String[] args) {

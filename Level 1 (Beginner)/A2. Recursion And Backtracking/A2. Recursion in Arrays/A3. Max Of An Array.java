@@ -60,7 +60,7 @@ public class MaximumOfAnArray {
 		}else {
 			return arr[idx];
 		}
-		// return Math.max(arr[idx], misa) // yeh bhi kr skte hai
+		// return Math.max(arr[idx], misa) // yeh bhi kr skte hai : inn dono mese jo bada hoga woh return hojayega
 	}
 
 	public static void main(String[] args) {

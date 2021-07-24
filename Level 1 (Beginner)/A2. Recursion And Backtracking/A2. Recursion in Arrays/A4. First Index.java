@@ -54,7 +54,7 @@ public class FirstIndex {
 	public static int firstIndex( int arr[], int idx, int x) {
 		
 		if(idx == arr.length) {
-			return -1; // wahape kuch nhi mil skta so return -1
+			return -1; // agar call hote hote index ki value agar arr.length ke equal hojati hai to mko pta lag gya ki element exist ho nhi krta so -1 return kardunga
 		}
 		
 		if( arr[idx] == x) {

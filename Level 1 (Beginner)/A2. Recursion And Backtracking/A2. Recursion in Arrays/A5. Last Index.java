@@ -31,3 +31,22 @@ Sample Input
 4
 Sample Output
 4
+
+Code:
+
+public static int li(int arr[], int idx, int data) {
+		if( idx == arr.length) { //index yahape aya means woh exist hi nhi krta
+			return -1;
+		}
+		
+		int lism= li(arr, idx+1, data);
+		// agar lism -1 nhi aya uska ek hi matlab hai ki data ka last index hume mil chuka hai to wahi return kar denge
+		if( lism == -1) {
+			if( arr[idx]== data) {
+				return idx;
+			}else {
+				return -1;
+			}
+		}
+		return lism;
+	}

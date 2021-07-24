@@ -50,3 +50,19 @@ public static int li(int arr[], int idx, int data) {
 		}
 		return lism;
 	}
+
+public static int li2(int arr[], int idx, int data) { 
+		if( idx < 0) {
+			return -1;
+		}
+		
+		if( arr[idx] == data) {
+			return idx;
+		}else {
+			
+			int li= li2(arr, idx-1, data);
+			return li;
+		}
+		
+	}
+	

@@ -55,7 +55,7 @@ public class DisplayArray {
 	
 	// expectation yeh hai ki yeh idx se end tak sab print karde
 	// and faith yeh hai ki idx+1 se end tak print karna woh janta hai
-	public static void displayArray(int arr[], int idx) {
+	public static void displayArray(int arr[], int idx) { // agr input mai muje array mila to kam nhi hoga, sirf array se mai problem ko chota nhi kr pa rha so muje index bhi chahiye taki mai choti problem achieve kr saku
 		if( idx == arr.length) {
 			return;
 		}
@@ -69,7 +69,7 @@ public class DisplayArray {
 
 		int arr[] = takeInput();
 		int n= arr.length;
-		displayArray(arr,0);
+		displayArray(arr,0); 
 
 
 	}

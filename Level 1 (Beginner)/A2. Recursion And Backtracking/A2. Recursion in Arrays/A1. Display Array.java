@@ -61,7 +61,7 @@ public class DisplayArray {
 		}
 		
 		System.out.println(arr[idx]); //idx wala hum print kar denge
-		displayArray(arr, idx +1);
+		displayArray(arr, idx +1); //never use post increament (idx++) operator in recursive call, coz idx++ use kiya to idx ki purani value hi use hogi uss line mai
 		
 	}
 

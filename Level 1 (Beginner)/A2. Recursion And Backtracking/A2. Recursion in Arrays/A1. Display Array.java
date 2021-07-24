@@ -60,7 +60,7 @@ public class DisplayArray {
 			return;
 		}
 		
-		System.out.println(arr[idx]); //idx wala hum print karenge
+		System.out.println(arr[idx]); //idx wala hum print kar denge
 		displayArray(arr, idx +1);
 		
 	}

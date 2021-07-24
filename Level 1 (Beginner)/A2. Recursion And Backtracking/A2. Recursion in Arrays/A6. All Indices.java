@@ -53,19 +53,21 @@ public class AllIndices {
 		return arr;
 	}
 	
+	//jate hue bas yeh count karenge ki kitni yeh element exist krta hai 
+	//aur wapas te hue array mai uski position fill karenge
 	public static int[] allIndices( int arr[], int x, int idx, int fsf) {
 		if( idx == arr.length) { // hum basecase pe pohoch gye means end mai so ab hum ek naya array banake return karenge
-			return new int[fsf];
-			
+			return new int[fsf]; //found so far ki jitni value hogi utni size ka array banakr return kardenge
 		}
 		
 		if( arr[idx]== x) { // agar equal hai to yeh wali call karenge
 			// yeh jo values lake dega woh array mai receive karenge
 			int iarr[]=allIndices(arr, x, idx+1, fsf +1); //index bhi badhega and found so far bhi badhega
 		   // jo basecase mai array bana woh iski niche wale level means yaha return hua then iarr ne receive kiya usko
+			//yeh iarr found so far ki jitni size hai usi size ka arry hai actually wahi array hai
 			
 			// jahape equal hai and jo answer recieve kiya hai usko directly return nhi karna pehle usme iarr mai fsf wali position ke upar index dalna hai aur fir hume iarr return karna hai
-			iarr[fsf]= idx;
+			iarr[fsf-1]= idx;
 			return iarr;
 		}else {
 			int iarr[]= allIndices(arr, x, idx+1, fsf); // agar equal nhi hai to sirf index badhega fsf nhi badhege

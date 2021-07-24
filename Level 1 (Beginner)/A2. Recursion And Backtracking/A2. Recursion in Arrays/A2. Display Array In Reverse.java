@@ -58,7 +58,7 @@ public class DisplayArrayInReverse {
 		}
 		
 		displayReverse(arr, idx+1); // faith yeh hai ki end se index+1 tak sab print kardega ab index wala reh gya to usko hum print karenge
-		System.out.println(arr[idx]);
+		System.out.println(arr[idx]); //recursion call ke bad wali lines stack mai wapas aate waqt chalti hai
 	}
 
 	public static void main(String[] args) {

@@ -62,6 +62,16 @@ public class MaximumOfAnArray {
 		}
 		// return Math.max(arr[idx], misa) // yeh bhi kr skte hai : inn dono mese jo bada hoga woh return hojayega
 	}
+	
+	public static int mx(int arr[], int idx) {
+		if( idx == arr.length) { //yahape koi element exist hi nhi krta to maximum hi nhi hoga so -infinity ko return kar denge coz wahi maximum hai waha. sabse bekar maximum return kara
+			return Integer.MIN_VALUE;
+		}
+		
+		int misa= mx(arr, idx+1);
+		
+		return Math.max(arr[idx], misa);
+	}
 
 	public static void main(String[] args) {
 

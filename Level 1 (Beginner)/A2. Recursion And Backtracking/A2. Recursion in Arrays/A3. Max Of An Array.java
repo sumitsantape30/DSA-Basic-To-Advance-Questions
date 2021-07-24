@@ -65,7 +65,7 @@ public class MaximumOfAnArray {
 	
 	public static int mx(int arr[], int idx) {
 		if( idx == arr.length) { //yahape koi element exist hi nhi krta to maximum hi nhi hoga so -infinity ko return kar denge coz wahi maximum hai waha. sabse bekar maximum return kara
-			return Integer.MIN_VALUE;
+			return Integer.MIN_VALUE; //max exist nhi krna aur -infinity same hi hota hai 
 		}
 		
 		int misa= mx(arr, idx+1);

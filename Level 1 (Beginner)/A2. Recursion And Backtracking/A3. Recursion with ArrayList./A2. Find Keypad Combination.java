@@ -77,13 +77,13 @@ public class KeypadCombination {
 		// so mere is codeforch string mai 6 ke characters means pqrs aagye hai ab mai ispe loop chalaunga
 		
 		for( int i=0; i< codeforch.length(); i++) { // yeh loop mai uss strin pe chala rha hu, pehle p ayega fir q ayega so on
-			char chcode= codeforch.charAt(i); // uspe loop chalake ek ek character leliye
+			char c= codeforch.charAt(i); // uspe loop chalake ek ek character leliye
 			//mere pas ek ek character ayega, iss ek ek character ko recursion result ke har ek element ke aage chipkana hai so rres ka har element access karne keliye uspe loop chalayege
 			
 			//ab recursion result mai loop lagayenge
 			for( String rstr: rres) {
 				// aur my result mai add karenge, jo character code aya hai usko rstr ke sath add karenge
-				mres.add(chcode + rstr);
+				mres.add(c + rstr);
 			}
 			
 		}

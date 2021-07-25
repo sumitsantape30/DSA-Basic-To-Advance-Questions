@@ -52,7 +52,7 @@ public class KeypadCombination {
 	
 	public static ArrayList<String> getKPC(String str){
 		if( str.length()== 0) { //agar koi key press nhi hui to ek word generate hoga that's blank
-			ArrayList<String> bres= new ArrayList<String>();
+			ArrayList<String> bres= new ArrayList<String>(); //string 0 hgyi to bres mai blank string dalke return kar denge
 			bres.add("");
 			return bres;
 		}

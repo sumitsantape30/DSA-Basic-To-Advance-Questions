@@ -28,6 +28,7 @@ import java.util.Scanner;
 public class getStairsPath {
 	
 	//isse yeh expectation hai ki yeh n se 0 tak sare paths batayega
+	// n stairs utarne/chadhane ke sare tarike lake dega
 	public static ArrayList<String> getStairPaths( int n){
 		
 		// positive basecase

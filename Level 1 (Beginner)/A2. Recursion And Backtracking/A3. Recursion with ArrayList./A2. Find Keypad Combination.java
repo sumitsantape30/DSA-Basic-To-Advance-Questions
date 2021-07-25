@@ -74,6 +74,7 @@ public class KeypadCombination {
 		
 		String codeforch= codes[ch- '0']; //yahape muje mno mil gya ab mai ispe loop chalaunga. And - '0' isliye kiye taki character ko number bana ske 
 		// so 678 ke 6 ke sare characters aagye ab yeh characters rres ke sare words ke sath interact karega
+		// so mere is codeforch string mai 6 ke characters means pqrs aagye hai ab mai ispe loop chalaunga
 		
 		for( int i=0; i< codeforch.length(); i++) {
 			char chcode= codeforch.charAt(i); // uspe loop chalake ek ek character leliye

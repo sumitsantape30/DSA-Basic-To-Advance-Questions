@@ -48,6 +48,7 @@ public class KeypadCombination {
 	// string hai to string ka array banayenge taki input number sring mai 0th pe jo number hoga ussa index pe jake uske character access karpaye aur usko substring(1) se aage walo ke sath append karpye
 	// 0h pe hai .; 1th index pe hai abc 2nd index pe hai def so on...
 	static String codes[]= {".;","abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"}; //yeh array bar bar use hoga isliye bahar hi bana dya
+	//yeh array function ke bahar banaya isliye static banaya andar hota to bina static kehi bana dete
 	
 	public static ArrayList<String> getKPC(String str){
 		if( str.length()== 0) { //agar koi key press nhi hui to ek word generate hoga that's blank

@@ -48,7 +48,7 @@ public class getMazePath {
 		// horizontal call lagne keliye jaruri hai ki aap last column mai nhi ho
 		if( sc < dc ) { //agar aapka source column destination column se chota hai, matlab hum right wall pe nhi hum thodasa andar hai to hum horizontal call laga skte hai
 			// hume faith yeh hai 
-			hpaths= getMazePaths(sr, sc +1, dr, dc); // yeh horizontal move hai hum column badha rhe hai
+			hpaths= getMazePaths(sr, sc +1, dr, dc); // yeh horizontal move hai hum column badha rhe hai wahase destination row and column tak jo raste exist krte hai woh lake dega
 		}
 		
 		//isi tarah se agar aapka source row destination row se choti hai to hum vertical call laga skte hai

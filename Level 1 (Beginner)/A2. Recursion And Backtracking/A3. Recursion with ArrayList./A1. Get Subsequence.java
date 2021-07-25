@@ -31,7 +31,7 @@ public class getSubsequence {
 		
 		if( str.length()==0) { //jab string khatam hojaye to uska sirf ek hi subsequence hai that's blank empty string itself
 			// so ek arraylist banake uskme blank add karke return karenge
-			// meri sring choti choti hoke blank hogyi hai so iska agar maine 0th ele access krneki koshish ki to inex out of bound de dega, aur koi bhi string ka susequence woh string khud ek bar hoti hai so blank string keliye blank subsequence hi return kardenge
+			// meri string choti choti hoke blank hogyi hai so iska agar maine 0th ele access krneki koshish ki to index out of bound de dega, aur koi bhi string ka susequence woh string khud ek bar hoti hai so blank string keliye blank subsequence hi return kardenge
 			ArrayList<String> bres=  new ArrayList<String>();// base result
 			bres.add("");
 			return bres;

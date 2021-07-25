@@ -30,12 +30,12 @@ import java.util.ArrayList;
 
 public class getMazePath {
 
-	 // sr - source row
+    // sr - source row
     // sc - source column
     // dr - destination row
     // dc - destination column
 	public static ArrayList<String> getMazePaths( int sr, int sc, int dr, int dc){
-		if( sr == dr &&  sc== dc) { // basecase mai hum vishwas dilana hai ki 3,3 se 3,3 tak ek rasta hai and that rasta is ki apni jagah se hio hi mat
+		if( sr == dr &&  sc== dc) { // basecase mai hum vishwas dilana hai ki 3,3 se 3,3 tak ek rasta hai and that rasta is ki apni jagah se hilo hi mat
 			ArrayList<String> bres= new ArrayList<String>();
 			bres.add("");
 			return bres;

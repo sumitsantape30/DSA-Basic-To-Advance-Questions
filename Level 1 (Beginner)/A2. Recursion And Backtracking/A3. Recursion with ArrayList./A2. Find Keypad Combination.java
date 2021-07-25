@@ -58,8 +58,8 @@ public class KeypadCombination {
 		
 		// humari input string 678 types hogi yeh represent krta hai ki pehle 6 press hua then 7 and then 8 press hua
 		
-		//so uss 678 ka 5 alag karlena hai
-		 char ch= str.charAt(0); // 5
+		//so uss 678 ka 6 alag karlena hai
+		 char ch= str.charAt(0); // 6
 		String ros= str.substring(1); // 78 bhi alag nikal liya
 		
 		// ab maine ek faith rakha aur call laga di

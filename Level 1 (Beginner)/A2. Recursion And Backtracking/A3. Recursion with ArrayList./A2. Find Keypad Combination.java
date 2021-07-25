@@ -73,6 +73,7 @@ public class KeypadCombination {
 		// so yeh jo 6 words hai of 78 unke sath yeh 6 interact karega pehle
 		
 		String codeforch= codes[ch- '0']; //yahape muje mno mil gya ab mai ispe loop chalaunga. And - '0' isliye kiye taki character ko number bana ske 
+		// so 678 ke 6 ke sare characters aagye ab yeh characters rres ke sare words ke sath interact karega
 		
 		for( int i=0; i< codeforch.length(); i++) {
 			char chcode= codeforch.charAt(i); // uspe loop chalake ek ek character leliye

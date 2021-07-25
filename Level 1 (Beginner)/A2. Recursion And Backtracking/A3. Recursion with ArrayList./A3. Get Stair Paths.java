@@ -44,29 +44,41 @@ public class getStairsPath {
 		}
 		
 		//yeh pehla faith hai
-		ArrayList<String> paths1 = getStairPaths(n-1); // yahapr yeh faith hai ki yeh line n-1 se 0 ke saare paths apko nikalkar de degi
-		ArrayList<String> paths2 = getStairPaths(n-2); // yeh n-2 se 0 tak sare paths de dega
-		ArrayList<String> paths3 = getStairPaths(n-3); // yeh n-3 se 0 tak sare paths de dega
+		ArrayList<String> rr1 = getStairPaths(n-1); // yahapr yeh faith hai ki yeh line n-1 se 0 ke saare paths apko nikalkar de degi
+		ArrayList<String> rr2 = getStairPaths(n-2); // yeh n-2 se 0 tak sare paths de dega
+		ArrayList<String> rr3 = getStairPaths(n-3); // yeh n-3 se 0 tak sare paths de dega
 		
 		// hume n se 0 tak sare paths chahiye
-		ArrayList<String> paths = new ArrayList<String>();
-		
+		ArrayList<String> mr = new ArrayList<String>();
+
 		// 6 to 0 ke paths ko agar upgrade karke 7 se 0 ka path banana hai to uske muh pe 1 laga denge
-		for( String path: paths1 ) {
-			paths.add(1 + path);
+		for( String path: rr1 ) { // recursion result mai 1 chipkake apne answer mai add kardo
+			mr.add(1 + path);
 		}
 		
 		//isis tarah agar n-2 se 0 ke sare path dikhaye aur unke muh pr hum 2 lagade to woh n se 0 ke path ban jayenge
-		for( String path: paths2 ) {
-			paths.add(2 + path);
+		for( String path: rr2 ) {
+			mr.add(2 + path);
 		}
 		
 		// isi tarah agar tum muje n-3 se 0 ke sare path dikhao aur unke muh pr hum 3 lagade to woh bhi n-3 ke 0 ke path ban jayenge
-		for( String path: paths3 ) {
-			paths.add(3 + path);
+		for( String path: rr3 ) {
+			mr.add(3 + path);
 		}
 		
-		return paths;
+//		for( int i=0; i< rr1.size(); i++) {
+//			mr.add("1"+rr1.get(i));
+//		}
+//		
+//		for( int i=0; i< rr2.size(); i++) {
+//			mr.add("1"+rr2.get(i));
+//		}
+//		
+//		for( int i=0; i< rr3.size(); i++) {
+//			mr.add("1"+rr3.get(i));
+//		}
+		
+		return mr;
 	}
 
 	public static void main(String[] args) {

@@ -73,6 +73,36 @@ public class getMazePath {
 		return paths;
 	}
 	
+	public static ArrayList<String> getMazePath(int sr, int sc, int dr, int dc){
+		if(sr > dr || sc > dc ) { //aisa hua means hum matrix ke bahar aachuke hai
+			ArrayList<String> bans= new ArrayList<String>();
+			return bans;
+		}
+		
+		if( sr == dr && sc == dc) { //aur jab destination pe pohoch jate ho, destination se destination tak ek rasta exist krta hai, aur woh rasta hota hai blank kuch bhi mat karo
+			ArrayList<String> bans= new ArrayList<String>();
+			bans.add("");
+			return bans;
+		}
+		
+		ArrayList<String> rr1= getMazePath(sr, sc +1, dr, dc);	
+		ArrayList<String> rr2= getMazePath(sr +1, sc, dr, dc);
+	
+		
+		ArrayList<String> mr= new ArrayList<String>();
+		
+		for( int i=0; i< rr1.size(); i++) {
+			mr.add("h"+rr1.get(i));
+		}
+		
+		for( int i=0; i< rr2.size(); i++) {
+			rr2.add("v"+ rr2.get(i));
+		}
+		
+		return mr;
+		
+	}
+	
 	public static void main(String[] args) {
 
 		Scanner s= new Scanner(System.in);

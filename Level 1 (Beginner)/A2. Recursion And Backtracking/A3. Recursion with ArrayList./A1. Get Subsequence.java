@@ -38,13 +38,13 @@ public class getSubsequence {
 		
 		// abc ka jo pehla character hai use alag karliya
 		char ch= str.charAt(0); // a
-		String ros= str.substring(1); // 1 se leke end tak ka alag kar diya, abc tha to a alag kiya and bc alag kardiya
+		String ros= str.substring(1); // 1 se leke end tak ka alag kar diya, abc tha to 'a' alag kiya and 'bc' alag kardiya
 		// ab mai call karke rest of the string(ros) ka jawab la lenge
 		ArrayList<String> rres= gss(ros); //mera faith hai ki isse result ajayega. Yahape bc ka result ajayega : [--, -c, b-, bc]
 		// rres= recursion result
 		
 		//ab muje mera result banana hai
-		ArrayList<String> myres=  new ArrayList<String>(); // so mai ab rres mai ek loop lagake kuch nhi dalunga means dash(-) dalunga fir mai usme dubara loop lagaunga aur isbar usme a kar dunga
+		ArrayList<String> myres=  new ArrayList<String>(); // so mai ab rres mai ek loop lagake kuch nhi dalunga means dash(-) dalunga fir mai usme dubara loop lagaunga aur isbar usme 'a' addd kar dunga
 		// myres= myresult
 		
 		// rres ka banda myres mai do bar add hoga blank and char ke liye so hum do alag alag loop laga skte hai (ek loop mai dono kobhi kr skte hai but this is more better)

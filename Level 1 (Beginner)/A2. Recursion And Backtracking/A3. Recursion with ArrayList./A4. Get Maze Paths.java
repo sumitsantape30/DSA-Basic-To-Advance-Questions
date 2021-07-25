@@ -60,7 +60,7 @@ public class getMazePath {
 		
 		ArrayList<String> paths= new ArrayList<String>(); // yeh humara final wala path hai
 		
-		// horizontal path mai loop lagayenge, usme jo paths hongi uske muh pe 'h' lagayenge
+		// horizontal path mai loop lagayenge, usme jo paths hongi uske muh pe 'h' lagayenge aur apne answer arraylist mai add karenge 
 		for( String hpath: hpaths) {
 			paths.add("h"+hpath);
 		}

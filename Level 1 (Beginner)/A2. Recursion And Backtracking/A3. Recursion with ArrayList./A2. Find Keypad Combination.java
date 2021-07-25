@@ -76,7 +76,7 @@ public class KeypadCombination {
 		// so 678 ke 6 ke sare characters aagye ab yeh characters rres ke sare words ke sath interact karega
 		// so mere is codeforch string mai 6 ke characters means pqrs aagye hai ab mai ispe loop chalaunga
 		
-		for( int i=0; i< codeforch.length(); i++) {
+		for( int i=0; i< codeforch.length(); i++) { // yeh loop mai uss strin pe chala rha hu, pehle p ayega fir q ayega so on
 			char chcode= codeforch.charAt(i); // uspe loop chalake ek ek character leliye
 			
 			//ab recursion result mai loop lagayenge

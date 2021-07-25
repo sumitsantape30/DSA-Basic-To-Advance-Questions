@@ -86,6 +86,11 @@ public class KeypadCombination {
 				mres.add(c + rstr);
 			}
 			
+			
+//			for( int j=0; j< rr.size(); j++) {
+//				mr.add(c+ rr.get(i));
+//			}
+			
 		}
 		return mres;	
 	}

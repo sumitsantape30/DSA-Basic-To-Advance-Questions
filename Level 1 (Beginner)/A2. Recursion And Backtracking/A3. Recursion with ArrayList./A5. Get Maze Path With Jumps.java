@@ -36,7 +36,7 @@ public class GetMazePathWithJump {
 			ArrayList<String> bres= new ArrayList<String>(); // destination se destination tak el rasta hota hai and thats blank.
 			bres.add("");
 			return bres;
-		}
+		} //
 		
 		ArrayList<String> mr= new ArrayList<String>(); //my result:  hume expectation hai ki sr sc se dr dc ka path denge
 		
@@ -77,7 +77,7 @@ public class GetMazePathWithJump {
 		
 		//ab diagonal mai humko dono walls control krti hai isliye dono check lagayenge
 		// woh bottom wall and right wall dono ke andar rehni chahiye
-		for( int jump= 1; ms <= dr - sr && ms <= dc - sc ; ms++) {
+		for( int jump= 1; ms <= dr - sr && ms <= dc - sc ; ms++) { // jump <= Math.min(dr-sr, dc-sc) isme se jo minimum hoga utne jumps lagne chahiye : yeh bhi use kr skte ho
 			ArrayList<String> rr= getMazePaths(sr + jump, sc + jump, dr, dc);
 			for( String dpath: rr) {
 				paths.add("d"+ jump + dpath); 

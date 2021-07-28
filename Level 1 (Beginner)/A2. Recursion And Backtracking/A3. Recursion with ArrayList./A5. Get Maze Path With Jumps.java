@@ -77,7 +77,7 @@ public class GetMazePathWithJump {
 		
 		//ab diagonal mai humko dono walls control krti hai isliye dono check lagayenge
 		// woh bottom wall and right wall dono ke andar rehni chahiye
-		for( int jump= 1; ms <= dr - sr && jump <= dc - sc ; jump++) { // jump <= Math.min(dr-sr, dc-sc) isme se jo minimum hoga utne jumps lagne chahiye : yeh bhi use kr skte ho
+		for( int jump= 1; jump <= dr - sr && jump <= dc - sc ; jump++) { // jump <= Math.min(dr-sr, dc-sc) isme se jo minimum hoga utne jumps lagne chahiye : yeh bhi use kr skte ho
 			ArrayList<String> rr= getMazePaths(sr + jump, sc + jump, dr, dc);
 			for( String dpath: rr) {
 				paths.add("d"+ jump + dpath); 

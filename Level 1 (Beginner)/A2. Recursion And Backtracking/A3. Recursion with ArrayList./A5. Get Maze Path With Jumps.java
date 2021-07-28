@@ -44,7 +44,7 @@ public class GetMazePathWithJump {
 		// pehle dekhte mai kis kis intermeate pe ja skta hu
 		// horizontal move karke (means move ka size kitna hai) 
 		for( int ms= 1; ms <= dc-sc ; ms++) { //(ms: move size) hum kitne horizontal move/jump kr skte hai itermediate pe jane keliye
-			// ab hum lagayenge apna faithm, jahape bhi hum pohochenge wahase aage ke paths hume mil jayenge
+			// ab hum lagayenge apna faith, jahape bhi hum pohochenge wahase aage ke paths hume mil jayenge
 			ArrayList<String> hpaths= getMazePaths(sr, sc+ ms, dr, dc);
 			// move size dc-sc rahega horizontal direction mai
 			

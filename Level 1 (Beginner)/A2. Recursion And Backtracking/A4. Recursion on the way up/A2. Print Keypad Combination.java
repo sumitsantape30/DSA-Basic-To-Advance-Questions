@@ -55,6 +55,7 @@ public class printKPC {
 		String roq= ques.substring(1); // res of the string
 		
 		// now this 6 can be solved as pqrs so woh layenge pehle
+		// so yahape yeh choice hai ki 6 ayega to kya banke ayega p ki q ki r s
 		String codeforch= codes[ch- '0'];
 		// ab pqrs mai ek ek call lagani hai, means yeh 6 p ke form mai solve hoga ya q ke or r ya s ke
 		for( int i=0 ; i< codeforch.length(); i++) {

@@ -33,7 +33,7 @@ public class GetMazePathWithJump {
 	
 	public static ArrayList<String> getMazePaths( int sr, int sc, int dr, int dc){
 		if( sr == dr && sc == dc) { // yahape aaye means hum pohoch gye
-			ArrayList<String> bres= new ArrayList<String>();
+			ArrayList<String> bres= new ArrayList<String>(); // destination se destination tak el rasta hota hai and thats blank.
 			bres.add("");
 			return bres;
 		}
@@ -61,23 +61,33 @@ public class GetMazePathWithJump {
 		}
 		
 		//vertical moves
-		for( int ms= 1; ms <= dr - sr; ms++) {
-			ArrayList<String> vpaths= getMazePaths(sr + ms, sc, dr, dc);
-			for( String vpath: vpaths) {
-				paths.add("v"+ ms + vpath); //coz hum vertical effort karke gye hai to v1 v2 v3 aise chipkayenge
+		for( int jump= 1; jump <= dr - sr; jump++) {
+			ArrayList<String> rr= getMazePaths(sr + jump, sc, dr, dc);
+			
+			for( String vpath: rr) {
+				paths.add("v"+ jump + vpath); //coz hum vertical effort karke gye hai to v1 v2 v3 aise chipkayenge
 			}
+			
+	//		for( int i=0 ;i< rr.size(); i++) {
+        //		mr.add("v"+ jump+ rr.get(i));
+        //	       }
+			
 		}
 		
 		//ab diagonal mai humko dono walls control krti hai isliye dono check lagayenge
 		// woh bottom wall and right wall dono ke andar rehni chahiye
-		for( int ms= 1; ms <= dr - sr && ms <= dc - sc ; ms++) {
-			ArrayList<String> dpaths= getMazePaths(sr + ms, sc + sc, dr, dc);
-			for( String dpath: dpaths) {
-				paths.add("d"+ ms + dpath); 
+		for( int jump= 1; ms <= dr - sr && ms <= dc - sc ; ms++) {
+			ArrayList<String> rr= getMazePaths(sr + jump, sc + jump, dr, dc);
+			for( String dpath: rr) {
+				paths.add("d"+ jump + dpath); 
 			}
+			
+	//		for( int i=0 ;i< rr.size(); i++) {
+        //		mr.add("h"+ jump+ rr.get(i));
+        //	       }
 		}
 		
-		return paths;
+		return mr;
 	}
 
 	public static void main(String[] args) {

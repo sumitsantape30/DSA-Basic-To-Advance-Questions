@@ -48,7 +48,7 @@ public class printMazePathWithJumps {
     	
     	// horizontal direction mai kya hai mere pas options
     	for( int jump = 1; jump <= dc- sc; jump++) { // move distance h1 or h2 or h3
-    		printMazePaths( sr, sc+jump, dr, dc, psf + "h"+jumpms);
+    		printMazePaths( sr, sc+jump, dr, dc, psf + "h"+jump);
     	}
     	
     	//vertical move size

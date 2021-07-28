@@ -49,6 +49,18 @@ public class PrintSubsequence {
 		printSS(roq, ans +""); // roq pass kiya and answer ke andar character add nhi kiya, character ne no keh diya
 		
 	}
+	
+	public static void pss(String str, String asf){
+		if( str.length() == 0) {
+			System.out.println(asf);
+		}
+		
+		char ch= str.charAt(0);
+		String ros= str.substring(1);
+		pss(ros, asf + ch);
+		pss(ros, asf + "");
+		
+	}
 
 	public static void main(String[] args) {
 

@@ -28,22 +28,22 @@ import java.util.Scanner;
 
 public class printStairPath {
 	
-	public static void printStairPaths(int n, String path) {
+	public static void printStairPaths(int n, String asf) {
 		
 		if( n < 0) { // 0 se niche hye to journey khatam hai and yeh answer bhi nhi hai so print bhi nhi karenge
-			return;
+			return; //agar n ki value -ve hogyi to waha hume answer nhi milega 
 		}
 		
-		if( n == 0) { // aur kabhi kabhi hum 0 pr pohoch jayenge
+		if( n == 0) { // hum 0 pr pohoch gaye means destination pr aagye so print kardo aur return hojao
 			// journey 0 pebhi khatam hai lekin yeh sahi rasta hai isko print karenge
 			System.out.println(path);
 			return;
 		}
 		
 		// apne teeno options express kardo usse new levels ban jayenge
-		printStairPaths( n -1 , path + "1"); // humare pas option hai 1 step rakhna
-		printStairPaths( n -2, path + "2"); // dusri option hai humare pas 2 kadam rakhna
-		printStairPaths( n -3, path + "3"); // teesri option hai humare pas 2 kadam rakhna
+		printStairPaths( n -1 , asf + "1"); // agar mai 1 ka jump lagata hu to aur n-1 stairs jump karni hai. Coz Ek ka jump lagaya to asf mai 1 add kar diya 
+		printStairPaths( n -2, asf + "2"); // dusri option hai humare pas 2 kadam rakhna
+		printStairPaths( n -3, asf + "3"); // teesri option hai humare pas 2 kadam rakhna
 	}
 
 	public static void main(String[] args) {

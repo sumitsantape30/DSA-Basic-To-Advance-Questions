@@ -40,6 +40,7 @@ public class GetMazePathWithJump {
 		
 		ArrayList<String> mr= new ArrayList<String>(); //my result:  hume expectation hai ki sr sc se dr dc ka path denge
 		
+		// isme multiple jumps hogi isliye jumps ke loop ke andar se call lagegi
 		//faith wali line
 		// pehle dekhte mai kis kis intermeate pe ja skta hu
 		// horizontal move karke (means move ka size kitna hai) 

@@ -38,21 +38,26 @@ public class GetMazePathWithJump {
 			return bres;
 		}
 		
-		ArrayList<String> paths= new ArrayList<String>(); // hume expectation hai ki sr sc se dr dc ka path denge
+		ArrayList<String> mr= new ArrayList<String>(); //my result:  hume expectation hai ki sr sc se dr dc ka path denge
 		
 		//faith wali line
 		// pehle dekhte mai kis kis intermeate pe ja skta hu
 		// horizontal move karke (means move ka size kitna hai) 
-		for( int ms= 1; ms <= dc-sc ; ms++) { //(ms: move size) hum kitne horizontal move/jump kr skte hai itermediate pe jane keliye
+		for( int jump= 1; jump <= dc-sc ; jump++) { // hum kitne horizontal move/jump kr skte hai itermediate pe jane keliye
 			// ab hum lagayenge apna faith, jahape bhi hum pohochenge wahase aage ke paths hume mil jayenge
-			ArrayList<String> hpaths= getMazePaths(sr, sc+ ms, dr, dc);
-			// move size dc-sc rahega horizontal direction mai
+			ArrayList<String> rr= getMazePaths(sr, sc+ jump, dr, dc);
+			// jump size dc-sc rahega horizontal direction mai
 			
+			//so recursion result mai string bharke aagyi, ab muje inko apne answer mai convert karana hoga
 			//ab inn horizontal paths ko kaise convert kiya jaye ki yeh sr sc se dr sc ke path ban jaye
-			for( String hpath : hpaths) {
+			for( String hpath : rr) {
 				// jo paths aaye hai unke upar loop lagayenge woh h1/h2 types unke muh pe jod diya
-				paths.add("h"+ ms + hpath);
+				paths.add("h"+ jump + hpath);
 			}
+			
+	//		for( int i=0 ;i< rr.size(); i++) {
+        //		mr.add("h"+ jump+ rr.get(i));
+        //	       }
 		}
 		
 		//vertical moves

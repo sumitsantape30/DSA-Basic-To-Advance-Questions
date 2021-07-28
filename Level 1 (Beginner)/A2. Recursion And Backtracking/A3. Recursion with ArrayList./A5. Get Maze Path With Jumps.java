@@ -33,7 +33,7 @@ public class GetMazePathWithJump {
 	
 	public static ArrayList<String> getMazePaths( int sr, int sc, int dr, int dc){
 		if( sr == dr && sc == dc) { // yahape aaye means hum pohoch gye
-			ArrayList<String> bres= new ArrayList<String>(); // destination se destination tak el rasta hota hai and thats blank.
+			ArrayList<String> bres= new ArrayList<String>(); // destination se destination tak ek rasta hota hai and thats blank.
 			bres.add("");
 			return bres;
 		} //

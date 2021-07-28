@@ -35,3 +35,55 @@ Sample Output
 rddr
 
 Code:
+
+package Restart;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Problems {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		int m = scn.nextInt();
+		int[][] arr = new int[n][m];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				arr[i][j] = scn.nextInt();
+			}
+		}
+		
+		//ek visited array bhi chahiye hoga taki alreay visited path ko firse visit nhi kare
+		boolean visited[][]= new boolean[n][m]; //by defaul isme har jagah false pda hoga, aur iss visited kobhi pass karenge
+		floodfill(arr, 0, 0, "", visited);
+	}
+
+	// asf -> answer so far
+	public static void floodfill(int[][] maze, int row, int col, String asf, boolean visited[][]) { //jab bhi kisi cell mai ayenge to uss cell ko sabse pehle visited mark karenge
+		
+		if( row < 0 || col < 0 || row == maze.length || col== maze[0].length || maze[row][col] ==1 || visited[row][col] == true) { //agar hum board ke bahar aagye or obstacle mila or already visited ho to return karenge 
+			return;
+		} // maze[row][col] ==1 yh coondition last mai hi likhna coz agar pehle rakhdi yeh condtn aur row -ve hua to index out of bound de dega. Agar hum board ke andar hai tabhi woh last condition check hogi
+		
+		if( row== maze.length-1 && col == maze[0].length-1) {
+			System.out.println(asf);
+			return;
+		}
+		
+		// so kisibhi direction mai jane se pehle visited mark karenge ki iss cell pe aa chuke hai
+		visited[row][col]= true;
+		
+		
+		//mere pas 4 choices hai
+		//pehle top ke taraf jayenge
+		floodfill(maze, row-1, col, asf + "t", visited); //top
+		floodfill(maze, row, col -1, asf + "l", visited); //left
+		floodfill(maze, row + 1, col, asf + "d", visited); // down 
+		floodfill(maze, row, col +1, asf + "r", visited); //right
+		
+		//apna kam hone ke bad means ek path milne ke bad uss cell ko hum non visited mark kr denge taki koi path mai woh cell use ho ske
+		visited[row][col]= false;
+
+	}
+}

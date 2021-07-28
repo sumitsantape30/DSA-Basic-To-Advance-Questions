@@ -42,7 +42,7 @@ public class PrintSubsequence {
 		
 		// ek yes ki call lagegi and ek no ki call lagegi, woh character ek bar ayegi aur ekbar nhi ayega
 		// ab mai question ko split karunga
-		char ch= ques.charAt(0); // iss character ke pas 2 options hai ki woh ek bar ayega aur ekbar nhi ayega
+		char ch= ques.charAt(0); // iss character ke pas 2 choices hai ki woh ek bar ayega aur ekbar nhi ayega
 		String roq= ques.substring(1);  //rest of the question, 1 ke bad ka question split karenge
 		printSS(roq, ans + ch); // ab answer mai character dal rhe hai, yeh yes ki call hai 
 

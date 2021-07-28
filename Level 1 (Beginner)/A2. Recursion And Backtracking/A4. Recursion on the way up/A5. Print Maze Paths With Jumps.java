@@ -47,18 +47,18 @@ public class printMazePathWithJumps {
     	
     	
     	// horizontal direction mai kya hai mere pas options
-    	for( int ms= 1; ms <= dc- sc; ms++) { // move distance h1 or h2 or h3
-    		printMazePaths( sr, sc+ms, dr, dc, psf + "h"+ ms);
+    	for( int jump = 1; jump <= dc- sc; jump++) { // move distance h1 or h2 or h3
+    		printMazePaths( sr, sc+jump, dr, dc, psf + "h"+jumpms);
     	}
     	
     	//vertical move size
-    	for( int ms= 1; ms <= dr- sr; ms++) {
-    		printMazePaths( sr + ms , sc, dr, dc, psf + "v"+ ms);
+    	for( int jump= 1; jump <= dr- sr; jump++) {
+    		printMazePaths( sr + jump , sc, dr, dc, psf + "v"+ jump);
     	}
     	
     	//diagonals, yeh donoko control krti hai isliiye yaha dono checks hone chahiye and dono chize badhayenge bhi
-    	for( int ms= 1; ms <= dr- sr && ms<= dc-sc; ms++) {
-    		printMazePaths( sr + ms , sc+ ms, dr, dc, psf + "v"+ ms);
+    	for( int jump= 1; jump <= dr- sr && jump<= dc-sc; jump++) {
+    		printMazePaths( sr + jump , sc+ ms, dr, dc, psf + "d"+ jump);
     	}
         
     }

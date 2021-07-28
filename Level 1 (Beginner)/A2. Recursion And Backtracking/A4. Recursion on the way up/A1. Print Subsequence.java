@@ -36,7 +36,7 @@ public class PrintSubsequence {
 	// fir dusre ispe jata hai fir dusre ko print krte hai fir niche aajate hai to kisi moment pe stack mai 4 level honge usse jada kabhi nhi honga, stack mai utne levels hote hai jitne aapke pas number of characters hote hai
 	public static void printSS( String ques, String ans) {
 		if( ques.length() == 0) { // jab question ki length hojayegi 0 to ab kahi nhi ja skte to return karna hoga but usse pehle humm answer ko print karlenge
-			System.out.println(ans); //qustion ki length 0 hai means question khatam hochuka hai means hum answer pe khade hai so usko print kardo
+			System.out.println(ans); //question ki length 0 hai means question khatam hochuka hai means hum answer pe khade hai so usko print kardo
 			return;
 		}
 		

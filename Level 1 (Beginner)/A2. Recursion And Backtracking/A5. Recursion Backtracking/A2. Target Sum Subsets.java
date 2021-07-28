@@ -36,4 +36,41 @@ Sample Output
 
 Code:
 
+package Restart;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Problems {
+
+	public static void main(String[] args) throws Exception {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< n; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		int tar= s.nextInt();
+		printTargetSumSubsets(arr, 0, "", 0, tar);
+	}
+
+	// set is the subset
+	// sos is sum of subset
+	// tar is target
+	public static void printTargetSumSubsets(int[] arr, int idx, String set, int sos, int tar) {
+		if( idx == arr.length) { //jab woh index arr.length pe pahuch jayega, humare pas aur elements nhi bache for choices
+			if(sos == tar) { //ab agar humara sum of subset target ke equal hua to jo set hai usme full stop lagake print kardenge
+				System.out.println(set + ".");
+			}	
+		}
+
+		// humare element ke pas hai 2 choices , woh set ka part ban skta hai aur nhi ban skta
+		printTargetSumSubsets(arr, idx+1, set + arr[idx] + ", " , sos + arr[idx], tar);// agar woh set mai gya to sum of set badhega
+		printTargetSumSubsets(arr, idx+1, set, sos , tar) ;// agar woh set mai nhi aya to sum of set wahi rahega
+
+	}
+}
 

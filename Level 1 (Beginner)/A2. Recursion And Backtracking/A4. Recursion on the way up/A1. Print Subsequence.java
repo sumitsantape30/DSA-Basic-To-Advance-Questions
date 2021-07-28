@@ -53,6 +53,7 @@ public class PrintSubsequence {
 	public static void pss(String str, String asf){
 		if( str.length() == 0) {
 			System.out.println(asf);
+			return;
 		}
 		
 		char ch= str.charAt(0);

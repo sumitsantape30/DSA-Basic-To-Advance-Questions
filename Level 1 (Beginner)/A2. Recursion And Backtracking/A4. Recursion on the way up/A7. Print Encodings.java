@@ -88,6 +88,33 @@ public class printEncodings {
      }
     }
 
+	public static void printEncodings(String str, String asf) {
+    	if( str.length() == 0) {
+    		System.out.println(asf);
+    		return;
+    	}
+    	// pehle string ki length hi check karna badme character
+    	if( str.charAt(0) == '0') { // starting mai 0 agya to wahise return hojao
+    		return;
+    	}
+    	
+    	//char ch0= str.charAt(0); // iss character kobhi string mai hi lenge
+    	String ch0= str.substring(0,1);
+    	String ros1= str.substring(1);
+    	
+    	printEncodings(ros1, asf + (char)(Integer.parseInt(ch0) - 1 + 'a')); // 0th pe jo number tha string form mai usko number mai convert kiya then uska endcoding lene keliye character mai convert kiya
+    	
+    	// ab strting ke 2 character alag nikalne hai aur baki bachi hui string alag nikalni hai but yeh tabhi nikal paoge jab string ki length at least 2 ho
+    	if( str.length() >= 2) {
+    		String ch01= str.substring(0, 2);
+        	String ros2= str.substring(2);
+            
+        	if(Integer.parseInt(ch01) <= 26) {
+            	printEncodings(ros2, asf + (char)(Integer.parseInt(ch01) - 1 + 'a'));
+        	}
+    	}
+    }
+	
 	public static void main(String[] args) {
 
 		Scanner s= new Scanner(System.in);

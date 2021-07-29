@@ -52,7 +52,7 @@ public class printEncodings {
     		 // agar woh koi aur character hai to uske corresponding jo code hoga woh print kardenge
     		 int chv= ch - '0'; //pehle woh character ko number mai convert karenge. ab chv ke andar asli wala means number ajayega
     		 // isliye number mai kiye coz uske corresponding character print karna hai hume
-    		 char code= (char)('a' + chv -1); //code keliye hum 'a' mai add karenge character ki value aur usme se 1 minus karenge
+    		 char code= (char)(chv -1 + 'a'); //code keliye hum 'a' mai add karenge character ki value aur usme se 1 minus karenge
     		 asf= asf + code;
     		 System.out.println(asf);
     	 } 
@@ -67,7 +67,7 @@ public class printEncodings {
     		 return ; 
     	 }else {
     		 int chv= ch - '0'; 
-    		 char code= (char)('a' + chv -1);
+    		 char code= (char)(chv -1 + 'a');
     		 //yaha ab print nhi kareng, 2 ya 2 se bda hai woh call karenge
     		 printEncodings(roq, asf + code); // answer so far mai code add krte hue aage call kar denge
     	 } 
@@ -82,7 +82,7 @@ public class printEncodings {
      
      // ab aage ka kam tabhi hoga jab pehle 2 character jo nikale hai woh less than equal to 26 hai
      if( ch12v <= 26) {
-		 char code= (char)('a' + ch12v -1); // upar ka copy paste kiya hai
+		 char code= (char)(ch12v -1 + 'a'); // upar ka copy paste kiya hai
 		 //yaha ab print nhi kareng, 2 ya 2 se bda hai woh call karenge
 		 printEncodings(roq12, asf + code); // roq12 means baki roq 12 ko chhodke
      }

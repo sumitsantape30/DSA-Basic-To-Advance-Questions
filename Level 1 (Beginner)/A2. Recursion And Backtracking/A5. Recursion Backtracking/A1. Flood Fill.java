@@ -87,4 +87,30 @@ public class Problems {
 		visited[row][col]= false;
 
 	}
+	
+	 public static void floodfill(int[][] maze, int sr, int sc, String asf, boolean visited[][]) { //jab bhi kisi cell mai ayenge to uss cell ko sabse pehle visited mark karenge
+		
+		if( sr < 0 || sc < 0 || sr == maze.length || sc== maze[0].length || maze[sr][sc] ==1 || visited[sr][sc] == true) { //agar hum board ke bahar aagye or obstacle mila or already visited ho to return karenge 
+			return;
+		} // maze[row][col] ==1 yh coondition last mai hi likhna coz agar pehle rakhdi yeh condtn aur row -ve hua to index out of bound de dega. Agar hum board ke andar hai tabhi woh last condition check hogi
+		
+		if( sr== maze.length-1 && sc == maze[0].length-1) {
+			System.out.println(asf);
+			return;
+		}
+		
+		// so kisibhi direction mai jane se pehle visited mark karenge ki iss cell pe aa chuke hai
+		visited[sr][sc]= true;
+		
+		
+		//mere pas 4 choices hai
+		//pehle top ke taraf jayenge
+		floodfill(maze, sr-1, sc, asf + "t", visited); //top
+		floodfill(maze, sr, sc -1, asf + "l", visited); //left
+		floodfill(maze, sr + 1, sc, asf + "d", visited); // down 
+		floodfill(maze, sr, sc +1, asf + "r", visited); //right
+		
+		//apna kam hone ke bad means ek path milne ke bad uss cell ko hum non visited mark kr denge taki koi path mai woh cell use ho ske
+		visited[sr][sc]= false;
+	}
 }

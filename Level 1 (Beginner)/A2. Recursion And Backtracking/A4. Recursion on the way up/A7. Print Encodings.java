@@ -97,13 +97,15 @@ public class printEncodings {
     	if( str.charAt(0) == '0') { // starting mai 0 agya to wahise return hojao
     		return;
     	}
-    	
+		
+    	//pehli choice
     	//char ch0= str.charAt(0); // iss character kobhi string mai hi lenge
     	String ch0= str.substring(0,1);
     	String ros1= str.substring(1);
     	
     	printEncodings(ros1, asf + (char)(Integer.parseInt(ch0) - 1 + 'a')); // 0th pe jo number tha string form mai usko number mai convert kiya then uska endcoding lene keliye character mai convert kiya
     	
+	// yeh dusri choice hai 
     	// ab strting ke 2 character alag nikalne hai aur baki bachi hui string alag nikalni hai but yeh tabhi nikal paoge jab string ki length at least 2 ho
     	if( str.length() >= 2) {
     		String ch01= str.substring(0, 2);

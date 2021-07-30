@@ -370,3 +370,60 @@ Sample Output
 21 2 13 8 23 
 
 Code:
+
+package Restart;
+
+import java.util.Scanner;
+
+public class Code {
+
+	public static void main(String[] args) throws Exception {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int chess[][]= new int[n][n];
+		
+		int r= s.nextInt();
+		int c= s.nextInt();
+		printKnightsTour(chess, r, c, 1); //1 is ki konse number ka move hai so yeh 1 number ka move hai
+		
+	}
+
+	public static void printKnightsTour(int[][] chess, int r, int c, int move) {
+		if( r < 0 || c < 0 || r >= chess.length || c >= chess[0].length || chess[r][c] > 0) { //agar chess[r][c] pe >0 value pdi hai means wog occupied hai so wahase laut jao
+			return;
+		}else if( move == chess.length*chess.length) { //jaise 5*5 ka board tha to jab 25th move ki bari aajaye to 25 move chalenge
+			chess[r][c]= move; //25th move chalenge aur display board kardenge
+			displayBoard(chess);
+			//aur return karne se pehle 25th move hatayenge bhi
+			chess[r][c]= 0;
+			return;
+		}
+		
+		chess[r][c]= move; //maine iss spot pe mera move chaldiya
+		//ab mere pas 8 options hai so 9 calls karunga
+		printKnightsTour(chess, r-2, c +1, move +1); 
+		printKnightsTour(chess, r-1, c +2, move +1); 
+		printKnightsTour(chess, r+1, c +2, move +1); 
+		printKnightsTour(chess, r+2, c +1, move +1); 
+		printKnightsTour(chess, r+2, c -1, move +1); 
+		printKnightsTour(chess, r+1, c -2, move +1); 
+		printKnightsTour(chess, r-1, c -2, move +1); 
+		printKnightsTour(chess, r-2, c -1, move +1); 
+		chess[r][c]= 0; // wapas aate waqt fir unoccupied kardenge
+		
+		
+	}
+
+	public static void displayBoard(int[][] chess) {
+		for (int i = 0; i < chess.length; i++) {
+			for (int j = 0; j < chess[0].length; j++) {
+				System.out.print(chess[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+	}
+
+}

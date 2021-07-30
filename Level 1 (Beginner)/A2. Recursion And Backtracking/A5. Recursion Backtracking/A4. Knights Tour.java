@@ -390,7 +390,7 @@ public class Code {
 	}
 
 	public static void printKnightsTour(int[][] chess, int r, int c, int move) {
-		if( r < 0 || c < 0 || r >= chess.length || c >= chess[0].length || chess[r][c] > 0) { //agar chess[r][c] pe >0 value pdi hai means wog occupied hai so wahase laut jao
+		if( r < 0 || c < 0 || r >= chess.length || c >= chess[0].length || chess[r][c] > 0) { //agar chess[r][c] pe >0 value pdi hai means woh already occupied hai so wahase laut jao, 0 se badi value yeh denote krti hai that yeh spot is already visited
 			return;
 		}else if( move == chess.length*chess.length) { //jaise 5*5 ka board tha to jab 25th move ki bari aajaye to 25 move chalenge
 			chess[r][c]= move; //25th move chalenge aur display board kardenge
@@ -410,6 +410,7 @@ public class Code {
 		printKnightsTour(chess, r+1, c -2, move +1); 
 		printKnightsTour(chess, r-1, c -2, move +1); 
 		printKnightsTour(chess, r-2, c -1, move +1); 
+		//8 bhi call lagne ke bad mai return karne wala hu so return karne se just pehle iss sport ko 0 banake jayenge
 		chess[r][c]= 0; // wapas aate waqt fir unoccupied kardenge
 		
 		

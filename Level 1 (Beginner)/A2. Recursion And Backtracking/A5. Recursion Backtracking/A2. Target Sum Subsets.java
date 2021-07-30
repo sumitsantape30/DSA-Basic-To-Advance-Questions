@@ -61,6 +61,10 @@ public class Problems {
 	// sos is sum of subset
 	// tar is target
 	public static void printTargetSumSubsets(int[] arr, int idx, String set, int sos, int tar) {
+		if( ssf > tar){ // agar sum so far ki value target se badi hogyi to bas return kardo
+			return;
+		}
+		
 		if( idx == arr.length) { //jab woh index arr.length pe pahuch jayega, humare pas aur elements nhi bache for choices
 			if(sos == tar) { //ab agar humara sum of subset target ke equal hua to jo set hai usme full stop lagake print kardenge
 				System.out.println(set + ".");
@@ -74,15 +78,19 @@ public class Problems {
 	}
 	
 	//asf : answer so far
-	// ss : subset sum
-	public static void printTargetSumSubsets2(int[] arr, int idx, String asf, int ss, int tar) {
+	// ssf : sum so far
+	public static void printTargetSumSubsets2(int[] arr, int idx, String asf, int ssf, int tar) {
+		if( ssf > tar){ // agar sum so far ki value target se badi hogyi to bas return kardo
+			return;
+		}
+		
 		if( idx == arr.length) { 
-			if(ss == tar) {
+			if(ssf == tar) {
 				System.out.println(asf + ".");
 			}	
 		}
-		printTargetSumSubsets(arr, idx+1, asf + arr[idx] + ", " , ss + arr[idx], tar); //yes 
-		printTargetSumSubsets(arr, idx+1, asf, ss , tar) ; //no
+		printTargetSumSubsets(arr, idx+1, asf + arr[idx] + ", " , ssf + arr[idx], tar); //yes 
+		printTargetSumSubsets(arr, idx+1, asf, ssf , tar) ; //no
 	}
 }
 

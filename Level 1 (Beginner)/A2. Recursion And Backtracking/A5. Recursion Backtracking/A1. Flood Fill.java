@@ -54,7 +54,7 @@ public class Problems {
 			}
 		}
 		
-		//ek visited array bhi chahiye hoga taki alreay visited path ko firse visit nhi kare
+		//ek visited array bhi chahiye hoga taki already visited path ko firse visit nhi kare
 		boolean visited[][]= new boolean[n][m]; //by defaul isme har jagah false pda hoga, aur iss visited kobhi pass karenge
 		floodfill(arr, 0, 0, "", visited);
 	}

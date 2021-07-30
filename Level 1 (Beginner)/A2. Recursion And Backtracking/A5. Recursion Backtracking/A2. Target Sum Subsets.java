@@ -72,5 +72,17 @@ public class Problems {
 		printTargetSumSubsets(arr, idx+1, set, sos , tar) ;// agar woh set mai nhi aya to sum of set wahi rahega
 
 	}
+	
+	//asf : answer so far
+	// ss : subset sum
+	public static void printTargetSumSubsets2(int[] arr, int idx, String asf, int ss, int tar) {
+		if( idx == arr.length) { 
+			if(ss == tar) {
+				System.out.println(asf + ".");
+			}	
+		}
+		printTargetSumSubsets(arr, idx+1, asf + arr[idx] + ", " , ss + arr[idx], tar); //yes 
+		printTargetSumSubsets(arr, idx+1, asf, ss , tar) ; //no
+	}
 }
 

@@ -32,7 +32,7 @@ public class Problems {
 
 		Scanner s= new Scanner(System.in);
 		int n= s.nextInt();
-		boolean chess[][]= new boolean[n][n];
+		boolean chess[][]= new boolean[n][n]; //boolean ka lenge coz true falsi mark karna h ki yahape queen place hai ya queen place nhi h 
 		printNQueens(chess, "", 0);
 	}
 

@@ -62,7 +62,7 @@ public class Problems {
 	    //meri queen safe hai ya nhi yeh check karne keliye mere piche wale3 directions mai check karna padega
 		//check karne keliye muje apne same column aur diagonal d1 and d2 mai chack karna padega
 		
-		//check is column, same column mai check karna hai to row vary karegi
+		//check in column, same column mai check karna hai to row vary karegi
 		for(int i= row-1; i >= 0 ; i--) {
 			
 			if( chess[i][col] == true) {// i, col pe kahipe bhi true dikh gya means our current spot is not safe

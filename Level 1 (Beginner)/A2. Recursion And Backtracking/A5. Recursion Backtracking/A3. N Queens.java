@@ -47,11 +47,11 @@ public class Problems {
 		for( int col= 0; col < chess.length; col++) {
 			//ab mai dehunga kya uuss sport mai meri queen safe hai
 			if( isItSafe(chess, row, col) == true) { //agar safe hai to uss spot pe queen ko place karwa do
-				chess[row][col]= true;
+				chess[row][col]= true; // place the queen
 				// aur fir next queen keliye call lagwado, next queen next row mai place hogi
 				printNQueens(chess, asf + row + "-" + col + ",", row+1); // answer so far mai abhi ke ans ko daldo aaur agli queen agli row mai baithegi so row+1 kardo
 				// wpaas aate waqt usse unplace bhi karoge
-				chess[row][col]= false;
+				chess[row][col]= false; // unplace the queen
 			}
 			
 		}

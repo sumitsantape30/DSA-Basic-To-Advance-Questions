@@ -389,6 +389,7 @@ public class Code {
 		
 	}
 
+	// use move or stepno as a variable
 	public static void printKnightsTour(int[][] chess, int r, int c, int move) {
 		if( r < 0 || c < 0 || r >= chess.length || c >= chess[0].length || chess[r][c] > 0) { //agar chess[r][c] pe >0 value pdi hai means woh already occupied hai so wahase laut jao, 0 se badi value yeh denote krti hai that yeh spot is already visited
 			return;

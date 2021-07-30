@@ -74,6 +74,7 @@ public class Problems {
 		// humare element ke pas hai 2 choices , woh set ka part ban skta hai aur nhi ban skta
 		printTargetSumSubsets(arr, idx+1, set + arr[idx] + ", " , sos + arr[idx], tar);// agar woh set mai gya to sum of set badhega
 		printTargetSumSubsets(arr, idx+1, set, sos , tar) ;// agar woh set mai nhi aya to sum of set wahi rahega
+		// next call mai aageka element check hona chahiye isliye idx+1 kr rhe hai
 
 	}
 	

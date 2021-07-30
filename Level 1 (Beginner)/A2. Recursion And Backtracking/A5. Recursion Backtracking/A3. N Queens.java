@@ -20,3 +20,72 @@ Sample Output
 0-2, 1-0, 2-3, 3-1, .
 
 Code:
+
+package Restart;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Problems {
+
+	public static void main(String[] args) throws Exception {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		boolean chess[][]= new boolean[n][n];
+		printNQueens(chess, "", 0);
+	}
+
+	public static void printNQueens(boolean[][] chess, String asf, int row) {
+		// jab row number chess.length pe pohoch jaye to wahase apna answer print krte hue return karna chahiye
+		if( row == chess.length) {
+			System.out.println(asf + ".");
+			return;
+		}
+		
+		//row 0 mai ek hi queen place hogi aur woh queen place karane keliye sare columns options hai
+		for( int col= 0; col < chess.length; col++) {
+			//ab mai dehunga kya uuss sport mai meri queen safe hai
+			if( isItSafe(chess, row, col) == true) { //agar safe hai to uss spot pe queen ko place karwa do
+				chess[row][col]= true;
+				// aur fir next queen keliye call lagwado, next queen next row mai place hogi
+				printNQueens(chess, asf + row + "-" + col + ",", row+1); // answer so far mai abhi ke ans ko daldo aaur agli queen agli row mai baithegi so row+1 kardo
+				// wpaas aate waqt usse unplace bhi karoge
+				chess[row][col]= false;
+			}
+			
+		}
+		
+	}
+	
+	public static boolean isItSafe(boolean chess[][], int row, int col) {
+	    //meri queen safe hai ya nhi yeh check karne keliye mere piche wale3 directions mai check karna padega
+		//check karne keliye muje apne same column aur diagonal d1 and d2 mai chack karna padega
+		
+		//check is column, same column mai check karna hai to row vary karegi
+		for(int i= row-1; i >= 0 ; i--) {
+			
+			if( chess[i][col] == true) {// i, col pe kahipe bhi true dikh gya means our current spot is not safe
+				return false;
+			}
+		}
+		
+		// diagonal 1 (right ki taraf)
+		for(int i= row-1, j= col +1; i >= 0 && j < chess.length; i--, j++) {
+			if( chess[i][j] == true) {
+				return false;
+			}
+		}
+		
+		//d1
+		for( int i= row-1, j= col -1; i >=0 && j >= 0 ; i--, j--) {
+			if( chess[i][j] == true) {
+				return false;
+			}
+		}
+		
+		return true; // sabkuch karne ke bad I can say our spot is safe
+		
+	}
+
+}

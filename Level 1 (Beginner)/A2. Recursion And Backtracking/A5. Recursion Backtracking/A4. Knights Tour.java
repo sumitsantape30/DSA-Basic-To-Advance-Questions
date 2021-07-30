@@ -413,10 +413,16 @@ public class Code {
 		printKnightsTour(chess, r-1, c -2, move +1); 
 		printKnightsTour(chess, r-2, c -1, move +1); 
 		//8 bhi call lagne ke bad mai return karne wala hu so return karne se just pehle iss sport ko 0 banake jayenge
-		chess[r][c]= 0; // wapas aate waqt fir unoccupied kardenge
-		
-		
+		chess[r][c]= 0; // wapas aate waqt fir unoccupied kardenge	
 	}
+/*
+steps:
+	1. Negative basecase
+	2. 8 calls lagao
+	3. cals laganese pehle step no store karao
+	4. saari calls algane ke bad wapas aaoge to use 0 marks karenge
+	5. fir positive basecase sambhalo
+*/
 
 	public static void displayBoard(int[][] chess) {
 		for (int i = 0; i < chess.length; i++) {

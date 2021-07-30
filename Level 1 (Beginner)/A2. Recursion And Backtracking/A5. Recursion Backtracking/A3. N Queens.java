@@ -45,7 +45,7 @@ public class Problems {
 		
 		//row 0 mai ek hi queen place hogi aur woh queen place karane keliye sare columns options hai
 		for( int col= 0; col < chess[0].length; col++) {
-			//ab mai dehunga kya uuss sport mai meri queen safe hai
+			//ab mai dehunga kya uuss spot mai meri queen safe hai
 			if( isItSafe(chess, row, col) == true) { //agar safe hai to uss spot pe queen ko place karwa do
 				chess[row][col]= true; // place the queen
 				// aur fir next queen keliye call lagwado, next queen next row mai place hogi

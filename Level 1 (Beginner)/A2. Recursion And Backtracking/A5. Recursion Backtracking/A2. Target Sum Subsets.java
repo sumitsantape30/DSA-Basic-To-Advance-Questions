@@ -68,6 +68,7 @@ public class Problems {
 		if( idx == arr.length) { //jab woh index arr.length pe pahuch jayega, humare pas aur elements nhi bache for choices
 			if(sos == tar) { //ab agar humara sum of subset target ke equal hua to jo set hai usme full stop lagake print kardenge
 				System.out.println(set + ".");
+				return;
 			}	
 		}
 
@@ -88,6 +89,7 @@ public class Problems {
 		if( idx == arr.length) { 
 			if(ssf == tar) {
 				System.out.println(asf + ".");
+				return;
 			}	
 		}
 		printTargetSumSubsets(arr, idx+1, asf + arr[idx] + ", " , ssf + arr[idx], tar); //yes 

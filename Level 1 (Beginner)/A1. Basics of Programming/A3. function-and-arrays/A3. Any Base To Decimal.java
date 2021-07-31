@@ -28,7 +28,7 @@ import java.util.Scanner;
 public class AnyBaseToDecimal {
 	
 	public static int getValueIndecimal(int n, int b) {
-		int rv= 0;
+		int ans= 0;
 		int p=1;
 		
 		while( n >0 ) { //hume tabtak kam karna hai jabtak humara number 0 se bda hai
@@ -43,7 +43,7 @@ public class AnyBaseToDecimal {
 			p= p * b; //agli bas keliye power update hogi
 			
 		}
-		return rv;
+		return ans;
 	}
 
 	public static void main(String[] args) {

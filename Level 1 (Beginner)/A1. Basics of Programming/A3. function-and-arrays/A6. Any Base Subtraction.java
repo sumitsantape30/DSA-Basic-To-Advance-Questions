@@ -35,7 +35,7 @@ public class AnyBaseSubstraction {
 		int carry= 0;
 		int power=1;
 		
-		//humara kam tabtak chalega jatbak bada number bacha hua hai
+		//humara kam tabtak chalega jatbak bada number bacha hua hai so n2>0 is sufficient
 		while( n2 > 0) {
 			
 			// dono mese last digit nikalenge

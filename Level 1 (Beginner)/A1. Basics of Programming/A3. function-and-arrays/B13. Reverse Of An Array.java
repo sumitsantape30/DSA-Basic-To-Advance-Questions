@@ -47,7 +47,7 @@ public class ReverseOfAnArray {
 		int i= 0;
 		int j= arr.length-1;
 		
-		for( i=0; i< arr.length; i++) {
+		while(i < j) {
 			
 			int temp= arr[i];
 			arr[i]= arr[j];

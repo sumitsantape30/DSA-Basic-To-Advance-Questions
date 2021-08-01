@@ -56,7 +56,7 @@ public class findAnElementInArray {
 		for( int i=0; i< arr.length; i++) {
 			
 			if( ele == arr[i]) {
-				return ele;
+				return i;
 			}
 		}
 		

@@ -110,7 +110,7 @@ public class ExitPoint {
 				j--; // j bahar nikal gya hai to j-- karke break kare
 				break;
 			}//let's jab hum bahar nikal jayege to i and j ki value hogi 2,-1 but exit point hum 2,-1 nhi print karna chahte hum print karna chahte hai jo aakhri spot humne visit kiya tha to hum 2,0 hi print karenge
-		     // so jab hum exist ho chuke hai to ek step wapas leke jayiye aur fir btaye ki yahase exit hua tha 
+		     // so jab hum exit ho chuke hai to ek step wapas leke jayiye aur fir btaye ki yahase exit hua tha 
 		}
 		//i and j ko print kardenge
 		System.out.println(i);

@@ -95,7 +95,7 @@ public class ExitPoint {
 				i--;
 			}
 			
-			//hume exist point chahiye to yeh hume pta chalega bahar aane ke bad, so agar hum matrix ke kahi bahar aagye to break kar denge, yeh hume pta lagega ek step bahar aane ke bad
+			//hume exit point chahiye to yeh hume pta chalega bahar aane ke bad, so agar hum matrix ke kahi bahar aagye to break kar denge, yeh hume pta lagega ek step bahar aane ke bad
 			//hum dekhenge kya hum bahar aagye kya
 			if( i < 0) { //agar i negative hojaye
 				i++; //i negative hogya to i++ krke break kare

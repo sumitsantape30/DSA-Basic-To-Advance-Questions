@@ -112,7 +112,7 @@ public class shellRotate {
 	
 	// fillOnedFromShell and fillShellFromOneD keliye spiral display wala logic use hoga
 	public static int[] fillOnedFromShell(int arr[][], int s) {
-			int minr= s-1; // jo shell keliye min row hoga, jo humara top left hota hai min row and min column
+		    int minr= s-1; // jo shell keliye min row hoga, jo humara top left hota hai min row and min column
 		    int minc= s-1;
 			//max row and max column
 		    int maxr= arr.length-s;

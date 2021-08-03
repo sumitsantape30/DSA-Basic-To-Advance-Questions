@@ -1,3 +1,6 @@
+*Open Book for Time Complexities*
+//we have 3 variations here
+
 //==Variation 1====
 public static int powerLinear(int x, int n) {
 		

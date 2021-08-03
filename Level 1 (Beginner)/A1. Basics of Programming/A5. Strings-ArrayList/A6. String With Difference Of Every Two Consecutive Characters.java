@@ -33,15 +33,18 @@ class HelloWorld {
 		return str;
 	}
 
-	public static String solution(String str){
-		String ans = "";
-		int diff = 0;
-		for (int i = 1; i < str.length(); i++) {
-			diff = str.charAt(i) - str.charAt(i - 1 );
-			ans += str.charAt(i - 1) + "" + diff;
+	public static void solution2(String str) {
+		String ans= "";
+		ans += str.charAt(0);
+		
+		for( int i=1; i< str.length(); i++) {
+			
+			int diff= str.charAt(i) - str.charAt(i-1);
+			
+			ans += ""+ diff + str.charAt(i);
 		}
-		ans += str.charAt(str.length() - 1);
-		return ans;
+		
+		System.out.println(ans);
 	}
 	
 	public static String Solution( String str) {

@@ -50,7 +50,7 @@ class HelloWorld {
 				// ab remainder nikalenge
 				int r= dvd % div;
 				// ab jo remainder aya uss index wale character ko print karke usko delete bhi kar denge
-				System.out.println(sb.charAt(r));
+				System.out.print(sb.charAt(r));
 				sb.deleteCharAt(r);
 				
 				dvd= dvd/ div;

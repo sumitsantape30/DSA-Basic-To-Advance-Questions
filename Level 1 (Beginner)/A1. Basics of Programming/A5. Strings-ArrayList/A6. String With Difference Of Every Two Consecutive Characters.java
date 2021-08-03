@@ -32,6 +32,17 @@ class HelloWorld {
 		String str= s.next();
 		return str;
 	}
+
+	public static String solution(String str){
+		String ans = "";
+		int diff = 0;
+		for (int i = 1; i < str.length(); i++) {
+			diff = str.charAt(i) - str.charAt(i - 1 );
+			ans += str.charAt(i - 1) + "" + diff;
+		}
+		ans += str.charAt(str.length() - 1);
+		return ans;
+	}
 	
 	public static String Solution( String str) {
 		//hume string form mai return karna hai

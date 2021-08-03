@@ -11,7 +11,7 @@ class HelloWorld {
         System.out.println(sb);
         //So string builder mai hum string mai set bhi kr skte hai 
         
-        //kahibichme character insert karne keliye setChar se uss index pe koi character replace kr skte hai
+        //kahibichme character insert karne keliye aur setChar se uss index pe koi character replace kr skte hai
         sb.insert(2, 'y'); // insert
         System.out.println(sb);
         

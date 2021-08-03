@@ -28,7 +28,7 @@ public class PowerLinear {
 	
 	public static int powerLinear(int x, int n) {
 		
-		if(  == 0) {
+		if( n == 0) {
 			return 1;
 		}
 		

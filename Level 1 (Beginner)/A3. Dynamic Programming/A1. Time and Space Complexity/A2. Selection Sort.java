@@ -53,7 +53,7 @@ public class SelectionSort {
 		
 		// n size ke array keliye n-1 iterations hoti hai
 		for( int i= 0; i < arr.length-1; i++) {
-			int mi= i; //shuruwat mai min i pehi hota hai
+			int mi= i; //mi:min Index. shuruwat mai min i pehi hota hai
 			
 			//j i ke aage se start hota hai and j end tak jata hai
 			for( int j= i+1 ; j< arr.length; j++) {

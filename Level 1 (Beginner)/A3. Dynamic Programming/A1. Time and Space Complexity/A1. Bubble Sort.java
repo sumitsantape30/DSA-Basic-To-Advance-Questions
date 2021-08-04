@@ -66,6 +66,19 @@ public class bubbleSort {
 		}
 	}
 	
+	public static void bubble( int arr[]) {
+	   int n= arr.length;
+	   
+	   for( int itr= 1; itr <= n-1; itr++) {
+		   
+		   for( int i=0; i<= n- itr- 1; i++) {
+			   if( isSmaller(arr, i+1, i) == true) {
+				   swap(arr, i+1, i);
+			   }
+		   }
+	   } 
+   }
+	
 	public static boolean isSmaller( int arr[], int i, int j) {
 		//System.out.println("comparing "+arr[i]+ " and "+arr[j]);
 		if( arr[i] < arr[j]) {

@@ -64,6 +64,7 @@ public class mergeTwoSortedArrays {
 		int j=0;
 		int k=0;
 		
+		//jabtak i and j range mai hote hai tabtak dono ko compare krte hue faisla lo
 		while( i < a.length && j < b.length) { // i and j dono bache hue hai dono array ke end tak pahuche nhi hai
 			// dono mese jo chota hoga usko use karenge
 			if( a[i] < b[j]){
@@ -77,6 +78,7 @@ public class mergeTwoSortedArrays {
 			}
 		} // aisa krte krte i and j apne end tak pahuch jayega, dono array mese ek bhi array khatam hogya to yeh loop khatam hojayega
 		
+		//niche dono bhi while loop se bad ek hi run hoga, jo abhibhi bacha hua hai woh chalega
 		// but agar dono mese jo array abhibhi bacha hai usko bina compare kiye dal denge
 		while( i < a.length) {
 			res[k]= a[i];

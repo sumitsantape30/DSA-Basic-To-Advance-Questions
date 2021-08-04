@@ -71,7 +71,7 @@ public class mergeTwoSortedArrays {
 				res[k]= a[i];
 				i++; //i ko use kiya hai so i++
 				k++; // and k har bar ++ hota hai
-			}else { // agar arr2[j] chota hai to usko use karenge
+			}else { // agar arr2[j] chota hai or equal hai to usko use karenge
 				res[k]= b[j];
 				j++;
 				k++;

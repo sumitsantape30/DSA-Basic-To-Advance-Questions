@@ -78,7 +78,7 @@ public class bubbleSort {
 // 		   }
 // 	   } 
 //    }
-	
+	  // return true if ith element is smaller than jth element
 	public static boolean isSmaller( int arr[], int i, int j) {
 		//System.out.println("comparing "+arr[i]+ " and "+arr[j]);
 		if( arr[i] < arr[j]) {

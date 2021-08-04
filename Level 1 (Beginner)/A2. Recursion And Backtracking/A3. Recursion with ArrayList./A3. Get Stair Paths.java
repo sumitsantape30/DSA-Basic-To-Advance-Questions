@@ -71,11 +71,11 @@ public class getStairsPath {
 //		}
 //		
 //		for( int i=0; i< rr2.size(); i++) {
-//			mr.add("1"+rr2.get(i));
+//			mr.add("2"+rr2.get(i));
 //		}
 //		
 //		for( int i=0; i< rr3.size(); i++) {
-//			mr.add("1"+rr3.get(i));
+//			mr.add("3"+rr3.get(i));
 //		}
 		
 		return mr;

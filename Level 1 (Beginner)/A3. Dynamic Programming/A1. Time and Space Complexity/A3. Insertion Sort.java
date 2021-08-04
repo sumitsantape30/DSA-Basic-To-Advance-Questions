@@ -69,7 +69,7 @@ public class InsertionSort {
 			for( int j= i-1; j>=0; j--) {
 				if( isGreater(arr, j, j+1)) {// j apne aage wale se bol rha hai ki agar mai terese bda hu to mere sath swap hoja
 					swap(arr, j, j+1);
-				}else { //aur agar mai terese chota hu to break hoja kyuki merese piche wale tumse chotehi honga
+				}else { //aur agar mai terese chota hu to break hoja kyuki merese piche wale tumse chotehi honge to waha jake fayda nhi so break kr denge
 					break;
 				}
 			}

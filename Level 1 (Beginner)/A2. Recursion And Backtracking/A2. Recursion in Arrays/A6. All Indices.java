@@ -67,7 +67,7 @@ public class AllIndices {
 			//yeh iarr found so far ki jitni size hai usi size ka arry hai actually wahi array hai
 			
 			// jahape equal hai and jo answer recieve kiya hai usko directly return nhi karna pehle usme iarr mai fsf wali position ke upar index dalna hai aur fir hume iarr return karna hai
-			iarr[fsf-1]= idx;
+			iarr[fsf]= idx;
 			return iarr;
 		}else {
 			int iarr[]= allIndices(arr, x, idx+1, fsf); // agar equal nhi hai to sirf index badhega fsf nhi badhege
@@ -76,6 +76,22 @@ public class AllIndices {
 		}
 		//isme array sirf ek bar ban rha hai woh chota array sirf woh basecase mai bana hai jo nicheke levels hai use piche piche return kar rhe hai bas, woh as it is return kar rhe hai or value mai change karke return kr rhe hai
 	}
+	
+	  public static int[] allIndices2(int[] arr, int x, int idx, int fsf) {
+               if(idx == arr.length){
+                  return new int[fsf];
+               } 
+        
+               if(arr[idx] == x){
+                    fsf++; 
+               }
+               int ans[] =  allIndices(arr, x, idx + 1, fsf);
+        
+               if(arr[idx] == x){
+                    ans[fsf - 1] = idx;
+               }
+                return ans;
+         }
 
 	public static void main(String[] args) {
 

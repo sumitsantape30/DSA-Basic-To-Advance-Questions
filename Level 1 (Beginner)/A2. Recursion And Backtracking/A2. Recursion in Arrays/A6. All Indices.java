@@ -53,7 +53,7 @@ public class AllIndices {
 		return arr;
 	}
 	
-	//jate hue bas yeh count karenge ki kitni yeh element exist krta hai 
+	//jate hue bas yeh count karenge ki kitni bar yeh element exist krta hai 
 	//aur wapas te hue array mai uski position fill karenge
 	public static int[] allIndices( int arr[], int x, int idx, int fsf) {
 		if( idx == arr.length) { // hum basecase pe pohoch gye means end mai so ab hum ek naya array banake return karenge

@@ -88,7 +88,7 @@ public class KeypadCombination {
 			
 			
 //			for( int j=0; j< rr.size(); j++) {
-//				mr.add(c+ rr.get(i));
+//				mr.add(c+ rr.get(j));
 //			}
 			
 		}

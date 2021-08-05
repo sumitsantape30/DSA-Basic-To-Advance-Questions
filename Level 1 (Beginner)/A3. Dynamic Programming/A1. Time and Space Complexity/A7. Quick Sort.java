@@ -59,7 +59,7 @@ public class QuickSort {
 		int pi= partition(arr, pivot, lo, hi); // low se leke hi tak jitne bhi elements hai unmese pivot se jo chote hai unko left mai karde and pivot se jo bade hai unko right mai karde, aur aisa karne ke bad yeh muje btayega ki pivot kaha pda hai
 		// pivot index muje aage call lagane mai help karega
 		
-		//so ab ke side small and ek side bade elements hai
+		//so ab ek side small and ek side bade elements hai
 		// so jahapr smaller values hai uss half pe call lagayenge
 		quickSort(arr, lo, pi-1); // low se lekar pivot index-1 tak sort kardo, aur maine faith rakha ki woh sort hokar ayenge
 		

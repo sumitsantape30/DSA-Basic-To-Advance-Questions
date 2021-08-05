@@ -50,7 +50,7 @@ public class paritioningAnArray {
 		while( i < arr.length) { //jabtak koi bhi unknown hai 
 			if( arr[i] > pivot) { // agar pivot se bda hai to sirf i badhege
 				i++;
-			}else { // agar tum chote ho ya barabr ho
+			}else { // agar tum chote ho ya barabr ho. arr[i] <= pivot
 				//pehle to swap hoga aur uske bad dono badhenge
 				swap(arr, i, j);
 				i++;

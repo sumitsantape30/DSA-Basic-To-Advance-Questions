@@ -50,9 +50,9 @@ import java.util.Scanner;
 public class QuickSort {
 	
 	public static void quickSort(int arr[], int lo, int hi) {
-		if( lo >= hi) { //jab apne pas ek element bache or jab koi element nhi bacha ho means jal lo grater than hi hojaye means cross kar jaye
+		if( lo >= hi) { //jab apne pas ek element bache or jab koi element nhi bacha ho means jab lo grater than hi hojaye means cross kar jaye tan retur kardo
 			return;
-		}
+		} //ek single element lo aur uspe calls lagake dekho basecase smjh jayega
 		
 		//hum akhri element ko pivot ke rup mai pass karenge
 		int pivot= arr[hi];

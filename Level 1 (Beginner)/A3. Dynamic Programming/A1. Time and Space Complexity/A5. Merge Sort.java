@@ -50,7 +50,7 @@ public class mergeSort {
 	}
 	
 	public static int[] mergeSort( int arr[], int lo, int hi) {
-		if( lo == hi) { //jab ek hi element reh jaye, low bhi wahi hai and high bhi so 1 size ka array banayenge
+		if( lo == hi) { //jab ek hi element reh jaye, low bhi wahi hai and high bhi so 1 size ka array banayenge, coz 1 size ka array is sorted so ek array banake usme iss element ko dalke return kar denge
 			int ba[]= new int[1]; // aur iss array ke 0th index mai lo or hi dal denge
 			ba[0]= arr[lo];
 			return ba; //aur return kar denge base array

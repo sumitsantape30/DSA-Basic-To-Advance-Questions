@@ -51,7 +51,7 @@ public class Sort012 {
 		
 		// i to k is unknown
 		// jabt tak kuch to unknown hai problem chalti rahegi
-		while( i <= k) { //jab i k ko cross karega tabhi unknowns khatam honge
+		while( i <= k) { //jab i k ko cross karega tabhi unknowns khatam honge, end mai ho skta hai ki i and k dono bhi 0 pe hai but 0 to compare hi nhi hua na so rukenge nhi chalte rahenge till i<=k
 			
 			if( arr[i] == 0) {
 				// agar 0 mila to i and j ko swap kardenge

@@ -51,7 +51,7 @@ public class QuickSort {
 	
 	public static void quickSort(int arr[], int lo, int hi) {
 		if( lo >= hi) { //jab apne pas ek element bache or jab koi element nhi bacha ho means jab lo grater than hi hojaye means cross kar jaye to return kardo
-			return;
+			return; //basecase lo > hi bhi lkihe tobhi chalta
 		} //ek single element lo aur uspe calls lagake dekho basecase smjh jayega
 		
 		//hum akhri element ko pivot ke rup mai pass karenge

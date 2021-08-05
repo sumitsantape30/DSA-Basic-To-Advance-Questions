@@ -77,7 +77,7 @@ public class QuickSort {
 		while (i < arr.length) {
 			if (arr[i] > pivot) {
 				i++;
-			} else {
+			} else { //arr[i] <= pivot
 				swap(arr, i, j);
 				i++;
 				j++;

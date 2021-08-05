@@ -57,6 +57,7 @@ public class QuickSort {
 		//hum akhri element ko pivot ke rup mai pass karenge
 		int pivot= arr[hi];
 		int pi= partition(arr, pivot, lo, hi); // low se leke hi tak jitne bhi elements hai unmese pivot se jo chote hai unko left mai karde and pivot se jo bade hai unko right mai karde, aur aisa karne ke bad yeh muje btayega ki pivot kaha pda hai
+		//so iss parition ke bad pivot apni sahi position pe aagya hoga so muje bas pivot ke left and right kohi sort karna hai
 		// pivot index muje aage call lagane mai help karega
 		
 		//so ab ek side small and ek side bade elements hai
@@ -82,7 +83,7 @@ public class QuickSort {
 				j++;
 			}
 		}
-		return (j-1);
+		return (j-1); // pura operation complete hojane kebad, i arr.length pe pohoch jane ke bad mera j pivot ke ek step aage hoga means mera pivot j-1 iss position pe hai
 	}
 
 	public static void swap(int[] arr, int i, int j) {

@@ -40,6 +40,7 @@ public class Sort01 {
 		int i=0;
 		int j=0;
 		
+		//i ki help pe se travel krte hai array pe
 		while( i < arr.length) { //jabtak kuch to unknown hai hum kam karte rahenge
 			if( arr[i] == 1) { // agar arr[i] pr mil jata hai 1 to simply i badhega
 				i++;

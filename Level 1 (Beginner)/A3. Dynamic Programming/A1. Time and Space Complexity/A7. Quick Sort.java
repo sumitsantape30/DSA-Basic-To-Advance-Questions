@@ -69,6 +69,7 @@ public class QuickSort {
 		
 	}
 
+	//this function return pivot index
 	public static int partition(int arr[], int pivot, int lo, int hi) {
                // System.out.println("pivot -> " + pivot);
 

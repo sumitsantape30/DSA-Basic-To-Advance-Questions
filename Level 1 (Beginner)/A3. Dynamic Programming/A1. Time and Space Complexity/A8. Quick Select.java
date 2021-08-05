@@ -1,18 +1,20 @@
-Quick Sort
+Quick Select
 
 1. You are given an array(arr) of integers.
-2. You have to sort the given array in increasing order using quick-sort.
+2. You have to find the k-th smallest element in the given array using the quick-select algorithm.
 Input Format
 An Integer n 
 arr1
 arr2..
 n integers
+An integer k
 Output Format
 Check the sample output and question video.
 
-Constraints
+  COMMENTConstraints
 1 <= N <= 100000
 -10^9 <= arr[i] <= 10^9
+1 <= k <= N
 Sample Input
 5
 7 
@@ -20,14 +22,15 @@ Sample Input
 4 
 1 
 3
+3
 Sample Output
 pivot -> 3
 Swapping -2 and 7
 Swapping 1 and 7
 Swapping 3 and 4
 pivot index -> 2
-pivot -> 1
-Swapping -2 and -2
+3
+
   
 Code:
 package TimeAnsSpace;

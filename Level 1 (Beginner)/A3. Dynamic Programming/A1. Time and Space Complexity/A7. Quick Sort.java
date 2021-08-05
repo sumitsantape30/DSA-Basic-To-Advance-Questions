@@ -70,6 +70,7 @@ public class QuickSort {
 	}
 
 	public static int partition(int arr[], int pivot, int lo, int hi) {
+               // System.out.println("pivot -> " + pivot);
 
 		int i = lo;
 		int j = lo;
@@ -83,6 +84,7 @@ public class QuickSort {
 				j++;
 			}
 		}
+		 //System.out.println("pivot index -> " + (j - 1));
 		return (j-1); // pura operation complete hojane kebad, i arr.length pe pohoch jane ke bad mera j pivot ke ek step aage hoga means mera pivot j-1 iss position pe hai
 	}
 

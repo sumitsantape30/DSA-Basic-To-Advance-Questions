@@ -52,9 +52,9 @@ public class CountSort {
 		}
 		//iss step ke bad humare pas frequency aa chuki hogi
 		
-		//ab hum usko simple frequency ke hisab se chipka nhi skte instead hum prequency ko convert karke prefix sum array create karlenge
+		//ab hum usko simple frequency ke hisab se chipka nhi skte instead hum frequency ko convert karke prefix sum array create karlenge
 		for( int i=1; i< farr.length; i++) {
-			//frquency arra pe loop lagake iske har position ke andar usse pichle wala add kardenge
+			//frquency array pe loop lagake iske har position ke andar usse pichle wala add kardenge
 			farr[i]= farr[i] + farr[i-1];
 		} // so mera prefix sum array mai convert hogya
 		
@@ -65,7 +65,7 @@ public class CountSort {
 		for( int i=arr.length-1 ; i >=0 ; i--) {
 			//ab meri ayegi value
 			int val= arr[i]; //arr[i] mese agyi value
-			// ab frequency aaray batayega usa kaha dala jaye, woh position batayega idex nhi batyaega
+			// ab frequency aaray batayega usko kaha dala jaye, woh position batayega idex nhi batyaega
 			int pos= farr[val - min]; //freqeuncy array mai jab usko value ko use karunga but hume pta hai woh sidhi use hoti nhi hai uss value se humesha min minus karna pdta hai
 			
 			//so hume mil gyi position ab position pe nhi dump karenge answer ke andar, index se pos 1 minus hota hai
@@ -77,7 +77,7 @@ public class CountSort {
 			farr[val - min]--; // iss wali spot pe -- karde
 		}
 		
-		//ab answer mai loop lagakr original arra mai dal denge
+		//ab answer mai loop lagakr original array mai dal denge
 		for( int i=0; i< ans.length; i++) {
 			arr[i]= ans[i];
 		}

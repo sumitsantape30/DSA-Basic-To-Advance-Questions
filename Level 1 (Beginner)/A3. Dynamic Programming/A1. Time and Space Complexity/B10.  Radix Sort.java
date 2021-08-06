@@ -41,7 +41,7 @@ public class RadixSort {
 		int counter=1;
 		while( max !=0) { //jabtak max 0 nhi hojata max ko 10 se divide krte rho aur countSort ko call krte rho so jitne digit hai utni bar call lagegi
 			max= max/10;
-			countSort(arr, (int)Math.pow(10, counter));
+			countSort(arr, (int)Math.pow(10, counter)); //exponent pass kr rhe ki kiske basis pe sort kr rhe hai, 10's ke basis pe ya 100's ke basis pe ya 1000's ke basis pe
 			counter++;
 		} //jinte number of digits hai utni bar yeh loop chalega
 		
@@ -69,7 +69,7 @@ public class RadixSort {
 	// 0 to 9 vary kr rha hai to min humara humesha 0 hoga 
 	// aur freuqency array ke andar arr[i] use nhi kr skte 
 	// kisi bhi number ki digit kaise nikalte hai iske liye open book
-	public static void countSort(int arr[], int exp) {
+	public static void countSort(int arr[], int exp) { //exponent pass kr rhe ki kiske basis pe sort kr rhe hai, 10's ke basis pe ya 100's ke basis pe ya 1000's ke basis pe
 
 		int farr[] = new int[10]; //10 size ka array banayenge cox ek digit ki range 0 to 9 hoti hai
 

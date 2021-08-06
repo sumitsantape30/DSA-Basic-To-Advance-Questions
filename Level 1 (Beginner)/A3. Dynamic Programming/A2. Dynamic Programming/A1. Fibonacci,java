@@ -51,9 +51,10 @@ public class Fibonacci {
 			return n;
 		}
 		
+		//call lagane se pehle check karlo ki yeh sawal kahi pre calculated to nhi hai
 		//5. ek basecase aur extra lagayenge just return karne se pehle and just kam hone se pehle yaha ek basecase lagayenge
 		if( qb[n] != 0) { // woh basecase yeh hai ki kya woh question bank mai yeh question already solved pda hai, 0 nhi hai means it contains the answer already so dont solve it instead return it from the question bank
-			return qb[n];
+			return qb[n]; //non zero value pdi hai yeh denote krta hai ki iska jawab aap pehle nikal chuke ho
 		}
 		
 		//3. humne iss fuction mai jo n pass kiya hai woh question hai  and niche jo fibn return kr rhe hai woh answer hai
@@ -66,7 +67,8 @@ public class Fibonacci {
 		int fibnm2 = fibomemoized(n-2, qb);
 		int fibn = fibnm1 + fibnm2;
 		
-		qb[n]= fibn ; //4. question tha n and answer tha fibn, so n ke samne fibn store kardiya
+		//apna answer return karne se pehle store karake jao
+		qb[n]= fibn ; //4. question tha n and answer tha fibn, so n ke samne fibn store kardiya. maine yaha fibo(n) ka jawab nokala hai so array mai nth index pehi store hoga
 		
 		return fibn;
 	}
@@ -75,7 +77,7 @@ public class Fibonacci {
 
 		Scanner s= new Scanner(System.in);
 		int n= s.nextInt();
-		int qb[]= new int[n+1];
+		int qb[]= new int[n+1]; //aakhri index n chahiye to array ka size n+1 rakhn padega
 		int fibn = fibomemoized(n, qb);
 		System.out.println(fibn);
 		

@@ -74,7 +74,7 @@ public class CountSort {
 			ans[idx]= val;	
 			
 			//aur frequency array mai jo position hai woh kam karenge
-			farr[val - min]--; // iss wali spot pe -- karde
+			farr[val - min]--; // iss wali spot pe -- karde, aglir bar keliye position update
 		}
 		
 		//ab answer mai loop lagakr original array mai dal denge

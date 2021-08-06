@@ -43,7 +43,7 @@ public class RadixSort {
 			max= max/10;
 			countSort(arr, (int)Math.pow(10, counter)); //exponent pass kr rhe ki kiske basis pe sort kr rhe hai, 10's ke basis pe ya 100's ke basis pe ya 1000's ke basis pe
 			counter++;
-		} //jinte number of digits hai utni bar yeh loop chalega
+		} //jitne number of digits hai utni bar yeh loop chalega
 		
 /*		
 		//radix sort chalaya kitni bar jaye? ones place keliye tens place keliye aisa kabtak chalaye? jabtak sabse bade number ki sari digit puri na hojaye so max nikalna padega

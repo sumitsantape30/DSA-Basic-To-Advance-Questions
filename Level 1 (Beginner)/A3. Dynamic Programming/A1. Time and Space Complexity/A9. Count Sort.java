@@ -52,6 +52,7 @@ public class CountSort {
 		}
 		//iss step ke bad humare pas frequency aa chuki hogi
 		
+		//ab iss farr ko pre sum mai convert kardenge
 		//ab hum usko simple frequency ke hisab se chipka nhi skte instead hum frequency ko convert karke prefix sum array create karlenge
 		for( int i=1; i< farr.length; i++) {
 			//frquency array pe loop lagake iske har position ke andar usse pichle wala add kardenge

@@ -88,6 +88,32 @@ public class CountSort {
 			arr[i]= ans[i];
 		}
 	}
+	
+	public static void countSort( int arr[],int min, int max) {
+		
+		int farr[]= new int[max- min +1];
+		
+		for( int i=0; i< arr.length; i++) {
+			farr[arr[i]- min]++;
+		}
+		
+		for( int i=1; i< farr.length; i++) {
+			farr[i]= farr[i-1] + farr[i];
+		}
+		
+		int ans[]= new int[arr.length];
+		
+		for( int i= arr.length-1; i>=0; i--) {
+			int pos= farr[arr[i]- min];
+			ans[pos-1]= arr[i];
+			farr[arr[i] - min]--;
+			
+		}
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= ans[i];
+		}
+	}
 
 	public static void print(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {

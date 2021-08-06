@@ -30,7 +30,7 @@ import java.util.Scanner;
 
 public class Fibonacci {
 	
-	public static int fibo( int n) {
+	public static int fibo( int n) { //nth fibonacci number chahiye
 		
 		if( n == 0 || n == 1) {
 			return n;
@@ -38,8 +38,8 @@ public class Fibonacci {
 		
 		//System.out.println("Hello World"+ n);
 		
-		//hume faith hai ki hume yeh n-1 and n-2 ke fibonacci lake dega
-		int fibnm1 = fibo( n -1);
+		//hume faith hai ki hume yeh n-1 and n-2 ke fibonacci lake dedega
+		int fibnm1 = fibo( n -1); //finm1 ==fibo of n minus 1
 		int fibnm2 = fibo(n-2);
 		int fibn = fibnm1 + fibnm2;
 		

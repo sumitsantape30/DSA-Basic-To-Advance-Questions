@@ -65,8 +65,8 @@ public class CountSort {
 		// ab ulta loop lagayenge
 		for( int i=arr.length-1 ; i >=0 ; i--) {
 			//ab meri ayegi value
-			int val= arr[i]; //arr[i] mese agyi value
-			// ab frequency aaray batayega usko kaha dala jaye, woh position batayega idex nhi batyaega
+			int val= arr[i]; //arr[i] mese value laayi
+			// ab frequency array batayega usko kaha dala jaye, woh position batayega idex nhi batyaega
 			int pos= farr[val - min]; //freqeuncy array mai jab usko value ko use karunga but hume pta hai woh sidhi use hoti nhi hai uss value se humesha min minus karna pdta hai
 			
 			//so hume mil gyi position ab position pe nhi dump karenge answer ke andar, index se pos 1 minus hota hai
@@ -75,7 +75,7 @@ public class CountSort {
 			ans[idx]= val;	
 			
 			//aur frequency array mai jo position hai woh kam karenge
-			farr[val - min]--; // iss wali spot pe -- karde, aglir bar keliye position update
+			farr[val - min]--; // iss wali spot pe -- karde, means agli bar keliye position update
 		}
 		
 		//ab answer mai loop lagakr original array mai dal denge

@@ -72,6 +72,24 @@ public class Fibonacci {
 		
 		return fibn;
 	}
+	
+	public static int fibomemoized( int n, int dp[]) {
+		if( n == 0 || n == 1) {
+			return n;
+		}
+		
+		if(  dp[n] != 0) {
+			return dp[n];
+		}
+		
+		int fnm1= fibomemoized(n-1, dp);
+		int fnm2= fibomemoized(n-2,dp);
+		int fn= fnm1 + fnm2;
+		
+		dp[n]= fn;
+		return fn;
+		
+	}
 
 	public static void main(String[] args) {
 

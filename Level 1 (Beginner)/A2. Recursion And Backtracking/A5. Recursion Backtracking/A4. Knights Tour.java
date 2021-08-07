@@ -390,29 +390,29 @@ public class Code {
 	}
 
 	// use move or stepno as a variable
-	public static void printKnightsTour(int[][] chess, int r, int c, int move) {
+	public static void printKnightsTour(int[][] chess, int r, int c, int stepno) {
 		if( r < 0 || c < 0 || r >= chess.length || c >= chess[0].length || chess[r][c] > 0) { //agar chess[r][c] pe >0 value pdi hai means woh already occupied hai so wahase laut jao, 0 se badi value yeh denote krti hai that yeh spot is already visited
 			return;
 		}
 		//n*n ki matrix thi step no 1 se start kiya fir 2 3 4 5, to jab hum last step lete hai tab rukte hai means jab step no ki value n*n hogi
-		if( move == chess.length*chess.length) { //as 5*5 ka board h to jab 25th move ki bari aajaye to 25 move chalenge
-			chess[r][c]= move; //25th move chalenge aur display board kardenge
+		if( stepno == chess.length*chess.length) { //as 5*5 ka board h to jab 25th move ki bari aajaye to 25 move chalenge
+			chess[r][c]= stepno; //25th move chalenge aur display board kardenge
 			displayBoard(chess);
 			//aur return karne se pehle 25th move hatayenge bhi
 			chess[r][c]= 0;
 			return;
 		}
 		
-		chess[r][c]= move; //maine iss spot pe mera move chaldiya
+		chess[r][c]= stepno; //maine iss spot pe mera move chaldiya
 		//ab mere pas 8 options hai so 9 calls karunga
-		printKnightsTour(chess, r-2, c +1, move +1); 
-		printKnightsTour(chess, r-1, c +2, move +1); 
-		printKnightsTour(chess, r+1, c +2, move +1); 
-		printKnightsTour(chess, r+2, c +1, move +1); 
-		printKnightsTour(chess, r+2, c -1, move +1); 
-		printKnightsTour(chess, r+1, c -2, move +1); 
-		printKnightsTour(chess, r-1, c -2, move +1); 
-		printKnightsTour(chess, r-2, c -1, move +1); 
+		printKnightsTour(chess, r-2, c +1, stepno +1); 
+		printKnightsTour(chess, r-1, c +2, stepno +1); 
+		printKnightsTour(chess, r+1, c +2, stepno +1); 
+		printKnightsTour(chess, r+2, c +1, stepno +1); 
+		printKnightsTour(chess, r+2, c -1, stepno +1); 
+		printKnightsTour(chess, r+1, c -2, stepno +1); 
+		printKnightsTour(chess, r-1, c -2, stepno +1); 
+		printKnightsTour(chess, r-2, c -1, stepno +1); 
 		//8 bhi call lagne ke bad mai return karne wala hu so return karne se just pehle iss sport ko 0 banake jayenge
 		chess[r][c]= 0; // wapas aate waqt fir unoccupied kardenge	
 	}

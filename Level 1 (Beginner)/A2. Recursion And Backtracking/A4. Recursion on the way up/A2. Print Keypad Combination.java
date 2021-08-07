@@ -80,7 +80,7 @@ public class printKPC {
 		
 		for( int i=0; i< code.length(); i++) {
 			char c= code.charAt(i); 
-			pkc(str, asf + c);
+			pkc(ros, asf + c);
 		}
 	}
 	

@@ -25,19 +25,19 @@ import java.util.Scanner;
 public class ClimbingStairs {
 	
 	public static int countPaths( int n) {
-		if( n == 0 ) {
+		if( n == 0 ) { //0 se 0 tak jane ka 1 tarika hai 
 			return 1;
 		}else if( n < 0) {
-			return 0;
+			return 0; 
 		}
 		
 		//System.out.println("Hello" +n);
 		
-		int nm1 = countPaths(n-1); // muje yeh faith hai ki yeh muje n-1 se 0 ke numbr of paths laake dedegi
-		int nm2 = countPaths(n-2);
-		int nm3 = countPaths(n-3);
+		int f1 = countPaths(n-1); // muje yeh faith hai ki yeh muje n-1 se 0 ke numbr of paths laake dedegi
+		int f2 = countPaths(n-2); //n-2 stairs climb karne ke tarike lake dega
+		int f3 = countPaths(n-3);
 		
-		int cp = nm1 + nm2 + nm3;
+		int cp = f1 + f2 + f3;
 		
 		return cp;
 		

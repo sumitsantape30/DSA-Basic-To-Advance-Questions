@@ -37,8 +37,30 @@ import java.io.*;
 import java.util.*;
 
 public class ClimbingStairsWithVariableJumps {
-
+		
+	//recursive
+	public static int cs2(int arr[], int idx) { //array milta hai aur aap konse index pe abhi ho yeh milta hai
+		if( idx == arr.length) { //agar destination pe pohoch gye, to destination se destination tak 1 rasta exist krta hai and woh rasta hai kuch bhi mat karo
+			
+		}
+		
+		if( idx > arr.length) { //agar galtise destination ke age nikal gye, to wahase destination tak ek bhi rasta exist nhi karega
+			return 0;
+		}
+		
+		int ans=0;
+		
+		for( int jump=1; jump <= arr[idx]; jump++) { //1 se jump lagana start karoge to arr[idx] itne jumps lagaoge
+			
+			ans += cs2(arr, idx + jump); //maine mangwaya: aap iss index se destination tak pohochna tha to iske total number of ways lake do. current index
+			
+		}
+		
+		return ans;
+	}
+	
 	public static void main(String[] args) {
+
 
 		Scanner s= new Scanner(System.in);
 		int n = s.nextInt();
@@ -47,6 +69,7 @@ public class ClimbingStairsWithVariableJumps {
 		for( int i=0; i< arr.length; i++) {
 			arr[i]= s.nextInt();
 		}
+		System.out.println(cs2(arr,0);
 		
 		
 		int dp[]= new int[n+1]; 

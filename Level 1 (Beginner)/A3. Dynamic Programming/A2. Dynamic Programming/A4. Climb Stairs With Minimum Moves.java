@@ -37,6 +37,28 @@ Code:
 import java.util.Scanner;
 
 public class ClimbingStairswithMinimumMoves {
+	
+	public static int climb_stairs_with_minimum_jump_Tabu(int[] arr) {
+		int n = arr.length;
+		int dp[] = new int[n];
+		dp[n-1] = 0;  // destination - tak 1 way hota hai ki move hi na kro
+		
+	    for(int i = arr.length - 2; i >= 0; i-- ) {
+	    	int min = Integer.MAX_VALUE - 1;
+	        for(int jump = 1; jump <= arr[i]; jump++ ) {
+	        	if(i + jump < arr.length) {
+	        	   min = Math.min(min, dp[jump + i]);
+	        	   
+	            }
+	        }
+	        if(min == Integer.MAX_VALUE) {
+	        	dp[i] = min;
+	        } else {
+	        	dp[i] = min + 1;
+	        }
+	    }
+	    return dp[0];
+	}
 
 	public static void main(String[] args) {
 

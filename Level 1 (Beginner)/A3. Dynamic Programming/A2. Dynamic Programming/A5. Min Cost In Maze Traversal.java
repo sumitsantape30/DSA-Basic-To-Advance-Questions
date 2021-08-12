@@ -36,3 +36,51 @@ Sample Output
 23
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+		 Scanner sc= new Scanner(System.in);
+         int n = sc.nextInt();
+         int m = sc.nextInt();
+         int a[][] = new int[n][m];
+         for(int i = 0; i < n; i++) {
+        	 for(int j = 0; j < m; j++) {
+        		 a[i][j] = sc.nextInt();
+        	 }
+         }
+         System.out.println(min_cost_in_maze_traversal(a, n, m));
+         sc.close();  
+	 }
+
+	private static int min_cost_in_maze_traversal(int[][] a, int n, int m) {
+		 
+		int dp[][] = new int[n][m];
+		
+		for(int i = n-1; i >= 0; i--) {
+			for(int j = m-1; j >= 0; j--) {
+				if(i == n-1 && j == m-1) {
+					dp[i][j] = a[i][j];
+				} else if(j == m-1) {
+					dp[i][j] = dp[i + 1][j] +a[i][j];
+				} else if(i == n-1) {
+					dp[i][j] = dp[i][j + 1] + a[i][j];
+				} else {
+					dp[i][j] = Math.min(dp[i + 1][j], dp[i][j + 1]) + a[i][j];
+				}
+			}
+		}
+		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < m; j++) {
+//				System.out.print(dp[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+		return dp[0][0];
+	}
+
+}

@@ -37,11 +37,40 @@ import java.io.*;
 import java.util.*;
 
 public class ClimbingStairsWithVariableJumps {
+	
+	//memoization
+	//current index se destination tak jane ke total number of ways kitne yeh nikal rhe hai
+	public static int cs2(int arr[], int idx, int dp[]) { //step 1 storage bana liye
+		if( idx == arr.length) { 
+			return 1;
+		}
+		
+		if( idx > arr.length) { 
+			return 0;
+		}
+		
+		//step3 call lagane se pehle check karlo
+		if( dp[idx] != 0) {
+			return dp[idx];
+		}
+		
+		int ans=0;
+		for( int jump=1; jump <= arr[idx]; jump++) { 
+			ans += cs2(arr, idx + jump, dp); 
+		}
+		
+		//step 2. apna answerr return karne se pehle store karwao
+		dp[idx]= ans;
+		
+		return ans;
+	}
+	//mai dp[idx] mai yeh store karwa rha hu ki ith index se destination tak jane ke total number of ways
+	
 		
 	//recursive
 	public static int cs2(int arr[], int idx) { //array milta hai aur aap konse index pe abhi ho yeh milta hai
 		if( idx == arr.length) { //agar destination pe pohoch gye, to destination se destination tak 1 rasta exist krta hai and woh rasta hai kuch bhi mat karo
-			
+			return 1;
 		}
 		
 		if( idx > arr.length) { //agar galtise destination ke age nikal gye, to wahase destination tak ek bhi rasta exist nhi karega
@@ -69,11 +98,11 @@ public class ClimbingStairsWithVariableJumps {
 		for( int i=0; i< arr.length; i++) {
 			arr[i]= s.nextInt();
 		}
+		int dp[]= new int[n+1]; //memoization keliye array banaye
+		// why ? 0 pe store hoga 0 se n jane ke raste. n pe n tak jane ke raste store hoga so 0 se n chahiye to n+1 size ka array banan pdta hai
 		System.out.println(cs2(arr,0);
 		
 		
-		int dp[]= new int[n+1]; 
-		// why ? 0 pe store hoga 0 se n jane ke raste. n pe n tak jane ke raste store hoga so 0 se n chahiye to n+1 size ka array banan pdta hai
 		dp[n]= 1; // iska matlab hai n se n jane ka 1 rasta hai means chalo hi mat
 		
 		for( int i= n-1; i>=0; i-- ) {

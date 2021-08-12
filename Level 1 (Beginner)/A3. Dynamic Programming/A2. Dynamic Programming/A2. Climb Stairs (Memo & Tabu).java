@@ -96,7 +96,7 @@ public class ClimbingStairs {
 		Scanner s= new Scanner(System.in);
 		int n = s.nextInt();
 		int cp1 = countPaths(n); //iss function se meri yeh expectations hai ki yeh n se 0 ke number of paths return kare
-		int cp2 = countPathsM( n, new int[n+1]); //n+1 size ka array pass karenge
+		int cp2 = countPathsM( n, new int[n+1]); //cs(n) means nth stair tak climb karne ke kitne tarike usko mai store karaunga dp[n] ke upar, n-1 ka answer n-1 pe, n ka answer dp[n] pe so muje n+1 size ka storage bana padega
 		System.out.println(cp2);
 	}
 }

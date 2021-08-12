@@ -56,16 +56,16 @@ public class ClimbingStairs {
 		}
 		
 		
-		System.out.println("Hello" +n);
+		//System.out.println("Hello" +n);
 		
-		int nm1 = countPathsM(n-1, qb); 
-		int nm2 = countPathsM(n-2, qb);
-		int nm3 = countPathsM(n-3, qb);
+		int f1 = countPathsM(n-1, qb); 
+		int f2 = countPathsM(n-2, qb);
+		int f3 = countPathsM(n-3, qb);
 		
-		int cp = nm1 + nm2 + nm3;
+		int cp = f1+f2+f3;
 		
 		//1. question hai n( n se number of path return karne hai) aur cp(count paths) humara answr hai)
-		qb[n]= cp ;// so question bank of n mai maine question ke samne answer store kardiya
+		qb[n]= cp ;// hum iss call mai n ka answer kr rhe hai so nth index pe count paths rakh denge
 		
 		return cp;
 		

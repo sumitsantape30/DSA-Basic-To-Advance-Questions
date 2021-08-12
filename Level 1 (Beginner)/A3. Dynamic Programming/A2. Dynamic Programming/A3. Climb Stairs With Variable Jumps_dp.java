@@ -54,7 +54,7 @@ public class ClimbingStairsWithVariableJumps {
 		dp[n]= 1; // iska matlab hai n se n jane ka 1 rasta hai means chalo hi mat
 		
 		for( int i= n-1; i>=0; i-- ) {
-			// yeh solve karega, ap[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
+			// yeh solve karega, dp[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
 			for( int j=1; j<= arr[i] && i+j < dp.length; j++) {
 				dp[i] += dp[i+j];
 			}

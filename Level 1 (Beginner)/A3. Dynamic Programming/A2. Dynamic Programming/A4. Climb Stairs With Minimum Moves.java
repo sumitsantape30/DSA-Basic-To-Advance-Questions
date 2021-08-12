@@ -54,7 +54,7 @@ public class ClimbingStairswithMinimumMoves {
 // 	        if(min == Integer.MAX_VALUE) {
 // 	        	dp[i] = min;
 // 	        } else {
-	        	dp[i] = min + 1; //agle 4 spots ka minimum +1 yeh mere jawab hoga. ek jump hume bhi lagayenge uska +1 hai 
+	        	dp[i] = min + 1; //agle 4 spots ka minimum +1 yeh mere jawab hoga. ek jump hum bhi lagayenge uska +1 hai 
 	        //}
 	    }
 	    return dp[0];

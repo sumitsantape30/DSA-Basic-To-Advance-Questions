@@ -38,6 +38,7 @@ import java.util.Scanner;
 
 public class ClimbingStairswithMinimumMoves {
 	
+	//jB's method
 	public static int climb_stairs_with_minimum_jump_Tabu(int[] arr) {
 		int n = arr.length;
 		int dp[] = new int[n]; // n size ka dp banega
@@ -50,14 +51,15 @@ public class ClimbingStairswithMinimumMoves {
 	        	   min = Math.min(min, dp[jump + i]); // min will be minimum abtak ka min aur dp[i+1] 
 	            }
 	        }
-	        if(min == Integer.MAX_VALUE) {
-	        	dp[i] = min;
-	        } else {
+// 	        if(min == Integer.MAX_VALUE) {
+// 	        	dp[i] = min;
+// 	        } else {
 	        	dp[i] = min + 1; //agle 4 spots ka minimum +1 yeh mere jawab hoga. ek jump hume bhi lagayenge uska +1 hai 
-	        }
+	        //}
 	    }
 	    return dp[0];
 	}
+/* manlo agar mai infinity-1 nhi krta, min ki value sirf infinity rakhta, aur manlo jump 0 ka allowed hota means arr[i] pe 0 rakha hota to jump wala loop to ek bar bhi nhi chalta, to dp[i] pe mai infinity+1 store karwa deta aur infinity+1 means -infinity hota hai so -infinity store kara deta jisse mera answer ajta galat */
 
 	public static void main(String[] args) {
 

@@ -104,7 +104,7 @@ public class ClimbingStairs {
 				dp[i] += dp[i-2];
 			}
 			
-			if( i-3 >= 0) {
+			if( i-3 >= 0) { //i-3 negative nhi hona chahiye, negative ho rha hai to woh out of range hai
 				dp[i] += dp[i-3];
 			}
 		}

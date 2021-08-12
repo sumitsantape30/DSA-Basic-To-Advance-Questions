@@ -59,27 +59,35 @@ public class Main {
         sc.close();  
 	 }
 
-	private static int goldmine(int[][] a, int n, int m) {
+	public static int goldmine(int[][] a, int n, int m) {
+
+		int dp[][] = new int[n][m];
+
 		
-        int dp[][] = new int[n][m];
-		
-		
-		for(int j = m-1; j >= 0; j--) {
-			for(int i = 0; i < n; i++) {
-				if(j == m-1) {
+		for (int j = m - 1; j >= 0; j--) { //hum solve krte waqt column by column piche ki taraf aa rhe so column ko bahar rakhenge aur khudko(j) ko sabse last mai rakhenge
+			for (int i = 0; i < n; i++) { //aag iss column mai niche se upar ya upar se niche travel karo faraq nhi pdta
+				if (j == a[0].length - 1) { //agar last column hai hai to dig nhi kr skta aage, jo arr[i][j] ai pda hoga wahi humara answer hojayega
 					dp[i][j] = a[i][j];
-				} else if(i == 0) {
-					dp[i][j] = Math.max(dp[i][j+1], dp[i + 1][j + 1]) + a[i][j];
-				} else if(i == n-1) {
+					
+				} else if (i == 0) { //agar first row mai hai to hum 2 jagah ja skte hai 
+					
+					dp[i][j] = a[i][j] + Math.max(dp[i][j + 1], dp[i + 1][j + 1]); //apna gold collect kiya aur dono jagah ka max liya
+					
+				} else if (i == n - 1) { //agar last row hai , to last row mai banda 2 direction mai dig kr skta hai
+					
 					dp[i][j] = Math.max(dp[i][j + 1], dp[i - 1][j + 1]) + a[i][j];
-				} else {
-					dp[i][j] = Math.max(Math.max(dp[i+1][j + 1], dp[i - 1][j + 1]), dp[i][j + 1])+a[i][j];
+					
+				} else { //rest of it, rest of the mai woh 3 jagah ja skta hai
+					
+					dp[i][j] = Math.max(Math.max(dp[i + 1][j + 1], dp[i - 1][j + 1]), dp[i][j + 1]) + a[i][j];
 				}
 			}
 		}
+		
+		//pure first column mai jo mera max hoga woh mera answer hoga
 		int max = Integer.MIN_VALUE;
-		for(int i = 0; i < n; i++) {
-			if ( dp[i][0] > max) {
+		for (int i = 0; i < n; i++) {
+			if (dp[i][0] > max) {
 				max = dp[i][0];
 			}
 		}

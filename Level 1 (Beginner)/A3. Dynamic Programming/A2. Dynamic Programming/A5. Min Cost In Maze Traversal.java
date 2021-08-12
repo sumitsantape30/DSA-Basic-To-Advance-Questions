@@ -41,7 +41,29 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-
+	
+	//recursive : yeh TLE dega
+	public static int minCost(int arr[][], int sr, int sc) {
+		if( sr >= arr.length || sc >= arr[0].length) { //so yaha ek invalid spot se destination tak jane ki minimum cost puchi ja rhi hai 
+			return Integer.MAX_VALUE; //kabhi pohoch hi nhi skte so mai bolung infinte cost deni padegi aapko
+		}
+		
+		if( sr == arr.length-1 && sc == arr[0].length-1) { //jab aap destination pe ho
+			//destination ke sport ke paise
+			return arr[sc][sc];
+		}
+		
+		int f1= minCost(arr, sr, sc+1); //horizontal: sr, sc+1 se destination tak jane ki minimum cost
+		int f2= minCost(arr, sr+1, sc); //sr+1,sc se dest jane ki min cost
+		int ans= Math.min(f1,  f2) + arr[sr][sc];
+		
+		return ans;
+		
+	}// boht sari repeated calls ho rhi hongi jiski wajah se TLE ayega
+	
+  //memoization
+/* step1: kitne dimension ka storage array lena padega? yeh kaise decide karenge? jitne arguments vary kr rhe hai function call krte waqt arr,sr,sc. Jitne variable recursive call ke andar vary karenge utne dimension ka storage aapko chahiye hoga. jaise recursive call mai array same pass ho rha hai, row and column vary ho rha hai dono calls mai to 2 dimensional storage hume chahiye hoga
+         so recursive call ke andar jitne variables vary kr rhe hai utne dimension ka storage array banayenge */
     public static void main(String[] args) throws Exception {
 		 Scanner sc= new Scanner(System.in);
          int n = sc.nextInt();

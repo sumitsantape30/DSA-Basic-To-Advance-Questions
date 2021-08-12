@@ -37,3 +37,60 @@ Sample Input
 2 7 0 8 5 1
 Sample Output
 33
+
+Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+		 Scanner sc= new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int a[][] = new int[n][m];
+        for(int i = 0; i < n; i++) {
+       	 for(int j = 0; j < m; j++) {
+       		 a[i][j] = sc.nextInt();
+       	 }
+        }
+        System.out.println(goldmine(a, n, m));
+        sc.close();  
+	 }
+
+	private static int goldmine(int[][] a, int n, int m) {
+		
+        int dp[][] = new int[n][m];
+		
+		
+		for(int j = m-1; j >= 0; j--) {
+			for(int i = 0; i < n; i++) {
+				if(j == m-1) {
+					dp[i][j] = a[i][j];
+				} else if(i == 0) {
+					dp[i][j] = Math.max(dp[i][j+1], dp[i + 1][j + 1]) + a[i][j];
+				} else if(i == n-1) {
+					dp[i][j] = Math.max(dp[i][j + 1], dp[i - 1][j + 1]) + a[i][j];
+				} else {
+					dp[i][j] = Math.max(Math.max(dp[i+1][j + 1], dp[i - 1][j + 1]), dp[i][j + 1])+a[i][j];
+				}
+			}
+		}
+		int max = Integer.MIN_VALUE;
+		for(int i = 0; i < n; i++) {
+			if ( dp[i][0] > max) {
+				max = dp[i][0];
+			}
+		}
+//		System.out.println(max);
+//		for(int i = 0; i < n; i++) {
+//		   for(int j = 0; j < m; j++) {
+//			   System.out.print(dp[i][j] + " ");
+//		   }
+//		   System.out.println();
+//	    }
+		return max;
+	}
+
+}

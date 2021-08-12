@@ -40,21 +40,20 @@ public class ClimbingStairswithMinimumMoves {
 	
 	public static int climb_stairs_with_minimum_jump_Tabu(int[] arr) {
 		int n = arr.length;
-		int dp[] = new int[n];
-		dp[n-1] = 0;  // destination - tak 1 way hota hai ki move hi na kro
+		int dp[] = new int[n]; // n size ka dp banega
+		dp[n-1] = 0;  // destination se destination tak 1 way hota hai ki move hi na kro aur minimum number of steps 0 hote hai 
 		
 	    for(int i = arr.length - 2; i >= 0; i-- ) {
-	    	int min = Integer.MAX_VALUE - 1;
-	        for(int jump = 1; jump <= arr[i]; jump++ ) {
-	        	if(i + jump < arr.length) {
-	        	   min = Math.min(min, dp[jump + i]);
-	        	   
+	    	int min = Integer.MAX_VALUE - 1; //hume min nikalna hai. manlo maximum jump4 ka allowed hai to agle 4 spots ka minimum nikalna hai  
+	        for(int jump = 1; jump <= arr[i]; jump++ ) { // jump 1 se maximum kitna jump allowed hai yeh arr[idx] pe store hoga 
+	        	if(i + jump < arr.length) { // yeh range mai hona chahiye
+	        	   min = Math.min(min, dp[jump + i]); // min will be minimum abtak ka min aur dp[i+1] 
 	            }
 	        }
 	        if(min == Integer.MAX_VALUE) {
 	        	dp[i] = min;
 	        } else {
-	        	dp[i] = min + 1;
+	        	dp[i] = min + 1; //agle 4 spots ka minimum +1 yeh mere jawab hoga. ek jump hume bhi lagayenge uska +1 hai 
 	        }
 	    }
 	    return dp[0];

@@ -78,7 +78,7 @@ public class ClimbingStairs {
 		
 		dp[0]= 1 ; // hume pta hai 0 se 0 ke ek rasta hai
 		for( int i=1; i <=n ; i++) {
-			// jab i ==1 0r 2 hai to i-2 and i-2 negative hojate isliye usko handle kr rhe hai
+			// jab i ==1 0r 2 hai to i-2 and i-3 negative hojate isliye usko handle kr rhe hai
 			if( i == 1) {
 				dp[i]= dp[i-1]; // i-2 aur i-3 bahar chale jayenge so nhi liye
 			}else if( i == 2) {

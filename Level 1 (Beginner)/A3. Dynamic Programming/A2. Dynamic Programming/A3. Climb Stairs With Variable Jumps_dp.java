@@ -40,7 +40,7 @@ public class ClimbingStairsWithVariableJumps {
 	
 	//memoization
 	//current index se destination tak jane ke total number of ways kitne yeh nikal rhe hai
-	public static int cs2(int arr[], int idx, int dp[]) { //step 1 storage bana liye
+	public static int cs2M(int arr[], int idx, int dp[]) { //step 1 storage bana liye
 		if( idx == arr.length) { 
 			return 1;
 		}
@@ -101,18 +101,6 @@ public class ClimbingStairsWithVariableJumps {
 		int dp[]= new int[n+1]; //memoization keliye array banaye
 		// why ? 0 pe store hoga 0 se n jane ke raste. n pe n tak jane ke raste store hoga so 0 se n chahiye to n+1 size ka array banan pdta hai
 		System.out.println(cs2(arr,0);
-		
-		
-		dp[n]= 1; // iska matlab hai n se n jane ka 1 rasta hai means chalo hi mat
-		
-		for( int i= n-1; i>=0; i-- ) {
-			// yeh solve karega, dp[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
-			for( int j=1; j<= arr[i] && i+j < dp.length; j++) {
-				dp[i] += dp[i+j];
-			}
-		}
-		
-		System.out.println(dp[0]);
 		
 	}
 

@@ -74,11 +74,13 @@ public class ClimbingStairs {
 	//Tabulation
 	public static int countPathsTab( int n) { // isme recursion nhi lagate iteration se solve krte hai
 		
-		int dp[]= new int[n+1];
+		int dp[]= new int[n+1]; //aatehi maine dp array banaya
 		
-		dp[0]= 1 ; // hume pta hai 0 se 0 ke ek rasta hai
+		dp[0]= 1 ; // hume pta hai 0 se 0 ke ek rasta hai. 0 to 0 number of ways will be 1
+		
 		for( int i=1; i <=n ; i++) {
 			// jab i ==1 0r 2 hai to i-2 and i-3 negative hojate isliye usko handle kr rhe hai
+			
 			if( i == 1) {
 				dp[i]= dp[i-1]; // i-2 aur i-3 bahar chale jayenge so nhi liye
 			}else if( i == 2) {
@@ -89,6 +91,25 @@ public class ClimbingStairs {
 			}
 		}
 		return dp[n]; // last mai dp[n] return kardenge
+	}
+	
+	public static int cstab( int n) {
+		int dp[]= new int[n+1];
+		
+		dp[0]= 1;
+		
+		for( int i=0; i<= n; i++) {
+			dp[i]= dp[i-1] ; //dp[i]= dp[i-1] + dp[i-2] + dp[i-3]
+			if( i-2 >= 0) { //agar i-2 >= hai to tabhi aap iss factor ko consider kare
+				dp[i] += dp[i-2];
+			}
+			
+			if( i-3 >= 0) {
+				dp[i] += dp[i-3];
+			}
+		}
+		return dp[n];
+
 	}
 
 	public static void main(String[] args) {

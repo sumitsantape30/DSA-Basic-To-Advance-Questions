@@ -88,6 +88,35 @@ public class Main {
 		
 	}
 	
+	//Tabulation: yaha bas 2D array fill kr rhe so TC: O(n2)
+	public static int min_cost_in_maze_traversal(int[][] arr, int n, int m) {
+		 
+		int dp[][] = new int[arr.length][arr[0.length];
+		
+		for(int i = dp-1; i >= 0; i--) { //hum DP array mai pichese travel karenge coz choti problem destination pehi hai
+			for(int j = dp[0].length-1; j >= 0; j--) {
+				if(i == dp.length-1 && j == dp[0].length-1) { //destination pe ho
+					dp[i][j] = arr[i][j];
+				} else if(j == dp[0].length-1) { //agar last column mai ho to ek option hai vertical aur khudki cost jod denge usme
+					dp[i][j] = arr[i][j] dp[i + 1][j];
+				} else if(i == dp.length -1) { //agar last row mai ho to ek hi option hota hai, horizontal
+					dp[i][j] =  arr[i][j] + dp[i][j + 1] ;
+				} else { //otherwise 2 options hai mere pas, minimum of horizontal and vertical
+					dp[i][j] = Math.min(dp[i + 1][j], dp[i][j + 1]) + arr[i][j];
+				}
+			}
+		}
+		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < m; j++) {
+//				System.out.print(dp[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+		return dp[0][0];
+	}
+
+	
     public static void main(String[] args) throws Exception {
 		 Scanner sc= new Scanner(System.in);
          int n = sc.nextInt();
@@ -101,32 +130,5 @@ public class Main {
          System.out.println(min_cost_in_maze_traversal(a, n, m));
          sc.close();  
 	 }
-
-	private static int min_cost_in_maze_traversal(int[][] a, int n, int m) {
-		 
-		int dp[][] = new int[n][m];
-		
-		for(int i = n-1; i >= 0; i--) {
-			for(int j = m-1; j >= 0; j--) {
-				if(i == n-1 && j == m-1) {
-					dp[i][j] = a[i][j];
-				} else if(j == m-1) {
-					dp[i][j] = dp[i + 1][j] +a[i][j];
-				} else if(i == n-1) {
-					dp[i][j] = dp[i][j + 1] + a[i][j];
-				} else {
-					dp[i][j] = Math.min(dp[i + 1][j], dp[i][j + 1]) + a[i][j];
-				}
-			}
-		}
-		
-//		for(int i = 0; i < n; i++) {
-//			for(int j = 0; j < m; j++) {
-//				System.out.print(dp[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-		return dp[0][0];
-	}
 
 }

@@ -64,6 +64,30 @@ public class Main {
   //memoization
 /* step1: kitne dimension ka storage array lena padega? yeh kaise decide karenge? jitne arguments vary kr rhe hai function call krte waqt arr,sr,sc. Jitne variable recursive call ke andar vary karenge utne dimension ka storage aapko chahiye hoga. jaise recursive call mai array same pass ho rha hai, row and column vary ho rha hai dono calls mai to 2 dimensional storage hume chahiye hoga
          so recursive call ke andar jitne variables vary kr rhe hai utne dimension ka storage array banayenge */
+	
+	public static int minCost(int arr[][], int sr, int sc, int dp[][]) {
+		if( sr >= arr.length || sc >= arr[0].length) { 
+			return Integer.MAX_VALUE; 
+		}
+		
+		if( sr == arr.length-1 && sc == arr[0].length-1) { 
+			return arr[sc][sc];
+		}
+		
+		//step3. call lagane se pehle check karo ki pre calculated hai kya
+		if( dp[sr][sc] != 0) {
+			return dp[sr][sc];
+		}
+		
+		int f1= minCost(arr, sr, sc+1, dp); 
+		int f2= minCost(arr, sr+1, sc, dp); 
+		int ans= Math.min(f1,  f2) + arr[sr][sc];
+		
+		dp[sr][sc]= ans; //step 2 return karne se pehle ans dp mai stor karwa diya
+		return ans;
+		
+	}
+	
     public static void main(String[] args) throws Exception {
 		 Scanner sc= new Scanner(System.in);
          int n = sc.nextInt();

@@ -91,7 +91,7 @@ public class Fibonacci {
 		
 	}
 	
-	public static int[] fibo( int n) {
+	public static int fibo( int n) {
 		
 		int dp[]= new int[n+1];
 		

@@ -88,6 +88,24 @@ public class ClimbingStairsWithVariableJumps {
 		return ans;
 	}
 	
+	//tabulation
+	public static int sc2Tab( int arr[]) {
+		int n= arr.length;
+		int dp[]= new int[n+1];
+		
+        dp[n]= 1; // iska matlab hai n se n jane ka 1 rasta hai means chalo hi mat: destination se destination tak ek rasta hota hai
+		
+		for( int i= n-1; i>=0; i-- ) {
+			// yeh solve karega, dp[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
+			for( int jump=1; jump<= arr[i] && i+jump < dp.length; jump++) { //i + jump range mai hona chahiye
+				dp[i] += dp[i+jump];
+			}
+		}
+		
+		return dp[0];
+		
+	}
+	
 	public static void main(String[] args) {
 
 

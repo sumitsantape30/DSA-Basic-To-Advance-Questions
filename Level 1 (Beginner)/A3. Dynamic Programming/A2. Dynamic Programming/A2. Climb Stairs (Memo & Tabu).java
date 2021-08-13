@@ -24,7 +24,7 @@ import java.util.Scanner;
 
 public class ClimbingStairs {
 	
-	public static int countPaths( int n) {
+	public static int countPaths( int n) { // muje iss function se yeh expectation hai ki yeh muje n se 0 jane ke number of paths lake de
 		if( n == 0 ) { //0 se 0 tak jane ka 1 tarika hai 
 			return 1;
 		}else if( n < 0) {
@@ -33,8 +33,8 @@ public class ClimbingStairs {
 		
 		//System.out.println("Hello" +n);
 		
-		int f1 = countPaths(n-1); // muje yeh faith hai ki yeh muje n-1 se 0 ke numbr of paths laake dedegi
-		int f2 = countPaths(n-2); //n-2 stairs climb karne ke tarike lake dega
+		int f1 = countPaths(n-1); // muje yeh faith hai ki yeh muje n-1 se 0 tak jane ke numbr of paths laake dedegi
+		int f2 = countPaths(n-2); //muje yeh faith hai ki yeh n-2 se 0th stair tak janeke total number of paths lake dega
 		int f3 = countPaths(n-3);
 		
 		int cp = f1 + f2 + f3;
@@ -65,8 +65,8 @@ public class ClimbingStairs {
 		int cp = f1+f2+f3;
 		
 		//1. question hai n( n se number of path return karne hai) aur cp(count paths) humara answr hai)
-		qb[n]= cp ;// hum iss call mai n ka answer kr rhe hai so nth index pe count paths rakh denge
-		
+		qb[n]= cp ;// hum iss call mai n ka answer calculate kr rhe hai so nth index pe count paths rakh denge
+		//question ke samne answer rakh diya
 		return cp;
 		
 	}

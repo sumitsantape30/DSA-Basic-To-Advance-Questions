@@ -55,7 +55,7 @@ public class Main {
         sc.close();
     }
 
-	private static int coin_change_combination_dp(int n, int[] denoms, int amt) { //denoms: denomination
+	public static int coin_change_combination_dp(int n, int[] denoms, int amt) { //denoms: denomination
 		
 		int dp[] = new int[amt+1];
 		dp[0] = 1; // 0 ko pay karneka 1 tarik

@@ -55,16 +55,20 @@ public class Main {
         sc.close();
     }
 
-	private static int coin_change_combination_dp(int n, int[] coin, int amt) {
+	private static int coin_change_combination_dp(int n, int[] denoms, int amt) { //denoms: denomination
 		
 		int dp[] = new int[amt+1];
-		dp[0] = 1;
-		for(int i = 0; i < coin.length; i++) {
-			for(int j = coin[i]; j <= amt; j++) {
-				dp[j] += dp[j - coin[i]];
+		dp[0] = 1; // 0 ko pay karneka 1 tarik
+		//ab har ek spot ke upar sare coins ka eefect dalna hai 
+		for(int i = 0; i < dp.length; i++) { //outer loop chalega dp array ke upar 
+			for(int j = 0; j < denoms.length; j++) { //aur innner loop chalega coins ke upar
+				int coin= denoms[j] ;//coint nilalenge
+				if( i - coin >=0){
+					dp[i] += dp[i - coin];
+				}
 			}
 		}
-		return dp[amt];
+		return dp[dp.length]; //last mai aakhri index pe rakhi value ko return krdenge
 	}
 }
 

@@ -78,7 +78,7 @@ public class ClimbingStairs {
 		
 		dp[0]= 1 ; // hume pta hai 0 se 0 ke ek rasta hai. 0 to 0 number of ways will be 1
 		
-		for( int i=1; i <=n ; i++) {
+		for( int i=1; i <=n ; i++) { //i<=n tak kr rhe coz n+1 size ka array hai
 			// jab i ==1 0r 2 hai to i-2 and i-3 negative hojate isliye usko handle kr rhe hai
 			
 			if( i == 1) {

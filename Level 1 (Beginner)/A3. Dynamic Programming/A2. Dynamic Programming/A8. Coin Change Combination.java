@@ -55,14 +55,16 @@ public class Main {
         sc.close();
     }
 
-	private static int coin_change_combination_dp(int n, int[] coin, int amt) {
+	private static int coin_change_combination_dp(int n, int[] demons, int amt) { //coin array ko denominations bhi bol skte ho
 		
 		int dp[] = new int[amt+1];
-		dp[0] = 1;
-		for(int i = 0; i < coin.length; i++) {
-			for(int j = coin[i]; j <= amt; j++) {
-				dp[j] += dp[j - coin[i]];
-			}
+		dp[0] = 1; //dp[0] pe 1 dal diya coz 0 ko pay karne ka ek tarika hota hai, amt 0 can be paid in 1 way
+		
+		for(int i = 0; i < demons.length; i++) {  // ab mai ek ek coin select karunga aur uska effect pure dp mai dal dunga 
+			int coin= demons[i]; //ek coin  nikala iska effect pure dp mai dalna hai 
+			for(int j = coin; j < dp.length; j++) { // effect dalna kahase start karenge? agar coin 3 hai to 3 se, coin 5 hai to 5 se
+				dp[j] += dp[j - coin]; //dp[j] ke existing value mai add karo dp[j-coin]
+			} // j-coin ki value always positive hi rahegi coz loop coin se start ho rha so alag se condition lagane ki jarurat nhi hai
 		}
 		return dp[amt];
 	}

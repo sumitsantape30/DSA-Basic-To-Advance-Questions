@@ -91,18 +91,18 @@ public class Main {
 	//Tabulation: yaha bas 2D array fill kr rhe so TC: O(n2)
 	public static int min_cost_in_maze_traversal(int[][] arr, int n, int m) {
 		 
-		int dp[][] = new int[arr.length][arr[0.length];
+		int dp[][] = new int[arr.length][arr[0].length];
 		
-		for(int i = dp-1; i >= 0; i--) { //hum DP array mai pichese travel karenge coz choti problem destination pehi hai
+		for(int i = dp.length -1; i >= 0; i--) { //hum DP array mai pichese travel karenge coz choti problem destination pehi hai
 			for(int j = dp[0].length-1; j >= 0; j--) {
 				if(i == dp.length-1 && j == dp[0].length-1) { //destination pe ho
 					dp[i][j] = arr[i][j];
 				} else if(j == dp[0].length-1) { //agar last column mai ho to ek option hai vertical aur khudki cost jod denge usme
-					dp[i][j] = arr[i][j] dp[i + 1][j];
+					dp[i][j] = arr[i][j] + dp[i + 1][j];
 				} else if(i == dp.length -1) { //agar last row mai ho to ek hi option hota hai, horizontal
 					dp[i][j] =  arr[i][j] + dp[i][j + 1] ;
 				} else { //otherwise 2 options hai mere pas, minimum of horizontal and vertical
-					dp[i][j] = Math.min(dp[i + 1][j], dp[i][j + 1]) + arr[i][j];
+					dp[i][j] = arr[i][j] + Math.min(dp[i + 1][j], dp[i][j + 1]) ;
 				}
 			}
 		}

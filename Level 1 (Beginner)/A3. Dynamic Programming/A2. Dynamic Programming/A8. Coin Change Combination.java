@@ -37,4 +37,33 @@ Sample Output
 
 Code:
 
+import java.io.*;
+import java.util.*;
 
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int coin[] = new int[n];
+        for(int i = 0; i < n; i++) {
+        	coin[i] = sc.nextInt();
+        }
+        int amt = sc.nextInt();
+        
+        System.out.println(coin_change_combination_dp(n, coin, amt));
+        sc.close();
+    }
+
+	private static int coin_change_combination_dp(int n, int[] coin, int amt) {
+		
+		int dp[] = new int[amt+1];
+		dp[0] = 1;
+		for(int i = 0; i < coin.length; i++) {
+			for(int j = coin[i]; j <= amt; j++) {
+				dp[j] += dp[j - coin[i]];
+			}
+		}
+		return dp[amt];
+	}
+}

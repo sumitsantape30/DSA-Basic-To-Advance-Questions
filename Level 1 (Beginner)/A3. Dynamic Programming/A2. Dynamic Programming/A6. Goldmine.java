@@ -103,3 +103,57 @@ public class Main {
 	}
 
 }
+
+//==================Recursive================================
+
+package Restart;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Code {
+
+	//recursive: tle dega
+	public static int goldMine( int arr[][], int sr, int sc) {
+		if( sr <0 || sr >= arr.length) { //agar iss range mai nhi ho to wahase kuch bhu gold collect nhi kr paoge
+			return Integer.MIN_VALUE;
+			
+		}
+		
+		if( sc == arr[0].length-1) { //agar source row badhte badhte last column pe pohoch jaye to waha jitna gold hoga usko return kardenge
+			return arr[sr][sc];
+		}
+		
+		//3 option hote hai humare pas right up, right, right down
+		int f1= goldMine(arr, sr-1, sc+1); //right up
+		int f2= goldMine(arr, sr, sc+1);
+		int f3= goldMine(arr, sr+1, sc+1);
+		
+		int ans= arr[sr][sc] + Math.max(f1, Math.max(f2, f3)); //mere answer hoga inn teeno ka max aur khudki value
+		return ans;
+		
+	}
+
+	public static void main(String[] args) throws Exception {
+
+		Scanner s = new Scanner(System.in);
+		int n= s.nextInt();
+		int m= s.nextInt();
+		
+		int arr[][]= new int[n][m];
+		
+		for( int i=0 ;i< n; i++) {
+			for( int j=0; j< m; j++) {
+				arr[i][j]= s.nextInt();
+			}
+		}
+		
+		//yaha multiple sources hai wih kahise bhi dig karna start kr skta hai, 
+		int max=0; //max chahiye hum, so sabhi sources mese jo max hoga woh humara answer hoga
+		for( int i=0; i< n; i++) {
+			max= Math.max(max,  goldMine(arr, i, 0));
+		}
+		System.out.println(max);
+		
+	}
+}

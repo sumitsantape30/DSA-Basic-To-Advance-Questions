@@ -40,9 +40,9 @@ import java.util.Scanner;
 public class QuickSelect {
 	
 	public static int quickSelect(int arr[], int lo, int hi, int k) {
-		if( lo > hi){
-			return;
-		}
+// 		if( lo > hi){
+// 			return;
+// 		} //isme basecase ki jarurat nhi hoti 3 hi steps hai
 		
 		//sbase bade(hi) element ko pivot rakh lenge
 		int pivot= arr[hi];

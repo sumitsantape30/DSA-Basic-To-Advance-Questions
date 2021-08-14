@@ -69,6 +69,7 @@ public class Main {
 			}
 		}
 		return dp[dp.length]; //last mai aakhri index pe rakhi value ko return krdenge
+		//return dp[amt];
 	}
 }
 

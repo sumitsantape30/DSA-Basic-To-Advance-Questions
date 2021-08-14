@@ -65,7 +65,7 @@ public class InsertionSort {
 	public static void insertionSort( int arr[]) {
 		
 		//oth wala sorted manenge
-		for( int i=1; i< arr.length; i++) {
+		for( int i=1; i< arr.length; i++) { //hum yeh loop 1 se chala rhe end tak means n-1 hi iterations ho rhi hai
 			for( int j= i-1; j>=0; j--) {
 				if( isGreater(arr, j, j+1)) {// j apne aage wale se bol rha hai ki agar mai terese bda hu to mere sath swap hoja
 					swap(arr, j, j+1);

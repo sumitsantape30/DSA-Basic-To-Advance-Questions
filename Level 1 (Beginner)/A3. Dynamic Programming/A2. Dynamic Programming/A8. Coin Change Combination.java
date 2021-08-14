@@ -59,6 +59,7 @@ public class Main {
 		
 		int dp[] = new int[amt+1];
 		dp[0] = 1; //dp[0] pe 1 dal diya coz 0 ko pay karne ka ek tarika hota hai, amt 0 can be paid in 1 way
+		//0 ko pay karneka ek tarika hai ki kuch bhi mat do
 		
 		for(int i = 0; i < demons.length; i++) {  // ab mai ek ek coin select karunga aur uska effect pure dp mai dal dunga 
 			int coin= demons[i]; //ek coin  nikala iska effect pure dp mai dalna hai 

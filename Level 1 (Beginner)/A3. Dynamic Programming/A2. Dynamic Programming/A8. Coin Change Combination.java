@@ -65,6 +65,7 @@ public class Main {
 			int coin= demons[i]; //ek coin  nikala iska effect pure dp mai dalna hai 
 			for(int j = coin; j < dp.length; j++) { // effect dalna kahase start karenge? agar coin 3 hai to 3 se, coin 5 hai to 5 se
 				dp[j] += dp[j - coin]; //dp[j] ke existing value mai add karo dp[j-coin]
+				//dp[j] mai store hoga ki j ko pay karne ke kitne tarike
 			} // j-coin ki value always positive hi rahegi coz loop coin se start ho rha so alag se condition lagane ki jarurat nhi hai
 		}
 		return dp[amt];

@@ -99,6 +99,7 @@ public class ClimbingStairsWithVariableJumps {
 			// yeh solve karega, dp[i] pe yeh store karega ki i se n jane ke kitne rraste hai and arr[i] yeh contain krte hai ki i se kitni dur ja skte hai
 			for( int jump=1; jump<= arr[i] && i+jump < dp.length; jump++) { //i + jump range mai hona chahiye
 				dp[i] += dp[i+jump];
+				//samjo arr[i] ki value 3 hoti to hum dp[i] pe kya store krte? dp[i+1], dp[i=2], dp[i+3] ka sum store krte
 			}
 			//agar arr[i]= 3 hai hum i se i+1, i+2, i+3 ja skte hai
 		}

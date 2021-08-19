@@ -59,7 +59,7 @@ public class Main {
 		
 		int dp[] = new int[amt+1];
 		dp[0] = 1; // 0 ko pay karneka 1 tarik
-		//ab har ek spot ke upar sare coins ka eefect dalna hai 
+		//ab har ek spot ke upar sare coins ka effect dalna hai 
 		for(int i = 0; i < dp.length; i++) { //outer loop chalega dp array ke upar 
 			for(int j = 0; j < denoms.length; j++) { //aur innner loop chalega coins ke upar
 				int coin= denoms[j] ;//coint nilalenge

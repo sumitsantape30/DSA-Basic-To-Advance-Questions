@@ -59,8 +59,9 @@ public class Main {
 		
 		int dp[] = new int[amt+1];
 		dp[0] = 1; // 0 ko pay karneka 1 tarik
-		//ab har ek spot ke upar sare coins ka effect dalna hai 
+		
 		for(int i = 0; i < dp.length; i++) { //outer loop chalega dp array ke upar 
+			//ab har ek spot ke upar sare coins ka effect dalna hai 
 			for(int j = 0; j < denoms.length; j++) { //aur innner loop chalega coins ke upar
 				int coin= denoms[j] ;//coint nilalenge
 				if( i - coin >=0){
@@ -70,6 +71,19 @@ public class Main {
 		}
 		return dp[dp.length]; //last mai aakhri index pe rakhi value ko return krdenge
 		//return dp[amt];
+		
+// 		for(int amt = 1; amt <tar; amt++) {  //yeh tar tak chalega means dp ki size jitni hai utnahi chalega
+// 			//ab har ek spot ke upar sare coins ka effect dalna hai 
+// 			for(coin: coins) { // coins mera input wala array hai
+// 				if(coin <= amt){ //agar coin amount se chota hai to yeh tabhi kam ka hai 
+// 					int ramt= amt- coin;// remaining amout
+// 					dp[i] += dp[ramt];
+// 				}
+// 			}
+// 		}
+// 		return dp[tar];
+		
+		
 	}
 }
 

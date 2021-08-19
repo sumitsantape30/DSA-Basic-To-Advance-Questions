@@ -100,6 +100,7 @@ public class ClimbingStairsWithVariableJumps {
 			for( int jump=1; jump<= arr[i] && i+jump < dp.length; jump++) { //i + jump range mai hona chahiye
 				dp[i] += dp[i+jump];
 			}
+			//agar arr[i]= 3 hai hum i se i+1, i+2, i+3 ja skte hai
 		}
 		
 		return dp[0];

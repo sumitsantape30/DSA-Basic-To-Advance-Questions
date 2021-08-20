@@ -82,6 +82,7 @@ public class targetSumSubset {
 		
 	}
 	
+	//tabulation
 	public static void targetSumSubset(int arr[], int tar) {
 
 		//true or false store karege isliye boolean array banayenge
@@ -89,7 +90,7 @@ public class targetSumSubset {
 		
 		//pehla cell and rest of the row, aur first cell aur rest of the column 
 		// pehle row mai first cell chodake sab false hai coz empty array 0 ke alawa kuch nhi bana skta
-		//aur first column true hai coz sare array mai empty subset to hota hi hai. empty subset humesha 0 banwa hi deta hai
+		//aur first column true hai coz sare array mai empty subset to hota hi hai. empty subset humesha 0 sum banwa hi deta hai
 	    //to mai iske part karunga alag alag, first cell alag, first row alag aur first column alag aur bakika alag
 		for( int i= 0; i< dp.length; i++) {
 			for( int j=0; j< dp[0].length; j++) {
@@ -103,7 +104,7 @@ public class targetSumSubset {
 					dp[i][j]= true;
 					
 				}else {
-					//agar aap rest of the spot pe hai, to aap sabse pehle immediately upar dekhte hai
+/*					//agar aap rest of the spot pe hai, to aap sabse pehle immediately upar dekhte hai
 					if( dp[i-1][j] == true) { //agar i-1 tak ki team hi j bana degi to i tak ki team to banahi degi i ko batting nhi denge
 						dp[i][j]= true; 
 						//hum isme batting hi nhi kr rhe coz upar wala yeh run(j) score krskta hai already
@@ -118,9 +119,20 @@ public class targetSumSubset {
 						}
 					}
 					
+				} */
+					
+					//pehle mai na ki call 
+					dp[i][j]= dp[i-1][j];
+					//agar na wali choice se answer ata hai false to ha wali choice karo
+					if( dp[i][j] == false && j- arr[i-1] >= 0) { //j- arr[i-1] range mai hona chahiye
+						dp[i][j]= dp[i-1][j- arr[i-1]];
+					}
+					
 				}
 			}
 		}
+		// bottom right corner pe jo value store hogi woh mera jawab banega
+		//return dp[dp.length-1][dp[0].length-1];
 		System.out.println(dp[arr.length][tar]);
 	}
 

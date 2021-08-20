@@ -17,3 +17,25 @@ Sample Output
 441
 
 Code:
+
+public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+		long dp1[]= new long[n+1]; 
+		long dp2[]= new long[n+1]; 
+		
+		dp1[0]=1; 
+		dp2[0]= 1; 
+		
+		for( int i=2; i< dp1.length; i++) {
+			dp1[i] = dp2[i-1]; 
+			dp2[i]= dp1[i-1] + dp2[i-1] ;
+			
+		}
+		
+		long ans= dp1[n] + dp2[n];
+		System.out.println(ans*ans);
+		
+	}

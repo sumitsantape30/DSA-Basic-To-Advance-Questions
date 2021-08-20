@@ -49,7 +49,7 @@ public class targetSumSubset {
 		}
 		
 		boolean f1= tss(arr, idx+1, target); //current element nhi ana chahta, woh bol rha hai kya indx+1 se aage wale elements kya taret bana payenge
-		boolean f2= tss(arr, idx+1, target- arr[idx] ) ; //mai to ana chahta hu, aur kya idx+1 se aage wale elements kya tum updated bana paoge, updated target will be, target- value of current index
+		boolean f2= tss(arr, idx+1, target- arr[idx] ) ; //mai to ana chahta hu, aur kya idx+1 se aage wale elements kya tum updated target bana paoge, updated target will be, target- value of current index
 		
 		boolean ans= f1 || f2 ; //donomese ek bhi true hai to return true
 		return ans;

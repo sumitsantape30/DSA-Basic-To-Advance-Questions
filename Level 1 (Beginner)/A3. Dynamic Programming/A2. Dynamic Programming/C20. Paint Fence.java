@@ -19,3 +19,33 @@ Sample Output
 3672
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+         Scanner sc = new Scanner(System.in);
+         int n = sc.nextInt();
+         int k = sc.nextInt();
+         paint_fence(n, k);
+         sc.close();
+    }
+
+	private static void paint_fence(int n, int k) {
+		
+//		rgb --> repeate me - (eg. r -> rr,g -> gg,b -> bb)
+		long same = k * 1;
+//		rgb --> choose different options except me (eg. r -> gb, g -> rb, b -> rg)
+		long diff = k * (k - 1);
+		long total = same + diff;
+		
+		for(int i = 3; i <= n; i++) {
+		    same = diff * 1;
+			diff = total * ( k - 1 );
+			total = same + diff;
+		}
+		System.out.println(total);
+	}
+}

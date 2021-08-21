@@ -46,3 +46,49 @@ public class CountBinaryStrings {
 	}
 
 }
+
+//===============================SS's Mthd================
+
+package DP;
+
+import java.util.Scanner;
+
+public class CountBinaryStringss {
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+/*		int dp0[]= new int[n+1]; // dp array jo 0's ka count rakhega
+		int dp1[]= new int[n+1];
+		
+		dp0[1]= 1 ; //dp[0] pe 0 bhi rakh skte ho
+		dp1[1]= 1;
+		
+		for( int i=2; i<=n; i++) {
+			dp1[i]= dp0[i-1] + dp1[i-2]; // 1 wale mai pichli stage ka 1 bhi use hota hai aur 0 bhi use hota hai
+			dp0[i]= dp1[i-1]; //aur issbar ke 0 mai pichli bar ka keval 1 use hota hai
+		}
+		
+		System.out.println(dp1[n]+" "+ dp0[n]);
+		
+		// yaha hum extra array use kr rhe hai to space jada lagega
+		*/
+		
+		int oczeroes= 1; // shuruwat mai 0s pe khatam hone walo ki count hoti hai 1: oldcountzeroes
+		int ocones= 1; //initially 1 pe khatam hone walo ki count hoti hai 1: oldcountones
+		
+		for( int i=2; i<=n; i++) {
+			int nczeros= ocones; //jo new count zeros hai woh pichli bar ke old count ones ban jayenge
+			int ncones= oczeroes+ ocones; //jo new count ones honge usme old count zeros bhi ayega aur old count ones bhi ayega
+			
+			ocones= ncones;
+			oczeroes= nczeros;
+		}
+		
+		System.out.println(ocones+oczeroes);
+	
+	}
+
+}

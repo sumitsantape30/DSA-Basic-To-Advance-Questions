@@ -27,3 +27,42 @@ Sample Output
 116
 
 Code:
+
+package DP;
+
+import java.util.Scanner;
+
+public class maximumSumNonAdjacentElements {
+	
+	public static int maximumSumNonAdjacentElements( int arr[]) {
+		
+		int inc= arr[0];
+		int exc=0;
+		
+		for(int i= 1; i< arr.length; i++) {
+			int ninc= exc + arr[i]; //new include paida hota hai old include pe 
+			int nexc= Math.max(inc, exc); //puran incude and exclude ka jo max hoga woh rakh lenge
+			
+			 inc= ninc;
+			 exc= nexc;
+		}
+		//last mai humara answer dono ka max hoga
+		return Math.max(inc,  exc);
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		int ans= maximumSumNonAdjacentElements(arr);
+		System.out.println(ans);
+	}
+
+}

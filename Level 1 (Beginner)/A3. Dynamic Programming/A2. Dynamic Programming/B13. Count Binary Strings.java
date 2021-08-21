@@ -1,7 +1,8 @@
 Count Binary Strings
-Easy  Prev   Next
+
 1. You are given a number n.
 2. You are required to print the number of binary strings of length n with no consecutive 0's.
+	
 Input Format
 A number n
 Output Format

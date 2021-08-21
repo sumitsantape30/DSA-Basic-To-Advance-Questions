@@ -86,7 +86,7 @@ public class targetSumSubset {
 	public static void targetSumSubset(int arr[], int tar) {
 
 		//true or false store karege isliye boolean array banayenge
-		boolean dp[][]= new boolean[arr.length+1][tar+1]; //dp array banaynge jisme array size+1 hoga aur jo target ho usse ek size jada means target+1
+		boolean dp[][]= new boolean[arr.length+1][tar+1]; //dp array banaynge jisme array size+1 hoga aur jo target hai usse ek size jada means target+1
 		
 		//pehla cell and rest of the row, aur first cell aur rest of the column 
 		// pehle row mai first cell chodake sab false hai coz empty array 0 ke alawa kuch nhi bana skta

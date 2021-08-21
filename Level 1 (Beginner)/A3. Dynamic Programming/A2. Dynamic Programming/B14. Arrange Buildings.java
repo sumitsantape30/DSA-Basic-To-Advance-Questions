@@ -18,6 +18,7 @@ Sample Output
 
 Code:
 
+//int datatype se error ajata hai coz constraints de rakha hai so long use kiye
 public static void main(String[] args) {
 
 		Scanner s= new Scanner(System.in);
@@ -39,3 +40,34 @@ public static void main(String[] args) {
 		System.out.println(ans*ans);
 		
 	}
+
+//============================SS's=======================================================
+package DP;
+
+import java.util.Scanner;
+
+public class CountBinaryStringss {
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		long n= s.nextInt();
+		
+		long ob= 1; // ob : old buildings pe khatam hone wala
+		long os= 1;  //os: old space pe khatam hone wala
+		
+		
+		for( long i=2; i<=n; i++) {
+			long nb= os; // nb : new buildings pe khatam hone wala woh purane space wale sehi value lega
+			long ns= os+ ob; //issbar jo space mai khatam hoga woh purane wala space aur purane wala building dono lega
+			
+			os= ns;
+			ob= nb;
+		}
+		
+		long total= os + ob;
+		total= total*total;
+		System.out.println(total);
+	}
+
+}

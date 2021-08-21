@@ -71,7 +71,7 @@ public class ZeroOneSnapsack {
 		int wts[]= new int[n];
 		
 		for( int i=0; i<n;i++) {
-			prices[i]= s.nextInt();
+			wts[i]= s.nextInt();
 		}
 		
 		int cap= s.nextInt();

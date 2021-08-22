@@ -34,6 +34,7 @@ import java.util.Scanner;
 
 public class maximumSumNonAdjacentElements {
 	
+	//recursive
 	public static int ms( int arr[], int idx) {
 		if( idx >= arr.length) { //agar aakhiri index pe ho aur wahase index+2 ko call lag jaye
 			//aisa hua to yaha koi element exist nhi krta, max sum 0 banado

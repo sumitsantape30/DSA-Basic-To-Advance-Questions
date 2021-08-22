@@ -49,3 +49,33 @@ public class Main {
 		System.out.println(total);
 	}
 }
+
+//========================================Jb====================================================================
+
+package DP;
+
+import java.util.Scanner;
+
+public class paintFence {
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int k= s.nextInt();
+		
+		int dp1[]= new int[n+1]; //hume aakhri index n chahiye so n+1 ka banaye: last two fences are painted with the same color
+		int dp2[]= new int[n+1];// last two fences are painted with the different color
+		
+		dp2[1]= k;
+		
+		for( int i=2; i<= n; i++) {
+			dp1[i] = dp2[i-1];
+			dp2[i]= (dp1[i-1] + dp2[i-1]) * (k-1);
+		}
+		
+		System.out.println(dp1[n] + dp2[n]); // n fence ka answer 
+		
+	}
+
+}

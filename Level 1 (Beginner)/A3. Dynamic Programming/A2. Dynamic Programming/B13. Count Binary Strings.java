@@ -23,6 +23,31 @@ package DP;
 import java.util.Scanner;
 
 public class CountBinaryStrings {
+	
+	//recursive
+	public static int cbs(int n) { // expectation: yeh n length ki binary string lake dega jisme consecutive 0s nhi honge ye meri iss function se expectation hai
+		if( n == 1){
+			return 2;
+		}
+		
+		if( n == 2) {
+			return 3;
+		}
+		
+		//faith: mai isko bolunga n-1 length ki valid binary strings lade
+		int f1= cbs(n-1);
+		//jo mera answer ayega unke last mai simply 1 append hojayega aur n ka answer ban jayega
+		
+		int f2= cbs(n-2);
+		// iske last mai mai 10 append kardunga, isse 2 consecutive 0s nhi ayenge
+		
+		int ans= f1 + f2 ;
+		//so kya append karna chahiye yahi dekhna tha taki consecutive 0s na aaye
+		
+		return ans;
+		// yeh fibonacci ki variation ban gyi
+		
+	}
 
 	public static void main(String[] args) {
 

@@ -24,6 +24,24 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+	
+    public static int pf( int n, int k) { // n ka answer chahiye jiske andar not more than two consecutive fences should be painted with the same color iska jawab chahiye hume
+		if( n== 1) {
+			return k;
+		}
+		
+		if( n ==2) {
+			return k*k;
+		}
+		
+		
+		//int ans= pf(n-1)*(k-1) + pf(n-2)*(k-1);// n-1 ka jawab mangwa liya, n-1 fences ko paint karne ke kitne tarike hai jiske andar not more than two consecutive fences should be painted with the same color. and jis color se painted hoga usko chodke k-1 option hogye humare pas
+		//pehli call different color wale and second call same color wale
+		
+		int ans= (pf(n-1, k) + pf(n-2, k)) * (k-1);
+		
+		return ans;
+	}
 
    public static void main(String[] args) throws Exception {
          Scanner sc = new Scanner(System.in);

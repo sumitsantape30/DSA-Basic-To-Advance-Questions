@@ -34,6 +34,23 @@ import java.util.Scanner;
 
 public class maximumSumNonAdjacentElements {
 	
+	public static int ms( int arr[], int idx) {
+		if( idx >= arr.length) { //agar aakhiri index pe ho aur wahase index+2 ko call lag jaye
+			//aisa hua to yaha koi element exist nhi krta, max sum 0 banado
+			return 0;
+		}
+		
+		// mai uss current element ko 2 choice dunga ki yeh mera answer ka part banega aur answer ka part nhi banega
+		
+		int f1= 0 + ms(arr, idx+1); // agar woh answer ka hissa nhi hai, woh nhi aa chahta to idx+1 se aage ke kitna max sum ban rha tum btado with no consecutive elements
+		
+		int f2= arr[idx] + ms(arr, idx+2); //kyuki woh ana chahta hai to iss agle element nhi aa payega sp maine bola index+2 se aage ke elements tum batao tumhare andar max sum kitna ban rha hai 
+		
+		int ans= Math.max(f1, f2);
+		return ans;
+		
+	}
+	
 	public static int maximumSumNonAdjacentElements( int arr[]) {
 		
 		int inc= arr[0];

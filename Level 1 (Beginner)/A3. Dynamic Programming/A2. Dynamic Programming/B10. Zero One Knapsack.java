@@ -41,7 +41,7 @@ public class ZeroOneSnapsack {
 	
 	public static int knapsack(int prices[], int wts[], int cap) {
 		
-		int dp[][]= new int[prices.length][cap+1];
+		int dp[][]= new int[prices.length+1][cap+1];
 		
 		//1,1 se fill karna start karenge coz baki jagah to 0 hi hai, first row and column mai 0 hai
 		for( int i=1; i< dp.length; i++) {

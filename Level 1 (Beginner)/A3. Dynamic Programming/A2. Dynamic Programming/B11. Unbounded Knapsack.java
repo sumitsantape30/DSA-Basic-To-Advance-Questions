@@ -41,7 +41,7 @@ public class unboundedKnapsach {
 	public static int unboundedKnapsach(int vals[], int wts[], int cap) {
 		int n= vals.length;
 		
-		int dp[]= new int[cap+1]; // capacity se ek bana array banayenge, capacity 7 thi to 0 to 7 index lagega so 8 size ka banayenge
+		int dp[]= new int[cap+1]; // capacity se ek bada array banayenge, capacity 7 thi to 0 to 7 index lagega so 8 size ka banayenge
 		dp[0]= 0; //0 kilo ki bag mai kuch nhi ho skta
 		
 		for( int bagc= 1; bagc <= cap; bagc++) { //cap or dp.length likh skte ho

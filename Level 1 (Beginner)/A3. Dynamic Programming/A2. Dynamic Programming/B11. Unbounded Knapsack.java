@@ -50,9 +50,11 @@ public class unboundedKnapsach {
 			for( int i=0; i<n ; i++) {
 				if( wts[i] <= bagc) { //agar weight bag capacity se kam hai to hum isko use kr skte bag mai
 					
-					int rbagc= bagc- wts[i];// remaining bag capacity
+				/*	int rbagc= bagc- wts[i];// remaining bag capacity
 					int rbagv= dp[rbagc]; // reamining bag value
-					int tbagv= rbagv + vals[i];// total bag value
+					int tbagv= rbagv + vals[i];// total bag value */
+					
+					 int tbagv= prices[j] + dp[bagc-wts[j]];
 					
 					if( tbagv > max) { //agar yeh total bag value tumhare max ko beat krti hai to max ko update krlo
 						max= tbagv;

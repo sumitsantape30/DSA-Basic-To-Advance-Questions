@@ -74,6 +74,58 @@ public class paintHouseManyColors {
 		return min;
 		
 	}
+	
+	// yeh n2 hai, loop mai loop aur mamla khatam
+	public static int paintHouseManyColors( int arr[][]) {
+		int n= arr.length;
+		int c= arr[0].length;
+		
+		int dp[][]= new int[n][c];
+		
+		// jab hum first row ko bhar rhe hai tabhi least aur 2nd least ko nikalne ki koshish kare
+		int least= Integer.MAX_VALUE;
+		int sleast= Integer.MAX_VALUE;
+		for( int j=0; j< arr[0].length; j++) { 
+			dp[0][j]= arr[0][j];
+			
+			//agar aapki value jo arr[0][j] dal rhe hai , agar yeh value least sebhi choti hai 
+			if( arr[0][j] <= least) {
+				sleast= least;
+				least= arr[0][j];
+				
+			}else if(arr[0][j] < sleast){
+				//agar yeh sirf 2nd least se choti hai to sirf second least mai change ayega
+				sleast= arr[0][j];
+			}
+		}
+		
+		for( int i=1; i< dp.length; i++) {
+			int nleast= Integer.MAX_VALUE;
+			int nsleast= Integer.MAX_VALUE; //new least and 2nd least bhi calculate karne padenge
+			for( int j=0; j< dp[0].length; j++) {
+				if(least == dp[i-1][j]) { //agar least pichle wale se equal hai to 2nd least add karenge
+					dp[i][j]= sleast+ arr[i][j];
+				}else {
+					dp[i][j]= least + arr[i][j];
+				}
+
+				//agli row keliye least aur sleast calculate kr rhe hai
+				if (dp[i][j] <= nleast) {
+					nsleast = nleast;
+					nleast = dp[0][j];
+
+				} else if (dp[i][j] < nsleast) {
+					nsleast = dp[0][j];
+				}
+			}
+			//yeh pura process hone ke bad mere pas naya least aur 2nd least agya hoga
+			// so agli row mai jane se pehle least mai new least ko pdkdle
+			least= nleast;
+			sleast= nsleast;
+		} 
+		
+		return least;
+	}
 
 	public static void main(String[] args) {
 

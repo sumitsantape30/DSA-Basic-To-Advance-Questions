@@ -26,63 +26,70 @@ Sample Output
 8
 
 Code:
+package DP;
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
-public class Main {
-
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int arr[][] = new int[n][m];
-        for(int i = 0; i < n; i++) {
-        	for(int j = 0; j < m; j++) {
-        		arr[i][j] = sc.nextInt();
-        	}
-        }
-        paint_house_many_colors_optimal(n,m,arr);
-        sc.close();
-    }
-
-private static void paint_house_many_colors_optimal(int n, int m, int[][] arr) {
-		int dp[][] = new int[n][m];
+public class paintHouseManyColors {
+	
+	// n3 approach hai yeh
+	public static int paintHouseManyColors( int arr[][]) {
+		int n= arr.length;
+		int c= arr[0].length;
 		
-		int least = Integer.MAX_VALUE;
-		int sleast = Integer.MAX_VALUE;
+		int dp[][]= new int[n][c];
 		
-		for(int j = 0; j < m; j++) {
-			dp[0][j] = arr[0][j];
-			
-			if(arr[0][j] <= least) {
-				sleast = least;
-				least = arr[0][j];
-			} else if(arr[0][j] <= sleast) {
-				sleast = arr[0][j];
+		for( int j=0; j< arr[0].length; j++) { //first row wahi rahega jaise ka waisa
+			dp[0][j]= arr[0][j];
+		}
+		
+		for( int i=1; i< arr.length; i++) {
+			for( int j=0; j< arr[0].length; j++) {
+				// ab yaha i hai house number aur j hai color number
+				//so ith ghar pr jth color lagana hai to usse pehle wale gharke upar jth ko chodkar koi bhi color ho skta hai
+				int min= Integer.MAX_VALUE;
+				
+				//isse pehle wali row mai ghumenge to get minimum
+				for( int k=0; k< dp[0].length; k++) {
+					if( k != j) { //minimum lete waqt dhyan denge ki k!= j
+						if( dp[i-1][k] < min) { //pichli row ke sare colors except j color itself agar woh chota hai min se to min ko update krlo
+							min= dp[i-1][k];
+						}
+					}
+				}
+				
+				// min aagya ab dp mai dalenge
+				dp[i][j]= arr[i][j] + min;
 			}
 		}
 		
-		for(int i = 1; i < dp.length; i++) {
-			int nleast = Integer.MAX_VALUE;
-			int nsleast = Integer.MAX_VALUE;
-			for(int j = 0; j < dp[0].length; j++) {
-				if(least == dp[i-1][j]) {
-					dp[i][j] = sleast + arr[i][j];
-				} else {
-					dp[i][j] = least + arr[i][j];
-				}
-//				update least and sleast
-				if(dp[i][j] <= nleast) {
-					nsleast = nleast;
-					nleast = dp[i][j];
-				} else if(dp[i][j] <= nsleast) {
-					nsleast = dp[i][j];
-				}
+		//aisa karne ke bad jo aakhri row ka min hoga woh humara answer hoga
+		int min= Integer.MAX_VALUE;
+		for( int k=0; k< arr[0].length; k++) { 
+			if( dp[n -1][k] < min) {  //aakhri row isliye n-1
+				min= dp[n -1][k];
 			}
-			least = nleast;
-			sleast = nsleast;
 		}
-		System.out.println(least);
+		
+		return min;
+		
 	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt(); // number of houses
+		int c= s.nextInt(); // number of colors
+		
+		int arr[][]= new int[n][c];
+		for( int i=0; i< arr.length; i++) {
+			for( int j=0; j< arr[0].length; j++) {
+				arr[i][j]= s.nextInt();
+			}
+		}
+		
+		System.out.println(paintHouseManyColors(arr));
+		
+	}
+
 }

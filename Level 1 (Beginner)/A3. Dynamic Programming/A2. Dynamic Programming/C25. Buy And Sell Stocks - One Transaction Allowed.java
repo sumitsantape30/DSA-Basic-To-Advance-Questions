@@ -28,3 +28,51 @@ Sample Output
 17
 
 Code:
+
+package DP;
+
+import java.util.Scanner;
+
+public class bestTimeToBuyAndSellStocksOneTransactionAllowed {
+
+	public static int bestTimeToBuyAndSell( int prices[]) {
+		
+		int lsf= Integer.MAX_VALUE; //least so far
+		int op = 0; //overall profit
+		int pist=0 ; // profit is sold today
+		
+		for( int i=0; i< prices.length; i++) {
+			if( prices[i] < lsf) { // agar yeh lsf se chota hai to sabse pehle lsf ko update kardunga
+				lsf= prices[i];
+			} // lsf kyu maintain karke rakhna hai? coz kisi bhi din ka profitifsoldtoday sabse jada tab hota hai jab woh apne left pe least ke sath pair krta hai
+			
+			//agar aaj bechna mandatory hai to kitna profit hoga, aaj wale prices mese aap apnese pehle wale dino ke least se minus krdo to apko profit pta lag jayega
+			 pist=  prices[i] - lsf;
+			 
+			 //har din ka pist nikalte rahenge jis din ka sabse jada rahega to woh humara overall profit hoga
+			 if(pist > op) {
+				 op = pist;
+			 }
+			
+		}
+		
+		return op;
+		
+	}
+	
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int prices[]= new int[n];
+		
+		for( int i=0; i< prices.length; i++) {
+			prices[i]= s.nextInt();
+		}
+		
+		System.out.println(bestTimeToBuyAndSell(prices));
+		
+	}
+
+}

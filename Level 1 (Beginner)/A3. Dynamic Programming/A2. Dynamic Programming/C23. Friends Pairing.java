@@ -36,7 +36,7 @@ public class FriendsPairing {
 		
 		//3 se aage hum solve karenge
 		for( int i=3; i<= n; i++) {
-			dp[i]= dp[i-1] + dp[i-2] * (i-1) ; // humara pehle banda bola mai alag rahunga to bache n-1 unka count muje dp[n-1] mai milega. ab first banda bola mai pair up hounga woh n-1 tarike se pair up ho skta hai. usko pair up karna ke bad n-2 bache, n-2 log kitne tarike se single or pair up krte hai iska count dp[n-2] mai pda hua hai 
+			dp[i]= dp[i-1] + (dp[i-2] * (i-1)) ; // humara pehle banda bola mai alag rahunga to bache n-1 unka count muje dp[n-1] mai milega. ab first banda bola mai pair up hounga woh n-1 tarike se pair up ho skta hai. usko pair up karna ke bad n-2 bache, n-2 log kitne tarike se single or pair up krte hai iska count dp[n-2] mai pda hua hai 
 		}
 		
 		return dp[n];

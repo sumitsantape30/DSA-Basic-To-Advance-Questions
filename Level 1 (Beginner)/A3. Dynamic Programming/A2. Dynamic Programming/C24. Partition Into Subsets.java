@@ -59,6 +59,22 @@ public class partitionIntoSubsets {
 		return dp[k][n];
 		
 	}
+	
+	//recursive
+	public static long partitionSubsetR(int n, int k) {
+		if( n == k) {
+			return 1;
+		}
+		
+		if( n < k || k == 0) {
+			return 0;
+		}
+		
+		long ans= partitionSubsetR(n-1, k-1) + k*partitionSubsetR(n-1, k);
+		
+		return ans;
+		
+	}
 
 	public static void main(String[] args) {
 

@@ -66,7 +66,7 @@ public class partitionIntoSubsets {
 			return 1;
 		}
 		
-		if( n < k || k == 0) {
+		if( k == 0) { // n < k ki jarurat nhi hai coz constraints mai already de rakha hai ki n>k
 			return 0;
 		}
 		

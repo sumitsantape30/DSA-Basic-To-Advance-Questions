@@ -38,6 +38,8 @@ import java.util.Scanner;
 
 public class BuyAndSellStocksKTransactionsAllowed {
 	
+	//T.C- > n.k.n -> o(n2k) hogi pichle approach ki yeh dono optimized hai
+	
 	private static int ktransactionsAllowedOptimized(int n, int[] arr, int k) {
 	    int dp[][] = new int[k + 1][n];
 	    for (int t = 1 ; t <= k ; t++ ) {
@@ -59,7 +61,23 @@ public class BuyAndSellStocksKTransactionsAllowed {
 	    return dp[k][n - 1];
 	  }
 	
-	//T.C- > n.k.n -> o(n2k) hogi iski
+	public static int ktransactionsAllowedOptimized( int n, int arr[], int k) {
+		
+		int dp[][]= new int[k+1][n];
+		
+		//pehle row aur column mai 0 hi rahega siliye 1 se loop chalayenge
+		for( int i=1; i< dp.length; i++) {
+			int max= dp[i-1][0] - arr[0];//next loop se pehle max nam ka variable maintain karege
+			for( int j=1; j< dp[0].length; j++) {
+				dp[i][j]= Math.max(dp[i][j-1], max + arr[j]); //pehle factor dp[i][j-1] aur dusra factor max+ arr[i] hota hai
+				max= Math.max(max, dp[i-1][j] - arr[j]);
+			}
+		}
+		
+		//dp of bottom left corner answer rahega
+		return dp[dp.length-1][dp[0].length-1];
+		
+	}
 
 	public static void main(String[] args) {
 		

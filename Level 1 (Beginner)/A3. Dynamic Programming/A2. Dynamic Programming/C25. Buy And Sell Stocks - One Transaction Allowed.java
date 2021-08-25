@@ -57,7 +57,25 @@ public class bestTimeToBuyAndSellStocksOneTransactionAllowed {
 		}
 		
 		return op;
+	}
+	
+	public static int btbs( int arr[]) {
+		int n= arr.length;
+		//pehle max so far from right nikalna hai to woh banayenge
+		int msf[]= new int[n];
+		msf[n-1]= arr[n-1] ; //akhri element ka maximum aakhri element hi hoga
 		
+		for( int i= n-2; i>=0; i--) {
+			msf[i]= Math.max(arr[i], msf[i+1]); //max so far ab current wala hoga yafir old wala jo right mai tha
+		}
+		
+		int maxProfit= 0; //ax Profit hi chahiye
+		for( int i=0; i< n; i++) {
+			//har ek day ko buying point bana diya
+			 maxProfit= Math.max(maxProfit, msf[i]- arr[i]);
+		}
+		
+		return maxProfit;
 	}
 	
 	public static void main(String[] args) {

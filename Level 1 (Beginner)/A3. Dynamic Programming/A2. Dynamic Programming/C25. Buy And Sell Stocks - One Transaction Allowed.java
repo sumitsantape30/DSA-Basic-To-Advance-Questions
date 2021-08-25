@@ -39,7 +39,7 @@ public class bestTimeToBuyAndSellStocksOneTransactionAllowed {
 		
 		int lsf= Integer.MAX_VALUE; //least so far
 		int op = 0; //overall profit
-		int pist=0 ; // profit is sold today
+		int pist=0 ; // profit if sold today
 		
 		for( int i=0; i< prices.length; i++) {
 			if( prices[i] < lsf) { // agar yeh lsf se chota hai to sabse pehle lsf ko update kardunga

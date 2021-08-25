@@ -62,7 +62,7 @@ public class partitionIntoSubsets {
 
 	public static void main(String[] args) {
 
-		Scanner s= new Scanner(System.in);
+	    Scanner s= new Scanner(System.in);
 	    int n= s.nextInt();
 	    int k= s.nextInt();
 		System.out.println(partitionKSubset(n,k));

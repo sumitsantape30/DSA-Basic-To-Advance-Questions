@@ -31,6 +31,7 @@ public class FriendsPairing {
 		
 		int dp[]= new int[n+1];
 		
+		dp[0]= 0; //ek bhi banda nhi hai to 0 tarike
 		dp[1]=1; // 1 banda hota to 1 tarika hai 
 		dp[2]= 2 ;// 2 bande hote to 2 tarike hai, 1-2,12
 		

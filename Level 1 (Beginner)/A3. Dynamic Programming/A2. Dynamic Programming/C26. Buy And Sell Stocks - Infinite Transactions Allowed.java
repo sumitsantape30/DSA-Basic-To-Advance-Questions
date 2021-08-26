@@ -42,6 +42,8 @@ public class buyAndSellStocksInfiniteTransactionsAllowed {
 		for( int i=0; i< arr.length-1; i++) {
 			if( arr[i+1] > arr[i]) {
 				profit += (arr[i+1] - arr[i]);
+				//profit += (-arr[i] + arr[i+1]); // agar ith day pe price kam hai i+1th day se to mai ise kharid lunga to muje uska prices dena padega means muje -arr[i] profit hua. i+1th day pe jada hai price to iss din bech dunga to muje +arr[i+1] itne paise milenge
+
 			}
 		}
 		return profit;

@@ -11,9 +11,8 @@ A number n
 A number fee
 Output Format
 A number representing the maximum profit you can make if you are allowed infinite transactions with transaction fee.
-Question Video
 
-  COMMENTConstraints
+Constraints
 0 <= n <= 20
 0 <= n1, n2, .. <= 10
 0 <= fee <= 5

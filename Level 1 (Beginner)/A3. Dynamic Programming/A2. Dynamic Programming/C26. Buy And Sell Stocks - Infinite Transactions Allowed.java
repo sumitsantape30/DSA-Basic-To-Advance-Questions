@@ -29,3 +29,53 @@ Sample Output
 30
 
 Code:
+
+package DP;
+
+import java.util.Scanner;
+
+public class buyAndSellStocksInfiniteTransactionsAllowed {
+	
+	//approach 1
+	public static int buyAndSellStocksInfiniteTransactionsAllowed1( int arr[]) {
+		int profit=0;
+		for( int i=0; i< arr.length-1; i++) {
+			if( arr[i+1] > arr[i]) {
+				profit += (arr[i+1] - arr[i]);
+			}
+		}
+		return profit;
+	}
+	
+	public static int buyAndSellStocksInfiniteTransactionsAllowed2( int arr[]) {
+		
+		int buy[]= new int[arr.length];
+		int sell[]= new int[arr.length];
+		
+		buy[0]= 0;
+		buy[1]=1;
+		
+		for( int i=1; i< arr.length; i++) {
+			buy[i]= Math.max(buy[i-1], sell[i-1] - arr[i]);
+			sell[i]= Math.max(sell[i-1], buy[i-1] + arr[i]);
+		}
+		
+		return sell[arr.length-1];
+	}
+	
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		System.out.println(buyAndSellStocksInfiniteTransactionsAllowed2(arr));
+		
+	}
+
+}

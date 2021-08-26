@@ -52,7 +52,7 @@ public class BuyAndSellStocksWithTransactionFeeInfiniteTransactionsAllowed {
 		sell[0] = 0;
 
 		for (int i = 1; i < arr.length; i++) {
-			buy[i] = Math.max(buy[i - 1], sell[i - 1] - arr[i]);
+			buy[i] = Math.max(buy[i - 1], sell[i - 1] - arr[i]); //frist option: aaj nhi kharidna chahte bought state mai hi rehna chahte hai. Dusra option aaj khardite hai 
 			sell[i] = Math.max(sell[i - 1], buy[i - 1] + arr[i] - fee);
 		}
 

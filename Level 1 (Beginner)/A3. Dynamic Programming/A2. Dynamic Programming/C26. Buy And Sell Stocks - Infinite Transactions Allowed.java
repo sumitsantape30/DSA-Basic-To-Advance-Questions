@@ -52,8 +52,8 @@ public class buyAndSellStocksInfiniteTransactionsAllowed {
 		int buy[]= new int[arr.length];
 		int sell[]= new int[arr.length];
 		
-		buy[0]= 0;
-		buy[1]=1;
+		buy[0]= -arr[0];
+		sell[0]=0 ;
 		
 		for( int i=1; i< arr.length; i++) {
 			buy[i]= Math.max(buy[i-1], sell[i-1] - arr[i]);

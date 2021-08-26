@@ -34,3 +34,44 @@ Sample Input
 3
 Sample Output
 13
+
+Code:
+
+package DP;
+
+import java.util.Scanner;
+
+public class BuyAndSellStocksWithTransactionFeeInfiniteTransactionsAllowed {
+
+	public static int buyAndSellStocksInfiniteTransactionsAllowed2(int arr[], int fee) {
+
+		int buy[] = new int[arr.length];
+		int sell[] = new int[arr.length];
+
+		buy[0] = -arr[0];
+		sell[0] = 0;
+
+		for (int i = 1; i < arr.length; i++) {
+			buy[i] = Math.max(buy[i - 1], sell[i - 1] - arr[i]);
+			sell[i] = Math.max(sell[i - 1], buy[i - 1] + arr[i] - fee);
+		}
+
+		return sell[arr.length - 1];
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		int fee= s.nextInt();
+		System.out.println(buyAndSellStocksInfiniteTransactionsAllowed2(arr, fee));
+	}
+
+}

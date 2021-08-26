@@ -42,11 +42,11 @@ public class DuplicateBrackets {
 		for( int i=0; i< str.length(); i++) {
 			char ch= str.charAt(i); // humko character milgya
 			if( ch == ')') { //agar character hai ek closing bracket
-				if( st.peek() == '(') { // agar peek mai direct closing bracket milgya means duplicacy hai
+				if( st.peek() == '(') { // agar peek mai direct closing bracket milgya means duplicacy hai coz uske andar kuch content hi nhi hai pop hone keliye means woh bracket duplicate hai
 					System.out.println("True");
 					return; // true print krke code ko terminate kardenge
 				}else {
-					// otherwise tabtak pop krte rahenge jabtak peek pr closing bracket na ajaye 
+					// otherwise tabtak pop krte rahenge jabtak peek pr opening bracket na ajaye 
 					while( st.peek() != '(' ) {
 						st.pop();
 					}

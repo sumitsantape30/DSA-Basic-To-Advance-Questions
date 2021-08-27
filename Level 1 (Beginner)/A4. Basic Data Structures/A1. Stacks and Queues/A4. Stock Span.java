@@ -4387,7 +4387,7 @@ public class StockSpan {
 	}
 	
 	public static int[] solve( int arr[]) {
-		
+		//sirf difference yeh hai ki left to right loop chalega aur index rakhenge
 		int span[]= new int[arr.length];
 		
 		Stack<Integer> st= new Stack<Integer>();
@@ -4396,21 +4396,23 @@ public class StockSpan {
 		
 		for( int i=1 ; i< arr.length; i++) {
 			// humara algorithm hai, pop karaye answer le aur fir push karaye
-			
-			while( st.size() > 0 && arr[i] > arr[st.peek()] ) { // pop tabtak karenge jabtak stack mai kuch hai aur arr of i arr[st.peek] se bda hai
+			//pop all smaller elements
+			while( st.size() > 0 && arr[i] > arr[st.peek()] ) { // pop tabtak karenge jabtak stack mai kuch hai aur arr of i arr[st.peek] se bda hai. stack mai index rakhege hue hao isliye arr[st.peek] liye
+				// st.peek() se muje milega ek index to uss index pe rakhi value current index wale value se choti hai to usko pop karado
 				// matlab tab rukenge jab stack mai humnse kuch bda milega
 				st.pop();
 			}
 			
+			//update your ans
 			//ab jab hum rukenge to dekhenge stack ka size kaisa hai
 			if( st.size() == 0) { //agar stack ka size 0 kara diya to sabko pop kardiya aapse koi chota hai hi nhi
 				// uss case mai span hoga i+1
-				span[i]= i+1;
+				span[i]= i - (-1);
 			}else {
 				// agar aap sabko pop nhi kara paye, to jo aapse bda aapke left par hai uska index
 				span[i]= i - st.peek();
 			}
-			
+			//push current element in the stack
 			//last mai push krde i ko
 			st.push(i);
 		}

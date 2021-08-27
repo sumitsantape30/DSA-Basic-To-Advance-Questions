@@ -106,3 +106,77 @@ public class LargestAreainHistogram {
 	}
 
 }
+
+//====================================JB===========================================================
+
+package practice;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Code {
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		
+		int nsl[]= new int[arr.length]; // nsl : next smaller on left
+		int nsr[]= new int[arr.length]; //nsr: next smaller on right
+
+		
+		Stack<Integer> st= new Stack<Integer>();
+		
+		 
+		for(int i = 0 ; i < arr.length ; i++) {
+			//pop all elements
+			while( st.size() > 0 && arr[st.peek()] >= arr[i] ) {
+				st.pop();
+			}
+			
+			// update your ans
+			if( st.size()== 0) {
+			 nsl[i]= -1;
+		    }else {
+			   nsl[i]= st.peek();
+		   } 
+			//push current index in the stock
+			st.push(i);
+		}
+		
+
+		st= new Stack<Integer>();
+		
+		for(int i = arr.length-1 ; i >= 0 ; i--) {
+			//pop all grater elements
+			while( st.size() > 0 && arr[st.peek()] >= arr[i]) {
+				st.pop();
+			}
+			
+			//update uour ans
+			if( st.size()== 0) {
+			 nsr[i]= arr.length;
+		    }else {
+			   nsr[i]= st.peek();
+		   }
+			// push current index in the stock
+			st.push(i);
+		}
+		
+		int ans =0;
+		for( int i=0; i< arr.length; i++) { 
+			
+			ans= Math.max(ans, arr[i]* (nsr[i]- nsl[i] -1));
+	
+		}
+		
+		System.out.println(ans); 
+	}
+
+}

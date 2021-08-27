@@ -82,8 +82,8 @@ public class BalancedBrackets {
 		if( st.size() == 0) { //agar code ke bahar aate hai aur stack ka size 0 hai means sab sahi hai
 			System.out.println(true);
 			
-		}else { //agar stack k size 0 nhi hai means opening brackets jada the means false prnt karenge
-			System.out.println(false);
+		}else { //agar stack ka size 0 nhi hai means opening brackets jada the means false prnt karenge
+			System.out.println(false); //more opening brackets
 			
 		}
 		

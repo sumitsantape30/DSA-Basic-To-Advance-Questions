@@ -72,14 +72,17 @@ public class nextGeneratorElement {
 		
 		nge[arr.length-1]= -1;
 		
+		// i= arr.length-1 ; i>=0; i-- sebhi loop chala skte ho
 		// ab last 2nd element se ulta loop chalega
 		for( int i= arr.length-2; i>=0; i-- ) {
 			//har element keliye 3 bate hai pop, answer, push
 			
+			//pop all smaller elements
 			while( st.size()>0 && arr[i] >= st.peek() ) { //tabtak pop karenge jabtak stack khali na hojoaye aur jo arr[i] hai woh stack ke peek se bda hai or equal hai
 				st.pop();
 			}
 			
+			//update ans
 			//bahar aaye hai to 2 bate ho skti hai ya to stack khali hogyi hai 
 			if( st.size() == 0) { //agar stack khali hogyi hai to isne sabko pop kara diya matlab sabse bda yeh hai
 				// to uss case mai next greater element is -1
@@ -90,7 +93,7 @@ public class nextGeneratorElement {
 			}
 			
 			//aur jate jate yeh khud ko stack mai push krdega
-			st.push(arr[i]);
+			st.push(arr[i]); //push current element in the stack
 			
 		}
 		

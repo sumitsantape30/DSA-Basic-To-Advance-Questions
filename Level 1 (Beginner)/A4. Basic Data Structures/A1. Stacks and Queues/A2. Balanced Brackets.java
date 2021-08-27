@@ -30,7 +30,7 @@ public class BalancedBrackets {
 	
 	public static boolean handleClosing(Stack<Character> st, char corresoch) { //corresponding opening character
 		if( st.size() == 0) {
-			
+			return false;
 		}else if( st.peek() != corresoch) { //agar stack ke top pe iss closing bracket ka corresponsingOpening bracket nhi hai to false
 			return false; //false karke return karenge
 		}else {

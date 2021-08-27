@@ -85,7 +85,7 @@ public class nextGeneratorElement {
 				// to uss case mai next greater element is -1
 				nge[i]= -1;
 			}else {
-				// dusri bat yeh ho skti hai ki yeh bahar tab aya jab stack ke top pe koi iss bda agya to uss case mai jo stack ka top hai wahi iska ans hai
+				// dusri bat yeh ho skti hai ki yeh bahar tab aya jab stack ke top pe koi isse bda agya to uss case mai jo stack ka top hai wahi iska ans hai
 				nge[i]= st.peek();
 			}
 			

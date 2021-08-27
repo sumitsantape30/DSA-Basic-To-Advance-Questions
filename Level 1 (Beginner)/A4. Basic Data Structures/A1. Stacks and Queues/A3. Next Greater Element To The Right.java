@@ -78,9 +78,9 @@ public class nextGeneratorElement {
 			//har element keliye 3 bate hai pop, answer, push
 			
 			//pop all smaller elements
-			while( st.size()>0 && arr[i] >= st.peek() ) { //tabtak pop karenge jabtak stack khali na hojoaye aur jo arr[i] hai woh stack ke peek se bda hai or equal hai
-				st.pop();
-			}
+			while( st.size()>0 && arr[i] >= st.peek() ) { //tabtak pop karenge jabtak stack ki size 0 na hojoaye aur jo arr[i] hai woh stack ke peek se bda hai or equal hai
+				st.pop(); 
+			} //jaise size 0 hogyi or stack ki top pe koi bada elements aagya to iss loop ke bahar ajayenge
 			
 			//update ans
 			//bahar aaye hai to 2 bate ho skti hai ya to stack khali hogyi hai 

@@ -4412,7 +4412,7 @@ public class StockSpan {
 				// agar aap sabko pop nhi kara paye, to jo aapse bda aapke left par hai uska index
 				span[i]= i - st.peek();
 			}
-			//push current element in the stack
+			//push index of current element in the stack
 			//last mai push krde i ko
 			st.push(i);
 		}

@@ -20,8 +20,6 @@ Input Format
 Input is managed for you
 Output Format
 Output is managed for you
-Question Video
-
 
 Constraints
 0 <= n < 10^5

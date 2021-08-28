@@ -56,7 +56,7 @@ public class SlidingWindowMaximum {
 		
 		//i se start hone wali 4 element ke window ka max nikalna yeh humara kam hoga aur j hai jo i ki help karega max nikalne ke andar
 		int j=0;
-		for( int i= 0; i< arr.length-k; i++) {
+		for( int i= 0; i<= arr.length-k; i++) {
 			// enter the loop to find the maximum of window starting at i (i pe jo window start ho rhi hai uska maxi nikalne keliye iss loop mai enter kariye)
 			// arr.length-k tak kyu chalaya? taki last window tak hi chale isliye, i ko aur aage le jane ki jarurat nai hai
 			

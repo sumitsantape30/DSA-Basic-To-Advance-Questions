@@ -70,7 +70,7 @@ public class nextGeneratorElement {
 		//last element ko push kara denge aur usme ans -1 dal denge ki last element ka next grater hota nhi
 		st.push(arr[arr.length-1]);
 		
-		nge[arr.length-1]= -1;
+		nge[arr.length-1]= -1; // nge[arr.length-1]= arr.length bhi le skte ho
 		
 		// i= arr.length-1 ; i>=0; i-- sebhi loop chala skte ho
 		// ab last 2nd element se ulta loop chalega

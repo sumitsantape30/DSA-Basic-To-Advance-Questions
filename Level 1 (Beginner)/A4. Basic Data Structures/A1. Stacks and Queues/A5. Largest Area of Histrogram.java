@@ -71,7 +71,7 @@ public class LargestAreainHistogram {
 		// mai isme yeh nhi rakhne wala ki 4 ka next smaller element 1 hai mai yeh rakhne wala hu 4 ke next smaller element ka index kya hai woh mai index rakhne wala hu. index mese index substract karunga to muje width dekhne ko milegi
 		st= new Stack<Integer>();
 		st.push(0); 
-		lb[0]= -1;  
+		lb[0]= -1; //0 ki left boundary -1 hongi coz 0 ke left mai koi hai hi nhi
 		for(int i = 1 ; i < arr.length ; i++) {
 			while( st.size() > 0 && arr[i]< arr[st.peek()]) {
 				st.pop();

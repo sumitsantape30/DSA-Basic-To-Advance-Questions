@@ -54,18 +54,21 @@ public class SlidingWindowMaximum {
 			st.push(i);
 		}
 		
+		//i se start hone wali 4 element ke window ka max nikalna yeh humara kam hoga aur j hai jo i ki help karega max nikalne ke andar
 		int j=0;
 		for( int i= 0; i< arr.length-k; i++) {
 			// enter the loop to find the maximum of window starting at i (i pe jo window start ho rhi hai uska maxi nikalne keliye iss loop mai enter kariye)
 			// arr.length-k tak kyu chalaya? taki last window tak hi chale isliye, i ko aur aage le jane ki jarurat nai hai
 			
 			if( j < i) {
-				//agar j na badh paye aur j i se chota reh jaye tab j ko i ke barabr karlo
+				//agar j na badh paye aur j i se piche reh jaye tab j ko i ke barabr karlo
 				j=i;
-			}
-			while( nge[j] < i+k) { //agar jo next grater hai j ka woh window ke andar hai to aap next greater pe jate rahiye uchal uchal ke
-				j = nge[j];
-			}
+			} //ab barabr aane ke bad woh apna next grater walagame khelega
+			
+			// agar mera yeh neext greater element range ke andar hai to yahi meraanswer hai
+			while( nge[j] < i+k) { //agar jo next greater hai j ka woh window ke andar hai to aap next greater pe jate rahiye uchal uchal ke
+				j = nge[j]; 
+			} 
 			
 			//kabtak window ke end point se chota hai tabtak aap jump karke jate jaiye aur last mai jab aap nikalenge to window ke apke bahar hoga to bahar nikalkar print krdo
 			System.out.println(arr[j]);

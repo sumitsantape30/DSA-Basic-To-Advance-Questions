@@ -47,15 +47,16 @@ public class LargestAreainHistogram {
 	
 	public static void Area( int arr[]) {
 		
-		int rb[]= new int[arr.length]; // right boundary is basically the next smaller element on the right
+		int rb[]= new int[arr.length]; // right boundary is basically the next smaller element index on the right
 		//next greater element on the right, from right to left ka loop 
 		Stack<Integer> st= new Stack<Integer>();
-		st.push(arr.length-1); 
+		st.push(arr.length-1); //akhir wale ka index isme dal diye
 		rb[arr.length-1]= arr.length; //last wale bande ki right boundary, jiska next smaller element na mile on the right side uska by default arr.length manlo
 		//maine default yeh man liya ab mai loop chalunga ulta
 		for(int i = arr.length-2 ; i >= 0 ; i--) {
-			while( st.size() > 0 && arr[i]< arr[st.peek()]) {
-				st.pop();
+			while( st.size() > 0 && arr[i]< arr[st.peek()]) { //agar arr[i] chota hai stack ke top se to, means stack ke top pe bda elements hai to use pop kara dega.
+				//woh rukega tab jab use apnese chota banda milega
+				st.pop(); 
 			}
 			
 			if( st.size()== 0) {
@@ -66,7 +67,7 @@ public class LargestAreainHistogram {
 			st.push(i);
 		}//so right boundary mil gyi hai
 		
-		int lb[]= new int[arr.length]; // left boundary is basically the next smaller element on the left
+		int lb[]= new int[arr.length]; // left boundary is basically the next smaller element index on the left
 		// mai isme yeh nhi rakhne wala ki 4 ka next smaller element 1 hai mai yeh rakhne wala hu 4 ke next smaller element ka index kya hai woh mai index rakhne wala hu. index mese index substract karunga to muje width dekhne ko milegi
 		st= new Stack<Integer>();
 		st.push(0); 
@@ -88,7 +89,7 @@ public class LargestAreainHistogram {
 		int maxArea=0;
 		for( int i=0; i< arr.length; i++) {
 			int width= rb[i] - lb[i] - 1;
-			int area= arr[i] * width;
+			int area= arr[i] * width; //uski height arr[i] mai hi pdi hui hai
 			
 			if( area > maxArea) { //agar yeh area maxArea se jada hai to maxArea ko update karlenge
 				maxArea= area;

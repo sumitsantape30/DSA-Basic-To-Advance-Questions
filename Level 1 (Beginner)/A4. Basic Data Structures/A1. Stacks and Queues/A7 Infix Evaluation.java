@@ -29,16 +29,14 @@ import java.util.Stack;
 public class InfixEvaluation {
 	
 	public static int precedence( char optor) { //yeh function operator ki precedence dega
-		if( optor== '+') {
+		if( optor== '+' || optor== '-') {
 			return 1;
-		}else if( optor== '-'){
-			return 1;
-		}else if( optor == '*') {
+		}else if( optor == '*' || '/') {
 			return 2;
-		}else { //yafir operator divide ho
-			return 2;
+		}else { 
+			return 0;
 		}
-		// + and - keliye 1 return karre aur /* keliye 2 return karre
+		// + and - keliye 1 return karre aur / * keliye 2 return karre
 	}
 	
 	public static int operation( int v1, int v2, char optor) { // actual operation jisme value 1 value 2 ayegi aur operation ayega

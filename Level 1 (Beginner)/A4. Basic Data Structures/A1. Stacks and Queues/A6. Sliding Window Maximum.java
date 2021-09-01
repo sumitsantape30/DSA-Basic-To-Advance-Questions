@@ -89,7 +89,7 @@ public class SlidingWindowMaximum {
 			dq.add(i);	
 		}
 		
-		//so pehle k bando ka maxm aachuka hai
+		//so pehle k bando ka maxm aachuka hai print krdo
 		System.out.println(arr[dq.peek()]);
 		
 		//ab k se aage wale elements ki kahanai

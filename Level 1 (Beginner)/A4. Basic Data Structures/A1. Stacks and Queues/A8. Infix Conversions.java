@@ -136,3 +136,102 @@ public class InfixConversions {
 		infixConversion(str);
 	}
 }
+
+//==============================================================JB's method================================================
+package Stack;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class InfixEvaluation2 {
+	
+	public static int precedence( char optor) { //yeh function operator ki precedence dega
+		if( optor== '+') {
+			return 1;
+		}else if( optor== '-'){
+			return 1;
+		}else if( optor == '*') {
+			return 2;
+		}else { //yafir operator divide ho
+			return 2;
+		}
+		// + and - keliye 1 return karre aur /* keliye 2 return karre
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		String str = s.next();
+
+		Stack<String> st1 = new Stack<>(); // prefix
+		Stack<Character> st2 = new Stack<>(); // operators
+		Stack<String> st3 = new Stack<>(); // postfix
+
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+
+			if (ch >= 'a' && ch <= 'z') { // operand ka case
+				//koi operand ata hai to stack 1 aur stack 3 mai push krdo
+				st1.push(ch + "");
+				st3.push(ch+ "");
+
+			} else if (ch == '(') { // agar closing bracket ata hai to stack 2 mai push krdo
+				st2.push(ch);
+ 
+			} else if (ch == ')') { 
+				// jabtak opening bracket nhi mil jata mai pop lagaunga stack2 se
+				while( st2.peek() != '(') {
+					char oprtr= st2.pop();
+					String op2= st1.pop();
+					String op1= st1.pop();
+					//stack 1 mai prefix chahiye to pehle operator ayega then operand 1 and then operand 2
+					st1.push(oprtr + op1 + op2); //yeh prefix ka handle kiya
+					
+					//postfix kabhi handle karenge
+					String o2= st3.pop();
+					String o1= st3.pop();
+					st3.push(o1+ o2+ oprtr);
+					
+				} //jabtk opening nhi milta yeh kam krte rahenge
+                //finally uss opening bracket kobhi pop karado
+				st2.pop();
+				
+			} else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') { //agar koi bhi operator ata hai
+				// woh dekhega kisiki precidence merese equal or jada hai to usko solve karado aur fir merko stack mai push kardo
+				
+				while(st2.size() > 0 && precedence(st2.peek()) >= precedence(ch)) { //yahabhi similar kam karenge, solve karke apna result daldo
+					char oprtr= st2.pop();
+					String op2= st1.pop();
+					String op1= st1.pop();
+					st1.push(oprtr + op1 + op2); //yeh prefix ka handle kiya
+					
+					//postfix kabhi handle karenge
+					String o2= st3.pop();
+					String o1= st3.pop();
+					st3.push(o1+ o2+ oprtr);
+					
+				}
+				//fir jo operator aya usko stack mai push bhi krdo
+				st2.push(ch);
+			}
+		}
+	
+	//iss loop se bahar aane ke bad, string pe puri tarah se traverse karne ke bad 
+		while (st2.size() != 0) { // jabtak stack2 ka size 0 nhi hojata dubara yahi kam
+			char oprtr= st2.pop();
+			String op2= st1.pop();
+			String op1= st1.pop();
+			st1.push(oprtr + op1 + op2); //yeh prefix ka handle kiya
+			
+			//postfix kabhi handle karenge
+			String o2= st3.pop();
+			String o1= st3.pop();
+			st3.push(o1+ o2+ oprtr);
+			
+		}
+		
+		System.out.println(st3.pop());
+		System.out.println(st1.pop());
+		
+	}
+}

@@ -23,6 +23,7 @@ Sample Output
 abc-d+*e/
 /*a+-bcde
 
+*/
 Code:
 
 package Stack;

@@ -73,8 +73,9 @@ public class SlidingWindowMaximum {
 			//kabtak window ke end point se chota hai tabtak aap jump karke jate jaiye aur last mai jab aap nikalenge to window ke apke bahar hoga to bahar nikalkar print krdo
 			System.out.println(arr[j]);
 		}
-	}
+	} // yeh O(n*k) hai
 	
+	//JB's : yeh O(n)
 	public static void slidingWindowMaxJB(int arr[], int k) {
 		
 		Deque<Integer> dq= new ArrayDeque<>(); //double ended queue le lenge

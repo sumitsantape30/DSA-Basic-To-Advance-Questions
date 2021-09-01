@@ -77,7 +77,7 @@ public class InfixEvaluation {
 					//isme tabtak pop hota hai jabtak size grater than 0 hai aur peek pr opening bracket nhi hai, yafir humko unko pop krte hai jo precedence mai greater than equal hai
 					while(st2.size() > 0 && precedence(st2.peek()) >= precedence(ch)) { //peek wale ki priority badi ya barbar aapse(ch) hai to pop hota rahega
 						
-						// aur bichme ab wahi kam karenge jo upar kiye the
+						// ab wahi kam karenge, operator mese ek pop hoga and operands mese 2 pop honge and fir calculate krke wapas operand mai push kardenge
 							char optor= st2.pop();
 							int v2= st1.pop(); 
 							int v1= st1.pop(); 

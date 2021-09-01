@@ -73,6 +73,37 @@ public class SlidingWindowMaximum {
 			//kabtak window ke end point se chota hai tabtak aap jump karke jate jaiye aur last mai jab aap nikalenge to window ke apke bahar hoga to bahar nikalkar print krdo
 			System.out.println(arr[j]);
 		}
+	}
+	
+	public static void slidingWindowMaxJB(int arr[], int k) {
+		
+		Deque<Integer> dq= new ArrayDeque<>(); //double ended queue le lenge
+		
+		for( int i=0; i< k; i++) { //pehle k elements keliye alag se kam hoga
+			// first k elements keliye kya karenge? next grater wali approch, apne se chote bando ko pop karao
+			
+			while(dq.size() > 0 && arr[dq.peek()] < arr[i]) { //jabtak dq size > 0 hai aur jabtak current elements se chote elements milte rahenge tabtak last element pop krte rho
+				dq.removeLast();
+			}
+			//fir current index ko dq ke last mai add krdo
+			dq.add(i);	
+		}
+		
+		//so pehle k bando ka maxm aachuka hai
+		System.out.println(arr[dq.peek()]);
+		
+		//ab k se aage wale elements ki kahanai
+		for( int i=k; i < arr.length; i++) {
+			while(dq.size() > 0 && arr[dq.peek()] < arr[i]) { 
+				dq.removeLast();
+			}
+			dq.addLast(i);
+			
+			if(dq.peek() <= i-k) {
+				dq.removeFirst();
+			}
+			System.out.println(arr[dq.peek()]);
+		}
 		
 	}
 

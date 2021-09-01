@@ -116,7 +116,7 @@ public class InfixEvaluation {
 				opnds.push(opv);
 			}
 			
-			//aur finally jo perands stack mai aakhri banda bachega woh humara answer hoga
+			//aur finally jo operands stack mai aakhri calculated banda bachega woh humara answer hoga
 			System.out.println(opnds.peek());
 		}
 	}

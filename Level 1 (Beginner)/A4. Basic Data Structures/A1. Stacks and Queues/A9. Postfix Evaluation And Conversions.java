@@ -51,37 +51,37 @@ public class PostfixExpressions {
 	public static void postfixCon(String exp) {
 		
 		// integer ka stack banayenge thats integer ka
-		Stack<Integer> vs = new Stack<Integer>();
+		Stack<Integer> vs = new Stack<Integer>(); //value stack
 		Stack<String> is= new Stack<>(); //infix stack of integer
-		Stack<String> ps= new Stack<>();
+		Stack<String> ps= new Stack<>(); // postfix stack
 		
 		for( int i= 0; i<exp.length(); i++ ) {
 			char ch= exp.charAt(i);
 			
 			//ab hume dekhna hai woh operand hai ki operator hai
-			if( ch == '+' || ch== '-' || ch== '*' || ch== '/') {
+			if( ch == '+' || ch== '-' || ch== '*' || ch== '/') { //agar koi operator ayega to mai 2 pop lagaunga, 1 stack mese 2 pop lagaye aur result banake dubara stack mai push kardenge
 				
-				int v2= vs.pop() ; //upar wala hai v2
-				int v1= vs.pop();
-				int val= operation(v1, v2, ch); //operation call kar denge iske upar
+				int op2= vs.pop() ; //upar wala hai v2
+				int op1= vs.pop();
+				int val= operation(op1, op2, ch); //operation call kar denge iske upar
 				
 				// jis tarah ka operation hua uss operation ke bad ab value stack mai usko wapas push kardenge
 				vs.push(val);
 				
 				//infix ki values
-				String iv2= is.pop(); // yeh infix stack se niklega
-				String iv1= is.pop();
-				String ival= "(" + iv1+ ch + iv2 + ")"; //infix ke andar pehle hota hai opening bracket + fir value 1 + fir hota hai operand which is just character + fir value 2  + fir closing bracket
+				String o2= is.pop(); // yeh infix stack se niklega
+				String o1= is.pop();
+				String ival= "(" + o1+ ch + o2 + ")"; //infix ke andar pehle hota hai opening bracket + fir value 1 + fir hota hai operand which is just character + fir value 2  + fir closing bracket
 				//yeh karne ke bad hum infix stack mai infix value ko push kardenge
 				is.push(ival);
 				
 				//yahi lines prefix mai bhi ayegi bas order alag rahega
-				String pv2= ps.pop(); // yeh infix stack se niklega
-				String pv1= ps.pop();
+				String opp2= ps.pop(); // yeh infix stack se niklega
+				String opp1= ps.pop();
 				String pval= ch + pv1 + pv2; //operator + prefixvalue1+ prefixvalue2
 				ps.push(pval);
 			
-			}else {
+			}else { // number hota hai to stacks mai push krdo
 				//operands ke case mai boht simple kam kr rhe hai hum, bas push karna hai 
 				vs.push(ch-'0');  //push krte waqt uska integer bana de
 				is.push(ch+ ""); //yaha ch ko string mai convert karo

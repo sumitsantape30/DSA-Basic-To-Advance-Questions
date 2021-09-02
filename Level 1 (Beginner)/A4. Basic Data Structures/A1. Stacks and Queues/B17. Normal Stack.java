@@ -87,7 +87,7 @@ import java.util.Scanner;
 public class BuildNormalStack {
 
 	 public static class CustomStack {
-		    int[] data;
+		    int[] data; //using array karenge
 		    int tos; // top of the stack pe konsa element hai iska track rakhne keliye yeh index rakhenge
 
 		    public CustomStack(int cap) {
@@ -99,7 +99,7 @@ public class BuildNormalStack {
 		    	return tos+1;
 		    }
 
-		    void display() {
+		    void display() { //lifo hota hai, jo last mai aya woh pehle print hoga
 
 		    	for(int i= tos; i>= 0; i--) {
 		    		System.out.print(data[i]+" ");

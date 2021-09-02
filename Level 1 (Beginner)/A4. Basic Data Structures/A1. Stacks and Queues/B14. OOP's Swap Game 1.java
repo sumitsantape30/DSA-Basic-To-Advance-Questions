@@ -14,7 +14,7 @@ public class SwapGame1 {
 	
 	public static void swap1(Person prsn1, Person prsn2) {
 		
-		Person temp= prsn1;
+		Person temp= prsn1; //temp bas naya reference banaya hai, naya instance nhi banaya hai
 		prsn1= prsn2;
 		prsn2= temp;
 	}
@@ -30,7 +30,7 @@ public class SwapGame1 {
 		p2.age= 20;
 		p2.name= "B";
 		//p2.saysHi();
-		
+		                                                                                             
 		//swap karne se pehle aur swap karne ke bad dono ki property call karenge taki hume pta chale
 		p1.saysHi();
 		p2.saysHi();

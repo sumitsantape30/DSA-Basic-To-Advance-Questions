@@ -27,3 +27,29 @@ Sample Output
 543216789
 
 Code:
+
+ private static void smallestNumber(String str) {
+		Stack<Integer> st = new Stack<>();
+		int num = 1;
+		
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			
+			if ( ch == 'd' ) {
+				st.push(num);
+				num++;
+			}else {
+				st.push(num);
+				num++;
+				
+				while(!st.isEmpty()) {
+					System.out.print(st.pop());
+				}
+			}
+		}
+		st.push(num);
+		while(!st.isEmpty()) {
+			System.out.print(st.pop());
+		}
+		
+	}

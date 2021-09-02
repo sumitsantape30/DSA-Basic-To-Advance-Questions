@@ -12,7 +12,7 @@ public class SwapGame1 {
 		}
 	}
 	
-	public static void swap1(Person prsn1, Person prsn2) {
+	public static void swap1(Person prsn1, Person prsn2) { 
 		
 		int age= prsn1.age;
 		prsn1.age= prsn2.age;
@@ -21,7 +21,7 @@ public class SwapGame1 {
 		String name= prsn1.name;
 		prsn1.name= prsn2.name;
 		prsn2.name= name;
-	}
+	} //isbar maine properties change kardi sidha prsn1 ka name hi change kardiya, mai jo change leke aya woh heap mai leke aya, heap mai aap jo change leke aate ho to woh change persist karega. last wale mai bas reference/address change kiya tha bas to woh function khatam hote hi woh wipeout hojayega, uss function mai jitne bhi functions, variable honge woh gayab.
 
 	public static void main(String[] args) {
 

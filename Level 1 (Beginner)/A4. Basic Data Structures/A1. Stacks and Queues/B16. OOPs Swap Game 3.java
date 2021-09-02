@@ -15,7 +15,7 @@ public class SwapGame1 {
 	public static void swap1(Person prsn1, Person prsn2) {
 		// kisi chiz ko hum new krte hai aur usme values aasign nhi kari hoti hai to integers by default 0 hote hai aur strings by default null hoti hai
 		
-		prsn1= new Person();
+		prsn1= new Person(); /p1 new kardiya ab purane p1 mai koi change nhi aayega. jobhi change honge woh new p1 mai hi honge 
 		
 		int age= prsn1.age;
 		prsn1.age= prsn2.age;

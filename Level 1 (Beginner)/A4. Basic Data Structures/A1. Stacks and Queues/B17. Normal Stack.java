@@ -110,7 +110,8 @@ public class BuildNormalStack {
 
 		    void push(int val) {
 		    	if( size()== data.length) {
-		    		System.out.println("Stack Overflow");
+		    		System.out.println("Stack overflow");
+				return;
 		    	}
 		    	tos++;
 		    	data[tos]= val;
@@ -118,7 +119,7 @@ public class BuildNormalStack {
 
 		    int pop() {
 		    	if( size() == 0) {
-		    		System.out.println("Stack Underflow");
+		    		System.out.println("Stack underflow");
 		    		return -1;
 		    	}
 		    	
@@ -129,7 +130,7 @@ public class BuildNormalStack {
 
 		    int top() {
 		    	if( size() == 0) {
-		    		System.out.println("Stack Underflow");
+		    		System.out.println("Stack underflow");
 		    		return -1;
 		    	}
 		    	return data[tos];

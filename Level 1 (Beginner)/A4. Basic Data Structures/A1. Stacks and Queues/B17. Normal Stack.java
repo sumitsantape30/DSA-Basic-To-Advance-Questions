@@ -88,7 +88,7 @@ public class BuildNormalStack {
 
 	 public static class CustomStack {
 		    int[] data;
-		    int tos;
+		    int tos; // top of the stack pe konsa element hai iska track rakhne keliye yeh index rakhenge
 
 		    public CustomStack(int cap) {
 		      data = new int[cap];

@@ -79,7 +79,11 @@ import java.util.*;
 
 public class Main {
 
-  public static class QueueToStackAdapter {
+/*q1 and q1 2 queues hai, agar size chahiye to q1.size return karenge coz humesha mere elements q1 mai hi rehte hai, yeh push effiecient kaise hua? agar muje 100 add karna tha to q1 mai simply add krdeta hu
+ but pop karwate time apko thodi mehnat karni pdti hai, q1 se size-1 elements remove krta hu fir aakhri wale element ko return karna hota hai fir q2 ka adress q1 mai assign krdete hai aur q1 ko new krdete hai,
+ so yaha push efficient hhua*/	
+	
+public static class QueueToStackAdapter {
     Queue<Integer> mainQ;
     Queue<Integer> helperQ;
 
@@ -88,7 +92,7 @@ public class Main {
       helperQ = new ArrayDeque<>();
     }
 
-   int size() {
+            int size() {
 	       return mainQ.size();
 	    }
 

@@ -74,12 +74,11 @@ public class MinimumStack1 {
 		      minData = new Stack<>();
 		    }
 
-
-		    int size() {
-				return allData.size();
+		    int size() { //stack1 ka size return kardiya
+			return allData.size();
 		    }
 
-		    void push(int val) {
+		    void push(int val) { // agar push karna hai to dono stack mai push karenge
 		      allData.push(val); //all data mai push karna hi hai
 		      
 		      //aur minData mai tab push karna hai jab value choti hai minData ke peek se aur jab minData ka size 0 ho
@@ -87,12 +86,22 @@ public class MinimumStack1 {
 		    	  minData.push(val);
 		      }
 		    }
+		 
+		 /*  void push( int val){
+			   if(allData.size() == 0){
+				   allData.push(val);
+				   minData.push(val);
+			   }else{
+				   allData.push(val);
+				   minData.push(Math.min(val, minData.peek())); //jab current value aur minData ke peek mese jo choti ho wahi minData mai push hoga
+			   }
+		   } */
 
 		    int pop() {
-		    	if(size() == 0) {
+		    	 if(size() == 0) {
 		    		System.out.println("Stack Underflow");
 		    		return -1;
-		    	}else {
+		    	} /*else {
 		    		int val= allData.pop();
 		    		
 		    		//agar yahi value minData ke peek pe dikhi to woh bhi pop hota hi hai
@@ -100,7 +109,9 @@ public class MinimumStack1 {
 		    			minData.pop();
 		    		}
 		    		return val;
-		    	}
+		    	}  */
+			     minData.pop();
+			    return allData.pop(); //dono stack mese pop lagaya, aur value uski stack1 wale ki return karenge 
 		    }
 
 		    int top() {
@@ -108,9 +119,10 @@ public class MinimumStack1 {
 		    		//agar size 0 hua -1 return karenge
 		    		System.out.println("Stack Underflow");
 		    		return -1;
-		    	}else {
+		    	}/*else {
 		    		return allData.peek();
-		    	}
+		    	}*/
+			    return allData.peek();
 		    }
 
 		  //1.jo content abhitak dala gya hai stack mai usme jo sabse chota hai woh O(1) milna chahiye
@@ -120,9 +132,8 @@ public class MinimumStack1 {
 		    		//agar size 0 hua -1 return karenge
 		    		System.out.println("Stack Underflow");
 		    		return -1;
-		    	}else {
-		    		return minData.peek();
 		    	}
+		    	  return minData.peek();
 		    }
 		 }
 

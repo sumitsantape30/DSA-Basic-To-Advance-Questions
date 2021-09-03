@@ -65,6 +65,7 @@ import java.util.Stack;
 
 public class MinimumStack1 {
 	
+	//yahape hum ek extra stack use kr rhe hai means O(n) Space hai so kya hum sirf ek hi stack se yahi kam achieve kr skte hai yeh next question mai dekhenge
 	 public static class MinStack {
 		    Stack<Integer> allData;
 		    Stack<Integer> minData;

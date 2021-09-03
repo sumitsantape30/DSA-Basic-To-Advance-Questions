@@ -106,7 +106,7 @@ public static class QueueToStackAdapter {
 		    	 return -1;
 	    	}
 		    
-	        while( mainQ.size() != 1) { // jabtak main queue ka size 1 nhi hojata, q1 se remove krte rho aur q2 mai add krte rho
+	        while( mainQ.size() > 1) { // jabtak main queue ka size greater than 1 hai, q1 se remove krte rho aur q2 mai add krte rho
 	        	helperQ.add(mainQ.remove());
 	        }
 	        int val = mainQ.remove(); // fir jo ek element bacha usko bhi remove krdo but hume iski iski valu return krni hai last mai

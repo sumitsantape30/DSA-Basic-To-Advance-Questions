@@ -123,7 +123,7 @@ public static class QueueToStackAdapter {
 	    	while( mainQ.size() > 1) {
 	        	helperQ.add(mainQ.remove());
 	        }
-	        int val = mainQ.remove();
+	        int val = mainQ.remove(); // is bande ko remove kiya to isko q2 mai add bhi karwado, yeh gayab nhi karna hai hume bas top chahiye
 	        helperQ.add(val);
 	        mainQ = helperQ;
 	        helperQ = new ArrayDeque<>();

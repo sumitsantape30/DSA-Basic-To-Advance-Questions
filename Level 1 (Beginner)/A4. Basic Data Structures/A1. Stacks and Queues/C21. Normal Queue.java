@@ -97,44 +97,40 @@ public class Main {
     }
 
     int size() {
-      // write ur code here
       return size;
     }
 
     void display() {
       // write ur code here
-      for(int i = 0; i < size; i++){
-        int idx = (front + i) % data.length;
+      for(int i = 0; i < size; i++){ //size jitne bande print honga
+        int idx = (front + i) % data.length; //aur printing 
         System.out.print(data[idx] + " ");
+        //System.out.println(data[(front+i)% data.length] + " ");
       }
       System.out.println();
     }
 
     // change this code
     void add(int val) {
-      // write ur code here
       if(size == data.length){
         System.out.println("Queue overflow");
-      } else {
-        int idx = (front + size) % data.length;
-        data[idx] = val;
+        return;
+      } 
+        int rear = (front + size) % data.length; // rear end nikalte hai aur rear end nikalke modulo bhi lena hota hai 
+        data[rear] = val;
         size++;
-      }
     }
 
     int remove() {
-      // write ur code here
-      if(size == 0){
+      if(size == 0){ //size hi 0 hai to kisko remove karoge
         System.out.println("Queue underflow");
         return -1;
-       } else {
+       } 
         int val = data[front];
-
-        front = (front + 1) % data.length;
-        size--;
+        front = (front + 1) % data.length; //remove karne ke bad front ko ek kadam aage badhana hoga
+        size--; 
 
         return val;
-       }
     }
 
     int peek() {
@@ -142,10 +138,9 @@ public class Main {
        if(size == 0){
         System.out.println("Queue underflow");
         return -1;
-       } else {
+       }
         int val = data[front];
         return val;
-       }
     }
   }
 

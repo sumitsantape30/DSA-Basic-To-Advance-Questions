@@ -67,6 +67,7 @@ import java.util.Stack;
 
 public class MinimumStack2 {
 
+	// ab hum extra space means extra stack nhi lenge, normal variable ko use krke karenge means constant space mai
 	 public static class MinStack {
 		    Stack<Integer> data;
 		    int min;

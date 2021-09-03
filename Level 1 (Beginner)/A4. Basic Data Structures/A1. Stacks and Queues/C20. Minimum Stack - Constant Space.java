@@ -170,3 +170,70 @@ public class MinimumStack2 {
 		    }
 		  }
 		}
+
+//============================================JB's ====================================================================================
+
+ public static class MinStack {
+		    Stack<Integer> data;
+		    int min;
+
+		    public MinStack() {
+		      data = new Stack<>();
+		    }
+
+		    int size() {
+		    	return data.size(); // data stakc ka jo size hai wahi apna size hoga
+		    }
+
+		    void push(int val) {
+		    	if(data.size() == 0) { //agar data ka size 0 hai to data bas push kardo aur min bhi set hojayega
+		    		data.push(val);
+		    		min= val;
+		    	}else if( val < min) { //agar current value choti hai mere abtak ke min se to dummy value banake dummy value push karenge
+		    		
+		    		int dv= 2 * val - min;
+		    		data.push(dv); // stack mai push kardenge dummy value aur min ki value update hojayegi val ke equal
+		    		min= val;
+		    	}else { // agar equal or badi hoti hai to normal push kardenge
+		    		data.push(val); 
+		    		
+		    	}
+		    }
+
+		    int pop() { 
+		    	if( data.size() == 0) {
+		    		System.out.println("stack underflow");
+		    		return -1;
+		    	}
+		    	
+		    	if( data.peek() < min) { // agar value choti hai to muje previous min nikalna padega
+		    		int rv= min; //yeh min preserve karke rakho
+		    		int pmin= 2 * min - data.pop() ; // dummy value apko data.peek() se milti hai hum data.pop() use karenge coz usko remove bhi karna hi hai 
+		    		min= pmin;
+		    		return rv;
+		    	}else { //agar value bdi hoti hai to simply pop
+		    		return data.pop();
+		    	}
+		    }
+
+		    int top() {
+		    	if( data.size() == 0) {
+		    		System.out.println("Stack underflow");
+		    		return -1;
+		    	}
+		    	
+		    	if( data.peek() < min) { // agar data ka peek min se chota hai means dummy value hai to original value min hoti hai
+		    		return min;
+		    	}else { 
+		    		return data.peek();
+		    	}
+		    }
+
+		    int min() {
+		    	if( data.size() == 0) {
+		    		System.out.println("Stack underflow");
+		    		return -1;
+		    	}
+		    	//min ki case mai simply return min
+		    	return min;
+		  }

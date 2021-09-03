@@ -105,7 +105,7 @@ public class MinimumStack2 {
 		    			return data.pop();
 		    		}else { //agar woh value min se choti hai to min 2min-data.peek() dalo 
 		    			int ov= min; //iss case mai original value min mai hoti hai
-		    			min= 2 * min - data.pop();
+		    			min= 2 * min - data.pop(); //yeh min hi mera val hai yaha
 		    			return ov;
 		    		}
 		    	}

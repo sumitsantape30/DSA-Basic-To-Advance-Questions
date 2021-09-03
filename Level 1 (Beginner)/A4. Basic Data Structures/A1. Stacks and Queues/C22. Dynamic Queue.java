@@ -32,17 +32,17 @@ public class Main {
     void add(int val) {
       // write ur code here
      if (size == data.length) {
-				int oa[] = data;
-				data = new int[2 * oa.length];
+	int oa[] = data; ..old array
+	data = new int[2 * oa.length];
 
-				for (int i = front; i < size; i++) {
-					data[i] = oa[(front + i) % oa.length];
-                }
-				front = 0;
-            }
-			int idx = (front + size) % data.length;
-			data[idx] = val;
-			size++;
+	for (int i = front; i < size; i++) {
+            data[i] = oa[(front + i) % oa.length];
+          }
+		front = 0;
+     }
+        int idx = (front + size) % data.length;
+	data[idx] = val;
+	size++;
     }
 
     int remove() {

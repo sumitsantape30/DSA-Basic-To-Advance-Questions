@@ -1,5 +1,5 @@
 Stock Span
-Easy  Prev   Next
+
 1. You are given a number n, representing the size of array a.
 2. You are given n numbers, representing the prices of a share on n days.
 3. You are required to find the stock span for n days.

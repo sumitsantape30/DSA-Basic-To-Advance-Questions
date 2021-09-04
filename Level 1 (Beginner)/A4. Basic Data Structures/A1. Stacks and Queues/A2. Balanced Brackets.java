@@ -34,6 +34,7 @@ public class BalancedBrackets {
 		}else if( st.peek() != corresoch) { //agar stack ke top pe iss closing bracket ka corresponsingOpening bracket nhi hai to false
 			return false; //false karke return karenge
 		}else {
+			//aur agar stack ki top pe mera counter part hai to usko pop karke true return krdo
 			st.pop(); //else pop krdijiye
 			return true;
 		}

@@ -12,8 +12,6 @@ Output Format
 value, a number
 infix
 prefix
-Question Video
-
 
 Constraints
 1. Expression is a valid postfix expression

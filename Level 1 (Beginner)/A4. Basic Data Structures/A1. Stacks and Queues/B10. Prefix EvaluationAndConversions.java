@@ -82,9 +82,9 @@ public class PrefixEvaNCon {
 			}
 		}
 		
-	   System.out.println(vs);
-	   System.out.println(is);
-	   System.out.println(ps);
+	  System.out.println(vs.peek());
+	   System.out.println(is.peek());
+	   System.out.println(ps.peek());
 
 	}
 

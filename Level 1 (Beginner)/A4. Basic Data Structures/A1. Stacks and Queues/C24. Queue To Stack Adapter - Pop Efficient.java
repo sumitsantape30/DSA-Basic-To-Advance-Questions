@@ -95,9 +95,9 @@ public class Code {
 	      helperQ = new ArrayDeque<>();
 	    }
 
-	     int size() {
+	                    int size() {
 			    	return mainQ.size();
-			    }
+			     }
 
 			    void push(int val) {
 			    	while(mainQ.size() != 0) {// jabtak q1 ka size 0 nhi hojata q1 se remove karo aur q2 mai add karo

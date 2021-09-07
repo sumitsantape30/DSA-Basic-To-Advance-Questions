@@ -74,3 +74,87 @@ Sample Output
 1
 10
 
+Code:
+
+package practice;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Code {
+	
+
+	  public static class QueueToStackAdapter {
+	    Queue<Integer> mainQ;
+	    Queue<Integer> helperQ;
+
+	    public QueueToStackAdapter() {
+	      mainQ = new ArrayDeque<>();
+	      helperQ = new ArrayDeque<>();
+	    }
+
+	     int size() {
+			    	return mainQ.size();
+			    }
+
+			    void push(int val) {
+			    	while(mainQ.size() != 0) {// jabtak q1 ka size 0 nhi hojata q1 se remove karo aur q2 mai add karo
+			    		helperQ.add(mainQ.remove());
+			    		
+			    	}
+			    	//ab jo naya banda aya hai usko q1 mai add krdo
+			    	mainQ.add(val);
+			    	
+			    	//aur dubara sare q2 ke bande q1 mai chahiye 
+			    	while(helperQ.size() != 0) { //jabtak q2 ka size 0 nhi hojata q2 se remove aur q1 mai add kro
+			    		mainQ.add(helperQ.remove());
+			    		
+			    	}
+			    	
+			    }
+
+			    int pop() {
+			    	if(mainQ.size() == 0) {
+			    		System.out.println("Stack underflow");
+			    		return -1;
+			    	}
+			    	return mainQ.remove();  // queue mai aagese front wala element remove hoga to humesha topmost banda front pe hona chahiye isko achieve karne keliye push function hume likhna hoga
+			    }
+
+			    int top() { // top will be exactly similar to pop bas yahape remove nhi karenge peek bta denge iski 
+			    	if(mainQ.size() == 0) {
+			    		System.out.println("Stack underflow");
+			    		return -1;
+			    	}
+			    	return mainQ.peek(); 
+			    }
+	  }
+
+	  public static void main(String[] args) throws Exception {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    QueueToStackAdapter st = new QueueToStackAdapter();
+
+	    String str = br.readLine();
+	    while (str.equals("quit") == false) {
+	      if (str.startsWith("push")) {
+	        int val = Integer.parseInt(str.split(" ")[1]);
+	        st.push(val);
+	      } else if (str.startsWith("pop")) {
+	        int val = st.pop();
+	        if (val != -1) {
+	          System.out.println(val);
+	        }
+	      } else if (str.startsWith("top")) {
+	        int val = st.top();
+	        if (val != -1) {
+	          System.out.println(val);
+	        }
+	      } else if (str.startsWith("size")) {
+	        System.out.println(st.size());
+	      }
+	      str = br.readLine();
+	    }
+	  }
+	}

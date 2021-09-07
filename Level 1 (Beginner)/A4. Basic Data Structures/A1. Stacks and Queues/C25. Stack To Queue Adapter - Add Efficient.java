@@ -56,3 +56,96 @@ Sample Output
 70
 Queue underflow
 Queue underflow
+
+Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static class StackToQueueAdapter {
+    Stack<Integer> mainS;
+    Stack<Integer> helperS;
+
+    public StackToQueueAdapter() {
+      mainS = new Stack<>();
+      helperS = new Stack<>();
+    }
+
+    int size() {
+        return mainS.size();
+    }
+
+    void add(int val) {
+      mainS.push(val);
+    }
+
+    int remove() {
+      if( size() == -0){
+          System.out.println("Queue underflow");
+          return -1;
+      }
+      
+      while(mainS.size() > 1){
+            helperS.push(mainS.pop());
+      }
+      int val= mainS.pop(); // iss aankhri bande ko wapas helper mai nhi dalenge baki sare dal denge 
+
+      while(helperS.size() > 0 ){
+          mainS.push(helperS.pop());
+      }
+      
+      return val;
+    }
+
+    int peek() {
+      if( size() == 0){
+          System.out.println("Queue underflow");
+          return -1;
+      }
+      
+      //otherwise jabtak main stack mai ekse jada bande hai to hum unko helper stack mai push karenge main stack se pop krte hue
+      while(mainS.size() > 1){
+            helperS.push(mainS.pop());
+      }
+      int val= mainS.pop(); //aakhri bande ko catch karliya
+      //ab iss akhri bande ko alag se push karenge, isko alag se isliye kiya kyuki isko capture bhi karna tha
+      helperS.push(val);
+      
+      //ab sanko helper se wapas main mai leke ayenge taki end mai state ho jo shuruwat mai thi
+      while(helperS.size() > 0 ){
+          mainS.push(helperS.pop());
+      }
+      
+      return val;
+      
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StackToQueueAdapter qu = new StackToQueueAdapter();
+
+    String str = br.readLine();
+    while (str.equals("quit") == false) {
+      if (str.startsWith("add")) {
+        int val = Integer.parseInt(str.split(" ")[1]);
+        qu.add(val);
+      } else if (str.startsWith("remove")) {
+        int val = qu.remove();
+        if (val != -1) {
+          System.out.println(val);
+        }
+      } else if (str.startsWith("peek")) {
+        int val = qu.peek();
+        if (val != -1) {
+          System.out.println(val);
+        }
+      } else if (str.startsWith("size")) {
+        System.out.println(qu.size());
+      }
+      str = br.readLine();
+    }
+  }
+}

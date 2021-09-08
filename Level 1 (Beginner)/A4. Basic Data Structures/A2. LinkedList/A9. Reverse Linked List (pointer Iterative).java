@@ -230,13 +230,13 @@ class LinkedList {
 		while( curr != null) { // jabtak current null nhi hojata tabtak kam hoga
 			Node next = curr.next; // originally current ka next save karke rakhlo
 			
-			curr.next= prev; // current ka next hojaye previous
+			curr.next= prev; // current ka next previous ko point karwayenge
 			
-			//uske bad jump hojaye dono
+			//uske bad prev aur curr ek step aage jump kare
 			prev= curr; //previous ko current pe leke aaye
 			curr= next; //
 		}
-		
+		//sare swap hogye bas head and tail bacha hai
 		//ab current null hogya to ruk jayega lekin sari pointing poche hogyi hai now all we need to do is swap the head and tail
 		Node temp= head;
 		head = tail;

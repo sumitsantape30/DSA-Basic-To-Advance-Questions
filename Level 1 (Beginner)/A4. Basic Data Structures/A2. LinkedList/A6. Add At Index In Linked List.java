@@ -178,7 +178,7 @@ class LinkedList {
 			//agar muje koi size mean last pe add karne bolega to addLast() ka dayda lenge
 			addLast(val);
 		}else {
-			// agar bihme kahi add karna hai
+			// agar bichme kahi add karna hai
 			Node node= new Node();
 			node.data= val;
 		

@@ -169,7 +169,7 @@ class LinkedList {
 	public void addAt(int idx, int val) {
 		
 		//pehle special case handle karenge
-		if(idx < 0 || idx > size) {
+		if(idx < 0 || idx > size) { 
 			System.out.println("Invalid Arguments");
 		}else if( idx == 0) {
 			//agar index 0 hai to mai addFirst() ka fayda uthaunga
@@ -199,27 +199,27 @@ class LinkedList {
 	/* 
 	 public void addAt(int idx, int val){
       if (idx < 0 || idx > size) {
-				System.out.println("Invalid arguments");
+			System.out.println("Invalid arguments");
 
-			} else if (idx == 0) {
+	     } else if (idx == 0) {
 
-				addFirst(val);
+			addFirst(val);
             } else if(idx == size) {
-				addLast(val);
-			} else {
-				Node temp = head;
-				int len = 0;
-				while (len < idx - 1) {
+			addLast(val);
+	     } else {
+			Node temp = head;
+			int len = 0;
+			while (len < idx - 1) {
 
-					temp = temp.next;
-					len++;
-				}
+			    temp = temp.next;
+			    len++;
+			}
 				
 		    	Node newNode = new Node();
-	            newNode.data = val;
-				newNode.next = temp.next;
-				temp.next = newNode;
-				size++;
+	                newNode.data = val;
+			newNode.next = temp.next;
+			temp.next = newNode;
+			size++;
 			}
     }
 	*/

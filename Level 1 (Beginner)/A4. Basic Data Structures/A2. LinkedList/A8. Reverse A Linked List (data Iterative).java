@@ -196,7 +196,7 @@ class LinkedList {
 		}
 	}
 	
-	private Node getNodeAt(int idx) {
+	private Node getNodeAt(int idx) { //hum valid index hi input denge isliye endges lagane ki jarurat nhi hai, aur yeh node return karega
 		//getAdd kisi index pe pdi hui value deta tha but yeh fucntion uss index pe pda hua node return karega, data nhi pura node hi de dega
 		Node temp= head;
 		for( int i=0; i< idx; i++) {

@@ -76,6 +76,27 @@ class LinkedList {
 			// aur size++ kobhi bahar rakh skte ho coz node add ho rha hai to size obviosuy badhega
 		}
 	}
+/*	
+	public static class LinkedList{
+		Node head;
+		Node tail;
+		int size;
+		
+		public void addFirst(int val) {
+			
+			Node n= new Node();
+			n.data= val;
+			n.next= null;
+
+			if(size == 0) {
+				head= tail= n;
+			}else {
+				tail.next= n;
+				tail= n;
+			}
+			size++;
+		}
+	} */
 }
 
 public class LLQues {

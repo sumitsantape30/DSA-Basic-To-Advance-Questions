@@ -206,13 +206,12 @@ class LinkedList {
 				temp= temp.next;
 			}
 			//to jab bahar ayenge to temp mai 2nd last agya hoga
+			temp.next= null; // temp ka next null karenge coz woh kisiko point nhi krta
 			//so ab tail ko update karenge
 			tail= temp;
-			temp.next= null; // temp ka next null karenge coz woh kisiko point nhi krta
 			size--;
 		}
 	}
-	
 }
 
 public class LLQues {

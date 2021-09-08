@@ -84,7 +84,7 @@ class LinkedList {
 	public void display() {
 		
 		Node temp= head;
-		while( temp != null) {
+		while( temp != null) { //jabtak temp null nhi hojata tabtak kam chalega
 			System.out.print(temp.data+" ");
 			temp = temp.next;
 		}

@@ -274,7 +274,7 @@ class LinkedList {
 			temp.next= temp.next.next;
 			size--; //size ko kam krdenge
 		}
-	}
+	} //so jo node humne remove kiya usko garbage collector kuch time bad remove karwa dega
 }
 
 public class LLQues {

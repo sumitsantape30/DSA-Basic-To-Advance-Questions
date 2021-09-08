@@ -33,7 +33,7 @@ import java.util.Scanner;
 
 class Node {
 	int data;
-	Node next;
+	Node next; //address node ka hai to reference bhi Node kahi hona chahiye
 
 	public Node(int data) {
 		this.data = data;

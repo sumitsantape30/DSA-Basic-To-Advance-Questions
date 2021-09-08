@@ -209,7 +209,7 @@ class LinkedList {
 		int li = 0;
 		int ri = size - 1;
 
-		while (li > ri) {
+		while (li < ri) {
 			Node left = getNodeAt(li);
 			Node right= getNodeAt(ri);
 			

@@ -105,7 +105,7 @@ class LinkedList {
 		if( size == 0) {
 			//khali list hai to list is empty print karenge
 			System.out.println("List is Empty");
-		}else if( size() == 1) { //agar size 1 hai to head and tail ko null kardenge aur size ko 0 kr denge
+		}else if( size == 1) { //agar size 1 hai to head and tail ko null kardenge aur size ko 0 kr denge
 			head= tail= null;
 			size=0;
 		} else{ //agar jada items hai to

@@ -222,7 +222,7 @@ class LinkedList {
 		}
 	}
 	
-	public void reversePI() { // pointer iterative
+	public void reversePI() { // pointer iterative, pointers reverse hojayenge
 		// initially current ko head pe bithayenge aur previous ko null pe
 		Node prev= null;
 		Node curr= head;

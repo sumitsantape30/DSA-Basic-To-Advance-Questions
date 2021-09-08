@@ -195,6 +195,34 @@ class LinkedList {
 			size++; //aur size ko jarur badhaye
 		}
 	}
+	
+	/* 
+	 public void addAt(int idx, int val){
+      if (idx < 0 || idx > size) {
+				System.out.println("Invalid arguments");
+
+			} else if (idx == 0) {
+
+				addFirst(val);
+            } else if(idx == size) {
+				addLast(val);
+			} else {
+				Node temp = head;
+				int len = 0;
+				while (len < idx - 1) {
+
+					temp = temp.next;
+					len++;
+				}
+				
+		    	Node newNode = new Node();
+	            newNode.data = val;
+				newNode.next = temp.next;
+				temp.next = newNode;
+				size++;
+			}
+    }
+	*/
 }
 
 public class LLQues {

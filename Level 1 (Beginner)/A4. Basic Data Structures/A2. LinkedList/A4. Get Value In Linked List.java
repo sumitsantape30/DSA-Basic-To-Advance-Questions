@@ -139,8 +139,8 @@ class LinkedList {
 		if(size == 0) { //size 0 hai to return -1 aur print bhi karna hai
 			System.out.println("List is Empty");
 			return -1;
-		}else if( idx < 0 || idx >= size()) { //agar index negative or index size ke barabr or usse bada pass karde to iss case mai return -1
-			System.out.println("Invalid Argument");
+		}else if( idx < 0 || idx >= size) { //agar index negative or index size ke barabr or usse bada pass karde to iss case mai return -1
+			System.out.println("Invalid arguments");
 			return -1;
 		}else {
 			//woh index tak loop lagayenge bas
@@ -151,6 +151,28 @@ class LinkedList {
 			return temp.data;
 		}
 	}
+	
+	public int getAt(int idx) {
+		if( idx < 0 || idx >= size) { 
+			System.out.println("Invalid arguments");
+			return -1;
+		}if(size == 0) { 
+			System.out.println("List is Empty");
+			return -1;
+		}else if( idx == 0){
+			return getFirst();
+		}else if( idx == size -1){
+			return getLast();
+		}else{ 
+			Node temp = head;
+			for( int i=0; i< idx ; i++) { // index times yeh loop chalna chahiye
+				temp = temp.next;
+			} 
+			return temp.data;
+		}
+	}
+	
+	
 }
 
 public class LLQues {

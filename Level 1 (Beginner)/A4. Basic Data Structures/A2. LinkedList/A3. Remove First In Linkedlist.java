@@ -112,7 +112,7 @@ class LinkedList {
 			head= head.next;
 			size--;
 		}
-	}
+	} //mera jo old first wala node tha, usko ab koi access nhi kr rha to garbage collector kuch time bas usko apne aap remove karwa dega aur space free karwa dega
 }
 
 public class LLQues {

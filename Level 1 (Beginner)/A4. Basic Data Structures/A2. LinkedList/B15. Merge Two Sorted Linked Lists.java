@@ -275,13 +275,13 @@ public class KthEleFromEnd {
 			//agar two khatam hogya aur one bacha hai to bina comparison ke ones ko consume karenge
 			while( one != null ) {
 					res.addLast(one.data); 
-					two= two.next;
+					one = one.next;
 			}
 			
 			//ho skta hai ki one khatam hogya ho aur two abhibhi bacha hua ho two ko cosume karenge
 			while( two != null) {
 				res.addLast(two.data);
-				two= two.next;
+				two = two.next;
 			}
 			
 			return res;

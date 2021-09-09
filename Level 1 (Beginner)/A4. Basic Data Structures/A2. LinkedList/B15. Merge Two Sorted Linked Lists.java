@@ -254,6 +254,7 @@ public class KthEleFromEnd {
 		}
 		
 		public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2 ) {
+			//original dono linked lists mai koi gadbad na ho isliye one and two mai leliye unko
 			Node one= l1.head;  // node 1 ko list 1 ke head pe bitha diya
 			Node two= l2.head; // node 2 ko list 2 ke head pe bitha diya
 			

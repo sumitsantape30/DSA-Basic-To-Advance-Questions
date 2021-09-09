@@ -281,6 +281,25 @@ public class KthEleFromEnd {
 			return slow.data;
 		}
 	}
+	
+	//using single loop only
+	public int kthFromLast2(int k) {
+		Node slow = head;
+		Node fast= head;
+	
+	        int i=1;
+		while( fast != tail) {
+			if( i <= k) {
+				fast= fast.next;
+			}else{
+				fast= fast.next;
+				slow= slow.next;
+			}
+			i++;
+		}
+		return slow.data;
+	}
+}
 
 	public static void main(String[] args) {
   

@@ -310,6 +310,7 @@ public class KthEleFromEnd {
 		}
 
 		// oops ke concepts ke basis pe solve karenge
+		// yeh removeDuplicates jis linkedlist pe call hua uska address 'this' mai rahega. (l1.removeDuplicates() : yahape l1 pe call hua to 'this' mai l1 ka address rahega )
 		public void removeDuplicates() {
 			LinkedList res= new LinkedList();
 			
@@ -329,6 +330,31 @@ public class KthEleFromEnd {
 			this.size= res.size;
 			//directly this= res nhi kr skte coz this read only hota hai, this ko nh change kr skte this ki properties ko change kr skte hai so humne this ki teeno properties change krdi
 		}
+		
+	/* JB's Method=====================
+	
+		public void removeDuplicates() {
+			
+			LinkedList ans= new LinkedList();
+			ans.addLast(this.getFirst()); //first wala element maine this wali linkedlist se nikal liya aur ans mai dal diya
+			this.removeFirst(); //badme usko this wali list se remove kardiya
+			
+			while(this.size() > 0) {
+				int val= this.getFirst(); //ab next value nikali
+				this.removeFirst();
+				
+				if( ans.getLast() != val) { //agar yeh ans ki tail se different hai tabhi ans mai dalenge
+					ans.addLast(val);
+				}
+			}
+			// yahape aaye means this wali linkedlist khali hogyi hai, head bhi null, tail bhi null aur size bhi 0
+			// this= ans ; //this keyword is read only usko hum change nhi kr skte, so this = ans kiya means ans ka address uthake this mai store karneki koshish kr rhe ho means this ki value change karneki koshish kr rhe ho but woh to read only hai 
+			//but hum this ki properties ko change kr skte hai
+			this.head= ans.head;
+			this.tail= ans.tail;
+			this.size= ans.size;
+			
+		}   */
 	}
 
 	public static void main(String[] args) {

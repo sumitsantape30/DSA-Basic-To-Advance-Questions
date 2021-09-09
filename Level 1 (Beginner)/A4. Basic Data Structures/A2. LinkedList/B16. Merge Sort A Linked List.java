@@ -240,17 +240,6 @@ public class KthEleFromEnd {
 			return s.data;
 		}
 
-		public int mid() {
-			Node s = head;
-			Node f = head;
-
-			while (f.next != null && f.next.next != null) {
-				s = s.next;
-				f = f.next.next;
-			}
-			return s.data;
-		}
-
 		public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
 			Node one = l1.head;
 			Node two = l2.head;
@@ -281,18 +270,16 @@ public class KthEleFromEnd {
 			return res;
 		}
 		
-		private static Node midNode(Node head, Node tail) {
-			//fast and slow ko rakhenge head pe
-			Node f= head;
-			Node s= head;
+		private static Node getMiddledNode(Node head, Node tail) {
+			Node fast = head;
+			Node slow = head;
 			
-			while( f != tail && f.next != tail) {
-				f= f.next.next; //fast ko mai 2 times aage badhaunga
-				s= s.next; //slow ko ek bar aage badhaunga
+			while( fast != tail && fast.next != tail) { //ek hi bat hai aisehi bhi likh skte hai
+				fast = fast.next.next; 
+				slow = slow.next; 
 			}
-			
-			//aur last mai slow ko return kardunga, jab fast tail pe pahuchega to slow bich mai hoga
-			return s;
+			//mai iss function mai bich ka portion pass karunga, ki yeh head hai aur yeh tail aur mai bolunga ki aap isme middle node nikalo, so isme tail ka next null thodina hoga coz hum ek part pass kr rhe hai isme, ho skta hai tail ka next kisise connected ho jaruri nhi tail ka next null hi ho
+			return slow;
 		}
 
 		public static LinkedList mergeSort(Node head, Node tail) {
@@ -304,7 +291,7 @@ public class KthEleFromEnd {
 			}
 			
 			//hume sabse pehle iss head aur tail ke bich ka mid chahiye hoga
-			Node mid= midNode( head, tail);
+			Node mid= getMiddledNode( head, tail);
 			//mid apne pas aa chuka hai ab 2 call lagate hai
 			// hum recursion pe faith rakhenge
 			LinkedList fsh= mergeSort(head, mid) ;// jab pehle half ki call lagayenge to woh sort hoke ayega head se mid ke bich mai aur first sorted half fsf mai store hoga

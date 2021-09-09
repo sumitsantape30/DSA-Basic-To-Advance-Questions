@@ -263,22 +263,22 @@ public class KthEleFromEnd {
 		}
 
 		public int kthFromLast(int k) {
-				//slow and fast rakhenge and woh starting mai head pe rahenge
-			Node s= head;
-			Node f= head;
+			//slow and fast rakhenge and woh starting mai head pe rahenge
+			Node slow = head;
+			Node fast= head;
 			
 			//ab shuruwat mai fast ka extra chalna jaruri hai taki slow aur fast mai thoda gap hojaye
 			for( int i=0; i< k; i++) {
-				f= f.next;
+				fast= fast.next;
 			}
 			
-			while( f != tail) {
+			while( fast != tail) {
 				// ab jabtak fast tail pe nhi pahuch jata tabtak dono ek ek chalenge to unn dono mai wog gap barkarar rahega
-				s= s.next;
-				f=f.next;
+				slow = slow.next;
+				fast = fast.next;
 			} //jab fast tail pe pahuchega tab to slow apne sahi position pe pahucha hua hoga
 			
-			return s.data;
+			return slow.data;
 		}
 	}
 

@@ -284,7 +284,7 @@ public class KthEleFromEnd {
 
 		public static LinkedList mergeSort(Node head, Node tail) {
 			
-			if( head == tail) { // matlab jab ek hi element reh gya hai
+			if( head == tail) { // matlab jab ek hi element reh gya hai means jab head aur tail ek hi node ko point kr rhe hai
 				LinkedList br= new LinkedList(); //base result banaye aur usme head ka data add ast kare
 				br.addLast(head.data);
 				return br;

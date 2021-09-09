@@ -294,9 +294,9 @@ public class KthEleFromEnd {
 			Node mid= getMiddledNode( head, tail);
 			//mid apne pas aa chuka hai ab 2 call lagate hai
 			// hum recursion pe faith rakhenge
-			LinkedList fsh= mergeSort(head, mid) ;// jab pehle half ki call lagayenge to woh sort hoke ayega head se mid ke bich mai aur first sorted half fsf mai store hoga
+			LinkedList fsh= mergeSort(head, mid) ;// jab pehle half ki call lagayenge to woh sort hoke ayega head se mid ke bich mai aur first sorted half (fsh) mai store hoga
 			LinkedList ssh= mergeSort(mid.next, tail);// fir second half sort hoke ayega aur second sorted half mai store hoga
-		    
+		      // ssh: second sorted half
 			//ab donoko merge kr denge
 			LinkedList cl= LinkedList.mergeTwoSortedLists(fsh, ssh); //complete list
 			return cl;

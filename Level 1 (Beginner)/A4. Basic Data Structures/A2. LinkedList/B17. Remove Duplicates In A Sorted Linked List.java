@@ -355,6 +355,9 @@ public class KthEleFromEnd {
 			this.size= ans.size;
 			
 		}   */
+		
+	// another method: agar muje dusri linkedlist leni hi nhi hai issi linkedlist ko modify karna hai 
+		
 	}
 
 	public static void main(String[] args) {

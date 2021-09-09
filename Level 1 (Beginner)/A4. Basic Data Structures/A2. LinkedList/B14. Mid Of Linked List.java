@@ -280,14 +280,14 @@ public class KthEleFromEnd {
 		}
 		
 		public int mid() {
-			Node s= head;
-			Node f= head;
+			Node slow = head;
+			Node fast = head;
 			
-			while( f.next != null && f.next.next != null) { // fast ka next jabtak null na ho aur even ke case keliye jabtak fast ke next ka next null na ho tabtak jab slow ko ek se badhaye to fast ko 2 se badhaye
-				s= s.next;
-				f= f.next.next;
+			while( fast.next != null && fast.next.next != null) { // fast ka next jabtak null na ho aur even ke case keliye jabtak fast ke next ka next null na ho tabtak jab slow ko ek se badhaye to fast ko 2 se badhaye
+				slow = slow.next;
+				fast = fast.next.next;
 			}
-			return s.data;
+			return slow.data;
 		}
 		
 	}

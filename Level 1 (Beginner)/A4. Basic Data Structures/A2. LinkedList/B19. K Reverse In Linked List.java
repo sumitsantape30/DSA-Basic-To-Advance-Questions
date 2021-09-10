@@ -371,11 +371,11 @@ public class KthEleFromEnd {
 
 			 LinkedList prev= new LinkedList(); //so maine ek linkedlist banayi previous ke nam se jo current ko use karne ke kam ayegi
 			 
-			 while( this.size > 0) { //kam tabtak hoga jabtak size greater than 0 hai tabtak
+			 while( this.size > 0) { //overall kam tabtak hoga jabtak size greater than 0 hai tabtak
 				 //andar ek linkedlist banayenge current ke nam se
 				 LinkedList curr= new LinkedList();
 				 
-				 if(this.size >= k) { //agar size greater than equal to k hai 
+			      if(this.size >= k) { //agar size greater than equal to k hai 
 				 
 				 for( int i=0; i< k ; i++) { //so ab hum k times
 					 int val = this.getFirst();
@@ -383,14 +383,14 @@ public class KthEleFromEnd {
 					 curr.addFirst(val);
 					 //removeFirst addFirst se ulta content banta hai to current mai k ulta ajyega humare pas
 				 } //so current mai k ulta aagya
-			 }else {
+			      }else {
 				 //agar size k se chota hai, to uss case mai aap k bar loop nhi chalayenge jitni size hai utni bar chalayenge
 				 int os= this.size(); 
 				 for( int i=0; i< os ; i++) { // yaha direct this.size nhi likh skte, coz s ki jagah loop mai this.size() likhte to apka pura loop chalta hi nhi coz i bhi badh rha hai aur size bhi kam ho rha hai removeFirst() ki wajah se isliye orignal size ko os mai store kiya
 					 int val = this.getFirst();
 					 this.removeFirst();
 					 curr.addLast(val);
-					 // remoeFirst karke addLast kiye jisko wajah se order same rhe 
+					 // removeFirst karke addLast kiye jisko wajah se order same rhe 
 			 }
 				 
 				 if( prev == null) { //agar previous null hai means previous abhi ek bar bhhi aya nhi hai
@@ -409,6 +409,43 @@ public class KthEleFromEnd {
 				 this.tail= prev.tail;
 				 this.size= prev.size;
 		 }
+			 
+	//---------------------------JB----------------------------------------------------------------------------------------------
+	/*		 
+public void kReverse(int k) {
+      LinkedList l1= new LinkedList();
+      LinkedList ans= new LinkedList();
+      
+      while(this.size() > 0){ //jabtak this khatam nhi hojati tabtak kam krte rahenge
+      
+            if( this.size() >= k){
+                for( int i=1; i<=k; i++){
+                    l1.addFirst(this.getFirst());
+                    this.removeFirst();
+                }
+            }else{
+                while( this.size() > 0){ //agar k elements nhi hai to jitne elements hai unke aisehi ans linkedlist mai dal denge
+                    l1.addLast(this.getFirst()); //yaha removeFirst isliye nhi liya coz removeFirst kuch return nhi krta
+                    this.removeFirst(); 
+                }
+            }
+            
+            if( ans.size()== 0){
+                ans= l1;
+                l1= new LinkedList();
+            }else{
+                ans.tail.next= l1.head;
+                ans.tail= l1.tail;
+                ans.size += l1.size();
+                l1= new LinkedList();
+            }
+      }
+      
+        this.head= ans.head;
+        this.tail= ans.tail;
+        this.size= ans.size;
+      
+    }	*/ 
 	}
     
 	public static void main(String[] args) {

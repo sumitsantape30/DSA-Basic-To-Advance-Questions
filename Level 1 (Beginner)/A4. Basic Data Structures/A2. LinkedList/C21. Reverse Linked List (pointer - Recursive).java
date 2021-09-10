@@ -417,34 +417,26 @@ public class KthEleFromEnd {
 		}
 
 		private void reversePRHelper(Node node) {
-			if( node == null) {
-				return; //2.jaha null hai wahase laut jaye
+			if( node == tail) {  //agar node tail ke barbar hota hai to waha basecase bana lenge
+				return; // tail pe pohoch gye to wahise return
 			}
 			
-			reversePRHelper(node.next); //1. Aage aage call karte jayenge
-			//3. wapas aate waqt ka code recursion call ke niche likha jata hai
-			
-			if( node == tail) {
-				//agar node tail pe hai to kuch nhi karna
-				
-			}else {
-				node.next.next= node; // node bolega mere next ka next mai khud hi hu
-			}
+			reversePRHelper(node.next); // faith rakhenge, maine bola ki node.next se aage ka part reverse hoke ajao iske pointers reverse karwado
+			node.next.next= node; // node bolega mere next ka next mai khud hi hu, node ke next ke next khudpe point karwa diya
 			
 		}
 
 		public void reversePR() {
 			reversePRHelper(head);
-			//recursion ke bad pichese sab apne aage wale ko point kr rhe honge magar first wala(a) uske next(b) wale ko point kr rha hoga
-			//so jo head(a) hai uska next null kardijiye
-			head.next= null;
 			
-			//abhi ek aur problem hai, abhibhi head a ko man rhe hai aur tail abhibhi z kohi man rhe hai
-			// but hume head z ko bana hoga aur tail a ko banana padega means head aur tail ko swap karna hoga
-			Node temp= head;
-			head= tail;
-			tail= temp;
-		}
+			//fir function pura chalne ke bad we have to swap head and tail
+			Node temp= this.head;
+			this.head= this.tail;
+			this.tail= temp;
+			
+			this.tail.next= null; //aur tail ka next kardiya null
+			// yeh kam hume ek hi bar karna hota hai jabr pura recursive kam hojaye, ek hi bar karna hota hai harbar nhi karna hota isliye yaha kr rhe hai
+		} //this likhna compulsory nhi hai
 	}
 
 	public static void main(String[] args) {

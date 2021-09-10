@@ -467,19 +467,20 @@ public class KthEleFromEnd {
 			boolean rres= IsPalindromHelper(right.next);
 			if( rres == false) { //agar upar sehi false aya means kuch mismatch hochuka hai so false return kardenge
 				return false;
-			}else if(pleft.data != right.data) { //means abhitak ka comparison true aa rha hai so ab agar left aur right barbar nhi hai tobhi false
+			}else if(left.data != right.data) { //means abhitak ka comparison true aa rha hai so ab agar left aur right barbar nhi hai tobhi false
 				return false;
 			}else {
 				//else return true;
-				pleft= pleft.next;
+				pleft= left.next;
 				return true;
 			}			
 		}
 		
 		//1.right ko IsPlindrome mai parameter ki tarah rakha  aur left ko data member ke form mai rakhenge
-		Node pleft;
+		Node left;
 		public boolean IsPalindrome() {
 			//2. Call se pehle pleft ko head pe rakhenge
+			left= head;
 			return IsPalindromHelper(head);
 		}
 

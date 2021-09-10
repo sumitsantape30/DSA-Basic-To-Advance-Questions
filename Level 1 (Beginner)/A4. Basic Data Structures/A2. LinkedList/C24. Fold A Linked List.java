@@ -492,28 +492,29 @@ public class KthEleFromEnd {
 			return IsPalindromHelper(head);
 		}
 		
-		private void foldHelper(Node right, int floor) {
-			if( right == null) {
+		 private void foldHelper(Node right, int counter) {
+			if( right == null) { // agar right null ke eqaul hai to return
 				return;
 			}
 			
-			foldHelper(right.next, floor+1);
-			
-			if( floor > size/2) { //yeh hume tabtak karna hai jabtak floor size/2 se chota hai
+			foldHelper(right.next, counter +1);
+			//wapas aate hue hume kuch kam karna hai 
+			if( counter > size/2) { //yeh hume tabtak karna hai jabtak floor size/2 se chota hai
 				
-			Node temp= fleft.next; // mai left ka next nikalke rakha
-			fleft.next= right ; //aur left ka next hai right
-			right.next= temp; //right ke next ko temp pe lagaya
-			fleft= temp; //aur fir left ko uthakar temp pehi rakh diya
-		  }else if(floor == size/2) { //agar flooe size/2 ke equal hogya hai to tail bhi thikse set karni padegi
-			  tail= right; //tail right pr hoga
-			  tail.next= null; // aur tail ka next null karna yad rakhe
+			Node leftkanext = left.next; // mai left ka next preserve karke rakhenge
+			left.next= right ; //aur left ka next hai right
+			right.next= leftkanext; //right ke next mai jo aapne preserve kiya tha woh address ayega
+			left= leftkanext; //aur fir left ko ek step aage bhi badhana hai to aage badha diya
+			
+		  }else if(counter == size/2) { //agar flooe size/2 ke equal hogya hai to right ko tail declare krdo aur tail ka next null krdo
+			  tail= right; 
+			  tail.next= null; 
 		  }
 		}
 		
-		Node fleft; // fold keliye left
+		Node left; // fold keliye left
 		public void fold() {
-			fleft= head;
+			left= head; //left ko head se intitialise kardenge
 			foldHelper(fleft, 0); //hume yaha floow use karna hoga coz half ke beyond ais karna nhi hai
 		}
 

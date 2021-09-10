@@ -437,9 +437,9 @@ public class KthEleFromEnd {
 			}
 		}
 		
-		public void reverseDR() {
+		public void reverseDR() { //initially right and left dono bhi head pehi rahenge
 			this.left= this.head; //yahse initialise hoga, left ko head pe rakhdo
-			reverseDRhelper(head, 0); // head pass karenge 2 (ek hi list ke head hai bas 2 times pass kiye)
+			reverseDRhelper(head, 0); // head pass karenge aur counter
 		}
 // 1. left ko local nhi rakh skte the, uska scope function ke andar nhi reh skta coz function pura chalta hai to wobhi wipeout hojata hai to usko heap mai rakhna padega 
 //2. fir woh swap karne wala kam aur left ko badhane wala kam yeh harbar nhi chalna chahiye yeh aadhe tak chalega

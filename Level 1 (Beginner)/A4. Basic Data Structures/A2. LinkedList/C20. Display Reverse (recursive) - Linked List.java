@@ -404,12 +404,12 @@ public class KthEleFromEnd {
 
 		private void displayReverseHelper(Node node) {
 			if( node == null) {
-				return; //2.yahase wapas lautenge
+				return; //3.aagar node null hai to wahase return
 			}
 			
-			displayReverseHelper(node.next); //1.aage aage pass kya aise krte krte ek din node null hojayega then we reach the basecase
-		    //3. Wapas aate waqt muje sabhi nodes ko reverse mai touch karne ko milenge tab mai unko print karunga
-			System.out.println(node.data+" ");
+			displayReverseHelper(node.next); //1. muje faith hai ki yeh aage ka data reverse mai print kardega
+		    //2. aur last mai ek data ka hum khud print karwa denge
+			System.out.print(node.data+" ");
 		}
 
 		public void displayReverse() {
@@ -418,8 +418,13 @@ public class KthEleFromEnd {
 		}
 
 	}
+	
+	public void displayReverse(){ //linkedlist isi function ko call karegi but hum reverse karne keliye kuch argument chahiye tha isliye helper function banaye
+		displayReverseHelper(head);
+		System.out.prnintln();
+	}
 
 	public static void main(String[] args) {
-
+              l1.displayReverse(); //yeh function call krte waqt isme kuch arguments nhi passs kr rhe
 	}
 }

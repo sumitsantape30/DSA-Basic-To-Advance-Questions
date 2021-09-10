@@ -414,6 +414,38 @@ public class KthEleFromEnd {
 			tail= temp;
 		}
 		
+	//------------JB's
+		
+		Node left; //now this is data memeber of class linkedlist
+		public void reverseDRhelper( Node right, int counter) {
+			if( right == null) { //jab right null ka barbar hojayega wahase hum return kar jayenge
+				return;
+			}
+			
+			reverseDRhelper(right.next, counter+1 );// right ka next pass kardenge
+			
+			if( counter >= size/2) {
+				//yeh swap wala kam left aadhe tak jayega tabtak hi hoga coz agar pura kiya to list jaiseki ki waisi hojayegi
+				// wapas aate hue dono ka data swap karna hai
+				int temp= left.data;
+				left.data= right.data;
+				right.data= temp;
+				
+				left= left.next; // ab left ko aage badhaye, so ab jo left (data memeber) bana hoga woh heap mai bana hai. jab LinkedList ka instance bana hoga wahape head, tail, size hoga aur uske hi sath sath left bhi hoga.
+			    //left function ke andar rehta to function pura hone ke bad woh wipeout hojata so isliye heap mai dala data memeber banake
+			    
+			}
+		}
+		
+		public void reverseDR() {
+			this.left= this.head; //yahse initialise hoga, left ko head pe rakhdo
+			reverseDRhelper(head, 0); // head pass karenge 2 (ek hi list ke head hai bas 2 times pass kiye)
+		}
+// 1. left ko local nhi rakh skte the, uska scope function ke andar nhi reh skta coz function pura chalta hai to wobhi wipeout hojata hai to usko heap mai rakhna padega 
+//2. fir woh swap karne wala kam aur left ko badhane wala kam yeh harbar nhi chalna chahiye yeh aadhe tak chalega
+		
+		
+		/*
 		private void reverseDRHelper( Node right, int floor) { //1. isko right node pass kiya, yeh woh hai jo wapas aane wala hai
 		
 			if( right == null) { //3.jab right null hojata hai to hum laut jate hai
@@ -441,7 +473,7 @@ public class KthEleFromEnd {
 		public void reverseDR() {
 			rleft= head; //6. aur mai reverse ke liye bane left ko head pe set karke function call kardiya
 			reverseDRHelper(head, 0);
-		}
+		}   */
 		
 	}
 

@@ -483,6 +483,28 @@ public class KthEleFromEnd {
 			left= head;
 			return IsPalindromHelper(head);
 		}
+		
+		/*--- Using Counter-----------------
+public boolean IsPalindrome() {
+      this.left = this.head;    
+      boolean ans = IsPalindromeHelper(head, 0);
+      return ans;
+    }
+    Node left;
+    public boolean IsPalindromeHelper(Node right, int counter) {
+      if (right == null) {
+        return true;
+      }
+      boolean rr = IsPalindromeHelper(right.next, counter + 1);
+      if (counter >= size / 2) {
+        if ( right.data != left.data ) {
+          return false;
+        } else {
+          left = left.next;
+        }
+      }
+      return rr; 
+    } */
 
 	}
 

@@ -239,7 +239,7 @@ class LinkedList {
 		//sare swap hogye bas head and tail bacha hai
 		//ab current null hogya to ruk jayega lekin sari pointing poche hogyi hai now all we need to do is swap the head and tail
 		Node temp= head;
-		head = tail;
+		head = prev; // sare operations hone ke bad last mai curr null pe hoga and prev sabse last element pe means woh humara head hai
 		tail= temp;
 		
 	}

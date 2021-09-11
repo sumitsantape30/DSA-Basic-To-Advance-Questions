@@ -105,13 +105,12 @@ public class LLToStackAdapt {
 			}
 		}
 
-		int top() {
-			if (size() == 0) {
-				return list.removeFirst();
-
-			} else {
-				return list.getFirst();
-			}
-		}
+		 int top() {
+                         if( list.size() == 0){
+                               System.out.println("Stack underflow");
+                               return -1;
+                     }
+                         return list.getFirst();
+                }
 	}
 }

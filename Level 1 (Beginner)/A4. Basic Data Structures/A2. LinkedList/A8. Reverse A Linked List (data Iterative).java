@@ -212,7 +212,7 @@ class LinkedList {
 		int li = 0;
 		int ri = size - 1;
 
-		while (li > ri) {
+		while (li < ri) {
 			// private wala function use krke left and right wala node nikalunga aur un donoke data property ko swap karenge
 			Node left = getNodeAt(li);
 			Node right= getNodeAt(ri);

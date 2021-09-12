@@ -362,7 +362,7 @@ public class KthEleFromEnd {
 				this.size = odd.size ;
 			}else if( even.size > 0) { //aisa ho skta hai ki sabkuch even mai ho
 				// iss case mai sabkuch even se uthayenge
-				odd.tail.next = even.head; 
+				even.tail.next = even.head; 
 				this.head = even.head;
 				this.tail = even.tail;
 				this.size = even.size;

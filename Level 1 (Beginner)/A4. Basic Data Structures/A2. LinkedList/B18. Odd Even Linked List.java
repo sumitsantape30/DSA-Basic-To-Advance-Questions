@@ -356,13 +356,13 @@ public class KthEleFromEnd {
 
 			}else if( odd.size > 0) { //aisa ho skta hai ki sirf odd mai hi data ho
 				//iss case mai hum sabkuch odd sehi uthayenge
-				odd.tail.next = odd.head; 
+				odd.tail.next = even.head; 
 				this.head = odd.head;
 				this.tail = odd.tail;
 				this.size = odd.size ;
 			}else if( even.size > 0) { //aisa ho skta hai ki sabkuch even mai ho
 				// iss case mai sabkuch even se uthayenge
-				even.tail.next = even.head; 
+				even.tail.next = null; 
 				this.head = even.head;
 				this.tail = even.tail;
 				this.size = even.size;

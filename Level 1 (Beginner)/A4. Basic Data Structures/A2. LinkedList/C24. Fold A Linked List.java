@@ -499,7 +499,7 @@ public class KthEleFromEnd {
 			
 			foldHelper(right.next, counter +1);
 			//wapas aate hue hume kuch kam karna hai 
-			if( counter > size/2) { //yeh hume tabtak karna hai jabtak floor size/2 se chota hai
+			if( counter > size/2) { //yeh hume tabtak karna hai jabtak floor size/2 se bada hai means aadhe tak hi yeh wala kam karenge
 				
 			Node leftkanext = left.next; // mai left ka next preserve karke rakhenge
 			left.next= right ; //aur left ka next hai right

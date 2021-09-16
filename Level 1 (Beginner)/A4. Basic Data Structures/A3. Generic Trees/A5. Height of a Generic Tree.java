@@ -73,11 +73,11 @@ public class HeightOfATree {
 		  //so edges bola jaye to -1 se intialise karo agar nodes ki term mai chahiye to 0 se initialise karo
 		  
 		  for( Node child: node.children) { //node ke children pe traverse karenge
-			  int ch= height(child); //aur maine child height mangayi
+			  int ch= height(child); //maine bola childs tum apni family ki height lake de
 			  ht= Math.max(ch,  ht);
 		  }
 		  
-		  ht += 1; //height mai ek add karle
+		  ht += 1; //height mai ek add karlenge root ki edege
 		  
 		  return ht;
 		  

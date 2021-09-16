@@ -67,15 +67,15 @@ public class SizeOfGenericTree {
 		  }
 
 		  public static int size(Node node){
-			  int s= 0;// size ==0;
+			  int s= 0;// size ==0; initially size 0 liya
 			  
-			  for( Node child: node.children) {
-				  int cs= size(child); //child size, size() hi call kiya aur child ko pass kardia
+			  for( Node child: node.children) { //ab mai apne childrens pe traverse karunga
+				  int cs= size(child); //child size, muje pura faith hai ki yeh muje apne apne children ka size lake dega
 				  //aur size ke andar yeh child size add karenge
 				  s += cs;
 			  }
 			  
-			  //bahar nikalke size ke andar 1 add karenge
+			  //jab children ki sie add hojaye to khudki bhi add kardenge
 			  s += 1; // 10 wale root node ke liye khudke liye 1 add kiya
 			  return s;
 		  }

@@ -72,7 +72,7 @@ public class MaxInAGenericTree {
 		  int max= Integer.MIN_VALUE; //max ko initialise karenge
 		  
 		  for( Node child: node.children) {
-			  int cm = max(child); // maine yahapr child ka max mangaya
+			  int cm = max(child); // muje ispe pura faith hai ki yeh child mese max lakde de dega
 			  //ab mai jo overall max hai uske sath child ke max ka fight karunga
 			  max= Math.max(max, cm);
 		  } //jab yeh loop chal chuka hoga to sare children ke max ki apas mai fight ho chuki hai aur unka overall max max mai aa chuka hai

@@ -74,7 +74,7 @@ public class TraversalsInGenericTree {
 		
 		while( q.size() > 0) { //jabtak queue ka size 0 nhi hota tabtak kam karenge
 			node = q.remove(); // queue mese node nikalenge
-			System.out.println(node.data + " "); //fir node ko print kardenge
+			System.out.print(node.data + " "); //fir node ko print kardenge
 			
 			//aur fir uske childrens ko add kardenge
 			for( Node child: node.children) {

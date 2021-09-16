@@ -104,9 +104,10 @@ public class LevelOrderInGenericTree {
 		System.out.println("Node Pre"+ node.data); // yahi euler ka left hai. Eulers left, On the way deep in recursion, node's pre area
 		for( Node child : node.children) {
 			// edge pre
-			System.out.println("Edge Pre"+ node.data+"--"+child.data);
+			System.out.println("Edge Pre"+ node.data+"--"+child.data); //jab mai parent se child ke taraf jata hu, parent is node.data and child is child.data. So jab aap first child ko call lagane wale hote ho usse pehle print karadu to yeh hoga edge ka pre area
+			//parent pe ho child ko call lagne wali hai but call lagne se pehle edge ke pre area mai hai
 			traversals(child);
-			System.out.println("Edge Post"+ node.data+"--"+child.data); //iss child ke pass se jab node pr wapas aa rhe honge to use bolenge edge post
+			System.out.println("Edge Post"+ node.data+"--"+child.data); //when you are coming back from child to the parent itself that will be the post area of edge
 			// edge post
 		}
 		

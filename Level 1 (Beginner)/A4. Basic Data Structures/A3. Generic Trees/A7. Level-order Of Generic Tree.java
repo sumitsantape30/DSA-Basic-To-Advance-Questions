@@ -67,8 +67,24 @@ public class TraversalsInGenericTree {
 		return root;
 	}
 	
+	public static void levelOrder(Node node) {
+		
+		Queue<Node> q= new LinkedList<>(); //ek quee banayi hai
+		q.add(node); //jo bhi node pass hua use queue mai dal denge
+		
+		while( q.size() > 0) { //jabtak queue ka size 0 nhi hota tabtak kam karenge
+			node = q.remove(); // queue mese node nikalenge
+			System.out.println(node.data + " ");
+			
+			//aur fir uske childrens ko add kardenge
+			for( Node child: node.children) {
+				q.add(child);
+			}
+		}
+		
+		System.out.println(".");
+	}
 	
-
 	public static void main(String[] args) {
 
 	}

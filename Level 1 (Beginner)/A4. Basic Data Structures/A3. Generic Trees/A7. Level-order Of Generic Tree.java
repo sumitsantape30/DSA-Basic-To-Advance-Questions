@@ -67,21 +67,7 @@ public class TraversalsInGenericTree {
 		return root;
 	}
 	
-	public static void traversals(Node node) {
-		//area 1
-		// area 1 node ka pre area kaha jata hai 
-		System.out.println("Node Pre"+ node.data); // yahi euler ka left hai. Eulers left, On the way deep in recursion, node's pre area
-		for( Node child : node.children) {
-			// edge pre
-			System.out.println("Edge Pre"+ node.data+"--"+child.data);
-			traversals(child);
-			System.out.println("Edge Post"+ node.data+"--"+child.data); //iss child ke pass se jab node pr wapas aa rhe honge to use bolenge edge post
-			// edge post
-		}
-		
-		//now eulers right, on the way out of recursion, node's post area
-		System.out.println("Node Post"+ node.data);
-	}
+	
 
 	public static void main(String[] args) {
 

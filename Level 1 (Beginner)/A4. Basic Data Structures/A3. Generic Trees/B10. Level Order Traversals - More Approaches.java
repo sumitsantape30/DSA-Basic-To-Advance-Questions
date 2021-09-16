@@ -24,7 +24,7 @@ private static class
 		 Queue<Node> mq= new LinkedList<>() ; //isme koi child queue nhi hai
 			mq.add(node); 
 			mq.add(new Node(-1)); //node ke sath sath maine null bhi add kr skte the but woh nhi hoga so null ki jaga aisa new node dalunga jiska data -1 hoga
-
+			// yeh jo new Node(-1) dal rhe ho uske jagah markingNode banakr bhi dal skte ho, Node markingNode= new Node(-1)
 						
 			while( mq.size() > 0){ 
 				node= mq.remove(); 
@@ -37,11 +37,10 @@ private static class
 					 mq.add(child);
 				 }
 			
-				}else { // agar node ka data -1 hai to check kare kya main queue ka size
-					if( mq.size() > 0) {
-						//agar main queue ka size greater than 0 hai tabhi dubara -1 wala node add krde aur enter bhi lagayenge
-						mq.add(new Node(-1));
+				}else { // agar node ka data -1 hai to enter lagao aur markingNode ko wapas queue mai daldo
+					if( mq.size() > 0) { //agar muje markingNode mila hai but queue ka size 0 hai to usko firse dalne ki jarurat nhi hai, so tabhi dalenge jab queue ki size > 0
 						System.out.println();
+						mq.add(new Node(-1)); 
 					}		
 				}	
 			}

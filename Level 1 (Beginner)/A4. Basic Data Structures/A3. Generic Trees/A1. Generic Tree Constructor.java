@@ -8,12 +8,7 @@ public class GenericTreeConstructor {
 
 	private static class Node { //constructor
 		int data;
-		ArrayList<Node> children;
-		
-		public Node(int data){
-			this.node= data;
-			children= new ArrayList<Node>();
-		}
+		ArrayList<Node> children = new ArrayList<Node>();
 	}
 
 	public static void main(String[] args) {
@@ -52,3 +47,7 @@ public class GenericTreeConstructor {
 	}
 
 }
+
+//==================================JB's=============================
+
+

@@ -31,7 +31,7 @@ private static class
 				//jo remove kiya hai uska data agar woh -1 nhi hai to print kardo aur uska children add kardo
 				if( node.data != -1) {
 					
-				 System.out.println(node.data+" "); 
+				 System.out.print(node.data+" "); 
 				 
 				 for( Node child: node.children) {
 					 mq.add(child);
@@ -58,7 +58,7 @@ Appraoch 3 (Count Approach)=====================================================
 			for( int i=0; i< cicl; i++) { //jitne children hai current level mai utni bar loop chalaye
 				//aur fir wahi rpa
 				node= mq.remove();
-				System.out.println(node.data +" ");
+				System.out.print(node.data +" ");
 				
 				for( Node child: node.children ) {
 					//hum wapas usko add kardenge
@@ -98,7 +98,7 @@ Approach 4 (Pair) ==============================================================
 			}
 			
 			// agr aisa nhi hai woh usi level ka hai to simple print kare
-			System.out.println(p.node.data+ " ");
+			System.out.print(p.node.data+ " ");
 			// aur uske children keliy loop chala de
 			for(Node child: p.node.children) {
 				Pair cp= new Pair(child, p.level +1); // child pair , aur uska level p.level se ek jada hoga

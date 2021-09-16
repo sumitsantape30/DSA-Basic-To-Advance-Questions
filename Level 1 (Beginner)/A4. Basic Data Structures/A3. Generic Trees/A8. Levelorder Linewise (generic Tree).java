@@ -28,7 +28,7 @@ public static void levelOrderLinewise(Node node){
 		
 		Queue<Node> cq= new LinkedList<>(); //child queue
 		
-		while( mq.size() > 0){ 
+		while( mq.size() > 0){ // (mq.size() || cq.size()) yeh bhi condition laga skte hai
 			node= mq.remove(); //pehle main queue mese removal karenge
 			 System.out.println(node.data+" "); //dusra kam printing ka
 			 

@@ -55,10 +55,10 @@ Appraoch 3 (Count Approach)=====================================================
 
 		while (mq.size() > 0) {
 			int cicl= mq.size(); //aatehi yeh dekhe children in current level aur woh main queue ka size aapko batayega
-
+			//jitni current time pe queue ki size rahegi utne removal karna hai
 			for( int i=0; i< cicl; i++) { //jitne children hai current level mai utni bar loop chalaye
 				//aur fir wahi rpa
-				mq.remove();
+				node= mq.remove();
 				System.out.println(node.data +" ");
 				
 				for( Node child: node.children ) {

@@ -74,11 +74,11 @@ public class TraversalsInGenericTree {
 		q.add(node); //jo bhi node pass hua use queue mai dal denge
 		
 		while( q.size() > 0) { //jabtak queue ka size 0 nhi hota tabtak kam karenge
-			node = q.remove(); // queue mese node nikalenge
-			System.out.print(node.data + " "); //fir node ko print kardenge
+			Node rn = q.remove(); // queue mese node nikalenge, rn : remove node
+			System.out.print(rn.data + " "); //fir node ko print kardenge
 			
-			//aur fir uske childrens ko add kardenge
-			for( Node child: node.children) {
+			//aur fir jo node remove kiya uske childrens ko add kardenge
+			for( Node child: rn.children) {
 				q.add(child);
 			}
 		}

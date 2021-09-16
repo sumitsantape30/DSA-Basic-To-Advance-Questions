@@ -69,7 +69,8 @@ public class TraversalsInGenericTree {
 	
 	public static void levelOrder(Node node) {
 		
-		Queue<Node> q= new LinkedList<>(); //ek quee banayi hai
+		Queue<Node> q= new ArrayDeque<>(); // yeh bhi syntax use kr skte ho
+		//Queue<Node> q= new LinkedList<>(); //ek quee banayi hai
 		q.add(node); //jo bhi node pass hua use queue mai dal denge
 		
 		while( q.size() > 0) { //jabtak queue ka size 0 nhi hota tabtak kam karenge

@@ -87,8 +87,8 @@ public static void linearize(Node node){
   public static Node getTail(Node node){
 
       while(node.children.size() != 0){//jabtak answer ke children ka size non zero or 1 hoga tabtak ans ko ans update kardo
-        node = node.children.get(0);
-      } 
+        node = node.children.get(0); //woh linearise hoke aaya hai so har node ka ek hi child exist karega isliye 0 index liye
+      } //har node ko check kar rhe hai ki agar iss node ka child exist krta hai to node ko uske child pe point karwate hai, jab kisi node ka child exist nhi karega matlab wahi humari tail hai
       
       return node;
   }

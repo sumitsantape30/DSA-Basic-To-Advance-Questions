@@ -84,7 +84,7 @@ public class MirrorAGenericTree {
 		    left++;
 		    right--;
 		}
-	}
+	} //yeh swap wala kam pre area aur post area mai karoge tabhhi hojayega
 
 	public static void main(String[] args) {
 

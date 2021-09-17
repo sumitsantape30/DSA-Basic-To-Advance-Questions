@@ -42,11 +42,11 @@ public class LinearizeAGenericTree {
 	public static void linearize(Node node) {
 		
 		// faith rakkhe sabpe linearize call kare
-		for( Node child: node.children) {
+		for( Node child: node.children) { //har child ko bolenge ki linearize hoke aja
 			linearize(child);
 		}
 		
-		while(node.children.size() > 1) {
+		while(node.children.size() > 1) { //node ki arraylist ka size 1 nhi hojata tabtak chalega yeh kam
 			Node lc= node.children.remove(node.children.size()-1); // last child ko remove kiya. lc: Last child (isse root aur last child ka connection tut gya)
 			//ab jo naya last hai woh 2nd last hai idliye size-1 hi index rahega
 			Node sl= node.children.get(node.children.size()-1); //second last
@@ -66,6 +66,32 @@ public class LinearizeAGenericTree {
 		return node;
 		
 	}
+	
+	//==============JBs
+	
+public static void linearize(Node node){
+     
+     for(Node child: node.children){
+         linearize(child);
+     }
+     
+     while(node.children.size() >1){
+         Node slkitail= getTail(node.children.get(node.children.size()-2));// second last child ki tail
+          // second last ki tail aachuki hai uske children mai hume add karna hai last child ko
+          slkitail.children.add(node.children.get(node.children.size()-1)); //second last ki tail mai last ko add karwa diya ab last child ko remove kardo
+          node.children.remove(node.children.size()-1); //last child ko remove kardiya
+     }
+     
+  }
+  
+  public static Node getTail(Node node){
+
+      while(node.children.size() != 0){//jabtak answer ke children ka size non zero or 1 hoga tabtak ans ko ans update kardo
+        node = node.children.get(0);
+      } 
+      
+      return node;
+  }
 
 	public static void main(String[] args) {
 

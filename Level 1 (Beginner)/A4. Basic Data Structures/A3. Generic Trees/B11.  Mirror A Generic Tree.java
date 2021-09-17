@@ -75,7 +75,7 @@ public class MirrorAGenericTree {
 		
 		while( left < right){
 		    //hume unka address badlna hoga, sirf data badlane se kuch nhi hoga
-		    //hume mirror image karna hai isliye data reverse karne se nhi hoga address change karna padega
+		    //hume mirror image karna hai isliye data reverse karne se nhi hoga address change karna padega. Arraylist ko change karna hai aur children arraylist mai nodes rehte hai tree ke ek node mai
 		    Node ln= node.children.get(left); //left node
 		    Node rn = node.children.get(right);//right node
 		    node.children.set(left, rn); //left pe right node set kardenge

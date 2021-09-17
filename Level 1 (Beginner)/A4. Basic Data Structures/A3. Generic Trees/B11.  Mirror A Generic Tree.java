@@ -57,10 +57,10 @@ public class MirrorAGenericTree {
 	public static void mirror(Node node) {
 
 		for (Node child : node.children) { //humar faith hai ki yeh children ka mirror banake de dega
-			mirror(child);
+			mirror(child); //har ek child ko call laga rhe ki apni mirror image mai convert hoke aaje
 		}
 		
-		//children to apn kam krlega but root ne abhitak nhi kiya so 10 ka mirror karayenge
+		//children to apn kam krlega but jo root node hai uski arraylist ko hume reverse karna padega 
 		Collections.reverse(node.children); //node ki jo children nam ki arraylist hai usko reverse krdenge
 	}
 

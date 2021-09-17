@@ -92,6 +92,18 @@ public static void linearize(Node node){
       
       return node;
   }
+	
+	//getTail using recursion
+ public static Node getTail(Node node){
+	if( node.children.size(){ //agar node ke children ka size grater than 0 hai means agar node ka child exist krta hai to usko hi bolo ki tu apna tail bta
+		Node rr = getTail(node.children.get(0)); //node ke child kohi bolre ki tu apna tail bta
+		return rr;
+	}else{ 
+		//agar uska child exist nhi krta to woh khud hi tail hai
+		return node;
+		//else wali case is a basecase actually, isko basecase banado or else mai rakho
+	}
+  }
 
 	public static void main(String[] args) {
 

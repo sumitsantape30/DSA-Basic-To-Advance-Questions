@@ -63,6 +63,28 @@ public class MirrorAGenericTree {
 		//children to apn kam krlega but jo root node hai uski arraylist ko hume reverse karna padega 
 		Collections.reverse(node.children); //node ki jo children nam ki arraylist hai usko reverse krdenge
 	}
+	
+	//JB's
+	 public static void mirror(Node node){
+                for (Node child : node.children) { //humar faith hai ki yeh children ka mirror banake de dega
+			mirror(child);
+		}
+		
+		int left=0;
+		int right= node.children.size()-1;
+		
+		while( left < right){
+		    //hume unka address badlna hoga, sirf data badlane se kuch nhi hoga
+		    //hume mirror image karna hai isliye data reverse karne se nhi hoga address change karna padega
+		    Node ln= node.children.get(left); //left node
+		    Node rn = node.children.get(right);//right node
+		    node.children.set(left, rn); //left pe right node set kardenge
+		    node.children.set(right, ln); // right pe left node set kiya
+		    
+		    left++;
+		    right--;
+		}
+	}
 
 	public static void main(String[] args) {
 

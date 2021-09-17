@@ -47,10 +47,10 @@ public class LinearizeAGenericTree {
 		}
 		
 		while(node.children.size() > 1) {
-			Node lc= node.children.remove(node.children.size()-1); // last child ko remove kare. lc: Last child
-			//ab jo naya last hai woh 2nd last hai
+			Node lc= node.children.remove(node.children.size()-1); // last child ko remove kiya. lc: Last child (isse root aur last child ka connection tut gya)
+			//ab jo naya last hai woh 2nd last hai idliye size-1 hi index rahega
 			Node sl= node.children.get(node.children.size()-1); //second last
-			// fir mangayenge 2nd last ki tail
+			//last aur second last aagye ab second last ki tail mai last ko dal denge, usse pehle second last ki tail mangayenge
 			Node slt= getTail(sl);// slt: second last tail. getTail nam ke function ko second last denge to woh uski tail lake dega
 			slt.children.add(lc); //second last ke children mai maine add kiya last child ko
 			

@@ -40,8 +40,8 @@ public class LowestCommonAncestor {
 		ArrayList<Integer> p2= nodeToRootPath(node, d2); //path 2, d2 pass kiya
 		
 		//ab do loop chalayenge
-		int i= p1.size();
-		int j= p2.size();
+		int i= p1.size()-1;
+		int j= p2.size()-1;
 		
 		while( i >= 0 && j >= 0 && p1.get(i) == p2.get(j)) { //jabtak i and j greater than 0 hai and p1 and p2 same hai
 		     i--;

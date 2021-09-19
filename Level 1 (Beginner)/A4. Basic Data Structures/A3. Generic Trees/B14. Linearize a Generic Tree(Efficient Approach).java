@@ -10,9 +10,9 @@ public static Node linearize2(Node node) { //yeh linear karne ke sath sath tail 
 			Node last= node.children.remove(node.children.size() - 1); //aakhri wale ko remove karenge so ab last variable ke andar woh pda hai
 			
 			// ab jo new last hai jo actually mai 2nd last hai to uski tail mangayenge
-			Node sl= node.children.get(node.children.size()-1); //second last
+			Node sl= node.children.get(node.children.size()-1); //yeh pehle seocnd last tha but last wale ko remove kardiya to ab yahi last hai siliye -1 kiye
 			Node slkt=  linearize2(sl); //second last ki tail
-			// so yeh linear bhi hogya aur usne muje ani tail bhi dedi
+			// so yeh linear bhi hogya aur usne muje anpi tail bhi dedi
 			
 			//so ab muje second last ke children mai add karna hai last ko
 			slkt.children.add(last);

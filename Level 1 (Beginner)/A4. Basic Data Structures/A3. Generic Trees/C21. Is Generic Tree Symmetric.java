@@ -41,9 +41,9 @@ public class IsGenericTreeSymmetric {
 		}
 
 		for (int i = 0; i < n1.children.size(); i++) {
-			int j = n1.children.size() - 1 - i;
+			int j = n2.children.size() - 1 - i;
 			Node c1 = n1.children.get(i);
-			Node c2 = n2.children.get(i);
+			Node c2 = n2.children.get(j);
 			if (areMirror(c1, c2) == false) {
 				return false;
 			}

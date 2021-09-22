@@ -51,7 +51,7 @@ public class PredecessorAndSuccessor {
 		}
 
 		for( Node child: node.children) { // 1. recursion call karenge
-			predecessorAndSuccessor(node, data);
+			predecessorAndSuccessor(child, data);
 		}
 		//travel krte hue aapko kuch vlues update karni thi, successor, predecessor, state inko values update karni thi isko travel and change strategy bolte hai 
 		//state ek marker hai aap chahe to as a parameter bhi pass kar skte ho 

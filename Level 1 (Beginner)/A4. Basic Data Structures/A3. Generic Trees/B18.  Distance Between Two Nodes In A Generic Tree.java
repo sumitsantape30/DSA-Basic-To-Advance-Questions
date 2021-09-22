@@ -44,7 +44,7 @@ public class DistanceBetweenNodes {
 		int i= p1.size()-1;
 		int j= p2.size()-1;
 		
-		while( i >= 0 && j >= 0 && p1.get(i) == p2.get(j)) { //jabtak i and j grater than 0 hai and p1 and p2 same hai
+		while( i >= 0 && j >= 0 && p1.get(i) == p2.get(j)) { //jabtak i and j greater than 0 hai and p1 and p2 same hai
 		     i--;
 		     j--;
 		     // i and j ko -- krte rahenge

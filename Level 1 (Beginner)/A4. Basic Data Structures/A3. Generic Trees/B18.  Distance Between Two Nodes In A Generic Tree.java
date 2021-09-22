@@ -37,7 +37,7 @@ public class DistanceBetweenNodes {
 	
 	public static int distanceBetweenNodes(Node node, int d1, int d2){
 
-		ArrayList<Integer> p1= nodeToRootPath(node, d1); //path 1, pehle wale ka path nikala
+		ArrayList<Integer> p1= nodeToRootPath(node, d1); //path 1, pehle wale ka path nikala arraylist mai ayega
 		ArrayList<Integer> p2= nodeToRootPath(node, d2); //path 2, d2 pass kiya and dusre wale ka path nikala
 		
 		//ab do loop chalayenge

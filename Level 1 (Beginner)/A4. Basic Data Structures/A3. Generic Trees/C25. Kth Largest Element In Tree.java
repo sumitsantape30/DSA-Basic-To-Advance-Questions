@@ -90,21 +90,23 @@ public class kthLargest {
 
 	  public static int kthLargest(Node node, int k){
 
-		  floor= Integer.MIN_VALUE; //floor ki value set kardi
-		  int factor= Integer.MIN_VALUE ;// kiska nikalna hai , factor bola mai infinity ka floor nikal lo
+		  int data= Integer.MAX_VALUE; //sabse pehle data pass hoga + infinite. coz pehle muje infinity ka floor chahiye
+		  ceil= Integer.MAX_VALUE ; //bado mai sabse chota hota hai
+		  floor= Integer.MIN_VALUE ;// floor hota hai choto mai sabse bada 
 		  
-		  for( int i=0; i< k ;i++) { //yeh kam k times kiya jaye
+		  for( int i=0; i< k ;i++) { //yeh kam k times kiya jaye, kth largest chahiye to k times iss function ko call karni hai 
 			  //ceilandfloor wale function ko k times call karenge
-			  ceilAndFloor(node, factor); //node pass kiya aur factor ke sath pass kiya, infinity ke sath pass kiya Infinty ke sath pass karunga to floor largest value ke barbar set hoke ayega
-			  // so agli bar ka factor yeh floor hi hojayega
-			  factor= floor;
-			  //aur agli bar call lagane se phele floor ko dubarase reset krde 
-			  floor= Integer.MIN_VALUE;
-			  
+			  ceilAndFloor(node, data); // maine bola ki iska ceil and floor nikalde dedo 
+			  //mere liye relevant floor hi hoga
+			  //ab agli bar keliye data floor banta hai aur fir mai uska floor mangwata hu
+			  data= floor; // infinity ka jo bhi floor aya woh agli bar keliye data banna chahiye
+			  //aur bar keliye floor ki value bhi update karni padegi usko reset karna padega, floor ko bar bar uske default value pe reset karna padega hume
+			  floor = Integer.MIN_VALUE;
+			    
 		  }
 		  
-		  //last mai finally yeh factor return kardo
-		  return factor;
+		  //last mai finally yeh data return kardo
+		  return data;
 	  
 	  }
 

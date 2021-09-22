@@ -45,7 +45,7 @@ public class AreTreesMirrorInShape {
 			// andar aatehi ek j nikalenge hum, j hoga dusre extreme se
 			int j= n1.children.size() -1 -i; // means agar i left se hai to j right se
 			Node c1= n1.children.get(i); //left se child uthaya n1 ka
-			Node c2= n2.children.get(i); //aur right se child uthaya n2 ka
+			Node c2= n2.children.get(j); //aur right se child uthaya n2 ka
 			if(areMirror(c1, c2) == false) { //aur fir pucha kya n1 ke left wale child aur kya n2 ke right wale child mirror nhi hai
 				// agar tum uske mirror nhi ho, n1 ke left wale child agar tum n2 ke right wale child ke mirror image nhi ho to n1 bhi n2 ka mirror image nhi hai
 				return false;

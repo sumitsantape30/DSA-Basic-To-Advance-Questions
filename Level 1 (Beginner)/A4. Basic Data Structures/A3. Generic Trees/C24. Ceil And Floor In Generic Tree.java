@@ -55,6 +55,21 @@ public class CeilAndFloor {
 		}
 	}
 
+// JB's
+    public static void ceilAndFloor(Node node, int data) {
+                if( node.data > data && node.data < ceil){
+                       ceil= node.data;
+                 }
+      
+                if( node.data < data && node.data > floor){
+                      floor= node.data;
+                 }
+      
+                 for(Node child: node.children){
+                     ceilAndFloor(child, data);
+                }
+        }
+
 	public static void main(String[] args) {
 
 		Node root = construct(arr);

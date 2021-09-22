@@ -38,12 +38,11 @@ public class PredecessorAndSuccessor {
 	public static void predecessorAndSuccessor(Node node, int data) {
 		
 		//2.ab iske preorder mai dekhiye
-		if( state == 0) {
-			//agar state 0 hai 
-			if( node.data == data) { //fir hum check karenge kya node ka data data ke equal hai, agar equal hai to state ko change karke 0 se 1 kardo
-				state= 1;
-			}else { //else apna predecessor change krte rho
+		if( state == 0) { //state ek to 0 ho skti hai or 1
+			if ( node.data != data){ //agar data node ke data ke equal nhi hai to apna predecessor change krte rho
 				predecessor= node; //isse jaha jaha apka recursion ja rha hoga, jis jis node pe pohchega woh woh predecessor banta jayega
+			} else { //agar state 0 hai aur node.data data ke equal hai to, abhiabhi apko data mila hai to state ko 1 se badha do
+				state= 1;
 			}
 		}else if( state == 1) { //agar state 1 hai to hum uss waqt Successor set kardenge aur state ko 2 kardenge
 			successor = node;
@@ -54,6 +53,8 @@ public class PredecessorAndSuccessor {
 		for( Node child: node.children) { // 1. recursion call karenge
 			predecessorAndSuccessor(node, data);
 		}
+		//travel krte hue aapko kuch vlues update karni thi, successor, predecessor, state inko values update karni thi isko travel and change strategy bolte hai 
+		//state ek marker hai aap chahe to as a parameter bhi pass kar skte ho 
 	}
 
 	public static void main(String[] args) {

@@ -89,14 +89,14 @@ public class NodeWithMaximumSubtreeSum {
 		return sum;
 	}
 	
-//=========================JB's
+//=========================JB's=====================================================
 	//Approach 1
 	
-	 static int maxSubTreeSum = Integer.MIN_VALUE;
+ static int maxSubTreeSum = Integer.MIN_VALUE;
   static Node maxSubTreeSumNode; 
   
   public static int sum(Node node){
-      int ans= node.data;
+      int ans= node.data; //jaise aaray mai hum subset ki bat krte hai to pura array bhi ek subset hota hai so agar yaha hum subtree ki bat kr rhe hai to jo pura tree hai woh bhi ek subtree hai, usko bhi mai ek substree bolunga isliye root kobhi consider karna padega
       
       for(Node child: node.children){
           ans += sum(child);

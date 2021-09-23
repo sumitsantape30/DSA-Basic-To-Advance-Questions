@@ -39,7 +39,7 @@ public class PredecessorAndSuccessor {
 		
 		//2.ab iske preorder mai dekhiye
 		if( state == 0) { //state ek to 0 ho skti hai or 1
-			if ( node.data != data){ //agar data node ke data ke equal nhi hai to apna predecessor change krte rho
+			if ( node.data != data){ //agar data node ke data ke equal nhi hai to apna predecessor change krte rho, coz chances hai ki yeh node predecessor ho skta hai
 				predecessor= node; //isse jaha jaha apka recursion ja rha hoga, jis jis node pe pohchega woh woh predecessor banta jayega
 			} else { //agar state 0 hai aur node.data data ke equal hai to, abhiabhi apko data mila hai to state ko 1 se badha do
 				state= 1;

@@ -37,7 +37,7 @@ public class DiameterOfGenericTree {
 		
 		for( Node child: node.children) {
 			int ch= calculateDiaReturnHeight(child); //child ki height
-			if( ch > sdch) { //agar aapki child ki height deepest child ki height ko beat karde to
+			if( ch > dch) { //agar aapki child ki height deepest child ki height ko beat karde to
 				// agar woh dono se jada hai to second wale mai deepest wale ki value aajayegi aur deepest wale mai yeh nayi value ajayegi
 				sdch= dch;
 				dch= ch;

@@ -30,7 +30,11 @@ public class DiameterOfGenericTree {
 	}
 
 //==================== Approach 1 (n^2) hai yeh ======
-	static int dia = 0; // hum isme diameter nikalenge aur return height karenge
+//function likhenge jo height calculate krta hai aue uski help se ek diameter nam ka static variable lenge aur uski value update kar denge
+	
+	static int dia; // hum isme diameter nikalenge aur return height karenge isliye dia ko static liye
+	//by default 0 se initialise hojayega
+	
 	static int calculateDiaReturnHeight(Node node) {
 		int dch= -1; //deepest child height ko -1 se set karenge
 		int sdch= -1; // second deepest child  ko -1 set karenge
@@ -60,7 +64,36 @@ public class DiameterOfGenericTree {
 		return dch; 
 		// return dch hoga par impact dia pr ayega
 	}
+	
+//============================JB's============================
+//Approach 1 = O(n^2)
+   static int diameter; //by default 0 se intialise hoga, sabse pehle jab code ek leaf node pe pohchega tab diameter compare hogi tab diameter 0 rahegi initially
+   public static int height(Node node){
+       
+       int maxh= -1;
+       int smaxh= -1;
+       
+       for(Node child: node.children){
+           int ch= height(child); // hum child ko call karenge ki apni height btao
+           if(ch > maxh){ //agar child ki height max hoti hai max height se so ch ko max hieght banado aur purane wali max hieght ko second max height mark kardo
+               smaxh= maxh;
+               maxh= ch;
+           }else if(ch > smaxh){ //agar sirf second max height sehi jada hai to bas use update krdo
+               smaxh= ch;
+           }
+       }
+       
+       diameter= Math.max(diameter, maxh + smaxh + 2); //diameter ko nikalke previous diameter ke sath compare karenge
+       
+       return maxh+ 1; //har node pe maxh aur smaxh nikalte hai isliye+1, hum height return krte hai ki meri subtree ki height yeh hai 
+       
+   }
 
+//===========================================================================
+// Approach 2 = Pair Approach	
+	
+	
+	
 	public static void main(String[] args) {
 
 	}

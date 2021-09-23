@@ -92,11 +92,44 @@ public class NodeWithMaximumSubtreeSum {
 //=========================JB's=====================================================
 	//Approach 1
 	
- static int maxSubTreeSum = Integer.MIN_VALUE;
+    public static class Pair{
+      int sum; //yeh sum 0 se initialise hojayega
+      int mss = Integer.MIN_VALUE; //max subtree sum
+      Node mssnode ; //max subtree sum ki node
+  }
+	
+    public static Pair fun(Node node){ // pair return karega yeh. 3 chize return karega yeh ki meri subtree ka sum kya hai, meri subtree mai max subtree sum kya hai aur konse node pr exist krti hai yeh 3 chize btayega
+    
+      Pair mp= new Pair(); //mai yeh pair return karunga so muje apne pair ki teeno chize set karni hogi
+      mp.sum += node.data; //my pair sum mai pehle node ka data dal dete hai 
+      
+      for(Node child: node.children){
+          Pair cp= fun(child); //maine har ek child ka pair mangwaliya 
+          mp.sum +=cp.sum ; //har ek child se pair aayi usme se jo sum aayi hai usko mai mypair ki sum mai dal rha hu 
+          
+          if(cp.mss > mp.mss){ //agar mere child ka max subtree sum jada hai my pair ke max subree sum se
+            mp.mss = cp.mss;
+            mp.mssnode = cp.mssnode;
+          } //sare children ke sath compre karliye 
+          
+      }
+      
+      //sare children ke sath compre karliye but last mai ek aur ke sath compare karna hai
+      if( mp.sum > mp.mss){ //agar mypair ka sum jada ata hai my pair ke subtreesum se to mp.mss hoga pure tree kahi sum
+        mp.mss= mp.sum;
+        mp.mssnode= node;
+      }
+      
+      return mp;
+      
+    }
+  
+//==================== Approach 2=================================	
+  static int maxSubTreeSum = Integer.MIN_VALUE;
   static Node maxSubTreeSumNode; 
   
   public static int sum(Node node){
-      int ans= node.data; //jaise aaray mai hum subset ki bat krte hai to pura array bhi ek subset hota hai so agar yaha hum subtree ki bat kr rhe hai to jo pura tree hai woh bhi ek subtree hai, usko bhi mai ek substree bolunga isliye root kobhi consider karna padega
+      int ans= node.data;
       
       for(Node child: node.children){
           ans += sum(child);

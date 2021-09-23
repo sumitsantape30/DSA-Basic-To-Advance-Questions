@@ -81,13 +81,36 @@ public class NodeWithMaximumSubtreeSum {
 		
 		// yeh jo sum calculate hua return hone se just pehle
 		if( sum > ms) { //agar yeh sum aapke maximum sum se jada hai to aapka maximum sum node iss node ko man liya jaye
-			msn= node.data;
+			msn= node;
 			ms= sum ; //aur apka maximum iss sum ke barbar ho
 			
 		}
 		
 		return sum;
 	}
+	
+//=========================JB's
+	//Approach 1
+	
+	 static int maxSubTreeSum = Integer.MIN_VALUE;
+  static Node maxSubTreeSumNode; 
+  
+  public static int sum(Node node){
+      int ans= node.data;
+      
+      for(Node child: node.children){
+          ans += sum(child);
+      }
+      
+      if(ans > maxSubTreeSum){
+          maxSubTreeSum = ans;
+          maxSubTreeSumNode = node;
+      }
+      
+      return ans;
+  }
+
+	
 
 	public static void main(String[] args) {
 

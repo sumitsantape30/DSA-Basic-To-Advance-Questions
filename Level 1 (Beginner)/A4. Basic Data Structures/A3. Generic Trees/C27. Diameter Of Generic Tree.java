@@ -29,8 +29,8 @@ public class DiameterOfGenericTree {
 		ArrayList<Node> children = new ArrayList<>();
 	}
 
+//==================== Approach 1 (n^2) hai yeh ======
 	static int dia = 0; // hum isme diameter nikalenge aur return height karenge
-
 	static int calculateDiaReturnHeight(Node node) {
 		int dch= -1; //deepest child height ko -1 se set karenge
 		int sdch= -1; // second deepest child  ko -1 set karenge

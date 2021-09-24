@@ -92,7 +92,36 @@ public class DiameterOfGenericTree {
 //===========================================================================
 // Approach 2 = Pair Approach	
 	
-	
+   public static class Pair{
+       int ht;
+       int dia;
+   }
+   
+   public static Pair diameter(Node node){
+       
+        int maxh= -1; //max height
+        int smaxh= -1; //second max height
+        int dia= 0;
+       
+       for(Node child: node.children){
+           //1. har ek child ko call lagayennge aur unse muje answer mai ek pair milega
+           Pair cp= diameter(child); 
+          if( cp.ht > maxh){ //agar child ki height jada hoti hai max height se to second max height ko update krdo ur max ko child height ke equal rakhdo
+                smaxh = maxh;
+                maxh= cp.ht;
+          }else if(cp.ht > smaxh){
+              smaxh= cp.ht;
+          }
+          dia= Math.max(dia, cp.dia); //abtak ka diameter aur child pair ka diameter ko compare kiya
+       }
+       
+       Pair mp= new Pair();
+       mp.ht = maxh + 1;
+       mp.dia = Math.max(dia, maxh + smaxh + 2); //sare childrens ka diameter compare karwa liye upar , fir unn sab diameter ka max compared with maxh+smaxh+2.
+       //compared with diameter if diameter is passing throught this current node
+       
+       return mp;
+   }
 	
 	public static void main(String[] args) {
 

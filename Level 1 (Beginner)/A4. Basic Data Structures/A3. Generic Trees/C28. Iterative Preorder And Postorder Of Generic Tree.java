@@ -77,6 +77,54 @@ public class IterativePreAndPostOrder {
 		System.out.println(pre);
 		System.out.println(post);
 	}
+	
+//=====================JB's===========================
+	static class Pair {
+		
+		Node node;
+		int state;
+		
+		Pair(Node node, int state){
+			this.node= node;
+			this.state= state;
+		}
+		
+	}
+
+	public static void IterativePreandPostOrder(Node node) {
+		
+		String pre= ""; // pre and post keliye 2 string bana lenge
+		String post= "";
+		
+		Stack<Pair> st= new Stack<>(); //pair ki stack bana lenge
+		st.push(new Pair(node, 0)); //root node add karenge aur uski state hogi 0
+		
+		while( st.size() > 0) { //jabtak stack mai kuch na kch rahega tabtak kam chalega
+			Pair tos = st.peek(); //stack ka top nikal lenge
+			//ab top wale mai 3 bate ho skti hai
+			if( tos.state == 0) { // ya to uski state 0 ho skti hai
+				// stack ki top agar 0 hai pre mai top of the stack ke node ka data add krlo
+				pre += tos.node.data + " ";
+				if(tos.node.children.size() > 0){ //agar stack ki top jo node hai uske children ka size greater than 0 hai to stack mai new pair push krdo jiski state 0 hogi
+				  st.push(new Pair(tos.node.children.get(0), 0)); //uska 0th child exist krta hai to usko stack mai push krdenge
+				}
+				tos.state++; 
+			}else if( tos.state >= tos.node.children.size()) { //agar stack ke top ki state >= hai node ke children ke size se to isko post order mai add karo aur isko stack se remove bhi kardo
+				post += tos.node.data + " ";
+				st.pop();
+			}else { // else bichme kahi hai
+				// ab kuch child bache hai hum unn child pe jayenge
+			//jo top ki state hai woh number(th) wala children get karenge, and initial state mai state -1 hongi woh stack mai push kardenge
+				st.push(new Pair(tos.node.children.get(tos.state), 0));
+				//aur iske bad bhi mai top ki state badhaunga 
+				tos.state++; //0th child push kardiya to top ki state isliye badhayi taki agli bar 1th child push ho
+			}
+		}
+		
+		System.out.println(pre);
+		System.out.println(post);
+		
+	}
 
 	public static void main(String[] args) {
 

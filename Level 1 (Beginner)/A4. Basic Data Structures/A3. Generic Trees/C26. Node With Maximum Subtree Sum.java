@@ -148,7 +148,7 @@ public class NodeWithMaximumSubtreeSum {
 
 		Node root= construct(arr);
 		retsumAndCalculateMSST(root);
-		System.out.println(msn + "@");
+		System.out.println(msn + "@" ms);
 	}
 
 }

@@ -7,6 +7,7 @@ Input is managed for you
 Output Format
 @
 
+
 Constraints
 None
 Sample Input

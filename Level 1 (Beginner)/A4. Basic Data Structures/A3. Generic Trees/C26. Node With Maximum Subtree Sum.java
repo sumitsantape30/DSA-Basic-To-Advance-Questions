@@ -115,7 +115,7 @@ public class NodeWithMaximumSubtreeSum {
           
       }
       
-      //sare children ke sath compre karliye but last mai ek aur ke sath compare karna hai
+      //sare children ke sath compre karliye but last mai ek aur ke sath compare karna hai, yeh root keliye check kr rhe hai
       if( mp.sum > mp.mss){ //agar mypair ka sum jada ata hai my pair ke subtreesum se to mp.mss hoga pure tree kahi sum
         mp.mss= mp.sum;
         mp.mssnode= node;

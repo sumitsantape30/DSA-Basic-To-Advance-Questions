@@ -12,27 +12,25 @@ Sample Output
 				*
         
  Code:
-package Patterns;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class Pattern4 {
+public class Main {
 
-	public static void main(String[] args) {
-
-		Scanner s= new Scanner(System.in);
-		int n= s.nextInt();
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+       int n= scn.nextInt();
 		
 		int space=0;
 		int st= n;
 		
 		for( int i=0; i<= n; i++) {
 			
-			for( int j=0; j<=space ; j++) {
+			for( int j=1; j<=space ; j++) {
 				System.out.print("\t");
 			}
 			
-			for( int j= 0; j<= st; j++) {
+			for( int j= 1; j<= st; j++) {
 				System.out.print("*\t");
 			}
 			

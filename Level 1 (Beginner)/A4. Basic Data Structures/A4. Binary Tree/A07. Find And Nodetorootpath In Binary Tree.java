@@ -108,7 +108,7 @@ public class Main {
   
    static ArrayList<Integer> path; //humne ek path arraylist banali so jaha jaha true milega uss node ko hum arraylist mai dal denge
   public static boolean find(Node node, int data){
-      if( node == null){
+      if( node == null){ //agar left or right mai call lagi aur woh null hai to return false 
           //agar khali node pass hojaye to usme kuch mil hi nhi skta
           return false;
       }

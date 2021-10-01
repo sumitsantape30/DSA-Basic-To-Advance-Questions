@@ -113,7 +113,7 @@ public class Main {
           return false;
       }
       
-     if( node.data == data){ //agar node ka data data ke eqaul hai to return true
+     if( node.data == data){ //agar node ka data data ke eqaul hai to aage dhundna hi nhi hai return true krdo
          path.add(node.data);
          return true;
      }

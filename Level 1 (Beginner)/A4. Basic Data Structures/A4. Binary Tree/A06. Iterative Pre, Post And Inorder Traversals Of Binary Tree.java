@@ -114,7 +114,7 @@ public class Main {
 		      String in = "";
 		      String post= "";
 		      
-		      while(st.size() > 0){ //jabtak stack ka size grater than 0 hai tabtak kam karenge
+		      while(st.size() > 0){ //jabtak stack ka size greater than 0 hai tabtak kam karenge
 		        
 		        Pair top= st.peek();
 		        if(top.state == 1){ //state 1 hai matlab preorder hai, fir state badhayenge aur left ko jayenge
@@ -139,7 +139,7 @@ public class Main {
 		         st.pop();
 		        }
 		    }
-		     System.out.println(pre);
+		      System.out.println(pre);
 		      System.out.println(in);
 		      System.out.println(post);
 	}

@@ -121,14 +121,14 @@ public class Main {
      //agar root ke barabr nhi hai to left child pe dekhenge
      boolean filc = find(node.left ,data); // filc: find in left child. yeh sirf left child ko nhi left ke sare subtree ko dekkhe btata hai kahi usme mila ya nhi
      if(filc){ //agar left side mai milgya to true return karedenge aage dhundne ki jarurat nhi hai
-         path.add(node.data);
+         path.add(node.data); //root ka data add kardenge
          return true;
      }
      
      //yahape pohoche means data root ke barbr nhi hai aur left side mai bhi nhi mila
      boolean firc= find(node.right, data);
      if( firc){ //agar right child mai milgya to return true
-         path.add(node.data);
+         path.add(node.data); //root ka data add kardenge
          return true;
      }
      

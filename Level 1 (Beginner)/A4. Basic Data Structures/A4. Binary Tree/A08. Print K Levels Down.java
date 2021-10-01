@@ -105,16 +105,34 @@ public class Main {
   }
 
   public static void printKLevelsDown(Node node, int k){
-      if( node == null || k < 0){ //agar node null hojaye or k negative ho to return
+      if( node == null || k < 0){ //agar node null hojaye or k negative ho to return. kisika left right exist hi nhi krta ho to return
         return;
       }
       
       if( k == 0){
-          System.out.println(node.data); //agar k==0 hai to 0th level pe root hi hai to usko print kardenge
+          System.out.println(node.data); //agar k==0 hai to 0th level pe root hi hai to usko print kardenge aur return
       }
     
+    //mai apne left child ko bola ki apnese k-1 levels down jitne bhi nodes hai unko print karde
     printKLevelsDown(node.left, k-1); //root se k levels deep hai to left wale node se k-1 levels deep hoga
+    //aur mai apne right child ko call laga dunga ki apnese k-1 level down jitne bhi nodes hai aap unko print karado
     printKLevelsDown(node.right, k-1); //similarly right wale node sebhi k-1 levels deep hoga
+  }
+  
+//=============JB's===========================
+  
+   public static void printKLevelsDown(Node node, int k){
+      if( node == null){ 
+        return;
+      }
+      
+      if( k == 0){
+          System.out.println(node.data); 
+          return; //yahipe return krdenge to k negative hogahi nhi kabhi
+      }
+    
+    printKLevelsDown(node.left, k-1); 
+    printKLevelsDown(node.right, k-1); 
   }
 
   public static void main(String[] args) throws Exception {

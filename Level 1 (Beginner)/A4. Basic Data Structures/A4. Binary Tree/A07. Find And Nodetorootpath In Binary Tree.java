@@ -136,6 +136,59 @@ public class Main {
      return false;
      
   }
+    
+//========================JB's==============================================
+    
+    public static boolean find(Node node, int data){
+      if( node == null){
+          return false;
+      }
+      
+      if( node.data == data){
+          return true;
+      }
+      
+      boolean lans= find(node.left, data);
+      if( lans == true){
+          return true;
+      }
+      
+      boolean rans = find(node.right, data);
+      if( rans == true){
+          return true;
+      }
+      
+     return false;
+  }
+  
+  public static ArrayList<Integer> nodeToRootPath(Node node, int data){
+      
+      if( node == null){ //agar banda nhi mila to return an empty arraylist
+          return new ArrayList<Integer>();
+      }
+      
+      if(node.data == data){
+          ArrayList<Integer> bans= new ArrayList<Integer>();
+          bans.add(node.data);
+          return bans;
+      }
+      
+      //fir left child pe call karenge
+      ArrayList<Integer> lans= nodeToRootPath(node.left, data);
+      if(lans.size()> 0){ //agar arraylist ka size greater than 0 hai means muje ans mil gya hai to mai usme root ko add kardunga
+         lans.add(node.data);
+         return lans;
+      }
+      
+      ArrayList<Integer> rans= nodeToRootPath(node.right, data);
+      if(rans.size()> 0){
+          rans.add(node.data);
+          return rans;
+      }
+      
+      //agar kahipe bhi nhi mila to ek blank arraylist return karenge
+      return new ArrayList<>();
+  }
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

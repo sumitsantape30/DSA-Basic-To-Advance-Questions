@@ -113,6 +113,7 @@ public class Main {
     display(node.right);
   }
 
+  // hum isme return value node bhi rakkhe kar skte hai, aur nhibhi return kiya still sahi hoga 
   public static void createLeftCloneTree(Node node){
       if( node == null){
         return ;

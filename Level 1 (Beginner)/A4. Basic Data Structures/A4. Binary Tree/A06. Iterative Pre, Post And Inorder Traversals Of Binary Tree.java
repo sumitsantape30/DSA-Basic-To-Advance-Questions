@@ -110,31 +110,34 @@ public class Main {
 		      Pair rtp= new Pair(node,1); //root ke corresponding pair banaya aur uska state 1 set kardiya
 		      st.push(rtp); //aur stack mai root pair push kardenge
 		      
+		//aur apne pas 3 strings rakhlo
 		      String pre = "";
 		      String in = "";
 		      String post= "";
 		      
 		      while(st.size() > 0){ //jabtak stack ka size greater than 0 hai tabtak kam karenge
 		        
-		        Pair top= st.peek();
+		        Pair top= st.peek(); //sabse pehle stack ka top nikalenge
+			//mere pas 3 cases hai, state 
 		        if(top.state == 1){ //state 1 hai matlab preorder hai, fir state badhayenge aur left ko jayenge
 		        pre += top.node.data + " ";
 		        top.state++;
 		        
-		        if( top.node.left != null){ //top ke node ke left agar null nhi hai tabhi hum left mai ja payenge
+		        if( top.node.left != null){ //top ke node ke left agar null nhi hai tabhi hum left mai ja payenge, agar left child exist krta hai to uska pair banayenge aur stack mai push kardenge
 		            Pair lp= new Pair(top.node.left, 1);
 		            st.push(lp);
 		          }     
+				
 		        }else if( top.state == 2){ //2 state hai matlab left wala karke aaye hai inorder mai hai, fir state++ aur right ke taraf jao
 		        in += top.node.data + " ";
 		        top.state++;
 		        
-		        if( top.node.right != null){ 
+		        if( top.node.right != null){ //agar right child exist krta hai to pair banake stack mai dal denge
 		        Pair rp= new Pair(top.node.right, 1);
 		        st.push(rp);
 		        }
 		            
-		        }else{ //state 3 hai means left right dono ka chuke hai means yeh post order mai hai, iska kam hochuke hai to isko pop kardenge
+		        }else{ //state 3 hai means left right dono ka chuke hai means yeh post order mai hai, iska kam hochuka hai to isko pop kardenge
 		         post += top.node.data + " ";
 		         st.pop();
 		        }

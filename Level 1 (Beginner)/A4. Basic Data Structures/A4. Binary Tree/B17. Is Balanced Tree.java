@@ -86,10 +86,10 @@ public class Main {
   }
 
   public static BalPair isBalanced(Node node) {
-    if (node == null) {
+    if (node == null) { //agar node null hai 
       BalPair bp = new BalPair();
       bp.ht = -1;
-      bp.isBal = true;
+      bp.isBal = true; // null ka is bal true hota hai 
       return bp;
     }
 

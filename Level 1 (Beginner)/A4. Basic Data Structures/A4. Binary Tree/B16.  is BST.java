@@ -92,32 +92,31 @@ public class Main {
     return th;
   }
 
-  public static class BSTPair {
+  public static class BSTPair { //muje har node se muje uska subtree ka min, max aur woh subtree hai ya nhi yeh chahiye
     int min;
     int max;
     boolean isBST;
   }
 
   public static BSTPair isBST(Node node) {
-    if (node == null) {
+    if (node == null) { //null pe pohoch gye to null pe pohochke muje ek pair return karna hai 
       BSTPair bp = new BSTPair();
-      bp.min = Integer.MAX_VALUE;
-      bp.max = Integer.MIN_VALUE;
-      bp.isBST = true;
+      bp.min = Integer.MAX_VALUE; // default value of min is infinity
+      bp.max = Integer.MIN_VALUE; // max ki default value
+      bp.isBST = true; 
       return bp;
     }
 
-    BSTPair lp = isBST(node.left);
-    BSTPair rp = isBST(node.right);
+    BSTPair lp = isBST(node.left); //mai left subtree ko boulnga ki tu apna min max de aur tu bst hai ya nhi yeh btade
+    BSTPair rp = isBST(node.right); // right subtree pe bhi same kam
 
-    BSTPair mp = new BSTPair();
-    mp.min = Math.min(node.data, Math.min(lp.min, rp.min));
+    BSTPair mp = new BSTPair(); //fir my pair banayenge
+    mp.min = Math.min(node.data, Math.min(lp.min, rp.min)); //mera minimum hoga, minimum of (node.data, minimum of left and right pair )
     mp.max = Math.max(node.data, Math.max(lp.max, rp.max));
-    mp.isBST = lp.isBST && rp.isBST && node.data >= lp.max && node.data <= rp.min;
+    mp.isBST = lp.isBST && rp.isBST && node.data >= lp.max && node.data <= rp.min; 
 
     return mp;
   }
-
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

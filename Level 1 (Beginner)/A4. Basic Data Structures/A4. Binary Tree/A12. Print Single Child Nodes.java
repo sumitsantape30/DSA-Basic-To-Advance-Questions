@@ -18,7 +18,6 @@ Sample Output
 70
 
 Code:
-
 import java.io.*;
 import java.util.*;
 
@@ -100,19 +99,19 @@ public class Main {
     display(node.right);
   }
 
-   public static void printSingleChildNodes(Node node, Node parent) {
+   public static void printSingleChildNodes(Node node, Node parent) { //root ka koi parent nhi hota hai isliye Parent mai null pass kiya hai input mai
     if (node == null) {
       return;
     }
 
-    if (parent != null && parent.left == null && parent.right == node) {
+    if (parent != null && parent.left == null && parent.right == node) { //agar parent right humara node hai aur parent ke pas left hai hi nhi. inut mai humne parent null pass kiya hai so woh parent not null hona chahiye nhito parent.left chala direct to exception dega
       System.out.println(node.data);
-    } else if (parent != null && parent.right == null && parent.left == node) {
+    } else if (parent != null && parent.right == null && parent.left == node) {//parent ka left agar humara node hai aur parent ko right child hai hi nhi
       System.out.println(node.data);
     }
 
-    printSingleChildNodes(node.left, node);
-    printSingleChildNodes(node.right, node);
+    printSingleChildNodes(node.left, node); //agar mai node.left pe jau to uska parent node hoga
+    printSingleChildNodes(node.right, node); // agar mai node.right pe jau to uska parent bhi node hoga
   }
 
   public static void main(String[] args) throws Exception {

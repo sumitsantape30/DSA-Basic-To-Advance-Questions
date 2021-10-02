@@ -260,7 +260,7 @@ public class Main {
   }
 
   public static void printKNodesFar(Node node, int data, int k) {
-      ArrayList<Integer> al= nodeToRootPath(node, data); //data ka root to root path ajayega
+      ArrayList<Node> al= nodeToRootPath(node, data); //data ka root to root path ajayega
       
       for( int i=0; i< al.size(); i++){
           Node cr = al.get(i); // current node
@@ -288,7 +288,7 @@ public class Main {
          return lans;
       }
       
-      ArrayList<Integer> rans= nodeToRootPath(node.right, data);
+      ArrayList<Node> rans= nodeToRootPath(node.right, data);
       if(rans.size()> 0){
           rans.add(node);
           return rans;

@@ -113,33 +113,35 @@ public class Main {
     return th;
   }
   
-  public static class DPair{
+  public static class DPair{ 
       public int ht;
       public int dia;
   }
 
-  public static DPair diameter(Node node) {
+  public static DPair diameter(Node node) { //yeh pair return karega
     
-    if( node == null){
+    if( node == null){ //agar node null hai 
         DPair pp= new DPair();
-        pp.ht= -1;
+        pp.ht= -1; // left node ki height hoti hai 0 to yaha aap null pe means left node kebhi aage aaye ho to height will be -1
         pp.dia= 0;
         return pp;
     }
     
-    DPair lp= diameter(node.left);
-    DPair rp= diameter(node.right);
-    DPair mp= new DPair();
+    DPair lp= diameter(node.left); // left pair milegi
+    DPair rp= diameter(node.right); //right pair
     
-    mp.ht = Math.max(lp.ht, rp.ht) + 1;
-    mp.dia = Math.max(lp.ht + rp.ht +2, Math.max(lp.dia, rp.dia));
+    DPair mp= new DPair(); //ab mai apni pair banaunga
+    //ab my pair ka height and diamter set karenge
+    
+    mp.ht = Math.max(lp.ht, rp.ht) + 1;  //my pair ki height hogi max of left or right subtree ki height +1
+    mp.dia = Math.max(lp.ht + rp.ht +2, Math.max(lp.dia, rp.dia)); // agar diameter current node se hoke ja rhi hai to diamter will be lh + rp +2 otherwise left right ka diamter
     return mp;
-    
+   
   }
   
-  public static int diameter1(Node node){
-      DPair pp= diameter(node);
-      return pp.dia;
+  public static int diameter1(Node node){ //yeh diameter return karega
+      DPair ansp= diameter(node); // yeh muje answer pair dega
+      return ansp.dia; //aur answer pair ka diameter will be my answer
   }
 
   public static void main(String[] args) throws Exception {

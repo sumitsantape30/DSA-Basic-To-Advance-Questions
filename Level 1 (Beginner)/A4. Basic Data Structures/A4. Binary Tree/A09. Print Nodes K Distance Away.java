@@ -297,7 +297,7 @@ public class Main {
       return new ArrayList<>();
   }
   
-  public static void printKLevelsDown(Node node, int k, int blocker){
+  public static void printKLevelsDown(Node node, int k, Node blocker){
       if( node == null || node == blocker){ 
         return;
       }

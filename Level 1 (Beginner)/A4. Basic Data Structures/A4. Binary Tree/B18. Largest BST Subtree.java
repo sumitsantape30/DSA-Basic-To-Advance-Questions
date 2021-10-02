@@ -33,7 +33,8 @@ public static bstpair isBST(Node node) {
   if (mp.isBST) {  // agar mypair ka bst agar true hai to largest bstroot yahi node hoga
     mp.lbstroot = node; 
     mp.lbstsize = lp.lbstsize + rp.lbstsize + 1; // largest BST ka size hoga, left and right pe bst rhe honge
-  } else if (lp.lbstsize > rp.lbstsize) {  // agar isBST false hai aur left ka largest bst ka size jada hai right ke largest bst ke size se to my pair ka largest bst root wahi hoga jo left wale ne jawab diya hai
+  } else if (lp.lbstsize >= rp.lbstsize) {  // agar jis node pe khade hai woh BST nhi hai means isBST false hai to hum else mai ayenge. so mai to bst nhi ban paya so mai mere left or right child ko dekhunga
+    //agar left ka largest bst ka size jada hai right ke largest bst ke size se to my pair ka largest bst root wahi hoga jo left wale ne jawab diya hai
     mp.lbstroot = lp.lbstroot;
     mp.lbstsize = lp.lbstsize;
   } else {  

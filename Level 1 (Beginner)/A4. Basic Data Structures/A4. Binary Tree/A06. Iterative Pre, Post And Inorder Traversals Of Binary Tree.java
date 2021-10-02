@@ -129,13 +129,13 @@ public class Main {
 		          }     
 				
 		        }else if( top.state == 2){ //2 state hai matlab left wala karke aaye hai inorder mai hai, fir state++ aur right ke taraf jao
-		        in += top.node.data + " ";
-		        top.state++;
+		            in += top.node.data + " ";
+		            top.state++;
 		        
-		        if( top.node.right != null){ //agar right child exist krta hai to pair banake stack mai dal denge
-		        Pair rp= new Pair(top.node.right, 1);
-		        st.push(rp);
-		        }
+		              if( top.node.right != null){ //agar right child exist krta hai to pair banake stack mai dal denge
+		                 Pair rp= new Pair(top.node.right, 1);
+		                 st.push(rp);
+		             }
 		            
 		        }else{ //state 3 hai means left right dono ka chuke hai means yeh post order mai hai, iska kam hochuka hai to isko pop kardenge
 		         post += top.node.data + " ";

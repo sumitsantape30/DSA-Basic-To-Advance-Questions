@@ -125,7 +125,7 @@ public class Main {
     int lans= sum(node.left);
     int rans= sum(node.right);
     
-    tilt += Math.abs(rans - lans);
+    tilt += Math.abs(rans - lans); // += kar rhe means har node ka tilt usme add hojayega
     
     return lans + rans + node.data;
     

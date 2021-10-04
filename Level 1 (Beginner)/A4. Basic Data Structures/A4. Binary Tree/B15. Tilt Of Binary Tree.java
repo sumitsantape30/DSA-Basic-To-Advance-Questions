@@ -122,10 +122,11 @@ public class Main {
         return 0;
     }
     
-    int lans= sum(node.left);
-    int rans= sum(node.right);
+    int lans= sum(node.left); //maine apne left subtree ka sum mangwa liya
+    int rans= sum(node.right); // fir maine apne right subtree ka sum mangwa liya
     
-    tilt += Math.abs(rans - lans); // += kar rhe means har node ka tilt usme add hojayega
+    // dono subtree ka sum aagya ab iss node ka tilt calculate karenge
+    tilt += Math.abs(rans - lans); // += kar rhe means har node ka tilt usme add ho rha hai aur abhi hum node ka tilt dal rhe hai usme
     
     return lans + rans + node.data;
     

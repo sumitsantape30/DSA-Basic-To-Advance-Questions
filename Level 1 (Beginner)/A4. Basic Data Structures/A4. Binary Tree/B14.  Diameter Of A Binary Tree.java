@@ -122,7 +122,7 @@ public class Main {
     
     if( node == null){ //agar node null hai 
         DPair pp= new DPair();
-        pp.ht= -1; // left node ki height hoti hai 0 to yaha aap null pe means left node kebhi aage aaye ho to height will be -1
+        pp.ht= -1; // single node rha to height 0 hoti hai based on edges, so null rha to uske piche -1 rahegi
         pp.dia= 0;
         return pp;
     }

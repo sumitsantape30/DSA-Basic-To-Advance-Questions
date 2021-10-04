@@ -104,12 +104,14 @@ public class Main {
       return;
     }
 
+     //fir mai khudke liye check karunga kya mai apne child ka single child hu, agar hu to print hojaounga
     if (parent != null && parent.left == null && parent.right == node) { //agar parent right humara node hai aur parent ke pas left hai hi nhi. inut mai humne parent null pass kiya hai so woh parent not null hona chahiye nhito parent.left chala direct to exception dega
       System.out.println(node.data);
     } else if (parent != null && parent.right == null && parent.left == node) {//parent ka left agar humara node hai aur parent ko right child hai hi nhi
       System.out.println(node.data);
     }
 
+    //muje apne child pe faith hai, mai unko bolunga yr check karo kya tum khud mere(root) means parent ke single child ho aur agar ho to print hojao. 
     printSingleChildNodes(node.left, node); //agar mai node.left pe jau to uska parent node hoga
     printSingleChildNodes(node.right, node); // agar mai node.right pe jau to uska parent bhi node hoga
   }

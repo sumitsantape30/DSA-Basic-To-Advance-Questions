@@ -155,8 +155,8 @@ public class Main {
       return false;
     }
 
-    if (data > node.data) {
-      return find(node.right, data);
+    if (data > node.data) { //aisa hua to yeh chota banda hume left mai milega 
+      return find(node.right, data); 
     } else if (data < node.data) {
       return find(node.left, data);
     } else {

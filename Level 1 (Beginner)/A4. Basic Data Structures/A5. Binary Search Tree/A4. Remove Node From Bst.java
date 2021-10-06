@@ -133,14 +133,14 @@ public class Main {
             //node ke left null hai aur right null nhi hai  to right child ko return kiya
             return node.right;
         }else{
-            //otherwise agar donohi null nhi hai to hume mangwana padega left ka max, so max function se max ajayega
+            //otherwise agar donohi null nhi hai means mere dono child hai to hume mangwana padega left ka max, so max function se max ajayega
             int lmax= max(node.left);
             node.data= lmax; //node ka data left ke max se replace karwa diya aur fir mai call lagaunga
             node.left= remove(node.left, lmax); //left ko call lagayi ki left mese lmax hatado
         }
         
     }else if( node.data < data){
-        //to mai right ko call laga dunga aur jobhi jawab ayega usko node ke right mai chipka denge
+        //root ka data agar data se chota hai to mai right ko call laga dunga aur jobhi jawab ayega usko node ke right mai chipka denge
         node.right= remove(node.right, data);
         
     }else{

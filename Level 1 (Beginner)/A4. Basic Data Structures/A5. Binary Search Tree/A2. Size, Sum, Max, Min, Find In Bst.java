@@ -116,9 +116,9 @@ public class Main {
       return 0;
     }
 
-    int ls = size(node.left);
-    int rs = size(node.right);
-    int ts = ls + rs + 1;
+    int ls = size(node.left); //left subtree ko bola ki tum apna size dedo
+    int rs = size(node.right); //right subtree ko bola tum apna size dedo
+    int ts = ls + rs + 1; //aur apna size banayenge
     return ts;
   }
 
@@ -133,10 +133,11 @@ public class Main {
     return ts;
   }
 
-  public static int max(Node node) {
-    if (node.right == null) {
+ //TC of min and max: ek to root ka data return hota hai ya fir ek size call lagti hai : O(h)== O(n), h= height of the tree
+  public static int max(Node node) { 
+    if (node.right == null) { //agar mere node ka right child exist nhi krta to node.data hi maximum hai
       return node.data;
-    } else {
+    } else { //agar right child exist krta hai to muje faith hai ki right pe call kiya to apna max lake dedega
       return max(node.right);
     }
   }

@@ -49,3 +49,58 @@ Sample Output
 
 Code:
 
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    HashMap<Integer, Boolean> map = new HashMap<>();
+
+    int n = scn.nextInt();
+    int arr[] = new int[n];
+
+    for ( int i = 0; i < n; i++) {
+      arr[i] = scn.nextInt();
+      map.put(arr[i] , true); //map mai dal denge and consider every element is a starting point of thesequence
+    }
+
+        //ab invalid starting points ko discard karenge
+        for ( int i = 0; i < n; i++) {
+      if ( map.containsKey(arr[i] - 1) == true) { //agar mere piche wali key present hai to mai starting point nhi ho skta so mere samne false rkhdo
+        map.put(arr[i], false); //merse just chota number present hai to mai starting point nhi ho skta
+      }
+    }
+
+    //ab hume apna answer banana hai
+    int sp = 0; //starting point
+    int maxlen = 0; //max length
+
+    for ( int i = 0; i < arr.length; i++) {
+
+      if (map.get(arr[i]) == true) { //agar merepe true pda hai to current starting point mai hu aur iski length hai 1
+        int curr = arr[i];
+        int len = 1;
+
+        while (map.containsKey(curr + 1) == true) { //jabtak current+1 map mai milta rahega tabtak curr ko ek se aage badhate jao aur length kobhi badhao
+          curr++;
+          len++;
+        }
+        
+        //jaisehi iss loop se bahar ayenge to muje pta hoga ki arr[i] starting point rakhte hue kitne length ka sequence mai bana paya 
+        
+        if(len > maxlen){ //aga uss starting point se jo sequence ban rha hai uski length maxlength se jada hui to maxlength ko aur sathmehi starting point ko update krdo 
+            sp = arr[i];
+            maxlen = len;
+        }
+      }
+    }
+    
+    //so yahapr max length wala subsequence aajayega aur ab print kardenge
+    for( int i=0; i< maxlen; i++){
+            System.out.println(sp + i); 
+    }
+  }
+
+}

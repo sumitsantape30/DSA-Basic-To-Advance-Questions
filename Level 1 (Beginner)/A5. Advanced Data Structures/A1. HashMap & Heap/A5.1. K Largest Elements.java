@@ -36,3 +36,41 @@ Sample Output
 99
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int n = Integer.parseInt(br.readLine());
+      int[] arr = new int[n];
+
+      for (int i = 0; i < n; i++) {
+         arr[i] = Integer.parseInt(br.readLine());
+      }
+
+      int k = Integer.parseInt(br.readLine());
+      
+      PriorityQueue<Integer> pq= new PriorityQueue<>();
+      
+      for( int i=0; i< k; i++){
+          pq.add(arr[i]); // 0 to i-k elements aisehi pq mai add kardo
+      } //iss loop mai k bande add ho rhe hai to TC will be O(klogk)
+      
+      //ab rest of the bando keliye
+      for( int i=k; i< arr.length; i++){ // k se leke last tak travel karo 
+          if( arr[i] > pq.peek()){ //agar current element bada hota hai pq ke peek se means team ke weakest player ko usne hara diya ro weakest ko remove kardo aur current bande ko pq mai add krdo
+          pq.remove();
+          pq.add(arr[i]);
+          }
+      }
+      
+      while(pq.size() != 0){
+          System.out.println(pq.remove());
+      }
+      
+    }
+
+}

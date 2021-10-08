@@ -1,5 +1,5 @@
 Median Priority Queue
-Hard  Prev   Next
+
 1. You are required to complete the code of our MedianPriorityQueue class. The class should mimic the behaviour of a PriorityQueue and give highest priority to median of it's data.
 2. Here is the list of functions that you are supposed to complete
 2.1. add -> Should accept new data.

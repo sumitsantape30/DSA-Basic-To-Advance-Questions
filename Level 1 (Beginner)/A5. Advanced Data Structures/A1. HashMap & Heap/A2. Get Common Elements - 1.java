@@ -1,5 +1,5 @@
 Get Common Elements - 1
-Easy  Prev   Next
+
 1. You are given a number n1, representing the size of array a1.
 2. You are given n1 numbers, representing elements of array a1.
 3. You are given a number n2, representing the size of array a2.

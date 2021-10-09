@@ -67,7 +67,7 @@ public class Main {
           }
       }
       
-      while(pq.size() != 0){
+      while(pq.size() != 0){ //fir jabtak priority queue khali nhi hojati tabtak remove krte hue print karenge
           System.out.println(pq.remove());
       }
       

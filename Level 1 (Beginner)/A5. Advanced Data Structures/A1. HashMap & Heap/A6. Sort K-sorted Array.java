@@ -59,6 +59,7 @@ public class Main {
 
     // Add first k+1 elements to the Priority Queue
     PriorityQueue< Integer> pq = new PriorityQueue<>();
+    //hume pehle 0th place pe element ko put karna hai, aur woh k steps aage ja skta hai isliye k+1 elements pq mai dalenge
     for (int i = 0; i <= k; i++) { //pehle k+1 elements ko as it is add kardo
       pq.add(arr[i]);
     }

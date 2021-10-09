@@ -19,7 +19,6 @@ n2 number of elements line separated
 Output Format
 All relevant elements of intersection in separate lines
 The elements of intersection should be printed in order of their occurence in a2.
-Question Video
 
 Constraints
 1 <= n1, n2 <= 100

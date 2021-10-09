@@ -70,7 +70,7 @@ public class Main {
     }
     
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-    //array1 e travel krte hue hashmap ko fill karenge
+    //array1 pe travel krte hue hashmap ko fill karenge
     for ( int i = 0; i < n1; i++) {
       map.put(a1[i], map.getOrDefault(a1[i], 0) + 1);
     }

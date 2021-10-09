@@ -32,17 +32,17 @@ public class Code {
 		System.out.println(map);
 		
 		map.remove("Pakistan");
-        System.out.println(map);
+                System.out.println(map);
         
-        System.out.println(map.get("USA"));
+               System.out.println(map.get("USA"));
         
-        if( map.containsKey("India") == true) {
-        	System.out.println("Hurray");
-        }
+               if( map.containsKey("India") == true) {
+        	   System.out.println("Hurray");
+               }
         
-        ArrayList<String> keys= new ArrayList<>(map.keySet());
-        for(String key: keys) {
-        	System.out.println(key);
-        }
+               ArrayList<String> keys= new ArrayList<>(map.keySet());
+                 for(String key: keys) {
+        	      System.out.println(key);
+               }
 	}
 }

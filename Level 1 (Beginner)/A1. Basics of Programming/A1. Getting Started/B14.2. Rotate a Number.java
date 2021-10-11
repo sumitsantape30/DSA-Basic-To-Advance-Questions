@@ -7,10 +7,11 @@ public class printZ {
 	public static void rotate( int n, int k) {
 		
 		//1. find number of digits
+		int temp= n;
 		int num=0; //number of digits
-		while( n != 0) {
+		while( trmp != 0) {
 			num++;
-			n= n/10;
+			temp = temp/10;
 		}
 		
 		//2. bring value of k in range

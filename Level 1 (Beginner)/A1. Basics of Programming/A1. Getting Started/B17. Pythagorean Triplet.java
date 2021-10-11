@@ -51,7 +51,7 @@ public class pythagoreanTriplet {
 			boolean result= ( (a*a + c*c) == b*b );
 			System.out.println(result);
 		}else if( max == c) {
-			boolean result= ( (a*a + c*c) == c*c );
+			boolean result= ( (a*a + b*b) == c*c );
 			System.out.println(result);
 		}
 	}

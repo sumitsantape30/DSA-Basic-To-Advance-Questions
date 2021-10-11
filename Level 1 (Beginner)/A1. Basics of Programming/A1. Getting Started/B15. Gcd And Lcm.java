@@ -69,3 +69,17 @@ public class GCDAndLCM {
 	}
 
 }
+
+Analysis:
+	
+Time Complexity:
+O(min(a, b))
+Since we have just one loop from min(a, b) to 1.
+
+Space Complexity:
+O(1)
+Since no auxiliary space was needed.
+This is not a very good optimized approach hence we are avoiding the code for this.
+The code is explained in the youtube solution video.
+
+

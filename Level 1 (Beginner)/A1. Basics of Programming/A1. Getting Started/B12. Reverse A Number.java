@@ -35,7 +35,7 @@ public class revserseOfANumber {
 		
 		while( n >0) {
 			int rev= n %10; 
-			System.out.print(rev);
+			System.out.println(rev);
 			n= n/10;
 		}
 	}

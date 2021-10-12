@@ -32,7 +32,7 @@ public class InverseANumber {
 		int inv =0; //muje banana hai iska inverse so abhi inverse 0 hai
 		int op= 1; //original place will be 1
 		while( n != 0) { //mai tabtak kam karunga jabtak mera number 0 nhi hojata
-			int od= n % 10; //original digit. so hume ab first position pe original digit hume mil gyi
+		    int od= n % 10; //original digit. so hume ab first position pe original digit hume mil gyi
 		    int id= op; //ab mera inverted digit hoga jo original positionn tha aur inverted place hoga orignal digit
 		    int ip= od;
 			

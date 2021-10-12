@@ -38,7 +38,7 @@ public class InverseANumber {
 			
 		    //id and ip se hum inverse mai kuch addition karenge
 		    // make change to inverse using inverted digit and inverted position
-		    inv=  inv + id * (int)Math.pow(10, ip-1);
+                    inv = inv + (id * (int) Math.pow(10, ip - 1));
 		    
 		    //number ko chota karna and original position badhana jarur yad rakhe
 		    n= n/10;

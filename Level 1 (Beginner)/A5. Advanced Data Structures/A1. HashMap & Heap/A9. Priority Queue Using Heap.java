@@ -112,7 +112,7 @@ public class Main {
         int lci = 2* pi + 1;
         int rci = 2* pi + 2;
         
-        //ab muje left child right child parent ismese minimum nikalna hai, so pehle parent ko min index manliya
+        //ab muje left child, right child, parent ismese minimum nikalna hai, so pehle parent ko min index manliya
         int minidx = pi; //maine yeh man liya ki min index parent index hi hai 
         
         if(lci < data.size() && data.get(lci) < data.get(minidx)){ //agar left child index ki value min index se choti hai to ab mera min index hoga lci

@@ -61,12 +61,12 @@ public class Main {
 
     public void add(int val) { //data add karo aur unheapify ke function ko call lagalo
       data.add(val);
-      upheapify(data.size() - 1); //jo aakhri banda humne add kiya hai uska index pass karta hu isme
+      upheapify(data.size() - 1); //jo aakhri banda humne add kiya hai arraylist mai uska index pass karte hai isme
 
     }
 
     public void upheapify( int ci) { //isme input child index ayega
-       if( ci == 0){
+       if( ci == 0){ 
            return;
        }
       

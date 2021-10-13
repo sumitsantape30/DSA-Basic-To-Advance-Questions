@@ -44,10 +44,9 @@ public class Pattern10 {
 			}
 			
 			// inner space ke bad firse jo star tha woh har row mai nhi tha, yeh pehli and last row mai nhi hai baki bichke rows mai do stars hai
-			if( i >1 && i < n) { //jabtak i 1 se bda hai and i n se chota hai means woh first and last row nhi hai tabhi iss star ko print karenge
+			if( i >1 && i < n) { //agar mera i 1 se bda hai and i n se chota hai means woh first and last row nhi hai tabhi iss star ko print karenge
 				System.out.print("*\t");
 			}
-			
 			
 			//iske bad addhe tak kuch means n/2 tak kuch aur ho rha hai aur uske bad kuch ho rha hai
 			if(i <= n/2) { //addhe tak outer spaces badh rhe hai aur inner space 2 2 se badh rhe hai

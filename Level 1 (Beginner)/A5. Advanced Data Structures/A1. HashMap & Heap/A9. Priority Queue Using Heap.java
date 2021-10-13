@@ -178,3 +178,140 @@ public class Main {
     }
   }
 }
+
+//==========================More optimised, when the array is given in input=============================================
+
+package practice;
+
+import java.util.*;
+
+public class Code {
+
+	public static class PriorityQueue {
+		ArrayList<Integer> data; 
+
+		public PriorityQueue() {
+			data = new ArrayList<>();
+		}
+		
+		//dusra constructor banane padega isme aap array receive krte ho
+		public PriorityQueue( int arr[]) {
+			data= new ArrayList<>();
+			
+			for( int i=0; i< arr.length; i++) {
+				data.add(arr[i]); // sare elements ko as it is arraylist mai add kardiya
+			}
+			
+			// heap order property maintain karne keliye downheapify call karenge
+			// but jitni leaf node hai unko downheapify call karneki jarurat nhi hai so call lagni chahiye first non-leaf node se 0th node tak
+			//basically akhri index ka parent index chahiye means ci-1/2 use karenge aur akhri index hota hai data.size()-1 so data.size()-1/2 => data.size()-2/2 yahase leke 0th index tak call lagado
+			
+			for( int i= (data.size() -2)/2 ; i>=0; i--) {
+				downheapify(i);
+			}
+		}
+
+		public void add(int val) { 
+			data.add(val);
+			upheapify(data.size() - 1); 
+
+		}
+
+		public void upheapify(int ci) { 
+			if (ci == 0) {
+				return;
+			}
+
+			int pi = (ci - 1) / 2; 
+			if (data.get(ci) < data.get(pi)) { 
+				swap(ci, pi);
+				upheapify(pi);
+			}
+		}
+
+		public void swap(int i, int j) {
+			int ith = data.get(i);
+			int jth = data.get(j);
+
+			data.set(i, jth);
+			data.set(j, ith);
+
+		}
+
+		public int remove() {
+			if (data.size() == 0) { 
+				System.out.println("Underflow");
+				return -1;
+			}
+
+			swap(0, data.size() - 1);
+
+			int rv = data.remove(data.size() - 1);
+
+			downheapify(0);
+
+			return rv;
+		}
+
+		public void downheapify(int pi) {
+
+			int lci = 2 * pi + 1;
+			int rci = 2 * pi + 2;
+
+			
+			int minidx = pi; 
+
+			if (lci < data.size() && data.get(lci) < data.get(minidx)) { 
+				minidx = lci;
+			}
+
+			if (rci < data.size() && data.get(rci) < data.get(minidx)) { 
+				minidx = rci;
+			}
+
+			if (minidx != pi) { 
+				swap(pi, minidx);
+				downheapify(minidx); 
+			}
+
+		}
+
+		public int peek() {
+			if (data.size() == 0) {
+				System.out.println("Underflow");
+				return -1;
+			} else {
+				return data.get(0); 
+			}
+		}
+
+		public int size() {
+			return data.size();
+		}
+
+	}
+
+	public static void main(String[] args) throws Exception {
+		int arr[]= {12, 8, -40, 11, 16, 9, 3, 119, -786, 754, 19, 1};
+
+		PriorityQueue pq = new PriorityQueue(arr); //maine array pass kiya aur muje O(1) mai priority queu banke mil jayegi
+
+		while( pq.size() != 0) {
+			System.out.println(pq.remove());
+		}
+	}
+}
+Output:
+
+-786
+-40
+1
+3
+8
+9
+11
+12
+16
+19
+119
+754

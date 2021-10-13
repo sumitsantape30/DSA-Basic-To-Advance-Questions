@@ -125,8 +125,10 @@ public class Main {
         }
         //lci and rci range mai hai aur unki value minindex pe rakhi hui value se choti hai to minindex ko update kardo
         
-        if(minidx != pi){ //agar minindex parent index ke barabr nhi hai means woh update ho chuka hai 
-          // to parent index ko swap karayenge
+        if(minidx != pi){ //agar minindex parent index ke barabr nhi hai means woh donomese ke if mai update ho chuka hai matlab minindex parent index nhi hai left or right mese minindex hai so muje swap karke downheapify() call karna chahiye
+         //agar woh dono if mai update nhi hua means minindex hi parent index rahega means wahi minimum hai to kisiko call nhi lageegi
+         
+         // to parent index ko swap karayenge
           swap(pi, minidx);
           downheapify(minidx); //fir minindex ko recursive call lagadenge
         }

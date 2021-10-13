@@ -96,12 +96,11 @@ public class Main {
         
         //sabse pehla kam 0th aur last index ka data swap karado
         swap(0, data.size()-1);
-        
-        //but agar swap ke bad swapping ke bad agar property violet hui hai to downheapify call karenge
-        
+                
         //uske bad aakhri wale ko remove karna hai
         int rv= data.remove(data.size()-1);
-        
+	    
+        //but agar swapping ke bad agar property violet hui hai to downheapify call karenge 0th element pe
         downheapify(0);
         
         //jisko remove kiya usko return karenge

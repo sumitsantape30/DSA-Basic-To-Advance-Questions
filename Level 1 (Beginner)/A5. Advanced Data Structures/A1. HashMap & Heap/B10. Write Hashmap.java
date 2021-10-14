@@ -160,7 +160,7 @@ public class Main {
         // size ko 0 se initialise kardo
         size = 0;
         for( int bi=0; bi < ob.length; bi++){
-            LinkedList<HMNode> ll = ob[bi]; //old bucket mese get bi
+            LinkedList<HMNode> ll = ob[bi]; //old bucket pe rakhi hui linkedlist
             
             for( int i=0; i< ll.size(); i++){
                 // ab mai put function ko call lagadunga

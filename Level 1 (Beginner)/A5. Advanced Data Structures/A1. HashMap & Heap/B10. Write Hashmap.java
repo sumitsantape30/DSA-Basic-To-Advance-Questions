@@ -99,6 +99,7 @@ public class Main {
 
   public static class HashMap<K, V> {
       
+   //  linkedlist ke har node mai key-value pair jayega so usko ek class mai enclose karna hoga so HMNode banao
     private class HMNode { //HashMap ke har node mai key-value pair rahegi
       K key;
       V value;
@@ -108,9 +109,10 @@ public class Main {
         this.value = value;
       }
     }
-
-    private int size; // n
-    private LinkedList<HMNode>[] buckets; // N = buckets.length
+    
+    // two data memebers hai
+    private int size; //yeh btayaega ki kitne key-value pairs hai
+    private LinkedList<HMNode>[] buckets; // buckets is linkedlists ka array. aur linkedlist HMNode type ki information store krti hai
 
     public HashMap() {  //HashMap ka constuctor
       initbuckets(4); //initbuckets function ko call laga rakhi hai
@@ -119,7 +121,7 @@ public class Main {
 
     private void initbuckets(int N) {
       buckets = new LinkedList[N]; // size set kardiya ki kitne size ka array banaye
-      for (int bi = 0; bi < buckets.length; bi++) { // by default value null hoti hai isliye har index pe jake new linedlist ko store karwa di means har index pe address store hogya
+      for (int bi = 0; bi < buckets.length; bi++) { // by default value null hoti hai isliye har index pe jake new linkedlist ko store karwa di means har index pe address store hogya
         buckets[bi] = new LinkedList<>();
       }
     }

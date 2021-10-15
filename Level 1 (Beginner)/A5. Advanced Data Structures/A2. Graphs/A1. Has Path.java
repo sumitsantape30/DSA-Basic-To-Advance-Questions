@@ -53,6 +53,7 @@ public class Main {
 
     // src vertex ke jitne bhi neighbours hai unpe loop chalado
     for (Edge e : graph[src]) { // graph[src] se source ke samne rakhi hui arraylist milegi aur maine arraylist ke upar for each loop chala diya, ek ek krke ek edge bahar nikalta rahega
+      //mere iss e mai edge mili hai aur har ek edge mai src, nbr aur wt hota hai so muje nbr ka kam hai 
       int nbr = e.nbr;
       //call lagane se pehle dekhenge yeh neighbour already visited hai ya nhi hai, call tabhi lagayenge jab neighbour unvisited hoga
 

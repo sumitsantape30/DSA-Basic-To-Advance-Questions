@@ -203,7 +203,7 @@ public class Code {
 			
 			// heap order property maintain karne keliye downheapify call karenge
 			// but jitni leaf node hai unko downheapify call karneki jarurat nhi hai so call lagni chahiye first non-leaf node se 0th node tak
-			//basically akhri index ka parent index chahiye means ci-1/2 use karenge aur akhri index hota hai data.size()-1 so data.size()-1/2 => data.size()-2/2 yahase leke 0th index tak call lagado
+			//basically akhri index ka parent index chahiye means ci-1/2 use karenge aur akhri index hota hai data.size()-1 so data.size()-1-1/2 => data.size()-2/2 yahase leke 0th index tak call lagado
 			
 			for( int i= (data.size() -2)/2 ; i>=0; i--) {
 				downheapify(i);

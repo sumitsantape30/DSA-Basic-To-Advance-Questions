@@ -58,7 +58,7 @@ public class Main {
       //call lagane se pehle dekhenge yeh neighbour already visited hai ya nhi hai, call tabhi lagayenge jab neighbour unvisited hoga
 
       if ( visited[nbr] == false) {
-        //ab mi puchunga kya iss nbr destination tak ka rasta exist krta hai
+        //ab mi puchunga kya iss nbr se destination tak ka rasta exist krta hai
         boolean ntod = hasPath(graph, nbr, dest, visited); // ntod : nbr to dest
 
         if ( ntod == true) { //agar nbr to destination ka rasta exist krta hai to hum dest pe jane ki kabilitiat rakhte hai

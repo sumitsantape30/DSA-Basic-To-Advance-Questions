@@ -241,6 +241,7 @@ public class Main {
            // buckets[bi] mauje ek linkedlit of HMNode mil jayegi
            LinkedList<HMNode> ll= buckets[bi];
            
+          //fir mai uss linkedlist pe traverse karunga aur har key ko arraylist mai dal dunga
            for( int i=0; i< ll.size(); i++){
                keys.add(ll.get(i).key);
            }

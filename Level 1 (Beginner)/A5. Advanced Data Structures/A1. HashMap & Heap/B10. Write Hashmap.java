@@ -132,7 +132,7 @@ public class Main {
        int di = findWithInBucket(key, bi); // ab mai iss key ko iss bucket index mi dhundunga to muje data index mil jayga aur nhi milti hai to data index -1 ajayega. dekh rhe hai ki kya yeh key already present hai or pehli bar aa rha hai 
        
        if( di == -1){ //agar data index -1 ajata hai means key doesnt exists
-          //to naya key value pair banake uss bucket ke last mia dal denge
+          //to naya key value pair banake uss bucket ke last mai dal denge
           buckets[bi].add(new HMNode(key, value));
           size++; // new key value pair add ki hai to size jarur badhana 
        }else{

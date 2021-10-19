@@ -63,8 +63,8 @@ public class Main {
       return;
     }
     
-    visited[i][j] = true; //ource ko visited mark krdo
-    // agala kam iske unvisted neighbour ko call lagado but maine bina dekhe aisehi 4 bhi neighbours ko call lagadi
+    visited[i][j] = true; //source ko visited mark krdo
+    // agala kam iske unvisited neighbour ko call lagado but maine bina dekhe aisehi 4 bhi neighbours ko call lagadi
     getComp(arr, i - 1, j, visited); 
     getComp(arr, i, j + 1, visited);
     getComp(arr, i, j - 1, visited);

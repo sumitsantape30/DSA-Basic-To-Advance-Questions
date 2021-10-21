@@ -47,3 +47,11 @@ public class Factorial {
 	}
 
 }
+
+Time Complexity :
+O(n)
+This time complexity is linear because a recursion call is made.
+
+SPACE COMPLEXITY :
+O(1)
+As no extra space is required, therefore space complexity is constant. However, if we include the space used in the recursive stack then the space complexity is O(n).

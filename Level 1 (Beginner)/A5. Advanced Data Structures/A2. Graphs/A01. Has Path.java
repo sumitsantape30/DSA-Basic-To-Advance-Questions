@@ -52,7 +52,7 @@ public class Main {
 
     visited[src] = true; //atehi sabse pehle source ko visited mark kardiya
 
-    // src vertex ke jitne bhi neighbours hai unpe loop chalado
+    // src vertex ke jitne bhi neighbours hai unpe loop chalado, agar mere neighbours mese koi destination tak ja skta hai to mai bhi destination tak ja skta hu
     for (Edge e : graph[src]) { // graph[src] se source ke samne rakhi hui arraylist milegi aur maine arraylist ke upar for each loop chala diya, ek ek krke ek edge bahar nikalta rahega
       //mere iss e mai edge mili hai aur har ek edge mai src, nbr aur wt hota hai so muje nbr ka kam hai 
       int nbr = e.nbr;

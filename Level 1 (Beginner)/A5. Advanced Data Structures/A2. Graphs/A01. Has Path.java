@@ -44,6 +44,7 @@ public class Main {
     }
   }
 
+  //iss function se hume yeh expectation hai ki agar src se dest tak path hogi to true return karega else false return karega
   public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean visited[]) {
     if ( src == dest) { // agar source destinantion pe pohoch jaye to destiation to destination ka rasta exist krta hi hai so return true
       return true;

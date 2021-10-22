@@ -147,9 +147,10 @@ public class Main {
       if (pq.size() < k) { //agar priority queue ka size k se chota hai to kuch comparison nhi hoga sidha PQ mai add krdo
         pq.add(new Pair(wsf, psf));
       } else { // agar size k ke equal or bada hai to 
+        // yaha boht sare paths ke weights ayenge
         if (wsf > pq.peek().wsf) { //pq ke peek ka weight so far ki value agar choti aati hai current weight so far se to pq mese remove krdo aur pq mai add karo current path ko add 
-          pq.remove();
-          pq.add(new Pair(wsf, psf));
+          pq.remove(); //jo sabse chota wala tha usko nikal diye
+          pq.add(new Pair(wsf, psf)); //fir jo abhi abhi naya aaya hai usko pq mai add kardenge
         }
       }
       return;

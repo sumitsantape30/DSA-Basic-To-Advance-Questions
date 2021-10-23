@@ -48,7 +48,7 @@ public class Main {
     int islands = 0;
     for (int i = 0; i < arr.length; i++) {    //2
       for (int j = 0; j < arr[0].length; j++) {
-        if (arr[i][j] == 0 && visited[i][j] == false) { //jaha jaha 0 present hai aur woh 0 unvisited hai getComponent ko call laga dunga
+        if (arr[i][j] == 0 && visited[i][j] == false) { //jaha jaha 0 present hai aur woh 0 unvisited hai to getComponent ko call laga dunga
           getComp(arr, i, j, visited);
           islands++;
         }

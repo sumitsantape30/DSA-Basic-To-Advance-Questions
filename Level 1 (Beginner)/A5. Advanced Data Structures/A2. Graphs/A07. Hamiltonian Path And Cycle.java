@@ -80,7 +80,7 @@ public class Main {
 
      // ab iss answer ke piche * lagega ya . yeh hume decide karna hai 
      //agar first aur last vertex ke bich edge hai to cycle hai nhito path hai, basically original source ke neighbour mai kya yeh aakhri vertex aati hai? 
-      boolean isHC = false; //is Hamiltonian cycle
+      boolean isHC = false; //is Hamiltonian cycle, isko hum initially false rakh rhe hai
       for (Edge e : graph[osrc]) {
         if (e.nbr == src) { //agar original source ka neighbour current source means vertex ke barabr hua  to mai isHC ko true mark kardunga
           isHC = true;

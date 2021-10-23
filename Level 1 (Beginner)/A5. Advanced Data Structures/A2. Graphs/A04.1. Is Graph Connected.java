@@ -72,7 +72,7 @@ public class Main {
       }
     }
 
-    System.out.println(comps.size()==1);
+    System.out.println(comps.size()==1); //agarr kisi graph mai ek hi connected component hai to woh graph connected hota hai
   }
 
   public static void getComp(ArrayList<Edge>[] graph, int src, boolean[] visited, ArrayList<Integer> comp) {

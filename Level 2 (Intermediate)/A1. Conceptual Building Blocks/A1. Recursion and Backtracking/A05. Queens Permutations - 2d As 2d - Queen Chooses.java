@@ -51,3 +51,49 @@ q2	-
 
 -	-	
 q2	q1	
+
+Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void queensPermutations(int qpsf, int tq, int[][] chess){
+        if( qpsf == tq){ //aise krte krte jab sari queens baith chuki hogi to loop lagake print krdenge
+         for( int i=0; i< chess.length; i++){
+             for( int j=0; j< chess[0].length; j++){
+                 if( chess[i][j] == 0){ //agar 0 pda hai to woh khali hai to dash print hoga
+                  System.out.print("-\t");
+                 }else{
+                     // agar bhara hua hai to usme jo number hai woh wali queen print hogi
+                     System.out.print("q"+ chess[i][j] + "\t");
+                 }
+             }
+             System.out.println();
+          }
+          System.out.println();
+          return;
+        }
+        
+        //aapki pehli qeueen kahipe bhi baith skti hai bas woh dabba khali hona chahiye
+        for( int i=0; i< chess.length; i++){
+            for( int j=0; j< chess[0].length; j++){
+                if( chess[i][j] == 0){ //agar board occupied nhi hai to aap apni queen waha place krde
+                chess[i][j]= (qpsf + 1) ; //qpsf hai agr apko 0 pass kiya hai aap first queen waha baithaye fir call lagade
+                queensPermutations(qpsf +1, tq, chess); // queen ko bitha diya to qpsf ko ek se badhaye
+                chess[i][j] = 0;// wapas aate hue board ko khali karna na bhule
+                }
+            }
+        }
+        
+        
+    }
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[][] chess = new int[n][n];
+        
+        queensPermutations(0, n, chess); //abhitak 0 queens placed hai 
+    }
+}

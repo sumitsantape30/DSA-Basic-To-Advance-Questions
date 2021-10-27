@@ -100,7 +100,7 @@ public class Main {
                   int nbr = e.nbr; //removed pair ke vertex nikale
                    
                    if( visited[nbr] == false){ //agar woh neighbour unvisited hai to usko queue mai add kardo
-                       q.add(new Pair(nbr, rp.psf + nbr)); // removed pair ke psf mai iss neighbour ko add kar denge
+                       q.add(new Pair(nbr, rp.psf + nbr)); // removed pair ke psf mai iss neighbour ko add kar denge, purane path mai iss neighbour ko add kiye
                    }
                   
               }

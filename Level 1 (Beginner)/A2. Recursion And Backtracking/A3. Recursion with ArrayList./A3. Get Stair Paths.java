@@ -41,7 +41,7 @@ public class getStairsPath {
 			// so agar negative hogya to iss case mai arraylist khali rakhenge arraylist mai kuch bhi path add nhi karenge
 			ArrayList<String> bres= new ArrayList<String>(); 
 			return bres;
-		}
+		} //koi rasta hi nhi hai isliye empty arraylist return kiiye
 		
 		//yeh pehla faith hai
 		ArrayList<String> rr1 = getStairPaths(n-1); // yahapr yeh faith hai ki yeh line n-1 se 0 ke saare paths apko nikalkar de degi
@@ -59,7 +59,7 @@ public class getStairsPath {
 		//isis tarah agar n-2 se 0 ke sare path dikhaye aur unke muh pr hum 2 lagade to woh n se 0 ke path ban jayenge
 		for( String path: rr2 ) {
 			mr.add(2 + path);
-		}
+		} /
 		
 		// isi tarah agar tum muje n-3 se 0 ke sare path dikhao aur unke muh pr hum 3 lagade to woh bhi n-3 ke 0 ke path ban jayenge
 		for( String path: rr3 ) {

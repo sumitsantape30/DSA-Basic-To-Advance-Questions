@@ -81,3 +81,11 @@ public class MaximumOfAnArray {
 	}
 
 }
+
+Analysis
+Time Complexity :
+The time complexity of the above solution is O(n). This is because we have iterated the array twice. Once while going into the recursion and the other time while coming out of it. So, n elements were visited twice: n+n= 2n, O(2n)=O(n).
+
+SPACE COMPLEXITY :
+The space complexity will be O(1) as we have not used any extra space. If we consider the recursion space, it will be O(n) i.e. the maximum height of the recursion stack.
+So dear reader, did you get the solution? You would have, the important question is, did you enjoy it? You have to enjoy recursion to feel it completely and the word feel is really important when it comes to recursion. If you have any doubts, we suggest you revisit the article once more or you may watch the complete solution video for better understanding.

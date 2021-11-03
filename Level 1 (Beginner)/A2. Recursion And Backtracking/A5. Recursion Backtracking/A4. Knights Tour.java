@@ -404,7 +404,7 @@ public class Code {
 		}
 		
 		chess[r][c]= stepno; //maine iss spot pe mera move chaldiya
-		//ab mere pas 8 options hai so 9 calls karunga
+		//ab mere pas 8 options hai so 8 calls karunga
 		printKnightsTour(chess, r-2, c +1, stepno +1); 
 		printKnightsTour(chess, r-1, c +2, stepno +1); 
 		printKnightsTour(chess, r+1, c +2, stepno +1); 

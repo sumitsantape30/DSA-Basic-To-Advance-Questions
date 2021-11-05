@@ -33,3 +33,41 @@ bde
 cde
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void generateSelection(String ustr, int cs, int ts, int lc, String asf) { // cs: current selection, ts: total selections, lc: last choice
+  
+    if (cs > ts) { // jab aisa hua means you have selected all that you wanted so print and return
+      System.out.println(asf);
+      return;
+    }
+
+    //jo apne last select kiya hota hai i ka loop usse aage chalta hai 
+    for (int i = lc + 1; i < ustr.length(); i++) {
+      generateSelection(ustr, cs + 1, ts, i, asf + ustr.charAt(i)); // current selection +1. ab aapne ith character select kiya hai to last choice mai i pass hoga kyuki pichli bar i select hua tha. asf mai yeh character add krlenge aur call lagayenge
+    }
+  }
+  
+  public static void main(String[] args) throws Exception { BufferedReader
+    br = new BufferedReader(new InputStreamReader(System.in));
+    String str = br.readLine();
+    int
+    k = Integer.parseInt(br.readLine());
+    HashSet unique = new HashSet<>();
+    String ustr = "";
+    for (char ch : str.toCharArray()) {
+      if (unique.contains(ch) == false) {
+        unique.add(ch);
+        ustr += ch;
+      }
+    }
+
+    generateSelection(ustr, 1, k, -1, ""); //1 is pehli selection karne ja rhe hai, total k select karne hai, aur last konse character select kiya tha woh asf mai dalna hai . aur last choice -1 pass kiya hai coz pehle koi select hi nhi kiya tha
+  }
+
+
+}

@@ -99,3 +99,35 @@ public class Main {
   }
 
 }
+
+//===============================Another Approach==============================================================
+
+ public static void fun1(String str, HashMap<Character, Integer> fmap, int idx, String asf, int k){
+      
+      if( k < 0){ 
+        return;
+      }
+      
+      if( idx == str.length()){ 
+        if( k == 0){ 
+         System.out.println(asf);
+       }
+       return;
+      }
+      
+      char ch= str.charAt(idx);
+      
+      //maine character nikala aur agar is character ki frequency grater than 0 hai to uske pas aane/select honeka ka mauka hoga
+      if( fmap.get(ch) > 0){
+          //agar woh select hona chahta hai to use ekbar use karlunga
+          fmap.put(ch, fmap.get(ch) - 1); // us character ki frequency ek se kam krlena
+          //fir lagayenge recursive call
+          fun1(str, fmap, idx, asf+ ch, k -1); //woh select hona chahta hai to hum usi character ko dubar mauke dete hai isliye idx hi pass kiye idx+1 nhi kiya. asf mai character add karenge aur k ki value will decremented by 1
+          //wapas aate hue yeh frequency dubara thik karni hogi
+          fmap.put(ch, fmap.get(ch)-1);
+      } // yh hogyi ha ki call
+      
+      //agar woh select nhi hona chahta
+      fun1(str, fmap, idx+1, asf, k); //index will get incremented by one, asf mai kuch bhi add nhi hoga aur k pe koi farak nhi ayega
+      
+  }

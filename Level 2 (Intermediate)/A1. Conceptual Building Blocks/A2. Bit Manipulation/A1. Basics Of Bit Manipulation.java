@@ -42,9 +42,10 @@ public class Main {
     int j = scn.nextInt();
     int k = scn.nextInt();
     int m = scn.nextInt();
-    
-    int onmask= (1 << i); // on karne ka mask, its actually 00000001, muje yaha n ki ith bit on karni hai. inki precedence = se kam hoti hai so brackets lagaye
-    int offmask= ~(1 << j); // muje jth bit off karni hai to fir 1 goes to goes to j fir mai uska 1's compliment lunga
+   
+    //jab bhi bitwise operator use kr rhe ho to bracket use karo
+    int onmask= (1 << i); // on karne ka mask, its actually 00000001, muje yaha n ki ith bit on karni hai. inki precedence =(equal) se kam hoti hai so brackets lagaye
+    int offmask= ~(1 << j); // muje jth bit off karni hai to fir 1 goes to goes to j fir mai uska 1's compliment lunga (1's compliments means toggle karo)
     
     // toggling keliye regular mask chahiye hota hai
     int tmask= (1 << k); // toggle mask
@@ -53,7 +54,7 @@ public class Main {
     System.out.println(n | onmask); // bit on karnekeliye onmask use hota hai aur or operator use hota hai 
     System.out.println(n & offmask);
     System.out.println(n ^ tmask);
-    System.out.println((n & cmask) == 0 ? false: true); // pehle check mask ke sath & kiya agar woh 0 bangya to woh bit off thi. agar 0 nhi bana to woh bit on thi
+    System.out.println((n & cmask) == 0 ? false: true); // pehle check mask ke sath & kiya agar woh 0 bangya means woh bit off thi. agar 0 nhi bana to woh bit on thi
   }
 
 }

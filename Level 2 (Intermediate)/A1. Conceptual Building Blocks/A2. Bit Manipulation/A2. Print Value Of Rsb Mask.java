@@ -29,6 +29,9 @@ public class Main {
     
     //hum isko binary print karna chahte hai
     System.out.println(Integer.toBinaryString(rsbm));
+    
+    //System.out.println(n & ((~n) + 1));
+    
   }
 
 }

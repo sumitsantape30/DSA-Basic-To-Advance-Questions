@@ -30,7 +30,6 @@ Missing Number -> 7
 Repeating Number -> 1
 
 Code:
-
 import java.io.*;
 import java.util.*;
 
@@ -50,7 +49,7 @@ public class Main {
     
     int xor = 0;
     for( int i=0; i < arr.length; i++){
-        xor += arr[i]; // pehle array ki sari values ko xor karliya
+        xor ^= arr[i]; // pehle array ki sari values ko xor karliya
     }
     
     //fir ek additional wala

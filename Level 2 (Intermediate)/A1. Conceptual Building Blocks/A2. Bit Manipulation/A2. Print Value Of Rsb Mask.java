@@ -30,7 +30,8 @@ public class Main {
     //hum isko binary print karna chahte hai
     System.out.println(Integer.toBinaryString(rsbm));
     
-    //System.out.println(n & ((~n) + 1));
+    // int ans= n & ((~n) + 1);
+    //System.out.println(Integer.toBinaryString(ans);
     
   }
 

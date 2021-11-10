@@ -56,7 +56,9 @@ public class Main {
     int count=0;
     
     while( n!= 0){
+      //unset right most setbit
         n ^= (n & ((~n) + 1));
+      // n = (n & (n-1));
         count++;
     }
     System.out.println(count);

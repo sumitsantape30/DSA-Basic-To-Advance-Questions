@@ -75,3 +75,56 @@ public class Main {
   }
 
 }
+
+//=======================================JB's===============================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args){
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int[] arr = new int[n];
+    for(int i = 0 ; i < n; i++){
+      arr[i] = scn.nextInt();
+    }
+    solution(arr);
+  }
+
+  public static void solution(int[] arr){
+     //sabse pehle kam sabka xor lelo
+     int xor= 0;
+     
+     for( int i=0; i< arr.length; i++){
+         xor ^= arr[i]; // sabka xor leliye
+     }
+     
+     //sabka xor leliya ab xor mai jo 2 non repeating numbers hai unka xor rahega
+     // yeh value aachuki hai ab muje iska nikalna chahiye rightmost set bit mask
+     int rsb = xor & -xor;
+     
+     //ab muje dubara loop lagake 2 set mai number ko divide krna hoga
+     int n1= 0;
+     int n2= 0;
+     
+     // dividing into 2 set
+     for( int i=0; i< arr.length; i++){
+         if((arr[i] & rsb) == 0){ // jobhi number aya uska & kiya right most set bit ke sath aur agar 0 aya to bit off hai
+             n1 ^= arr[i]; // uss number ko n1 mai rakhlo
+         }else{
+             //otherwise bit on hai to n2 ke sath xor lo
+             n2 ^= arr[i]; // on thi to n2 mai aagya
+         }
+     }
+     
+     if( n1 < n2){
+      System.out.println(n1);
+      System.out.println(n2);
+    }else{
+      System.out.println(n2);
+      System.out.println(n1);
+    }
+  }
+}

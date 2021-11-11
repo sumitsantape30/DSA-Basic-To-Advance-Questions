@@ -98,3 +98,69 @@ public class Main {
   }
 
 }
+
+//=====================================JB's=======================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args){
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int[] arr = new int[n];
+    for(int i = 0 ; i < n; i++){
+      arr[i] = scn.nextInt();
+    }
+    solution(arr);
+  }
+
+  public static void solution(int[] arr){
+    //sabse pehle array ke elements aur indexes ka xor lenge
+    int xor = 0;
+    for( int i = 0 ; i < arr.length; i++){
+        xor ^= arr[i];
+        xor ^= (i+1);
+    }
+    
+    // ab jo xor ki value hogi woh hogi-> print number ^ missing number
+    // to ab muje identify kanre keliye rsb nikalna padega
+    int rsb= xor & -xor;
+    
+    int n1 = 0;
+    int n2 = 0;
+    
+    for( int i=0; i < arr.length; i++){
+        if( (arr[i] & rsb) == 0){ // agar inki value 0 aati hai to set 1 mai jayega
+            n1 ^= arr[i];
+        }else{
+            n2 ^= arr[i];
+        }
+        
+        //fir indexes ka
+        if(((i+1) & rsb) == 0 ){
+            n1 ^= (i+1);
+        }else{ // agar on hai yeh bit to n1 mai jane do
+            n2 ^= (i+1);
+        }
+    }
+    
+    // so n1 and n2 two numbers aagye hai usmese ek repeating and ek missing hai to woh dhundna padega
+    for( int i=0; i< arr.length; i++){
+        if( arr[i] == n1){
+            System.out.println("Missing Number -> "+n2);
+            System.out.println("Repeating Number -> "+n1);
+            break;
+        }
+        
+        if( arr[i] == n2){
+            System.out.println("Repeating Number -> "+n1);
+            System.out.println("Missing Number -> "+n2);
+            break;
+        }
+    }
+   
+  }
+
+}

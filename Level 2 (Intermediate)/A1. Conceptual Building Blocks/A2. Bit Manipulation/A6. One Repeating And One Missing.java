@@ -100,7 +100,6 @@ public class Main {
 }
 
 //=====================================JB's=======================================================
-
 import java.io.*;
 import java.util.*;
 
@@ -155,8 +154,8 @@ public class Main {
         }
         
         if( arr[i] == n2){
-            System.out.println("Repeating Number -> "+n1);
-            System.out.println("Missing Number -> "+n2);
+            System.out.println("Missing Number -> "+n1);
+            System.out.println("Repeating Number -> "+n2);
             break;
         }
     }

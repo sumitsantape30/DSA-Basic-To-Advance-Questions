@@ -60,7 +60,7 @@ public class Main {
     // so abhi apki sari value bhi XOR hogyi aur woh 1 2 3 4 5 6 7 bhi XOR hogya ab woh missing number aur dublicate number bacha hua hai woh apko identify karna hai
     int rsb = xor & -xor;
     
-    //so ab jinka bit on ho unka alag set banta tha aur jink woh bit off ho unka alag set banta tha
+    //so ab jinka bit on ho unka alag set banta tha aur jinka woh bit off ho unka alag set banta tha
     int x= 0;
     int y= 0;
     for( int val: arr){

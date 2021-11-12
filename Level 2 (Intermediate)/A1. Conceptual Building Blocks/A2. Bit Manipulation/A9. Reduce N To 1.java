@@ -18,3 +18,42 @@ Sample Output
 3
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static int solution(int n) { //boht bada number aya to integer seh nhi payega range ke bahar jayega isliye long lo 
+        int res = 0;
+        
+        while( n != 1){
+            
+            if( n % 2 == 0){ // n agar even hua to 
+              n = n / 2;
+                
+            }else if(n == 3){ // agar n 3 hua to woh special case hai
+              //n = n - 1; // minus karna advantageous hoga
+              res = 2; // special case hai to res ko sidha 2 karke break kr skte hai
+              break;
+                
+            }else if((n & 3) == 1){ // n & 3 ==1 hai to 4x+1 nature ka hai. n % 4 == 1 bhi use kr skte ho but tle dega
+              n = n - 1; // isme bhi minus karna advantageous hota hai
+                
+            }else if( (n & 3) == 3){ // n & 3 agar 3 hai to woh 4x+3 nature ka hai to isme addition karna advantageous hota hai
+              n = n + 1;
+            }
+            
+            res++; // res ko ++ karenge coz harbar ek step lag rha hai
+        }
+        return res;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+        System.out.println(solution(n));
+    }
+	
+	
+}

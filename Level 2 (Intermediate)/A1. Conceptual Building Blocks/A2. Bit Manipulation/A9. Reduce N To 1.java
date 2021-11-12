@@ -24,7 +24,7 @@ import java.util.*;
 
 public class Main {
 
-    public static int solution(int n) { //boht bada number aya to integer seh nhi payega range ke bahar jayega isliye long lo 
+    public static int solution(long n) { //boht bada number aya to integer seh nhi payega range ke bahar jayega isliye long lo 
         int res = 0;
         
         while( n != 1){

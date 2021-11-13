@@ -90,3 +90,67 @@ public class Main {
 }
 
 //================================================ JB's=============================================
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static long ncr(long n, long r){
+        if(n < r){
+            return 0L;    
+        }
+        
+        long res = 1L;
+        
+        for(long i = 0L; i < r; i++){ //factorial se karenge to tle ayega 
+            res = res * (n - i);
+            res = res / (i + 1);
+        }
+        
+        return res;
+    }
+    
+    public static long solution(long n) {
+       int count= csb(n); // pehle set bits ka count nikal lo, ki n ke andar kitni set bits hai
+       
+       long ans= 0; // apna ans 0 se initialise kardiya
+       
+       //right ke taraf se loop lagayenge
+       for( int i= 62; i>=0; i--){ // 62 se start hoga, highest number hota hai 2^63-1. agar 63 se loop chalaye to 2^63 loop ke bahar jayega. 40 sebhi loop chala skte ho
+           // check if the ith bit is on or off uske liye mask chahiye hoga
+           long mask = (long)Math.pow(2, i); // yeh 1 >> i hi hai jisko hum mask bolte hai. hune bas long mai banaya
+           
+        // agar ith bit on hoti hai
+        if((n & mask) != 0 && count > 0){ // count bhi negative nhi hona chahiye
+            // agar woh bit on hoti hai to mai answer mai 
+            ans += ncr(i, count); // i mese count jitne select karenge
+            count--;
+        }
+      }
+       
+      return ans;
+      
+    }
+    
+    //csb: count set bits
+    public static int csb(long n){
+        int res = 0;
+        
+        while(n > 0){
+            long rsb = n & -n;
+            n -= rsb;
+            res++;
+        }
+        
+        return res;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+        long n = scn.nextLong(); // long number input liya hai to 64 bit ka number hoga means 0 to 63
+        // n input le rhe, humko iske andar number of set bits chahiye, coz ncr karne keliye number of set bits chahiye so karnighan algorithm ke thorugh no of set bits nikalenge 
+        
+        System.out.println(solution(n)); 
+    }
+	
+	
+}

@@ -19,7 +19,7 @@ Sample Output
 
 Code:
 
-====================================SS's==================================================
+//====================================SS's==================================================
 	
 import java.io.*;
 import java.util.*;
@@ -58,7 +58,7 @@ public class Main {
     }
 }
 
-==========================================JB's-1====================
+//==========================================JB's 1====================
 import java.io.*;
 import java.util.*;
 
@@ -100,7 +100,7 @@ public class Main {
 
 }
 
-============================================================JB's 2===================================
+//===================================================JB's 2===================================
 	import java.io.*;
 import java.util.*;
 
@@ -142,5 +142,48 @@ public class Main {
 
 }
 
-==============================================================JB's 3=======================================================
+//============================================================JB's 3=======================================================
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static int solution(int n) { 
+        int count = 0;  
+        long m = (long)n ; 
+        
+        while( m != 1){
+            
+            if( m % 2 == 0){ 
+              //m = m / 2;
+              // 2 se divide karne ki jagah mai, left shift se hota hai multiply aur right shift se hota hai divide to woh use kr skte 
+              m = m >> 1; // right shift krdo 1 se
+              count++;
+                
+            }else{
+               if(m == 3){ 
+                 count += 2; 
+                 m = 1 ; 
+                
+               }else{
+                   // first bit(sabse last wali) dono ki on hai so second bit ek off hai ek mai on hai 
+                  count++;
+                  if((m & 2) == 0){  // agar bit off hai to minus
+                   m -= 1; 
+                }else{  // bit on hai to plus
+                   m += 1;
+                }
+              }
+           }
+        }
+        return count;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+        System.out.println(solution(n));
+    }
 	
+	
+}

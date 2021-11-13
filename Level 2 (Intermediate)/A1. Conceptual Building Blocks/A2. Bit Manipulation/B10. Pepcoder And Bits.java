@@ -76,8 +76,8 @@ public class Main {
         return res;
     }
     
-	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in);
+   public static void main(String[] args) {
+	Scanner scn = new Scanner(System.in);
         long n = scn.nextLong();
         // n input le rhe, humko iske andar number of set bits chahiye, coz ncr karne keliye number of set bits chahiye so karnighan algorithm ke thorugh no of set bits nikalenge 
         

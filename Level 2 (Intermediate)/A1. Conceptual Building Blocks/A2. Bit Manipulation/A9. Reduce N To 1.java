@@ -19,6 +19,8 @@ Sample Output
 
 Code:
 
+====================================SS's==================================================
+	
 import java.io.*;
 import java.util.*;
 
@@ -54,6 +56,91 @@ public class Main {
 		int n = scn.nextInt();
         System.out.println(solution(n));
     }
-	
-	
 }
+
+==========================================JB's-1====================
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static int solution(int n) { //boht bada number aya to integer seh nhi kr payega range ke bahar jayega isliye long lo. kyuki input number ki range 2147483647 tak joki integer ka end hai so long mai convert karo isko
+        int count = 0; // minimum number of operations 0 lo pehle 
+        long m = (long)n ; // n ko long mai convert krlo
+        
+        while( m != 1){ // jabtak yeh number 1 nhi hojata tabtak kam karenge
+            
+            if( m % 2 == 0){ // n agar even hua to to simply number ko 2 se divide krdo
+              m = m / 2;
+              count++;
+                
+            }else if(m == 3){ // agar n 3 hua to woh special case hai, 3 ko reduce karne mai 2 hi step lagte hai 
+              count += 2; // special case hai to res ko sidha 2 karke break kr skte hai
+              m = 1 ; // 2 step lagenge aur m 1 ban jayega
+                
+            }//agar n odd hai to aap n-1 sebhi replace kr skte ho or n+1 se bhi replace kr skte ho 
+            else if((m & 3) == 1){ // n & 3 ==1 hai to 4x+1 nature ka hai. n % 4 == 1 bhi use kr skte ho but tle dega
+              m -= 1; // isme bhi minus karna advantageous hota hai
+              count++;
+              
+            }else if( (m & 3) == 3){ // n & 3 agar 3 hai to woh 4x+3 nature ka hai to isme addition karna advantageous hota hai
+              m += 1;
+              count++;
+            }
+            
+        }
+        return count;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+        System.out.println(solution(n));
+    }
+
+}
+
+============================================================JB's 2===================================
+	import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static int solution(int n) { 
+        int count = 0;  
+        long m = (long)n ; 
+        
+        while( m != 1){
+            
+            if( m % 2 == 0){ 
+              m = m / 2;
+              count++;
+                
+            }else{
+               if(m == 3){ 
+                 count += 2; 
+                 m = 1 ; 
+                
+               }else{
+                count++;
+                if(m % 4 == 1){ 
+                   m -= 1; 
+                }else{ 
+                   m += 1;
+                }
+              }
+           }
+        }
+        return count;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+        System.out.println(solution(n));
+    }
+
+}
+
+==============================================================JB's 3=======================================================
+	

@@ -154,3 +154,7 @@ public class Main {
 	
 	
 }
+
+// loop 40 se start kiya to kyu chalega? contrainst de rakha hai ki N ki max value 10^12 ho skti hai fir yeh assumption lagaya ki 2^10 hota hai 1024 means this is nearly equal to 10^3, 2^10 ~= 10^3.
+// so agar mai 10 ki power 12 banane keliye 10^3 ko power 4 se multiply karna padega to 2^10 kobhi 4 multiply karna padega, (2^10)^4 ~= (10^3)^4 => 2^40 ~= 10^12 isliye(2^40) loop 40 start kiya to chalta
+

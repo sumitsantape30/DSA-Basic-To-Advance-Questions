@@ -18,6 +18,8 @@ Sample Output
 
 Code:
 
+//===========================================SS's============================
+
 import java.io.*;
 import java.util.*;
 
@@ -85,5 +87,6 @@ public class Main {
         System.out.println(solution(n, k, 63)); // solution ke andar humne n pass kiya hai count of set bits pass kiya hai, aur sathme 63. long mai 64 bits hoti hai 0 to 63 means sara long consider hoga
     }
 	
-	
 }
+
+//================================================ JB's=============================================

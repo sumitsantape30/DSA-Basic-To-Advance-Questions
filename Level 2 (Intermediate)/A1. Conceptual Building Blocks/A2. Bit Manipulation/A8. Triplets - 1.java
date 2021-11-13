@@ -34,18 +34,20 @@ public class Main {
 	public static void solution(int[] arr){
 		int c= 0; // count = 0
 		
+		//mai ek loop chalaunga i keliye aur ek k keliye, basically i and k ko start index and end index ki tarah smjho 
 		for( int i=0; i< arr.length; i++){ // maine bahar lagaya i ka loop
-		    int val = arr[i]; // val ko arr[i] se initialise kardiya
+		    int xor = arr[i]; // xor mai arr[i] ko daldiya 
 		    
-		   for( int k= i +1 ; k < arr.length; k++){ // k ko strictly grater se start kiya
-		       val = val ^ arr[k];
+		   for( int k= i +1 ; k < arr.length; k++){ // k ko strictly i se badi honi chahiye, aur k last tak ja skta hai 
+		    // k ki value vary krte rahegi, i+1, i+2, i+3.... to manlo i+3 pe ssare elements ke XOR ki value 0 milgyi to yahape hum apna count settle krdenge uske bad aage badhenge 
+		       xor = xor ^ arr[k];
 		       
-		       if( val == 0){ // ab agar val 0 ata hai , means i se leke k tak ka XOR aagya 
+		       if( xor == 0){ // ab agar val 0 ata hai , means i se leke k tak ka XOR 0 aagya 
 		           c += (k - i); //i to k ke bichme total (k-i) triplets hote hai so usko count mai add karlo
 		       }
-		   }
-		    
+		   }    
 		}
+		
 		System.out.println(c);
     }
     
@@ -56,6 +58,6 @@ public class Main {
                 for(int i = 0 ; i < arr.length; i++){
                    arr[i] = scn.nextInt();
                 }
-               solution(arr);
+                solution(arr);
     }	
 }

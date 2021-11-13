@@ -41,7 +41,7 @@ public class Main {
 		       val = val ^ arr[k];
 		       
 		       if( val == 0){ // ab agar val 0 ata hai , means i se leke k tak ka XOR aagya 
-		           c += (k - i);
+		           c += (k - i); //i to k ke bichme total (k-i) triplets hote hai so usko count mai add karlo
 		       }
 		   }
 		    
@@ -52,13 +52,10 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
-        int[] arr = new int[n];
-        for(int i = 0 ; i < arr.length; i++){
-            arr[i] = scn.nextInt();
-        }
-        solution(arr);
-    }
-	
-	
+                int[] arr = new int[n];
+                for(int i = 0 ; i < arr.length; i++){
+                   arr[i] = scn.nextInt();
+                }
+               solution(arr);
+    }	
 }
-

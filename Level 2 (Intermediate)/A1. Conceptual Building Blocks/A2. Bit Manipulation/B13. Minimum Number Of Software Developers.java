@@ -36,4 +36,3 @@ Sample Output
 [0, 2]
 
 Code:
-

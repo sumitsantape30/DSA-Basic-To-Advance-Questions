@@ -32,11 +32,12 @@ Sample Output
 
 Code:
 
+//------------------------------------------------SS's (Isme Arraylist ke return type String hai----------------------------------------------
 import java.util.*;
  
  public class Main {
  
-     public static ArrayList<String> grayCode(int n) {
+     public static ArrayList<String> grayCode(int n) { 
          
          if( n == 1){
              // hum isme 2 log banakr arraylist mai add karenge
@@ -69,6 +70,46 @@ import java.util.*;
      public static void main(String[] args) {
          Scanner scn = new Scanner(System.in);
          ArrayList<String> ans= grayCode(scn.nextInt());
+         Collections.sort(ans);
+         System.out.println(ans);
+     }
+ }
+
+//========================================================JB's (isme ArrayList ke return type Integer hai) ====================================================
+
+import java.util.*;
+ 
+ public class Main {
+ 
+     public static List<Integer> grayCode(int n) {
+         List<Integer> ans = new ArrayList<Integer>(); //jaise hum likhte the queue = ArrayDeque waisehi yahape list ek interface hai, so yaha woh list ArrayList hai woh linkedlist etc bhi ho skti hai
+
+         fun(n, ans); // yeh funtion iss arraylist ko bharke de dega aur hum return krdenge
+         return ans;
+
+     }
+
+     public static void fun(int n, List<Integer> ans){
+         //aise call krte krte basecase hit hoga, jab hum 0 pe pohoch jayenge
+         if( n == 0){
+             ans.add(0); // answer mai add karenge 0 aur return krdenge
+             return;
+         }
+
+         fun(n-1, ans);
+         //ab wapis aate hue jawab banana hai 
+         //0 ka jawab aagya hai list mai hume ab 1 ka jawab banana hai
+         //jitne elements hai unke upar ulta loop chalana hoga aur unn elements ko one by one OR krte hue add krdo
+         for( int i = ans.size()-1; i>=0; i--){
+             //ek ek element uthao aur bitmask ke sath uska OR karo aur answer mai simply add karo
+             ans.add(ans.get(i) | (1<<(n-1)));
+         }
+
+     }
+ 
+     public static void main(String[] args) {
+         Scanner scn = new Scanner(System.in);
+         List<Integer> ans=grayCode(scn.nextInt());
          Collections.sort(ans);
          System.out.println(ans);
      }

@@ -112,6 +112,7 @@ public class Main {
                // valid candidate mai hume minimum nikalna hai 
                if( onesol.size() < sol.size() || sol.size() == 0){ // iss solution ka size agar overall solution ke size se chota hota hai to overall solution ko update krdo. or ho skta haiki solution ke size 0 hi ho to uss case mai bhi update
                    sol = new ArrayList<>(onesol);
+		   //yahape sol = onesol likha to, yahape onesol ka size eventually 0 hone wala hai coz last mai wapas aate time mai remove krta hu last mai muje yeh empty milegi matlab maine onesol ka address sol mai store kara diya to overall solution bhi last mai empty hi milega yeh galti hogi isliye aisa nhi likh skte
                }
             }
             return;

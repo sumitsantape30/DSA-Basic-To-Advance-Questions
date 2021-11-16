@@ -93,3 +93,64 @@ public class Main {
 
   }
 }
+
+//===========================================================JB's======================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	static ArrayList<Integer> sol = new ArrayList<>();
+
+	public static void solution(int[] people, int n, int cp, ArrayList<Integer> onesol, int skillsmask) {
+        //basecase: jab sare bando ke faila hojaye
+        if( cp == people.length){
+            //ab muje ismese dekhna kon konse valid case hote hai 
+            int skillset = ((1 << n)-1); //yeh hoga apna skillset
+            if( skillsmask == skillset){ //to mai bolunga agar skill ka mask barbr hota hai skill set ke to yeh humare liye yeh potential jawab hai, valid candidate hai humare liye
+               // valid candidate mai hume minimum nikalna hai 
+               if( onesol.size() < sol.size() || sol.size() == 0){ // iss solution ka size agar overall solution ke size se chota hota hai to overall solution ko update krdo. or ho skta haiki solution ke size 0 hi ho to uss case mai bhi update
+                   sol = new ArrayList<>(onesol);
+               }
+            }
+            return;
+        }
+
+        //2 choices hai banda aayega yafir banda nhi ayega
+        //pehli call for nhi ana chahta
+        solution(people, n, cp+1, onesol, skillsmask); // people wala array as it is pass hojayega, current bande ka faisla hogya to agle bande ke pas jao, one solution mai kuch add nhi hone wala, skillsmask bhi waisahi rahega
+
+        //ab ha ki call matlab banda ana chahta hai 
+        //this is one solution to onesol mai uss bande ko add karo
+        onesol.add(cp); //current person ko maine add karliye fir mai lagayi ha ki call
+        solution(people, n, cp+1, onesol, (skillsmask | people[cp])); // onesolution arraylist mai jo dalna tha woh dal chuke hai ab skills ka mask badlega, skills ka mask banega abtak ki skills OR current people(bande) ki skill
+        //wapas aate hue remove krna hai
+        onesol.remove(onesol.size() - 1);
+
+	}
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		HashMap<String, Integer> smap = new HashMap<>();
+		for (int i = 0; i < n; i++) {
+			smap.put(scn.next(), i);
+		}
+		
+		int np = scn.nextInt();
+		int[] people = new int[np];
+		for (int i = 0; i < np; i++) {
+			int personSkills = scn.nextInt();
+			for (int j = 0; j < personSkills; j++) {
+				String skill = scn.next();
+				int snum = smap.get(skill);
+				people[i] = people[i] | (1 << snum);
+			}
+		}
+
+		solution(people, n, 0, new ArrayList<>(), 0);
+		System.out.println(sol);
+		
+	}
+}

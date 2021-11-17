@@ -99,11 +99,11 @@ public class Main {
    
     //level pe current item hai, to faisla karna hai current item ka, current items keliye options hai jinte boxes hai. usmese valid boxes woh honge jo empty boxes hai 
     for (int i = 0; i < boxes.length; i++) { //sare boxes mai loop lagaya
-        if( boxes[i] == 0){ //bithane keliye jaruri hai ki box khali ho so agar box khali hai to box mai aap apne current item ko bithade
+        if( boxes[i] == 0){ //bithane keliye jaruri hai ki box khali ho so agar box khali hai to box mai aap apne current item ko bithade. jab woh box mai yeh place unoccupied hai matlab valid place hai
             boxes[i]= ci;
             //aur call lagade agle level pe agle bande ke faisla hoga
             permutations(boxes, ci+1, ti);
-            boxes[i]= 0; // wapas aate hue box ko khali krde
+            boxes[i]= 0; // wapas aate hue box ko khali krdenge
         }
     }
   }
@@ -113,6 +113,6 @@ public class Main {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int nboxes = Integer.parseInt(br.readLine());
     int ritems = Integer.parseInt(br.readLine());
-    permutations(new int[nboxes], 1, ritems); // n booxes keliye ek array pas kar rakha hai iss array mai sab jagah 0 pda hai means khali hai, ritems means total items kitne hai, aur 1 is ci: current item ki pehle item konsa hai
+    permutations(new int[nboxes], 1, ritems); // n booxes keliye ek array pas kar rakha hai iss array mai sab jagah 0 pda hai means khali hai, ritems means total items kitne hai, aur 1 is ci: current item ki pehle item konsa hai pehle item no 1 ka faisla hoga
   }
 }

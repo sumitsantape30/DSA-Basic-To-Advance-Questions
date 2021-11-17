@@ -89,7 +89,7 @@ public class Main {
 
   public static void permutations(int[] boxes, int ci, int ti) { // ci: current item, ti: total items
   
-    if( ci > ti){ //aisa krte krte agar current item total item se jada hojayega to means aap sabko bithe chuke hai to print krde
+    if( ci > ti){ //aisa krte krte agar current item total item se jada hojayega to means aap sabko bitha chuke hai to print krde
      for( int i=0; i< boxes.length; i++){
          System.out.print(boxes[i]);
      }

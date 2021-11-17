@@ -121,3 +121,45 @@ public class Main {
   }
 
 }
+
+//==================================================== JB's=====================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void permutations(int cb, int tb, int[] items, int ssf, int ts, String asf){ //cb: current box jiska faisla karoge, tb is total number of boxes, yahape items ka array liya hai muje yeh information chahiye ki konsa item select hochuka hai abtak aur konsa select nhi hua hai, ssf is kitne itema select kr chuke ho, ts: total selection: total items kitne select krne hai, asf is answer so far
+
+    //basecase: jab sare boxes ka faisla hojaye 
+    if( cb > tb){ // jitne basecases generate hue usme dekho ki kitne aise case hai jisme ssf ts ke equal hai 
+        if(ssf == ts){ // jab selection so far total selection ke equal hota hai uss uss case mai humko print karna hai
+          System.out.println(asf);
+        }
+        return;
+    }
+    
+    //pehle mai lagaunga 'ha' ki call, ha ki multiple calls hongi 
+    for( int i=0; i< items.length; i++){ //jojo item humne abhitak select nhi kiya woh sare place ho skte hai
+       if( items[i] == 0){ // iska matlab hai ki yeh item abhitak select nhi kara gya hai to hum iss item ko select kr skte hai 
+           items[i] = cb; // so iss item ko select karliya aur current box pe rakh diya 
+          
+          //aur baki boxes keliye recursive call laga denge 
+          permutations(cb + 1, tb, items, ssf + 1, ts, asf + (i+1) ); // selection so far will get inremented by 1 kyuki ek naya select kiya hai humne abhi. aur asf mai iss box pe konsa item number likha hai woh i+1 rakhenge coz items 0 se nhi 1 se start hote hai 
+          //wapas aate hue items ko unselect karna hoga
+          items[i] = 0;
+       }
+    }
+
+    //No ki call: box ne boldiya ki mai select hi nho hona chahta mai kisiko place nhi karunga
+    permutations(cb + 1, tb, items, ssf, ts, asf + "0") ; // current box ka faisla hogya ki woh khali rahega. asf mai 0 add hoga
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int nboxes = Integer.parseInt(br.readLine());
+    int ritems = Integer.parseInt(br.readLine());
+    permutations(1, nboxes, new int[ritems], 0, ritems, "");
+  }
+
+}

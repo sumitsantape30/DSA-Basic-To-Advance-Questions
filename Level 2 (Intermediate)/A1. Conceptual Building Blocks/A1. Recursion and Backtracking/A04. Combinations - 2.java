@@ -74,3 +74,43 @@ public class Main {
   }
 
 }
+
+//========================================================JB's============================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void combinations(int[] boxes, int ci, int ti, int lbui){ // lbui: last box used index
+    if( ci > ti){ // jab sarehi item ka faisla hojaye to return karenge
+       for( int i=0; i< boxes.length; i++){
+           if(boxes[i] == 0){
+               System.out.print("-");
+           }else{
+               System.out.print("i");
+           }
+       }
+       System.out.println();
+       return;
+    }
+
+    for( int i= lbui + 1; i < boxes.length; i++){// lbui se aage wale options explore krne hai
+        //abhi yahape woh check lagane ki jarurat nhi hai ki boxes[i]== 0 kyuki hum last boz used se aage loop chala rhe hai aage wale boxes to khali hi honge 
+        boxes[i] = ci; // current item ko rakh diya
+        // aur baki items keliye recursive call
+        combinations(boxes, ci+1, ti, i); // last box apne i use kiye so lbui = i pass karo
+        //wapas aateh hue unplace karenge taki jab dusre option pe explore krne jao to pehle wala jisko place kiya tha usko unplace kara chuke ho
+        boxes[i] = 0;
+    } 
+
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int nboxes = Integer.parseInt(br.readLine());
+    int ritems = Integer.parseInt(br.readLine());
+    combinations(new int[nboxes], 1, ritems, -1); // starting mai lastbox used index -1 rakha hai kyuki starting mai maine koi box nhi use kara hai 
+  }
+
+}

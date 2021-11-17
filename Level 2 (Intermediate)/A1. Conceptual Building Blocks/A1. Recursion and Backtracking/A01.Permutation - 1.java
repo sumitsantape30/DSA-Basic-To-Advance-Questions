@@ -96,17 +96,19 @@ public class Main {
      System.out.println();
      return;
     }
-
+   
+    //level pe current item hai, to faisla karna hai current item ka, current items keliye options hai jinte boxes hai. usmese valid boxes woh honge jo empty boxes hai 
     for (int i = 0; i < boxes.length; i++) { //sare boxes mai loop lagaya
         if( boxes[i] == 0){ //bithane keliye jaruri hai ki box khali ho so agar box khali hai to box mai aap apne current item ko bithade
-           boxes[i]= ci;
-           //aur call lagade agle level pe agle bande ke faisla hoga
+            boxes[i]= ci;
+            //aur call lagade agle level pe agle bande ke faisla hoga
             permutations(boxes, ci+1, ti);
             boxes[i]= 0; // wapas aate hue box ko khali krde
         }
     }
   }
 
+   //so hume rakhna hoga current item konsa hai aur total items kitne hai taki pta chale ki basecase kahape ayega aur ek rakhna padega ki i1 keliye kitne options hai, 4 options hai i1 kahipe bhi jake place ho skta hai to ek array rakhenge. 0th index denote karega box1, 1st index denote karega box 2 so on.
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int nboxes = Integer.parseInt(br.readLine());

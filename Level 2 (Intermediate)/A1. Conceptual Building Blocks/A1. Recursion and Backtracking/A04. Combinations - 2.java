@@ -96,7 +96,7 @@ public class Main {
     }
 
     for( int i= lbui + 1; i < boxes.length; i++){// lbui se aage wale options explore krne hai
-        //abhi yahape woh check lagane ki jarurat nhi hai ki boxes[i]== 0 kyuki hum last boz used se aage loop chala rhe hai aage wale boxes to khali hi honge 
+        //abhi yahape woh check lagane ki jarurat nhi hai ki boxes[i]== 0 kyuki hum last box used se aage loop chala rhe hai aage wale boxes to khali hi honge 
         boxes[i] = ci; // current item ko rakh diya
         // aur baki items keliye recursive call
         combinations(boxes, ci+1, ti, i); // last box apne i use kiye so lbui = i pass karo

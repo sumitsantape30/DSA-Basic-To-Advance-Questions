@@ -99,9 +99,9 @@ public class Main {
    
     //level pe current item hai, to faisla karna hai current item ka, current items keliye options hai jinte boxes hai. usmese valid boxes woh honge jo empty boxes hai 
     for (int i = 0; i < boxes.length; i++) { //sare boxes mai loop lagaya
-        if( boxes[i] == 0){ //bithane keliye jaruri hai ki box khali ho so agar box khali hai to box mai aap apne current item ko bithade. jab woh box mai yeh place unoccupied hai matlab valid place hai
+        if( boxes[i] == 0){ //bithane keliye jaruri hai ki box khali ho so agar box khali hai to box mai aap apne current item(ci) ko bithade. jab woh box mai yeh place unoccupied hai matlab valid place hai
             boxes[i]= ci;
-            //aur call lagade agle level pe agle bande ke faisla hoga
+            //aur call lagade agle level pe agle item ke faisla hoga
             permutations(boxes, ci+1, ti);
             boxes[i]= 0; // wapas aate hue box ko khali krdenge
         }

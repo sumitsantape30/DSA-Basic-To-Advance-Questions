@@ -49,10 +49,10 @@ public class Main {
          }
         return;
      }
-     //ek bas yes ki call ek bar no ki call
+     //ek baR yes ki call ek bar no ki call
      //banda yaha keh rha hai ha mai select hona chahta hu
-     combinations(cb+1, tb, ssf +1, ts, asf + "i"); //select hona chahta hu isliye - nhi hoga, i add hoga yeh ana chahta hai
-     combinations(cb+1, tb, ssf, ts, asf+"-"); // current box upar jate hue badhega. ssf nhi badhi box ne mana kard diya, bande ne mana kardiya usliye - ayega
+     combinations(cb + 1, tb, ssf +1, ts, asf + "i"); //select hona chahta hu isliye - nhi hoga, i add hoga yeh ana chahta hai
+     combinations(cb + 1, tb, ssf, ts, asf+"-"); // current box upar jate hue badhega. ssf nhi badhi box ne mana kar diya, bande ne mana kardiya usliye - ayega
      
      //ana chahta hai to i add kiya nhi ana chahta hai to - add kiya
   }
@@ -83,10 +83,9 @@ public class Main {
       }
 
       //given output mai dekhe to pehle badde bhare hue hai matlab ha ki call lagegi
-      combinations(cb + 1, tb, ssf + 1, ts, asf + "i"); //ssf ek se badhega kyuki humne ek box ke select karliya, asf mai i add karlenge
+      combinations(cb + 1, tb, ssf + 1, ts, asf + "i"); //ssf ek se badhega kyuki humne ek box ko select karliya, asf mai i add karlenge
       //na ki call
       combinations(cb + 1, tb, ssf, ts, asf + "-"); // ssf nhi badhega kyuki yahape uss box ko select nhi kara item ko place karwane keliye, aur answer so far mai - add kardenge
-
 
   }
 

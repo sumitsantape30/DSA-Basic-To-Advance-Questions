@@ -119,3 +119,51 @@ public class Main {
         queensPermutations(0, n, 0, 0, "", queens);
     }
 }
+
+//=========================================== JB's==========================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void queensPermutations(int qpsf, int tq, int row, int col, String asf, boolean[] queens) {
+        if(col == tq){ // jab column number total queen ke equal hojata hai
+          //column ko reset kardenge 0 pe, row ko ek se badha denge, aur asf mai ek enter laga denge
+          col = 0;
+          row++;
+          asf += "\n";
+        }
+
+        //basecase
+        if(row == tq){ // jab mera row number total queen ke barabr hojaye
+          if( qpsf == tq){
+              System.out.println(asf);
+              System.out.println(); // output mai ek enter extra diya tha so humne yaha enter dala taki eccept ho
+          }
+
+          return;
+        }
+        
+        //pehle ha ki calls, jitni queens hai utne mere pas options honge
+        for( int i = 0; i< queens.length; i++){
+            if(queens[i] == false){ // agar woh queen abhitak selected nhi hai to uss spot ko true kardo means humne ek queen ko bitha diya
+               queens[i] = true;
+               queensPermutations( qpsf + 1, tq, row, col + 1, asf + "q"+ (i +1) + "\t", queens); // aapne queen select krli to qpsf will get increamented by 1.  asf mai qpsf+1 add karenge coz initially qpsf 0 hai aur pehli queen place kr rha hu to 1 add hona chahiye answer mai 
+               queens[i] = false;
+            }
+        }// so yes ki multiple calls hogyi
+
+        //ab no ki call
+        queensPermutations(qpsf, tq, row, col+1, asf + "-\t", queens); // sirf column mai change ayega
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+    }                                     
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        boolean[] queens = new boolean[n];                               
+
+        queensPermutations(0, n, 0, 0, "", queens);
+    }
+}

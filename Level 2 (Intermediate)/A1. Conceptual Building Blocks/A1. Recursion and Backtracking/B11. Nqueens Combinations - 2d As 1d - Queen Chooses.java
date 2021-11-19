@@ -40,7 +40,6 @@ public class Main {
     for ( int i = row, j = col; i >= 0; i--) { //column ko nhi cheda hai bas row upar gyi hai
       if ( chess[i][j]) { //agar kabhibhi apko i and j ke andar queen mil gyi to return false krdena
         return false;
-
       }
     }
 
@@ -99,3 +98,39 @@ public class Main {
     nqueens(0, n, chess, -1);
   }
 }
+
+//===========================================JB's============================================
+
+public static boolean IsQueenSafe(boolean[][] chess, int row, int col) {
+       
+       //left side
+       for( int j= col - 1; j >= 0; j--){ // row fix rahega columns vary karenge
+          if( chess[row][j] == true){ //agar lest mai kisibhi spot pe queen dikh jati hai to our queen isnt safe
+            return false;
+          }
+       }
+
+       //north mai: isme column fix rahega aur row vary karenge
+       for(int i= row-1; i >= 0; i--){
+          if(chess[i][col] == true){
+            return false;
+          }
+       }
+
+       //left diagonal: isme row and col dono reduce hote hue jayenge
+       for( int i = row-1; j = col-1; i >= 0 && j >=0 ; i--, j--){
+          if(chess[i][j] == true){
+            return false;
+          }
+       }
+
+       //right diagonal
+       for(int i= row-1, j = col + 1 ; i >= 0 && j < chess.length; i--, j++){
+          if( chess[i][j] == true){
+            return false;
+          }
+       }
+
+       return true;
+
+    }

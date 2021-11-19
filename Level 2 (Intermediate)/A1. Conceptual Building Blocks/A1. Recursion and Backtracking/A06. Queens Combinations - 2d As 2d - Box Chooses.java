@@ -61,7 +61,7 @@ public class Main {
             //agar col extreme pe hai to purane row se badh jayenge aur column 0 hojayega
             nr= row +1;
             col= 0;
-            //agar row badal rhi hai to asf mai q add krdo, \n lagado kyuki enter lagana hai
+            //agar row badal rhi hai to asf mai q add krdo, \n lagado kyuki enter lagana hai kyuki hum extreme par hai to next line
             yasf = asf + "q\n";
             nasf = asf + "-\n"; //nsf mai purana asf + dash ke sath \n
         }else{ //agar extreme pe nhi hai to
@@ -75,6 +75,42 @@ public class Main {
         }
         queensCombinations(qpsf + 1, tq, nr, nc, yasf) ; // isne ha kaha hai so yasf pass karre
         queensCombinations(qpsf + 0, tq, nr, nc, nasf) ; // isne na keh diya to qpsf badhi nhi, total queen utni hi hai, yeh no wali call hai to nasf pass kro kyuki queen nhi badhayi humne
+    }
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        
+        queensCombinations(0, n, 0, 0, "");
+    }
+}
+
+//=====================================================JB's===================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void queensCombinations(int qpsf, int tq, int row, int col, String asf){
+       if( col == tq){ // aisa hua means woh extreme pe aagya hai apne
+           col = 0;
+           row++;
+           asf += "\n";
+       }
+
+       //basecase
+       if( row == tq){
+           if( qpsf == tq){
+               System.out.println(asf);
+           }
+           return;
+       }
+
+        // pehle ha ki call lagani hai 
+       queensCombinations(qpsf + 1, tq, row, col+1, asf+"q"); // row wahi rahegi coz usi row mai ho so next column pe chale gye kyuki row,col pe to humne queen place karwa di. aur humne queen(q) place karwayi hai to asf mai "q" add kardo.
+       //No ki call
+       queensCombinations(qpsf, tq, row, col+1, asf+"-"); // queen select nhi hui to asf mai "-" add hogi
+
     }
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

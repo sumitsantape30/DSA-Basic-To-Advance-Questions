@@ -59,7 +59,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void queensPermutations(int qpsf, int tq, int[][] chess){
+    public static void queensPermutations(int qpsf, int tq, int[][] chess){ //qpsf: queens placed so far, tq: total queens
         if( qpsf == tq){ //aise krte krte jab sari queens baith chuki hogi to loop lagake print krdenge
          for( int i=0; i< chess.length; i++){
              for( int j=0; j< chess[0].length; j++){
@@ -87,7 +87,6 @@ public class Main {
             }
         }
         
-        
     }
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -95,5 +94,52 @@ public class Main {
         int[][] chess = new int[n][n];
         
         queensPermutations(0, n, chess); //abhitak 0 queens placed hai 
+    }
+}
+
+//===============================================================================JB's===========================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void queensPermutations(int qpsf, int tq, int[][] chess){
+         if( qpsf == tq){ // agar queens placed so far total queens ke equal hai means sari queen placed krdi hai
+            for( int i=0; i< chess.length; i++){
+                for( int j=0; j< chess[0].length; j++){
+                    if( chess[i][j] == 0){ // gar 0 pda hai means yeh empty box hai to mai dash print karunga
+                      System.out.print("-\t");
+                    }else{
+                        System.out.print("q" + chess[i][j] + "\t");
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println();
+            return;
+         }
+
+        //pehli queen keliye sare options
+        for(int i=0; i< chess.length; i++){
+            for( int j=0; j< chess[0].length; j++){
+                //jojo empty boxes honge woh mere liye options honge
+                if( chess[i][j] == 0){ // yeh spot empty hai to mai yaha apni queen place kr skta hu 
+                   chess[i][j] = qpsf+1;
+                   //aur baki queens keliye recursive call laga denge
+                   queensPermutations( qpsf+1, tq, chess);
+                   //wapis aate hue jo queen humne place ki thi usko unplace karni padegi
+                   chess[i][j] = 0;
+                }
+            }
+        }
+
+    }
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[][] chess = new int[n][n];
+        
+        queensPermutations(0, n, chess);
     }
 }

@@ -83,3 +83,46 @@ public class Main {
         queensCombinations(0, n, chess, 0, -1); // hume pas kuya gya hai abhi kitni queens baithi hai 0, total kitni bithani hai n, then chess board, fir i and j yeh yeh represent krta hai ki previous level ki queen kaha baithi thi so shuruwat mai 0,-1 pas kiya to pichli queen kahi nhi baithi thi 
     }
 }
+
+//=============================================================JB's=========================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void queensCombinations(int qpsf, int tq, boolean[][] chess, int i, int j){ // i: last row used, j: last column used. i,j matlab jahape aapne last time queen ko place kiya tha
+      if( qpsf == tq){
+          for( int row = 0; row < chess.length; row++){
+              for( int col = 0; col < chess[0].length; col++){
+                  if( chess[row][col] == true){
+                      System.out.print("q\t");
+                  }else{
+                      System.out.print("-\t");
+                  }
+              }
+              System.out.println(); // ek answer print karne ke bad enter
+          }
+          System.out.println(); //pura answer print krne ke bad bhi enter
+          return;
+      }
+
+      for( int row= i; row < chess.length; row++){ // row ka loop chalega i se
+          for( int col = row == i ? j+1 : 0; col < chess[0].length; col++){ // column ki value kya hogi? agar row ki value i ke barabr hai to column ki value hogi j+1, otherwise column ki value 0 se start hogi. iska matlab hai ki agar aap usi row mai ho jis row mai aakhri queen placed hai to column ka loop j+1 se chalega nhito column ka loop 0 se chalega.
+             
+             chess[row][col] = true; // iss spot pe queen ko place kardunga
+             //aur baki queens keliye recursive call
+             queensCombinations( qpsf + 1, tq, chess, row, col);
+             chess[row][col] = false;
+          } 
+       }
+    }
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        boolean[][] chess = new boolean[n][n];
+        
+        queensCombinations(0, n, chess, 0, -1);
+    }
+}

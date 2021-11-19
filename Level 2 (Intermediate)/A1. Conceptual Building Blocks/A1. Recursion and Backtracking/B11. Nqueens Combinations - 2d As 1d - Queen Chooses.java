@@ -79,7 +79,7 @@ public class Main {
       return;
     }
 
-    for (int i = lcno + 1; i < chess.length * chess.length; i++) {
+    for (int i = lcno + 1; i < chess.length * chess.length; i++) { // isme loop lcno se aage chalra means last spot pe jaha box ka index use hua tha uske aage ke explore kr rhe hai means  aage koi queen hi nhi hogi isliye isqueensafe mai sirf piche wale 4 directions mai check karunga
       int row = i / chess.length;
       int col = i % chess.length;
 

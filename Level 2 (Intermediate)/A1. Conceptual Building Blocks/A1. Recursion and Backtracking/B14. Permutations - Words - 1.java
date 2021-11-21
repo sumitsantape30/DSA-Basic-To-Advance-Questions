@@ -110,3 +110,52 @@ public class Main {
   }
 
 }
+
+//================================================================JB's============================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void generateWords(int cc, String str, Character[] spots, HashMap<Character, Integer> map) { // iss hashmap mai store hoga last occurence, cc: current character
+     if( cc == str.length()){ // jab current charcter string.length pe pohoch jaye 
+        for( int i=0; i< spots.length; i++){
+            System.out.print(spots[i]);
+        }
+        System.out.println();
+         return;
+     }
+     
+     int lo = map.get(str.charAt(cc)); // current character ki last occurence maine nikal li
+     
+     //pehle character keliye jitne spots hai sare options honge
+     for(int i=  lo + 1 ; i< spots.length; i++){ // jobhi last occurence hai uske aage se start karunga
+         if( spots[i] == null){ // spots[i] pe null pda hai matalb woh empty hai to hum usko acquire kr skte hai
+            spots[i] = str.charAt(cc); // uss spot pe current character ko rakh diya
+            //ab muje current character ki last occurence update karni padegi
+            map.put(str.charAt(cc), i); // iss current character ki last occurence hai i
+            
+            //aur fir agle character keliye recursive call
+            generateWords(cc + 1, str, spots, map);
+            //wapas aate hue uss spot ko kahli krdenge aur uski original wali last occurence wapis rakhdenge
+            spots[i] = null;
+            map.put(str.charAt(cc), lo);
+         }
+     }
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String str = br.readLine();
+
+    Character[] spots = new Character[str.length()];
+    HashMap<Character, Integer> lastOccurence = new HashMap<>();
+    for(char ch: str.toCharArray()){
+      lastOccurence.put(ch, -1); // character ke samne -1 pass kiya hai means abhi yeh character kahipe bhi nhi hai. -1 pe appear kiya tha but -1 to koi box hi nhi hai
+    }
+
+    generateWords(0, str, spots, lastOccurence);
+  }
+
+}

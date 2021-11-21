@@ -80,3 +80,52 @@ public class Main {
   }
 
 }
+
+//========================================================JB's==========================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void nQueens(boolean[][] chess, int i, boolean[] cols, boolean[] d1, boolean[] d2, String asf){
+    int n= chess.length;
+
+    if( i == chess.length){
+      System.out.println(asf + ".");
+      return;
+    }
+
+    //pehli queen keliye sare columns option rahenge to columns ke upar loop chalado
+    for( int j = 0; j < chess.length; j++ ){ // j = columns
+      //so yahape mai check karta tha ki queen safe hai ya nhi
+      if( cols[j] == false && d1[i - j + n - 1] == false && d2[i + j] == false){// agar yeh teeno positions kisi queen ne aquire karke nhi rakhi hai to hum safe position pe hai to queen ko place krdo
+        chess[i][j] = true;
+        //queen ko jaisehi place kardiya to bolo cols[j] humne acquire krliya hai
+        cols[j] = true;
+        d1[ i - j + n - 1] = true;
+        d2[ i + j ] = true;
+        //humne queen yaha baithayi to inko true mark kardiya aur ab recursive call
+        nQueens(chess, i + 1, cols, d1, d2, asf + i + "-" + j + ", "); // i+1 means aagli queen next row mai place hogi. aur output mai hume answer iss tarah se chahiye to waisehi asf mai add karenge
+        // wapas aate time sabko unplace kardenge, kyuki hume dusri position try karni hai iske bad
+        chess[i][j] = false;
+        cols[j] = false;
+        d1[i - j + n - 1] = false;
+        d2[i + j] = false; 
+      }
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    boolean[][] board = new boolean[n][n];
+    boolean[] cols= new boolean[n];
+    boolean d1[] = new boolean[2*n - 1]; // 2n-1 diagonals hote hai total
+    boolean d2[] = new boolean[2*n - 1];
+
+    nQueens(board, 0, cols, d1, d2, ""); // starting mai row number will be 0
+    
+  }
+
+}

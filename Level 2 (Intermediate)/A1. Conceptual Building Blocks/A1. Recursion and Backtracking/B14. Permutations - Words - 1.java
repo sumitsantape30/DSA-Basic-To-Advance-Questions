@@ -65,3 +65,48 @@ public class Main {
   }
 
 }
+
+//=================================================================== JB's====================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void generateWords(int cs, int ts, HashMap<Character, Integer> map, String asf) { // cs: current spot, ts: total number of spots
+  
+   if( cs > ts){ // jab sare spots ka faisla hojaye to answer print karke return jajayenge
+     System.out.println(asf);
+     return;
+   }
+    
+    //pehle spot keliye hashmap mai jitne characters honge woh sare options honge
+    for( char ch: map.keySet()){ //map ka keyset mangwa liya
+        if( map.get(ch) > 0){ // mereliye yeh character mere liye tabhi usefull hai agar iss character ki frequency greater than 0 hai
+            //is character mai use karna chahta hu to iss character ki frquency mai update kardunga
+            map.put(ch, map.get(ch) - 1); // uss character ki frequency ko ek se reduce krdiya kyuki mai iss character ko usr krne ja rha hu
+            //fir iss character ko use karo aur agle spot keliye recursive call
+            generateWords( cs + 1, ts, map, asf + ch); // asf mai woh character add hojayega
+            //wapas aate hue muje dubara uss character ki frequency thik karni padegi, upar frequency 1 se reduce ki thi so wapas aate hue iski frequency ek se badhani padegi
+            map.put(ch, map.get(ch) +1);
+        }
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String str = br.readLine();
+
+    HashMap<Character, Integer> fmap = new HashMap<>(); // yeh frequency map hai joki humara question represent krta hai
+    for (char ch : str.toCharArray()) {
+      if (fmap.containsKey(ch)) {
+        fmap.put(ch, fmap.get(ch) + 1);
+      } else {
+        fmap.put(ch, 1);
+      }
+    }
+
+    generateWords(1, str.length(), fmap, "");
+  }
+
+}

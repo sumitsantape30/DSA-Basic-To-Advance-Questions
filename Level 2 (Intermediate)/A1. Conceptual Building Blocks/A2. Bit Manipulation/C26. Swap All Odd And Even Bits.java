@@ -18,3 +18,32 @@ Sample Output
 5
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args){
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    
+    //integer keliye kr rhe hai isliye 8 times 5 dena hoga and 8 times A
+    int om = 0x55555555; //odd walo ka mask
+    int em = 0xAAAAAAAA;// even ka mask
+    
+    int odds = (n & om); //isse odds mil jayenge. isme odd wali bach jayegi aur even wali udd jayegi
+    int evens = (n & em) ; // isme even wali bach jayegi aur odd wali bach jayegi
+    
+    odds <<= 1; // odds wale ko 1 se right shift kiya
+    evens >>= 1; 
+    
+    //ab evens wali odds ban gyi aur odds wali evens ban gyi
+    // ab odds aur evens ka OR lelo
+    n = odds | evens;
+    
+    System.out.println(n);
+    
+  }
+
+}

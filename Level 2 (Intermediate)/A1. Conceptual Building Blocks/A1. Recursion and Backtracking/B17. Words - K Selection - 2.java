@@ -66,7 +66,7 @@ public class Main {
       }
     }
 
-    generateSelection(ustr, 1, k, -1, ""); //1 is pehli selection karne ja rhe hai, total k select karne hai, aur last konse character select kiya tha woh asf mai dalna hai . aur last choice -1 pass kiya hai coz pehle koi select hi nhi kiya tha
+    generateSelection(ustr, 1, k, -1, ""); //1 is pehli selection karne ja rhe hai, total k select karne hai, aur last konsa character select kiya tha woh asf mai dalna hai . aur last choice -1 pass kiya hai coz pehle koi select hi nhi kiya tha
   }
 
 

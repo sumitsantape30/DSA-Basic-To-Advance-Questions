@@ -87,6 +87,7 @@ import java.util.*;
 
 public class Main {
 
+   // levels: characters, options: spots
   public static void generateWords( int cc, String ustr, int ssf, int ts, Character[] spots) { // cc: current character. spots array: konse spot pe konsa character aya
 
     if ( cc == ustr.length()) { // spots bharke aa rhe honge ab hum inn spots ko print karenge

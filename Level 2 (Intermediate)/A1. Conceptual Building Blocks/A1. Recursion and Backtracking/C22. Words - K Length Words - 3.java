@@ -72,8 +72,8 @@ public class Main {
     int k = Integer.parseInt(br.readLine());
 
     // hume last occurrence wala hashmap chahiye hoga
-    HashMap<Character, Integer> map = new HashMap<>();
-    
+    HashMap<Character, Integer> map = new HashMap<>(); 
+   
     for( int i=0; i< str.length(); i++){
         char ch= str.charAt(i);
         map.put(ch, -1); // map mai har character ke samne -1 put kardenge

@@ -99,7 +99,7 @@ public class Main {
        return;
     }
 
-    char ch = ustr.charAt(cc);
+    char ch = ustr.charAt(cc); //current character ka faisla ho rha hai
     for ( int i = 0; i < spots.length; i++) { // iss character ke as pehla option hai ki koi bhi spot mai ajao
       if ( spots[i] == null) { // agar woh spot empty hai to apna current character rakhdenge waha
         spots[i] = ch;

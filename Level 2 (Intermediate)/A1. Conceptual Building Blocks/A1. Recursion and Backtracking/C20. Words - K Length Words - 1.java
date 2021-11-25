@@ -87,7 +87,7 @@ import java.util.*;
 
 public class Main {
 
-  public static void generateWords( int cc, String ustr, int ssf, int ts, Character[] spots) { // cc: current character
+  public static void generateWords( int cc, String ustr, int ssf, int ts, Character[] spots) { // cc: current character. spots array: konse spot pe konsa character aya
 
     if ( cc == ustr.length()) { // spots bharke aa rhe honge ab hum inn spots ko print karenge
       if ( ssf == ts) { // hum sirf tab print karenge jab ssf == total selections
@@ -101,9 +101,9 @@ public class Main {
 
     char ch = ustr.charAt(cc);
     for ( int i = 0; i < spots.length; i++) { // iss character ke as pehla option hai ki koi bhi spot mai ajao
-      if ( spots[i] == null) { // agar woh spot empty hai to apna character rakhdenge waha
+      if ( spots[i] == null) { // agar woh spot empty hai to apna current character rakhdenge waha
         spots[i] = ch;
-        generateWords( cc + 1, ustr, ssf +1, ts, spots);
+        generateWords( cc + 1, ustr, ssf +1, ts, spots); // aur next character keliye call lagayenge
         spots[i] = null; // wapas aate hue null kardenge
       }
     }
@@ -130,7 +130,6 @@ public class Main {
     //jitne spots hai utne ka array bana lenge
     Character spots[] = new Character[k];
     generateWords(0, ustr, 0, k, spots);
-
 
   }
 

@@ -100,7 +100,7 @@ public class Main {
     }
 
     char ch = ustr.charAt(cc);
-    for ( int i = 0; i < spots.length; i++) { // iss character ke as pehla option hai ko koi bhi spot mai ajao
+    for ( int i = 0; i < spots.length; i++) { // iss character ke as pehla option hai ki koi bhi spot mai ajao
       if ( spots[i] == null) { // agar woh spot empty hai to apna character rakhdenge waha
         spots[i] = ch;
         generateWords( cc + 1, ustr, ssf +1, ts, spots);

@@ -56,7 +56,8 @@ public class Main {
     String str = br.readLine();
     int k = Integer.parseInt(br.readLine());
     
-    HashMap<Character, Integer> fmap = new HashMap<>();
+    HashMap<Character, Integer> fmap = new HashMap<>(); //jis jiski frequency greater than 0 hogi woh sare ke sare mere pas options honge, uss spot pe woh sare characters aa skte hai
+    
     String ustr= "";
     
     for( int i=0; i< str.length(); i++){

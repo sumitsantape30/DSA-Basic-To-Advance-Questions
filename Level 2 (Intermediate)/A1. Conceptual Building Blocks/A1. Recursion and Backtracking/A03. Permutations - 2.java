@@ -101,7 +101,7 @@ public class Main {
         //jo item use krlenge pehle hume check karna hoga ki woh item unused hai 
         if( items[i] == 0){ // 0 pda hai to woh item unused hai
            // to item ko use karle, item ke andar 1 dalde
-            items[i]= 1;
+            items[i]= 1; // 1 pda hai means yeh item unused hai
             permutations(cb+1, tb, items, ssf +1, ts, asf+ (i+1) ); // ssf mai 1 add hua kyuki ek banda select hua hai. aur asf ke andar add karenge uss item ka number
             items[i]= 0; //isko 0 dal denge ki tum unused ho
             
@@ -117,7 +117,7 @@ public class Main {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int nboxes = Integer.parseInt(br.readLine());
     int ritems = Integer.parseInt(br.readLine());
-    permutations(1, nboxes, new int[ritems], 0, ritems, "");
+    permutations(1, nboxes, new int[ritems], 0, ritems, "");  // mera item array yeh track rakh rha hai ki yeh item used hai ya unsed hai
   }
 
 }

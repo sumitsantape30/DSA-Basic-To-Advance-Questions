@@ -52,7 +52,7 @@ public class Main {
      //ek baR yes ki call ek bar no ki call
      //banda yaha keh rha hai ha mai select hona chahta hu
      combinations(cb + 1, tb, ssf +1, ts, asf + "i"); //select hona chahta hu isliye - nhi hoga, i add hoga yeh ana chahta hai
-     combinations(cb + 1, tb, ssf, ts, asf+"-"); // current box upar jate hue badhega. ssf nhi badhi box ne mana kar diya, bande ne mana kardiya usliye - ayega
+     combinations(cb + 1, tb, ssf, ts, asf+"-"); // current box upar jate hue badhega. ssf nhi badhi box ne mana kar diya, bande ne mana kardiya isliye - ayega
      
      //ana chahta hai to i add kiya nhi ana chahta hai to - add kiya
   }

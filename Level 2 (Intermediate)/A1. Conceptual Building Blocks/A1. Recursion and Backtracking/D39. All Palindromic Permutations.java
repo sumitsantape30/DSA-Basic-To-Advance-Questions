@@ -1,3 +1,23 @@
+All Palindromic Permutations
+
+1. You are given a string of length n.
+2. You have to print all the palindromic permutations of the given string.
+3. If no palindromic permutation exists for the given string, print "-1".
+
+Note -> Check out the question video and write the recursive code as it is intended without 
+               changing signature. The judge can't force you but intends you to teach a concept.
+Input Format
+A String of length n
+Output Format
+Check the sample ouput and question video.
+
+Constraints
+1 <= length of string <= 15
+Sample Input
+aaabb
+Sample Output
+ababa
+baaab
 
 Code:
 

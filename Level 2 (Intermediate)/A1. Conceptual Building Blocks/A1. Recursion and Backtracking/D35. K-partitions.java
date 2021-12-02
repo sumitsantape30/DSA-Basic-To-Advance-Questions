@@ -80,7 +80,7 @@ public class Main {
 
 }
 
-//======================================================================JB's=============================================
+//======================================================================JB's=================================================================
 
 import java.io.*;
 import java.util.*;
@@ -103,7 +103,7 @@ public class Main {
 	  }
 	  
 
-	  for( int j=0; j<= rssf && j < k; j++){ // jitni rssf ki value hogi utne mere pas options honge, jitni rooms selected hai utni choices hai 
+	  for( int j=0; j<= rssf && j < k; j++){ // jitni rssf ki value hogi utne mere pas options honge, jitni rooms selected hai utni choices hai, rssf uss index tak choices hai
 	     if( ans.get(j).size() == 0 ){ // size agar 0 hai to
 	        ans.get(j).add(i); //ans ek arraylist of arraylist hai to ans.get(j) ek arraylist hai usme mai current bande ko add karunga. ans is arraylist of arraylist usmese ek arraylist nikal li ans.get(j) aur ith bande ko add kardiya
 	       

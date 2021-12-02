@@ -81,3 +81,41 @@ public class Main {
         coinChange(0, coins, 0, amt, "");
     }
 }
+
+//================================================================ JB's================================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void coinChange(int i, int[] coins, int amtsf, int tamt, String asf) {
+        if( amtsf > tamt){//agar koi bhi coin ki mai ha wali choice consider krta hu to amtsf badhta rehta hai to agar amtsf tamt se jada hogya hai to wahase return karjao
+          return;
+        } 
+        
+         if( i == coins.length){
+            if( amtsf == tamt){
+                System.out.println(asf + ".");
+            }
+            return;
+        }
+        
+        coinChange(i, coins, amtsf + coins[i], tamt, asf + coins[i] + "-"); // agar ha ki call mai agar woh coin ana chahta hai to dubara usi coin ko mauka dediya so i hi rahega. i+1 index ke pas nhi gye usi i indix wale ko dubara mauka diya
+        
+        
+        coinChange(i + 1, coins, amtsf, tamt, asf); // no wali call
+        
+    }
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] coins = new int[n];
+        for (int i = 0; i < n; i++) {
+            coins[i] = Integer.parseInt(br.readLine());
+        }
+        int amt = Integer.parseInt(br.readLine());
+        coinChange(0, coins, 0, amt, "");
+    }
+}

@@ -53,9 +53,9 @@ public class Main {
        return;
      }
     
-      //so pay karne keliye sare options hai mere pas
+      //so first installment pay karne keliye mere pas sare options hai mere pas
       for( int i = 0; i< coins.length; i++){
-          // ab mai check karunga kisko use kar paoge: agar humne use pehle use nhi kiya hai to use karenge kyuki muje dublicates nhi chahiye
+          // ab mai check karunga kisko use kar paoge: agar humne use pehle use nhi kiya hai to use karenge kyuki muje dublicates nhi chahiye, means sirf ununsed coins options hai mere pas
           if( used[i] == false){ // agar false pda hai to hum usko use kr skte hai aur fir aage keliye call lagado
             used[i] = true;
             coinChange( coins, amtsf + coins[i], tamt, asf + coins[i] + "-", used ); // amount so far badhega

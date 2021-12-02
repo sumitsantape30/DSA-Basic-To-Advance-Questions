@@ -110,6 +110,6 @@ public class Main {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
     boolean[] used = new boolean[n]; 
-    solution(0, n, used, ""); 
+    solution(0, n, used, ""); //yaha 0 pass kr rhe hai upar wale mai 1 pass kiye the
   }
 }

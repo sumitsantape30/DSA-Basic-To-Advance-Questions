@@ -37,7 +37,7 @@ public class Main {
     }
  
     if ( used[i] == true) { // agar i pehlese used hai to i ke pas koi option nhi hoti
-        solution(i + 1, n, used, asf); // iske pas koi option nhi hai aagle walo pe decicate krdo, aage walo se karwa lo merko tum pehlese kisike sath set karwake llaye ho 
+        solution(i + 1, n, used, asf); // iske pas koi option nhi hai aagle walo pe delicate krdo, aage walo se karwa lo merko tum pehlese kisike sath set karwake llaye ho 
     } else {
 
       //pehle bande ke pas option hai ya to mai akele aau, ya 2 ke sath aau, ya 3 ke sath aau

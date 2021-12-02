@@ -81,7 +81,6 @@ public class Main {
 }
 
 //======================================================================JB's=================================================================
-
 import java.io.*;
 import java.util.*;
 
@@ -89,6 +88,7 @@ public class Main {
     
     static int counter= 0 ; // answer mai counter bhi print krna hai
 
+    //rooms ko arraylist<arraylist> se represent kr rhe aur jo ek arraylist hai woh ek room hai
 	public static void solution(int i, int n, int k, int rssf, ArrayList<ArrayList<Integer>> ans) { //rssf : room selected so far
 	  if( i == n + 1){ 
 	    if( rssf == k){ 
@@ -103,7 +103,7 @@ public class Main {
 	  }
 	  
 
-	  for( int j=0; j<= rssf && j < k; j++){ // jitni rssf ki value hogi utne mere pas options honge, jitni rooms selected hai utni choices hai, rssf uss index tak choices hai
+/*	  for( int j=0; j<= rssf && j < k; j++){ // jitni rssf ki value hogi utne mere pas options honge, jitni rooms selected hai utni choices hai 
 	     if( ans.get(j).size() == 0 ){ // size agar 0 hai to
 	        ans.get(j).add(i); //ans ek arraylist of arraylist hai to ans.get(j) ek arraylist hai usme mai current bande ko add karunga. ans is arraylist of arraylist usmese ek arraylist nikal li ans.get(j) aur ith bande ko add kardiya
 	       
@@ -115,11 +115,23 @@ public class Main {
 	     }else{ // agar size non 0 hai to upar wali same lines use karenge bas rooms selected so far ki value nhi badhegi
 	         
 	       ans.get(j).add(i); 
-	       
 	       solution(i+1, n, k, rssf, ans);
-	       
 	       ans.get(j).remove(ans.get(j).size() - 1);
 	     } 
+	  } */
+	  
+	  //aisebhi kr skte ho
+	  for( int j=0; j< k; j++){ // ab jitne rooms the sare options dediye
+	      if( ans.get(j).size() == 0 ){
+	          ans.get(j).add(i);
+	          solution( i +1, n, k, rssf + 1, ans);
+	          ans.get(j).remove(ans.get(j).size() - 1);
+	          break; // loop isliye break krdiya kyuki yeh aakhri option tha
+	      }else{
+	          ans.get(j).add(i);
+	          solution(i+1, n, k, rssf, ans);
+	          ans.get(j).remove(ans.get(j).size() - 1);
+	      }
 	  }
 	}
 	
@@ -134,4 +146,5 @@ public class Main {
 		solution(1, n, k, 0, ans); // ith banda 1 pass kiya hai,
 
 	}
+
 }

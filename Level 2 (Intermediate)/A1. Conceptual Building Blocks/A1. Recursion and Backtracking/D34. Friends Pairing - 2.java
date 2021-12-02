@@ -36,7 +36,7 @@ public class Main {
          return;
     }
  
-    if ( used[i] == true) { // agar i pehlese used hai to i ke pas koi option nhi hoti
+    if ( used[i] == true) { // agar i pehlese used hai means iska faisla ho chuka hai to i ke pas koi option nhi hai aage call lagado
         solution(i + 1, n, used, asf); // iske pas koi option nhi hai aagle walo pe delicate krdo, aage walo se karwa lo merko tum pehlese kisike sath set karwake llaye ho 
     } else {
 
@@ -51,7 +51,7 @@ public class Main {
         //jab akele gye the tab maine i ko used kiya tha ab hum j kobhi used kardenge
         if( used[j] == false){
             used[j] = true;
-            solution(i + 1, n, used, asf + "(" + i + "," + j + ") "); // kisike sath jane ki call yeh hai
+            solution(i + 1, n, used, asf + "(" + i + "," + j + ") "); // kisike sath pair up karne ki call yeh hai
             used[j] = false; // wapas aate hue edgepost mai j ko uda do
         }
       }

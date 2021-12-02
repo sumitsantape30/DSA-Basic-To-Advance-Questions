@@ -43,15 +43,17 @@ public class Main {
       //pehle bande ke pas option hai ya to mai akele aau, ya 2 ke sath aau, ya 3 ke sath aau
 
       used[i] = true;// akela aa rha hai to used hogya
-
+      //single
       solution(i + 1, n, used, asf + "(" + i + ") "); // akela ayega to sirf i badhado, aur asf mai add krdo iss i ko
+      
+      //pair up
       //ab 1(i) ke rha hai 2 or 3 ke sath aa skta hu, apne ke bad walo ke sath hi aa skta hai. kyuki jab 2 ki bari ayegi to 21 nhi banne dena kyuki 12 ban chuka hoga already, 21 se permutation paida hojati hai
       for ( int j = i + 1; j <= n; j++) { // jin logoke sath mai aa skta hu woh mere bad ke hone chahiye
         // i pehle use ho chuka hai, i ke level pr to i use honahi hai, i ke level pr aaye hai to i use hogahi hoga yato pehlese used hoga yafir ab used hojayega
         //jab akele gye the tab maine i ko used kiya tha ab hum j kobhi used kardenge
-        if( used[j] == false){
+        if( used[j] == false){ // agar uss bande ka faisla abhitak nhi hua hai to hum uske sath pair up kr skte hai
             used[j] = true;
-            solution(i + 1, n, used, asf + "(" + i + "," + j + ") "); // kisike sath pair up karne ki call yeh hai
+            solution(i + 1, n, used, asf + "(" + i + "," + j + ") "); // kisike sath pair up karne ki call yeh hai. i,j ki pair ko bracket mai dal diya
             used[j] = false; // wapas aate hue edgepost mai j ko uda do
         }
       }

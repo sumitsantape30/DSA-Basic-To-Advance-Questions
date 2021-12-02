@@ -79,3 +79,59 @@ public class Main {
 	}
 
 }
+
+//======================================================================JB's=============================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    
+    static int counter= 0 ; // answer mai counter bhi print krna hai
+
+	public static void solution(int i, int n, int k, int rssf, ArrayList<ArrayList<Integer>> ans) { //rssf : room selected so far
+	  if( i == n + 1){ 
+	    if( rssf == k){ 
+	        counter++;
+	        System.out.print(counter + ". ");
+	        for(ArrayList<Integer> list : ans){ 
+	            System.out.print(list + " ");
+	        }
+	        System.out.println();
+	    }
+	    return;
+	  }
+	  
+
+	  for( int j=0; j<= rssf && j < k; j++){ // jitni rssf ki value hogi utne mere pas options honge, jitni rooms selected hai utni choices hai 
+	     if( ans.get(j).size() == 0 ){ // size agar 0 hai to
+	        ans.get(j).add(i); //ans ek arraylist of arraylist hai to ans.get(j) ek arraylist hai usme mai current bande ko add karunga. ans is arraylist of arraylist usmese ek arraylist nikal li ans.get(j) aur ith bande ko add kardiya
+	       
+	       solution(i+1, n, k, rssf + 1, ans);// recursive call lgadi ki i+1th bande ke pas jao
+	       
+	       //apne arraylist mai banda add kiya tha aur arraylist banti hai heap pe to wapas aate hue woh change apne aap nhi hoga humko heap mese jake remove karna hoga
+	       ans.get(j).remove(ans.get(j).size() - 1);
+	       
+	     }else{ // agar size non 0 hai to upar wali same lines use karenge bas rooms selected so far ki value nhi badhegi
+	         
+	       ans.get(j).add(i); 
+	       
+	       solution(i+1, n, k, rssf, ans);
+	       
+	       ans.get(j).remove(ans.get(j).size() - 1);
+	     } 
+	  }
+	}
+	
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		int k = scn.nextInt();
+		ArrayList<ArrayList<Integer>> ans = new ArrayList<>(); // arraylist of arraylist banake de rakhi hai 
+		for(int i  = 0; i < k; i++) {
+			ans.add(new ArrayList<>()); // k sets hai to k arraylist di gyi hai, abhi sari arraylist khali hai 
+		}
+		solution(1, n, k, 0, ans); // ith banda 1 pass kiya hai,
+
+	}
+}

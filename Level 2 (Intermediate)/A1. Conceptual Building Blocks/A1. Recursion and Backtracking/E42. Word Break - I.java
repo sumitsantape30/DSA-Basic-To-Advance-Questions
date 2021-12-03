@@ -61,6 +61,5 @@ public class Main {
                wordBreak(right, ans + left + " ", dict); //pure sentence mese left part nikala to right part bacha to right part upar ja rha hai. aur answer ke andar left part kardenge
             }
         }
-	}
-		
+    }	
 }

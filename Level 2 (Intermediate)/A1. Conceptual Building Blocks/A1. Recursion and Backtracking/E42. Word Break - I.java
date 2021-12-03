@@ -29,3 +29,38 @@ i like pepper eating mango in pep coding
 i like pepper eating mango in pepcoding 
 
 Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		HashSet<String> dict = new HashSet<>();
+		for(int i = 0  ; i  < n; i++){
+			dict.add(scn.next());
+		}
+		String sentence = scn.next();
+		wordBreak(sentence,"", dict);
+	}
+
+	public static void wordBreak(String str, String ans, HashSet<String> dict){
+        if( str.length() == 0){ //aise krte krte jab string empty hojayegi
+          System.out.println(ans);
+            return;
+        }
+        
+        //sare prefixes ko use karenge
+        for( int i=0; i< str.length(); i++){
+            String left = str.substring(0, i + 1);
+            
+            if( dict.contains(left)){ // agar dictionary ke andar yeh left part word hua to usse use karenge
+               String right = str.substring(i + 1); // bachi hui string
+               wordBreak(right, ans + left + " ", dict); //pure sentence mese left part nikala to right part bacha to right part upar ja rha hai. aur answer ke andar left part kardenge
+            }
+        }
+	}
+		
+}

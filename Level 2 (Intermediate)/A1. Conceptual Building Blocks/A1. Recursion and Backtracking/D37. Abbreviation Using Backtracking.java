@@ -57,3 +57,34 @@ public class Main {
     
     
 }
+
+//================================================================= JBs===============================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void solution(String str, int idx, int count, String asf){
+        if( idx == str.length()){ // agar index badhte badhte str.length pe pahuch gya means sare characters ka faisla hogya to apna answer print karke return
+          if( count > 0){ // count > 0 hai to asf mai count ki value add karke fir print karo
+            System.out.println(asf + count);
+            
+          }else{ //agar count ki value 0 hi pohochti hai to sidha answer print kardo
+            System.out.println(asf);
+          }
+          return;
+        }
+
+      solution(str, idx + 1, 0, count > 0? asf + count + str.charAt(idx) : asf + str.charAt(idx)); // idx ka faisla hogya hai so idx+1 pe chaliye, agar count ki value grater than 0 hai to asf mai count bhi add hoga aur current character bhi add hoga nhi sirf yeh character ass hoga asf mai.
+      solution(str, idx + 1, count + 1, asf);// jo woh bolta hai ki woh 1 ki tarah ana chahta hai to mai count badhake bhej dunga bas aur asf mai kuch bhi add nhi kiya
+    }
+    
+	public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        String str = scn.nextLine();
+        solution(str, 0, 0, "");
+    }
+    
+    
+}

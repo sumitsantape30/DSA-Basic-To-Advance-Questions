@@ -103,7 +103,7 @@ public class Main {
 			return;
 		}
 		//if there are more subsets than no. of elements in array or sum of all elements is not divisible by k
-		if(k > n || sum % k != 0) { // agar k n se bada hai maltab elements 5 hai aur maine bole ki 10 hisse krdo to iska kuch nhi ho skta OR jo total elements ka sum tha woh woh k ka multiple hi nhi hai tobhi kuch nhi ho skta to -1 print karke return krdenge
+		if(k > n || sum % k != 0) { // agar k n se bada hai maltab elements 5 hai aur bole ki 10 hisse krdo to iska kuch nhi ho skta kyuki hume non empty sets chahiye but isse sets empty rahenge OR agar k se divide nhi ho pa rha sum to k partition kaise karoge uske that's no possible. jo total elements ka sum tha woh woh k ka divisible hi nhi hai tobhi kuch nhi ho skta to -1 print karke return krdenge
 			System.out.println("-1");
 			return;
 		}
@@ -115,4 +115,90 @@ public class Main {
 		} // so arraylist of arraylist ke andar mere pas k arraylist padi hai, sari blank hai abhi 
 		solution(arr,0,n,k,subsetSum,0,ans);
 	}
+}
+
+//==================================================JB's================================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+
+  public static void solution(int[] arr, int vidx, int n, int k, int[] subsetSum, int ssssf, ArrayList<ArrayList<Integer>> ans) { //ssss: subset selected so far
+    if (vidx == arr.length) { //jab sare elements ka faisla hojaye
+
+      if ( ssssf == k) { // jo non empty subsets select ho rakhe hai usme jana sssf == k hoga
+        int sum = subsetSum[0];
+        boolean flag = true;
+        
+        for ( int i = 1; i < subsetSum.length; i++) {
+          if ( subsetSum[i] != sum ) { //agar yeh subsetsum[i] sum ke equal nhi hua to flag ko false mark krdo
+            flag = false;
+            break;
+          }
+        }
+
+        //loop se bahar aane ke bad firse check karo ki kya flag ki value abhibhi true hai 
+        if (flag) { //flag ki value true hai yeh denote krta hai ki, ki subset jo array hai uske har ek index pe equal value padi hai matlab sare subsets ka sum equal hai to ab hume woh answer print krdena chahiye
+          for (ArrayList<Integer> list : ans) {
+            System.out.print(list + " ");
+          }
+          System.out.println();
+        }
+      }
+      return;
+    }
+
+    for ( int i = 0; i < k; i++) { // pehle ke liye sare subsets options mai rakhenge
+      if ( ans.get(i).size() == 0 ) { // agar iska size 0 hai to apne liye yeh akkri option banega
+        ans.get(i).add(arr[vidx]); // current element add karunga
+        subsetSum[i] += arr[vidx]; //ab subset sum bhi change karna hoga aur fir lagayenge recursive call
+        solution(arr, vidx + 1, n, k, subsetSum, ssssf + 1, ans); // yahape maine naya subset select kiya hai to subsetselectedsofar mai 1 ka increment ayega
+        //wapas aate hue apne change ko undo karna hoga
+        subsetSum[i] -= arr[vidx];
+        ans.get(i).remove(ans.get(i).size() - 1 );
+        break;
+      } else {
+        ans.get(i).add(arr[vidx]);
+        subsetSum[i] += arr[vidx];
+        solution(arr, vidx + 1, n, k, subsetSum, ssssf, ans); //humne koi naya subset select nhi kiya isliye ssssf mai 1 add nhi hoga
+        subsetSum[i] -= arr[vidx];
+        ans.get(i).remove(ans.get(i).size() - 1 );
+      }
+    }
+  }
+
+  public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int[] arr = new int[n];
+    int sum = 0;
+    for (int i =  0 ; i < arr.length; i++) {
+      arr[i] = scn.nextInt();
+      sum += arr[i];
+    }
+    int k = scn.nextInt();
+    // if k is equal to 1, then whole array is your answer
+    if (k == 1) {
+      System.out.print("[");
+      for (int i = 0 ; i  < arr.length; i++) {
+        System.out.print(arr[i] + ", ");
+      }
+      System.out.println("]");
+      return;
+    }
+    //if there are more subsets than no. of elements in array or sum of all elements is not divisible by k
+    if (k > n || sum % k != 0) {
+      System.out.println("-1");
+      return;
+    }
+    int[] subsetSum = new int[k];
+    ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+    for (int i = 0; i < k; i++) {
+      ans.add(new ArrayList<>());
+    }
+    solution(arr, 0, n, k, subsetSum, 0, ans);
+  }
+
 }

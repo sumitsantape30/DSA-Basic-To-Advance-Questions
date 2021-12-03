@@ -112,3 +112,87 @@ public class Main {
 
   }
 }
+
+//==================================================================== JB's==========================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+ public static int solution(String[] words, int idx, int[] farr, int[] score) {
+		if( idx == words.length){ // index badhte badhte pohoch gya words.length pe  to waha to koi word hi nhi rehta to yaha max score 0 hoga so return 0
+		  return 0;
+		}
+
+		//pehle no ki call ki iss word ko select nhi kr rhe
+		int f1 = 0 + solution(words, idx + 1, farr, score); //f1: factor 1, current word ko include nhi kr rhe, current word ka faisla hogya to next pe chalo. maine bola current word ko include nhi kr rha bakike bache hue words tum apni arrangement ke according btado li max score kitna bana rhe ho current word to nhi aa rha, to hum bache hue words ka max score lake do
+		int f2 = 0; // dusra factor hoga jisme mai current word ko include karna chahta hu
+
+		//pehle muje dekhna hoga kya yeh current word ban bhi payega
+		boolean flag = true; // starting mai true man liya
+		int scoreOfCurrentWord = 0;
+		
+		//agar yeh word possible hai to hum iss word ko banayenge aur iski frquency bhi reduce karenge
+		for( int i = 0 ; i < words[idx].length(); i++){ // words[idx] yeh current word hai to uspe loop chalaya aur bari bari se uske characters ayenge to frquency array mai uss character ki frequency reduce krdeta hu
+			char ch = words[idx].charAt(i);
+			//ek ek character nikala aur iski frequency reduce karenge
+			farr[ch - 'a']--;
+			scoreOfCurrentWord += score[ch - 'a']; //
+		}
+
+		for( int i=0; i < farr.length; i++){
+			if( farr[i] < 0){ // agar frequency array mai frequency negative dikh rhi hai to this word is not possible
+				flag = false;
+			}
+		}
+
+		if(flag == true){ // agar flag yahape true hai means word possible hai to mai ha wali choice ko consider krta
+		  //yess
+		  f2 = scoreOfCurrentWord + solution(words, idx + 1, farr, score); //current word ka score add kardiya aur bakike bache hue words updated frequency array ke sath aap apna result bta do ki maximum score kitna bna
+		}
+
+		//wapas aate hue dubara sari chize karni padegi
+
+		for( int i = 0 ; i < words[idx].length(); i++){ 
+			char ch = words[idx].charAt(i);
+			farr[ch - 'a']++;
+		}
+
+		//ab humare pas factor 1 and 2 aachuka hai now final answer, donoka max ya to word ko include krte hue maximum score ayega yafir  word ko exclude krte hue maximum score ayega 
+		return Math.max(f1, f2);
+
+	}
+
+  public static void main(String[] args) {
+
+    Scanner scn = new Scanner(System.in);
+    int nofWords = scn.nextInt();
+    String[] words = new String[nofWords];
+    for (int i = 0 ; i < words.length; i++) { // sare words utha liye
+      words[i] = scn.next();
+    }
+    int nofLetters = scn.nextInt();
+    char[] letters = new char[nofLetters];
+    for (int i = 0; i < letters.length; i++) { // sare letters utha liye
+      letters[i] = scn.next().charAt(0);
+    }
+    int[] score = new int[26];
+    for (int i = 0; i < score.length; i++) { // then score of every character from a to z. score array mai store kara liya
+      score[i] = scn.nextInt();
+    }
+    //edge case
+    if (words == null || words.length == 0 || letters == null || letters.length == 0 || score == null
+        || score.length == 0) { 
+      System.out.println(0);
+      return;
+    }
+    
+    int[] farr = new int[score.length]; //frequency array, konsa alphabet kitni bar diya gya hai
+    for (char ch : letters) {
+      farr[ch - 'a']++;
+    }
+    System.out.println(solution(words, 0, farr, score));
+
+  }
+}

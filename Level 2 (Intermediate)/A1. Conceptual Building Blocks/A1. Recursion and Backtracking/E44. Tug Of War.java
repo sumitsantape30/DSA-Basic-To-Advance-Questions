@@ -30,7 +30,6 @@ Sample Output
 [1, 3, 6] [2, 4, 5]
 
 Code:
-
 import java.io.*;
 import java.util.*;
 

@@ -86,7 +86,7 @@ public class ClimbingStairs {
 			}else if( i == 2) {
 				dp[i]= dp[i-1] + dp[i-2];
 				
-			}else if( i == 3) {
+			}else {
 				dp[i]= dp[i-1] + dp[i-2] + dp[i-3] ; // i = i-1 se 0 kitne raste hai, i-2 and i-3 se 0 kitne raste hai
 			}
 		}

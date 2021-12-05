@@ -89,7 +89,7 @@ public class ClimbingStairswithMinimumMoves {
 					}
 				}
 				
-				if( min != Integer.MAX_VALUE) { //agar aisi koi jagah mili jahase rasta tha to hum update karenge
+				if( min != Integer.MAX_VALUE) { // agar yaha yeh check nhi lagaya, suppose mera j wala loop hi nhi chala to mera min mai Integer.MAX_VALUE hi rahega aur agar fir mai usme +1 karunga to it'll become -infinity isliye tabhi dp[i] mai min+1 karenge agr woh Integer.max na ho
 					dp[i]= min + 1;
 				}
 			}

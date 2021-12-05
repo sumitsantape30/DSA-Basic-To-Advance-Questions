@@ -84,7 +84,7 @@ public class ClimbingStairswithMinimumMoves {
 				int min= Integer.MAX_VALUE; //
 				for( int j= 1; j<= arr[i] && i+j < dp.length; j++) {
 					// muje ab yeh calculate karna hai ki dp[i] pr kya dale
-					if( dp[i+j] != null) { // i+j jab null nhi hoga tabhi min le skte hai
+					if( dp[i+j] != null) { // i+j jab null nhi hoga tabhi min le skte hai, null yeh represent krta hai ki rasta nhi hai
 						min = Math.min(min, dp[i+j]);
 					}
 				}

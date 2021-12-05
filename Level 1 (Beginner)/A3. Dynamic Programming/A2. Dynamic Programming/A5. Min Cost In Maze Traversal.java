@@ -50,7 +50,7 @@ public class Main {
 		
 		if( sr == arr.length-1 && sc == arr[0].length-1) { //jab aap destination pe ho
 			//destination ke sport ke paise
-			return arr[sc][sc];
+			return arr[sr][sc];
 		}
 		
 		int f1= minCost(arr, sr, sc+1); //horizontal: sr, sc+1 se destination tak jane ki minimum cost

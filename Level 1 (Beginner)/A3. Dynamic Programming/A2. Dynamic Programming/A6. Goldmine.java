@@ -50,36 +50,37 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int a[][] = new int[n][m];
+        
         for(int i = 0; i < n; i++) {
        	 for(int j = 0; j < m; j++) {
        		 a[i][j] = sc.nextInt();
        	 }
         }
-        System.out.println(goldmine(a, n, m));
-        sc.close();  
+        
+        System.out.println(goldmine(a));
 	 }
 
-	public static int goldmine(int[][] a) {
+	public static int goldmine(int[][] arr) {
 
 		int dp[][] = new int[arr.length][arr[0].length];
 
 		// fir iss dp ko right to left fill karna hai column wise, pehle rightmost column fill hoga fir second right most..
 		for (int j = arr[0].length - 1; j >= 0; j--) { //hum solve krte waqt column by column piche ki taraf aa rhe so column ko bahar rakhenge aur khudko(j) ko sabse last mai rakhenge
-			for (int i = 0; i < arr.length; i++) { //aag iss column mai niche se upar ya upar se niche travel karo faraq nhi pdta
-				if (j == a[0].length - 1) { //agar last column hai hai to dig nhi kr skta aage, jo arr[i][j] ai pda hoga wahi humara answer hojayega
-					dp[i][j] = a[i][j];
+			for (int i = arr.length; i >= 0 ; i--) { //aag iss column mai niche se upar ya upar se niche travel karo faraq nhi pdta
+				if (j == arr[0].length - 1) { //agar last column hai hai to dig nhi kr skta aage, jo arr[i][j] ai pda hoga wahi humara answer hojayega
+					dp[i][j] = arr[i][j];
 					
 				} else if (i == 0) { //agar first row mai hai to hum 2 jagah ja skte hai 
 					
-					dp[i][j] = a[i][j] + Math.max(dp[i][j + 1], dp[i + 1][j + 1]); //khudka gold collect kiya aur dono jagah ka max liya
+					dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i + 1][j + 1]); //khudka gold collect kiya aur dono jagah ka max liya
 					
 				} else if (i == arr.length - 1) { //agar last row hai , to last row mai banda 2 direction mai dig kr skta hai
 					
-					dp[i][j] = a[i][j] + Math.max(dp[i][j + 1], dp[i - 1][j + 1]) ;
+					dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i - 1][j + 1]) ;
 					
 				} else { //rest of it, rest of the mai woh 3 jagah ja skta hai
 					
-					dp[i][j] = a[i][j] + Math.max(Math.max(dp[i + 1][j + 1], dp[i - 1][j + 1]), dp[i][j + 1]) ;
+					dp[i][j] = arr[i][j] + Math.max(Math.max(dp[i + 1][j + 1], dp[i - 1][j + 1]), dp[i][j + 1]) ;
 				}
 			}
 		}

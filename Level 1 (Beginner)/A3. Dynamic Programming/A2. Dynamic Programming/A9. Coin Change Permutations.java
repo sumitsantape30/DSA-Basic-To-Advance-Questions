@@ -64,7 +64,7 @@ public class Main {
 			//ab har ek spot ke upar sare coins ka effect dalna hai 
 			for(int j = 0; j < denoms.length; j++) { //aur innner loop chalega coins ke upar
 				int coin= denoms[j] ;//coint nilalenge
-				if( i - coin >=0){
+				if( i - coin >=0){ //yahape hum loop koi particular coin se nhi chala rhe hai, sare coins ke upar chala rhe hai loop, isliye i-coin karne ke bad -ve mai na chala jaye isliye yeh check laga rhe hai
 					dp[i] += dp[i - coin];
 				}
 			}

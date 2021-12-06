@@ -37,6 +37,45 @@ Sample Output
 
 Code:
 
+//===================================================== SS's (correct Solution)==========================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner s= new Scanner(System.in);
+        int n= s.nextInt();
+        int coins[]= new int[n];
+        
+        for( int i=0;i< coins.length; i++){
+            coins[i]= s.nextInt();
+        }
+        
+        int tar= s.nextInt();
+        
+        int dp[]= new int[tar + 1];
+        dp[0] = 1; //0 amount pay karneka ek tarika hota hai
+        
+        for( int amt = 1; amt<= tar; amt++){
+            //ab har spot pe sare coins ko ajmayenge
+            for( int coin: coins){
+                //dp[i] mia yeh store krte hai ki i ko pay karne ke kitne tarika hai to uspe sare coins ko ajmayenge
+                if( coin <= amt){ // agar yeh coin amount se chota hai to yeh kisi kam ka hai                   
+                  int ramt = amt - coin;
+                  dp[amt] += dp[ramt]; // dp of amount mai store hoga dp of remaining amount   
+                }
+            }
+        }
+        
+        System.out.println(dp[tar]);
+        
+        //eg. amout 8 hota aur coins 2 3 4 5 6 hote, to 2 keliye, 2 chota hai 8 se then remaining amount ayega 8-2=6 to dp[8] mai dp[6] dal jayega jab 3 ke coin keliye ayenge to dp[5] dal jayega
+    }
+}
+
+//================================================= (Incorrect Solution)==================================================================
 import java.io.*;
 import java.util.*;
 

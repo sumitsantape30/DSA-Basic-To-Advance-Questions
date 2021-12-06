@@ -73,8 +73,8 @@ public class targetSumSubset {
 			return dp[idx][target];
 		}
 		
-		boolean f1= tss(arr, idx+1, target); 
-		boolean f2= tss(arr, idx+1, target- arr[idx] ) ; 
+		boolean f1= tss(arr, idx+1, target, dp); 
+		boolean f2= tss(arr, idx+1, target- arr[idx], dp); 
 		boolean ans= f1 || f2 ; 
 		
 		dp[idx][target]= ans;

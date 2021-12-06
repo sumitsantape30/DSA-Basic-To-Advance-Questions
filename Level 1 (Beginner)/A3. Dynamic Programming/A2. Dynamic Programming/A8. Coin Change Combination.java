@@ -37,6 +37,41 @@ Sample Output
 
 Code:
 
+//======================================================= SS's (Correct Solution===========================================
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    
+
+    public static void main(String[] args) throws Exception {
+        Scanner s= new Scanner(System.in);
+        int n= s.nextInt();
+        
+        int arr[]= new int[n];
+        
+        for( int i=0; i< arr.length; i++){
+            arr[i] = s.nextInt();
+        }
+        int amt= s.nextInt();
+        
+        int dp[]= new int[amt+1];
+        dp[0]= 1;
+        
+        for( int i=0; i< arr.length; i++){ // bahar humara coins ka loop chalega, ki pehle sari dp mai 2 se pay hoga fir 3,4...
+          for( int j= arr[i]; j < dp.length; j++){ // agar coin 2 hai to 2 se aage loop lagayenge, agar coin 3 hai 3 se aage loop lagayenge
+              dp[j] += dp[j - arr[i]];// hume yehe store karna hai ki j ko pay karne ke kitne tarike hai,d[j] mai store karenge  [j - arr[i]ko pay karne ke kitne tarike the]. muje j rs ki payment karni hai to maine arr[i] ki payment kardi, eg 6 rs ki payment karni thi to 2rs ki payment kardi aur bache 4 rs to uss dp array mai 4th index pe jake usko pay karne ki jo value hogi usko yaha dal denge
+          }
+          
+//bahar coins ka loop lagane sehi combinations paida hui, humne pure mai pehle 2 ka effect liya fir 3 ka effect liya isse kisi bhi spot pe jo payment pdi hogi usme 3 humesha 2 ke bad hi ayega
+        }
+        
+        System.out.println(dp[amt]);
+    }
+}
+
+//=====================================================JB's (there's some error)===============================================
+
 import java.io.*;
 import java.util.*;
 

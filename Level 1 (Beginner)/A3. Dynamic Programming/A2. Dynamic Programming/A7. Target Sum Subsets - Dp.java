@@ -121,11 +121,12 @@ public class targetSumSubset {
 					
 				} */
 					
-					//pehle mai na ki call 
-					dp[i][j]= dp[i-1][j];
+					//pehle mai na ki call ki mai nhi ara to apne piche wale se puch ki kya tu yeh sum bana payega
+					dp[i][j]= dp[i-1][j]; //j is the sum jo hume banani hai so piche(i-1) wale ko bolre kya tu yeh sum bana payega
 					//agar na wali choice se answer ata hai false to ha wali choice karo
-					if( dp[i][j] == false && j- arr[i-1] >= 0) { //j- arr[i-1] range mai hona chahiye
-						dp[i][j]= dp[i-1][j- arr[i-1]];
+					
+					if( dp[i][j] == false && j - arr[i-1] >= 0) { //j- arr[i-1] range mai hona chahiye
+						dp[i][j]= dp[i-1][j - arr[i-1]];
 					}//na wali choice pehle consider karli aur 'ha' wali choice tabhi consider karoge jab yahape false stored hai aur woh range mai hai
 					
 				}

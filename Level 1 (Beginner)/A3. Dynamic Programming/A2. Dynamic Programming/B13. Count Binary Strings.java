@@ -49,16 +49,18 @@ public class CountBinaryStrings {
 		
 	}
 
-	public static void main(String[] args) {
 
-		Scanner s= new Scanner(System.in);
-		int n= s.nextInt();
+public class Main{
+
+          public static void main(String[] args) throws Exception {
+                 Scanner s= new Scanner(System.in);
+		 int n= s.nextInt();
 		
-		int dp1[]= new int[n+1]; // n+1 size ki banayenge coz aakhri index n hona chahiye, aur isme ending at 0 ka count store karenge
-		int dp2[]= new int[n+1]; // ending at 1 ka count store karunga
+		 int dp1[]= new int[n+1]; // n+1 size ki banayenge coz aakhri index n hona chahiye, aur isme ending at 0 ka count store karenge
+	         int dp2[]= new int[n+1]; // ending at 1 ka count store karunga
 		
-		dp1[0]=1; // 1 length ka answer 1 hi hoga
-		dp2[0]= 1; 
+		dp1[1]=1; // 1 length ka answer 1 hi hoga
+		dp2[1]= 1; 
 		
 		for( int i=2; i< dp1.length; i++) {
 			dp1[i] = dp2[i-1]; // ending at 0's pe, pehli wali string ka ending at 1's ka count
@@ -66,9 +68,10 @@ public class CountBinaryStrings {
 			
 		}
 		
-		System.out.println(dp1[n]+" "+dp2[n]);
-		
-	}
+		System.out.println(dp1[n] + dp2[n]);
+       }
+
+   }
 
 }
 

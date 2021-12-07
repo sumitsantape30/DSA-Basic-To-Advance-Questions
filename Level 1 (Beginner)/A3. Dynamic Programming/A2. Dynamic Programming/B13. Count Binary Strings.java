@@ -59,7 +59,9 @@ public class Main{
 		 int dp1[]= new int[n+1]; // n+1 size ki banayenge coz aakhri index n hona chahiye, aur isme ending at 0 ka count store karenge
 	         int dp2[]= new int[n+1]; // ending at 1 ka count store karunga
 		
-		dp1[1]=1; // 1 length ka answer 1 hi hoga
+		// dp1[0] and dp2[0] pe 0 hi pda hai co 0 length ki string ka binary ho hi nhi skti 
+		  
+		dp1[1]= 1; // 1 length ka answer 1 hi hoga
 		dp2[1]= 1; 
 		
 		for( int i=2; i< dp1.length; i++) {

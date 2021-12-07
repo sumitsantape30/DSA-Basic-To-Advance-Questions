@@ -49,6 +49,7 @@ public class ZeroOneSnapsack {
 				//sabse pehle maine na wali choice consider karli
 				dp[i][j]= dp[i-1][j]; //merese pehle wala element isi capacity ke sath maxm profit kitna de rha h
 				if(j- wts[i-1] >=0 ) { //ha wali choice iss condtn pehi de payenge, yeh range mai honi chahiye
+					//remaining capacity [j-wts[i-1]]: j apki total balls hai to ismese iss ka weight minus kardenge
 					dp[i][j]= Math.max(dp[i][j], prices[i-1] + dp[i-1][j- wts[i-1]]); //agar woh ana chahta hai to current element ka price add kardo fir maine bola merese pehle wale elemens updated capacity ke sath max profit kitne banayega 
 				}
 				// no wali choice aap humeshahi consider kr skte ho isliye bina kuch dimag lagaye no wale ka answer store krwa do 

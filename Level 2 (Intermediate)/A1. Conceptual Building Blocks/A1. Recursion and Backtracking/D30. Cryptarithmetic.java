@@ -105,7 +105,7 @@ public class Main {
         return;
       }
       
-     // so hume yaha uniqeue string mili hai uska idx character solve karna hai 
+     // so hume yaha unique string mili hai uska idx character solve karna hai 
      char ch= unique.charAt(idx); // yeh wala char solve karna hai
      for( int num =0; num<= 9; num++){ // isme mere pas 0 to 9 sare options hai, yeh potential numbers/options hai 
        if( usedNumbers[num] == false){ // agar usedNumbers mai iske samne false pda hai tabhi isko usr kr skte hai

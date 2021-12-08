@@ -30,7 +30,7 @@ public class Main {
   public static void solution(String str, int mra, HashSet<String> ans) { // mra = minimum removals allowed
     if (mra == 0) { // agar removal decrease krte krte minimum removals allowed 0 hogyi ho to return karna hai. jitni removals allowed thi utni karli iske bad call lagaoge to extra removal hojayegi, yahapr print karna nhi karna woh uss chiz pe depend krta hai jo aap string leke aaye ho woh valid hai ya nhi
       
-      //jo bhi string generate hoke aayi hai uske andar minimum removals 0 lag rhe hai to yeh mera jawab hai
+      //jo bhi string generate hoke aayi hai uske andar minimum removals 0 lag rhe hai to yeh valid string hai.
       int mrnow = getMin(str); //yahapr apke pas jo string pdi hai uske liye minimum removals allowed nikal lo ki jo aap string leke aaye ho uske liye kitne removals chahiye
       if (mrnow == 0) { // agar removal 0 hai to aap already balanaced hai
         //ab koi removal nhi chahiye to isko print kiya ja skta hai

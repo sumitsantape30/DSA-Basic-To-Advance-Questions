@@ -96,7 +96,7 @@ public class Main {
             for( int i=0; i< 26; i++){
                 char ch = (char)('a' + i);
                 //pehle check karunga kya yeh character apne hashmap hai ya nhi
-                if( charIntMap.containsKey(ch)){// agar hai to print karenge woh character aur woh jis digit ke sath map hua th
+                if( charIntMap.containsKey(ch)){// agar hai to print karenge woh character aur woh jis digit ke sath map hua tha
                    System.out.print(ch + "-" + charIntMap.get(ch) + " ");
                 }
             }
@@ -108,7 +108,7 @@ public class Main {
      // so hume yaha unique string mili hai uska idx character solve karna hai 
      char ch= unique.charAt(idx); // yeh wala char solve karna hai
      for( int num =0; num<= 9; num++){ // isme mere pas 0 to 9 sare options hai, yeh potential numbers/options hai 
-       if( usedNumbers[num] == false){ // agar usedNumbers mai iske samne false pda hai tabhi isko usr kr skte hai
+       if( usedNumbers[num] == false){ // woh number pehle used hua hua nhi chahiye, agar usedNumbers of num pe agar false pda hai to hum iske sath mapping kr skte hai
          charIntMap.put(ch, num); // hashmap mai iss character ke samne apna number put krdo
          usedNumbers[num] = true; // usednumbers mai dal do true ki used karliya
          solution(unique, idx + 1, charIntMap, usedNumbers, s1, s2, s3); // next character keliye call lagadi

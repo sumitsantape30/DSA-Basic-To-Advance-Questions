@@ -44,7 +44,7 @@ public class Main {
 
     //har character ko pehle level pr pehle removal karenge, har character ko remove hone ki option denge (tu remove hota to kya hota)
     for(int i = 0; i < str.length(); i++) {
-      // i ko remove karna hai to i ke pehle ka content chahiye
+      // ith char ko remove karna hai to i ke pehle ka content chahiye aur badka taki aage pass kr ske
       String left = str.substring(0, i);// i se pehle ka content
       String right = str.substring(i + 1);
       solution(left + right, mra - 1, ans); // left + right aage pass kiya to apka character chut gya hai aur minimum allowed removals mese ek kam krdo kyuki ek removal apne use karli hai

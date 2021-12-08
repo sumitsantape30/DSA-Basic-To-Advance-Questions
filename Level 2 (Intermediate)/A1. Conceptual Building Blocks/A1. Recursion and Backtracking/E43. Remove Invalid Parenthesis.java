@@ -32,9 +32,9 @@ public class Main {
       
       //jo bhi string generate hoke aayi hai uske andar minimum removals 0 lag rhe hai to yeh valid string hai.
       int mrnow = getMin(str); //yahapr apke pas jo string pdi hai uske liye minimum removals allowed nikal lo ki jo aap string leke aaye ho uske liye kitne removals chahiye
-      if (mrnow == 0) { // agar removal 0 hai to aap already balanaced hai
+      if (mrnow == 0) { // agar iss string ke removals 0 hai to aap already balanaced hai
         //ab koi removal nhi chahiye to isko print kiya ja skta hai
-        if(!ans.contains(str)){ // agar answer haset isko already contain krta hai to yeh dublicate hai hai so ans nhi contain krta hai tohi print kare
+        if(!ans.contains(str)){ // agar ans hashset isko already contain krta hai to yeh dublicate hai hai so ans nhi contain krta hai tohi print kare
             System.out.println(str);
             ans.add(str); //aur ans mai add karle
         }

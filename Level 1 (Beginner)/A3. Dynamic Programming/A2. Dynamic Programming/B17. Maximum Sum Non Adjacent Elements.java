@@ -45,7 +45,7 @@ public class maximumSumNonAdjacentElements {
 		
 		int f1= 0 + ms(arr, idx+1); // agar woh answer ka hissa nhi hai, woh nhi aa chahta to idx+1 se aage ke kitna max sum ban rha tum btado with no consecutive elements
 		
-		int f2= arr[idx] + ms(arr, idx+2); //kyuki woh ana chahta hai to iss agle element nhi aa payega sp maine bola index+2 se aage ke elements tum batao tumhare andar max sum kitna ban rha hai 
+		int f2= arr[idx] + ms(arr, idx+2); //kyuki woh ana chahta hai to iss agle element nhi aa payega so maine bola index+2 se aage ke elements tum batao tumhare andar max sum kitna ban rha hai 
 		
 		int ans= Math.max(f1, f2);
 		return ans;

@@ -54,7 +54,7 @@ public class AnyBaseMultiplication {
 		int carry=0;
 		int power= 1;
 		
-		while( n1 > 0 || c > 0) {
+		while( n1 > 0 || carry > 0) {
 			int l1= n1 % 10; //last digit of n1 aur fir n1 ko reduce bhi kar denge
 			n1= n1/10;
 			
@@ -64,7 +64,7 @@ public class AnyBaseMultiplication {
 			rem = product % b; //ramainder
 			
 			//remainder ki help se answer update
-			ans= ans + (rem * p);
+			ans= ans + (rem * power);
 			
 			//agli bar keliye carry update with the help of quotient
 			carry= q;
@@ -80,7 +80,7 @@ public class AnyBaseMultiplication {
 		 int carry= 0; 
 		 int power=1; 
 		 
-		 while( n1 > 0 || n2 > 0 || c > 0) {
+		 while( n1 > 0 || n2 > 0 || carry > 0) {
 			 
 			 int l1= n1 % 10;
 			 int l2= n2% 10; 
@@ -89,7 +89,7 @@ public class AnyBaseMultiplication {
 			 n1= n1 /10;
 			 n2= n2/10; 
 			 
-			 int sum = l1+ l2 + c;
+			 int sum = l1+ l2 + carry;
 			 int q = sum/ b; 
 			 int r = sum % b; 
 			 ans += (r* power);

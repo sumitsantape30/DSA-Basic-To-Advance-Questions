@@ -71,7 +71,7 @@ public class subsetOfArray {
 				
 				//agar remainder 0 hai to muje element ko print nhi karna warna muje element ko print karna hai
 				if( r == 0) {
-					set= "\t"+ set; //agar yeh 0 aya hai to iss number ke nam ka dash hum apn set mai add karlenge
+					set= "-\t"+ set; //agar yeh 0 aya hai to iss number ke nam ka dash hum apn set mai add karlenge
 				}else {
 					//aur agar yeh 1 aya hai to hum arr[j] ko apne set mai add karle
 					set= arr[j]+ "\t" + set;

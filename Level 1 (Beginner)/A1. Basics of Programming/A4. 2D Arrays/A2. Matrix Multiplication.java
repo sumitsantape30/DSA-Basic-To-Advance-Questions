@@ -63,6 +63,84 @@ Sample Output
 0 20 20 40
   
 Code:
+
+//================================================== Correct Solution=================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+
+  public static void multiply( int one[][], int two[][]) {
+
+    int r1 = one.length;
+    int c1 = one[0].length;
+
+    int r2 = two.length;
+    int c2 = two[0].length;
+
+    // pehle matrix ka column is not equal to rows of 2nd matrix to multiply ho hi nhi skta coz invalid input to invalid output deke khatam karenge means return karenge
+    if ( c1 != r2) {
+      System.out.println("Invalid input");
+      return;
+    }
+
+    // otherwise hum ek product nam ki matrix banayenge and it's size will be pehle matrix ki rows + and second ke columns
+    int prod[][] = new int[r1][c2];
+    // ab mai product array pe loop chalaunga
+    for ( int i = 0; i < prod.length; i++) {
+      for ( int j = 0; j < prod[0].length; j++) {
+        //ab hume product array ko fill krna hai
+        for ( int k = 0; k < c1; k++) { //yeh k constant hai in both. And as c1 and r2 equal hai so yeh loop tabtak chalega
+          prod[i][j] += one[i][k] * two[k][j]; // one ke andar row wahi rahegi and two ke andar row vary karegi and column wahi rahega
+          // a21*b13 : so isme jab a mai 1 column hota hai to b mai 1 row hoti hai, a22*b23: isme jab a mai 2 column hota hai to b mai bhi 2 row hota hai so basically woh k hai
+        }
+      }
+    }
+
+    //ab print karenge yeh product array
+
+    for ( int i = 0; i < prod.length; i++) {
+      for ( int j = 0; j < prod[0].length; j++) {
+        System.out.print(prod[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+   
+    Scanner s = new Scanner(System.in);
+    int r1 = s.nextInt();
+    int c1 = s.nextInt();
+
+    int one[][] = new int[r1][c1];
+
+    for ( int i = 0; i < one.length; i++) {
+      for ( int j = 0; j < one[0].length; j++) {
+        one[i][j] = s.nextInt();
+      }
+    }
+    
+    int r2 = s.nextInt();
+    int c2 = s.nextInt();
+
+    int two[][] = new int[r2][c2];
+
+    for ( int i = 0; i < two.length; i++) {
+      for ( int j = 0; j < two[0].length; j++) {
+        two[i][j] = s.nextInt();
+      }
+    }
+    
+    multiply(one, two);
+        
+  }
+
+}
+
+//======================================================== Some error================================================
 package TwoDArrays;
 
 import java.util.Scanner;

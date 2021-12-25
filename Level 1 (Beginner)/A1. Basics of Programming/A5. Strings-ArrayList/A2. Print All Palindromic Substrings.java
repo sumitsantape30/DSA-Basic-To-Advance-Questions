@@ -58,7 +58,7 @@ public class printAllPalindromicString {
 
 				String s = str.substring(si, ei + 1);
 
-				if (Ispalindrome(s) == true) {
+				if (isPalindrome(s) == true) {
 					System.out.println(s);
 				}
 			}

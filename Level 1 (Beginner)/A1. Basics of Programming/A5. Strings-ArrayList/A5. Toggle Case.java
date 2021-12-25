@@ -55,6 +55,7 @@ class HelloWorld {
 		return sb.toString();
 	}
 	
+	//jb's 
 	public static String togeeleCase( String str) {
 		
 		StringBuilder sb= new StringBuilder();

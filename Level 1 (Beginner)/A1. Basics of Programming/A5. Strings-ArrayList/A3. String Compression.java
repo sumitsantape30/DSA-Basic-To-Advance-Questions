@@ -41,26 +41,26 @@ public class StringCompression {
 		int count=1;
 		
 		//1 se leke last tak loop chalayenge
-		for( int i=1; i< str.length(); i++) {
+		for( int i = 1; i < str.length(); i++) {
 			
-			if(str.charAt(i) == ans.charAt(ans.length()-1)) { // string ka ith character agar equal hai answer ke last character se to count badha do 
-				 count++; //equal hota hai to bas count ko bdha denge
+			if(str.charAt(i) == ans.charAt(ans.length() - 1)) { // string ka ith character agar equal hai answer ke last character se to count badha do 
+			     count++; //equal hota hai to bas count ko bdha denge
 				 
 			}else {
 				//jab non equal hai to 3 kaam, count ko add karlo uss character ko add karlo aur count ko reset kardo
 				
 				if( count > 1) { //count 1 hoga to add nhi hoga directly woh character add kardenge
 					ans += count;
-					count=1;
 				}
 				ans += str.charAt(i);
+				count=1;
+
 			}
 		}
 		
 		// loop se bahar aane ke bad agar count ki value grater than 1 hai to count add karlenge usme
 		if( count > 1) {
 			ans += count;
-			count=1;
 		}
 		
 		return ans;
@@ -74,13 +74,12 @@ public class StringCompression {
 		//1 se leke last tak loop chalayenge
 		for( int i=1; i< str.length(); i++) {
 			
-			if(str.charAt(i) != ans.charAt(ans.length()-1)) { // string ka ith charcter agar equal nhi hai answer ke last character se to answer mai add karlo string ka ith character
+			if(str.charAt(i) != ans.charAt(ans.length() - 1)) { // string ka ith charcter agar equal nhi hai answer ke last character se to answer mai add karlo string ka ith character
 				ans += str.charAt(i);
 			}
 			
 		}
 		return ans;
-		
 	}
 	
 //=========================================================================

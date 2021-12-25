@@ -33,6 +33,7 @@ class HelloWorld {
 		return str;
 	}
 
+	//JB's
 	public static void solution2(String str) {
 		String ans= "";
 		ans += str.charAt(0);

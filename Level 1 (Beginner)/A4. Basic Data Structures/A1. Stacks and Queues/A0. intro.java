@@ -1,3 +1,5 @@
+// push, pop, peek, empty, size
+
 package Stack;
 
 import java.util.Stack;

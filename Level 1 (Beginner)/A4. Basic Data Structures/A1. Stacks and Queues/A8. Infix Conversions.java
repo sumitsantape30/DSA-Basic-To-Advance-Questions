@@ -175,7 +175,7 @@ public class InfixEvaluation2 {
 				st1.push(ch + "");
 				st3.push(ch+ "");
 
-			} else if (ch == '(') { // agar closing bracket ata hai to stack 2 mai push krdo
+			} else if (ch == '(') { // agar opening bracket ata hai to stack 2 mai push krdo
 				st2.push(ch);
  
 			} else if (ch == ')') { 

@@ -102,7 +102,7 @@ public class MinimumStack1 {
 		    	 if(size() == 0) {
 		    		System.out.println("Stack Underflow");
 		    		return -1;
-		    	} /*else {
+		    	} 
 		    		int val= allData.pop();
 		    		
 		    		//agar yahi value minData ke peek pe dikhi to woh bhi pop hota hi hai
@@ -110,9 +110,9 @@ public class MinimumStack1 {
 		    			minData.pop();
 		    		}
 		    		return val;
-		    	}  */
-			     minData.pop();
-			    return allData.pop(); //dono stack mese pop lagaya, aur value uski stack1 wale ki return karenge 
+		    	}  
+			    /* minData.pop();
+			    return allData.pop(); //dono stack mese pop lagaya, aur value uski stack1 wale ki return karenge */
 		    }
 
 		    int top() {

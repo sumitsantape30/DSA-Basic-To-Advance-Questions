@@ -64,8 +64,103 @@ package Stack;
 import java.util.Stack;
 
 public class MinimumStack1 {
-	
+//================================== Submitted Code=====================================
 	//yahape hum ek extra stack use kr rhe hai means O(n) Space hai so kya hum sirf ek hi stack se yahi kam achieve kr skte hai yeh next question mai dekhenge
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static class MinStack {
+		    Stack<Integer> allData;
+		    Stack<Integer> minData;
+	  
+		    public MinStack() {
+		      allData = new Stack<>();
+		      minData = new Stack<>();
+		    }
+	  
+		    int size() {
+				return allData.size();
+		    }
+	  
+		    void push(int val) {
+		      allData.push(val); //all data mai push karna hi hai
+		      
+		      //aur minData mai tab push karna hai jab value choti hai minData ke peek se aur jab minData ka size 0 ho
+		      if(minData.size()==0 || val <= minData.peek()) {
+		    	  minData.push(val);
+		      }
+		    }
+	  
+		    int pop() {
+		    	if(size() == 0) {
+		    		System.out.println("Stack Underflow");
+		    		return -1;
+		    	}
+		    		int val= allData.pop();
+		    		//agar yahi value minData ke peek pe dikhi to woh bhi pop hota hi hai
+		    		if( val == minData.peek()) {
+		    			minData.pop();
+		    		}
+		    		return val;
+		    	
+		    }
+	  
+		    int top() {
+		    	if(size() == 0) {
+		    		//agar size 0 hua -1 return karenge
+		    		System.out.println("Stack Underflow");
+		    		return -1;
+		    	}else {
+		    		return allData.peek();
+		    	}
+		    }
+	  
+		  //1.jo content abhitak dala gya hai stack mai usme jo sabse chota hai woh O(1) milna chahiye
+		   //jab value minData stack ke peek se choti aati hai tab dono taraf push karna hota hai, so ab top() dete waqt allData stack ka top denge and min dete waqt minData stack se dejiye
+		    int min(){
+		    	if(size() == 0) {
+		    		//agar size 0 hua -1 return karenge
+		    		System.out.println("Stack Underflow");
+		    		return -1;
+		    	}else {
+		    		return minData.peek();
+		    	}
+		    }
+		 }
+		  public static void main(String[] args) throws Exception {
+		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		    MinStack st = new MinStack();
+		    String str = br.readLine();
+		    while(str.equals("quit") == false){
+		      if(str.startsWith("push")){
+		        int val = Integer.parseInt(str.split(" ")[1]);
+		        st.push(val);
+		      } else if(str.startsWith("pop")){
+		        int val = st.pop();
+		        if(val != -1){
+		          System.out.println(val);
+		        }
+		      } else if(str.startsWith("top")){
+		        int val = st.top();
+		        if(val != -1){
+		          System.out.println(val);
+		        }
+		      } else if(str.startsWith("size")){
+		        System.out.println(st.size());
+		      } else if(str.startsWith("min")){
+		        int val = st.min();
+		        if(val != -1){
+		          System.out.println(val);
+		        }
+		      }
+		      str = br.readLine();
+		    }
+		  }
+		}
+	
+//======================================== THis has some error============================================
 	 public static class MinStack {
 		    Stack<Integer> allData;
 		    Stack<Integer> minData;

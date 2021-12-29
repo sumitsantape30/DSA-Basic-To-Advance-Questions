@@ -32,6 +32,8 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class PostfixExpressions {
+
+//muje input mai postfix expression mili hai isme brackets bhi nhi honge aur sare operators unke precedence wise hi honge so brackets aur precedence wala scene nhi hai isliye operators ki stack rakhne ki jarurat nhi hai
 	
 	public static int operation( int v1, int v2, char op) {
 		

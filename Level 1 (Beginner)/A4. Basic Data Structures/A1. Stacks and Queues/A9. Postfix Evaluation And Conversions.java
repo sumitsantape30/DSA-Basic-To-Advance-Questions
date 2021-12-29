@@ -78,7 +78,7 @@ public class PostfixExpressions {
 				//yahi lines prefix mai bhi ayegi bas order alag rahega
 				String opp2= ps.pop(); // yeh infix stack se niklega
 				String opp1= ps.pop();
-				String pval= ch + pv1 + pv2; //operator + prefixvalue1+ prefixvalue2
+				String pval= ch + opp1 + opp2; //operator + prefixvalue1+ prefixvalue2
 				ps.push(pval);
 			
 			}else { // number hota hai to stacks mai push krdo

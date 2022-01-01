@@ -147,7 +147,7 @@ class LinkedList {
 			return -1;
 		}else {
 			Node temp = head;
-			for( int i=0; i< idx ; i++) {
+			for( int i=0; i< idx ; i++) { // hum i<idx isliye kr rhe hai kyuki hum temp= temp.next kr rhe hai so jab idx-1 pe pahuchenge to humara temp.next idx pe hoga isliye
 				temp = temp.next;
 			} 
 			return temp.data;

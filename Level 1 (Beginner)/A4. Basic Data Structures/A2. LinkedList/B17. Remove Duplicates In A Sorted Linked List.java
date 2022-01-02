@@ -310,7 +310,7 @@ public class KthEleFromEnd {
 		}
 
 		// oops ke concepts ke basis pe solve karenge
-		// yeh removeDuplicates jis linkedlist pe call hua uska address 'this' mai rahega. (l1.removeDuplicates() : yahape l1 pe call hua to 'this' mai l1 ka address rahega )
+		// yeh removeDuplicates function jis linkedlist pe call hua uska address 'this' mai rahega. (l1.removeDuplicates() : yahape l1 pe call hua to 'this' mai l1 ka address rahega )
 		public void removeDuplicates() {
 			LinkedList res= new LinkedList();
 			

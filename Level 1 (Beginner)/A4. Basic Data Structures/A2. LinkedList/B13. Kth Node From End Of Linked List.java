@@ -268,7 +268,7 @@ public class KthEleFromEnd {
 			Node fast= head;
 			
 			//ab shuruwat mai fast ka extra chalna jaruri hai taki slow aur fast mai thoda gap hojaye
-			for( int i=0; i< k; i++) {
+			for( int i=0; i< k; i++) { //loop i< k isliye chala rhe hai coz hum fast = fast.next kr rhe hai to woh loop khatam hone ke bad kth position pe hi hoga
 				fast= fast.next;
 			}
 			

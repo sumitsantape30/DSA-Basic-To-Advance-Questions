@@ -72,7 +72,7 @@ public class GenericTreeConstructor {
 		
 		Stack<Node> st = new Stack<>();
 		Node root = new Node(arr[0]); //ek root node banalo, aur jo 0th element hai array ka woh humara root hoga
-        st.push(root) ; // aur root ko pehlehi daldo stack mai
+                st.push(root) ; // aur root ko pehlehi daldo stack mai
 
 		for (int i = 1; i < arr.length; i++) {
 			if( arr[i] == -1) { //agar 

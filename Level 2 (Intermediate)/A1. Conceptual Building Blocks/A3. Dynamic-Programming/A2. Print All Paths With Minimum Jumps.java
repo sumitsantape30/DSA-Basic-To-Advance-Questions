@@ -122,3 +122,87 @@ public class Main{
         scn.close();
     }
 }
+
+//======================================================= JB's and Accepted===============================================================
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Main{
+    
+    //bfs keliye hume path so far rakhna padega 
+    public static class Pair{
+        int idx;
+        String psf;
+        
+        public Pair(int idx, String psf){
+            this.idx = idx;
+            this.psf = psf;
+        }
+    }
+    
+    //2.
+    public static void bfs(int dp[], int arr[]){
+        Queue<Pair> q = new ArrayDeque<>();
+        //queue mai ek naya pair add kardenge jiska indx hoga 0 aur psf mai add karenge 0
+        q.add(new Pair(0, "0"));
+        
+        while(q.size() != 0 ){ //jabtak que ka size 0 nhi hojata apna kam karenge
+          
+          //pehla kam remove pair
+          Pair rp = q.remove();
+          int minJumpsFromCurrIdx = dp[rp.idx]; //remove mara aur puchliya ki yahase minimum jumps from current index, current index se minimum jumps kitne lag rhe hai
+          
+          //jaisehi destination pe pohoch jate hai to apne raste ko print kardenge aur fir aage chalenge
+          if( rp.idx == dp.length-1 ){ //apne jo remove pair kiya uska index dp.length-1 ke equal hai to hume ek jawab mil gya apna 
+           System.out.println(rp.psf + " .");
+           continue; //agar aap destination pe pohoch gye ho to jawab ko print karke aage badhiye dusra jawab dhunde ki koshish kare
+              
+          }
+          
+          //ab que mai add karna hai ki woh value kaha kahase bani thi
+          for( int jump = 1; jump <= arr[rp.idx]; jump++){ //1 se leke utne tak ka jump laga skte hai, woh value kaha kahase aaayi woh pta karna hai hum, multiple jagah sebhi aa skti hai woh value
+            if(rp.idx + jump < dp.length && dp[rp.idx + jump] == minJumpsFromCurrIdx - 1){ //maine dekha uss point pe kya value minJumpsFromCurrIdx-1 pdi hai? eg, minJumpsFromCurrIdx hai 4 aur yahase max jump 3 allowed tha to agle 3 spot pe mai dekhna chahta hu ki kahape value 3 pdi hai, jaha jaha pe value 3 pdi hai uska pair banake queue mai add krdiya
+                q.add(new Pair(rp.idx + jump, rp.psf + " -> " + (rp.idx + jump)));
+            }
+            
+          }
+        }
+    }
+    
+    //1. 
+    public static void Solution(int arr[]){
+        int dp[]= new int[arr.length];
+        dp[dp.length-1] = 0;
+        
+        for( int i= dp.length - 2; i >= 0; i--){
+            int min = Integer.MAX_VALUE;
+            for( int jump = 1; jump <= arr[i] && i + jump < dp.length; jump++){
+                min = Math.min(min, dp[i + jump]);
+            }
+            if( min != Integer.MAX_VALUE){
+                dp[i] = min + 1;
+            }else{
+                dp[i] = min;
+            }
+        }
+        
+       System.out.println(dp[0]); //isse humara adha answer sahi print hua but abhi paths bhi print karni hai so bfs lagao
+       
+       bfs(dp, arr);//dp ke sath original array bhi bhejdo
+       
+    }
+    
+    public static void main(String []args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+
+        int arr[] = new int[n];
+        for(int i = 0 ; i < n ; i++)
+            arr[i] = scn.nextInt();
+
+        Solution(arr);
+        scn.close();
+    }
+}

@@ -64,7 +64,7 @@ public class Main{
         
         Integer dp[]= new Integer[arr.length]; // capital integer wali array banaynge taki isme null dal sake, null isliye jaruri hai kyuki kahi kahise rasta nhi hoga to null dalenge 
         //choti problem last spot pe hai
-        dp[arr.length - 1] = 0; // last spot pe 0 dal diye kyuki last spot se koi jump lagegi nhi already pahuche hue hai
+        dp[arr.length - 1] = 0;// last spot pe 0 dal diye kyuki last spot se koi jump lagegi nhi already pahuche hue hai, aur kisine puche hota ki destination to dest raste kitne hai to answer ata 1 ki kuch mat karo wahi khade rho buta bhi pucha ja rha hai minimum number of moves it'll be 0
         
         for(int i = arr.length - 2 ; i >= 0; i--){ //last second spot se loop chalayenge
             // kisi i par ho to wahase kahatk ja skte ho? wahape jitni steps allowed hai

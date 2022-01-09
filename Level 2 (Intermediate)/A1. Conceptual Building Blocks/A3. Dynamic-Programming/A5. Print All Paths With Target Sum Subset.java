@@ -35,6 +35,7 @@ true
 
 Code:
 
+//========================================= SS's=================================================================================
 import java.io.*;
 import java.util.*;
 
@@ -119,3 +120,81 @@ public class Main {
     }
   }
 }
+
+//======================================================== JB's===============================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static class Pair{
+        int i;
+        int j;
+        String psf;
+
+        public Pair(int i, int j, String psf){
+            this.i = i;
+            this.j = j;
+            this.psf = psf;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+
+        int tar = Integer.parseInt(br.readLine());
+
+        boolean dp[][]= new boolean[n+1][tar+1];
+
+        for( int i=0; i < dp.length; i++){
+            for( int j=0; j< dp[0].length; j++){
+                if( j == 0){
+                    dp[i][j] = true;
+                }else if( i == 0){
+                    dp[i][j] = false;
+                }else{
+                    dp[i][j] = dp[i-1][j]; //no wali call
+                    //agar No wali call se false aya hai to yes wali call
+                       if(dp[i][j] == false && j - arr[i-1] >= 0){ //uske liye yeh range mai hona chahiye
+                           dp[i][j] = dp[i - 1][j - arr[i-1]];
+                     }
+                }
+            }
+        }
+         System.out.println(dp[dp.length-1][dp[0].length-1]);
+
+        //ab hum lagayenge dfs
+        Queue<Pair> q = new ArrayDeque<>();
+        q.add(new Pair(dp.length - 1, dp[0].length - 1, "")); //shuruwat mai iss queue ke andar i, j, psf dal denge
+
+        while(q.size() > 0){ //jabtak queue ka size greater than 0 hai tabtak kam karenge
+
+          Pair rp = q.remove();
+
+          if( rp.j == 0){ //jab j 0 pe pohoch jata hai uske bad no no wali hi choices chalti hai uske bad psf mai kuch add hi nhi hota to usse sabse chota answer sabse chota pehle ayega
+            System.out.println(rp.psf);
+            continue;
+          } //bottom right se start karke 0,0 pe pohoch gye to wahape apna kam khatam hogya
+
+          //so mai kisi bhi dabbe keliye analyse krte tha ki Ha wale raste jaye ya Ha wale raste jaye
+          //na wale raste mai i-1(rp.i-1) aur j(rp.j) wahi rehta tha aur psf mai alag se kuch add nhi hota tha
+          //Ha (means woh element ana chahta hai) wale raste keliye i(rp.i-1) aur (rp.j - arr[rp.i-1])
+
+          if(rp.j - arr[rp.i-1] >= 0 && dp[rp.i - 1][rp.j - arr[rp.i-1]] == true){
+              q.add(new Pair(rp.i - 1, rp.j - arr[rp.i-1], (rp.i -1) + " " + rp.psf));
+          }
+
+          if( dp[rp.i - 1][rp.j] == true){ //Na wali, agar yaha true pda hai to mai queue mai ek banda add karunga
+                q.add(new Pair(rp.i - 1, rp.j, rp.psf));
+          }
+        }
+    }
+}
+   

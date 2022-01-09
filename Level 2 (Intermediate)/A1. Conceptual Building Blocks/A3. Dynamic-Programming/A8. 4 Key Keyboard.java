@@ -25,3 +25,35 @@ Sample Input
 Sample Output
 3
 
+Code:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static int solution(int n) {
+
+		int dp[]= new int[n+1];
+
+		//1 to 6 tak ka answer to muje pta hi hota hai
+		for(int i = 1; i <= n; i++){
+			if( i <= 6){ //yeh obervation kiya tha to directly fill krdete hai
+				dp[i] = i; 
+			}else{
+				dp[i] = i ; //har case mai dp[i] pe i to rakh hi dunga
+				for(int j = 1; j <= i - 3; j++){
+					dp[i] = Math.max(dp[i], dp[j] + dp[j] * (i - j - 2)); //abtak jo value rakhi hui hai compared with 
+				}
+			}
+		}
+		return dp[n];
+	}
+	
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		System.out.println(solution(n));
+	}
+
+}

@@ -179,6 +179,7 @@ public class Main {
           Pair rp = q.remove();
 
           if( rp.j == 0){ //jab j 0 pe pohoch jata hai uske bad no no wali hi choices chalti hai uske bad psf mai kuch add hi nhi hota to usse sabse chota answer sabse chota pehle ayega
+            // j 0 hogya means column no 0 pe aagye to yahase bas No ki calls hi bachti hai, yes ki dikhegi hi nhi calls
             System.out.println(rp.psf);
             continue;
           } //bottom right se start karke 0,0 pe pohoch gye to wahape apna kam khatam hogya
@@ -187,6 +188,7 @@ public class Main {
           //na wale raste mai i-1(rp.i-1) aur j(rp.j) wahi rehta tha aur psf mai alag se kuch add nhi hota tha
           //Ha (means woh element ana chahta hai) wale raste keliye i(rp.i-1) aur (rp.j - arr[rp.i-1])
 
+          //Ha wali choice ko pehle consider karna hai
           if(rp.j - arr[rp.i-1] >= 0 && dp[rp.i - 1][rp.j - arr[rp.i-1]] == true){
               q.add(new Pair(rp.i - 1, rp.j - arr[rp.i-1], (rp.i -1) + " " + rp.psf));
           }

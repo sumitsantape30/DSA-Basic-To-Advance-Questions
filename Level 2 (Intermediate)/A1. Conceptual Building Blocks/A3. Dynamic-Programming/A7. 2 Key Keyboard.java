@@ -32,8 +32,8 @@ public class Main {
 		for(int div = 2; div*div <= n; div++){
 
 			while( n % div == 0){ //jabtak number divisor se divide hota hai tabtak use divide krte rho aur answer mai uss divisor kobhi add krte rho
+			  n = n / div;
 			  ans += div;
-			  n = n / 10;
 			}
 		}	
 

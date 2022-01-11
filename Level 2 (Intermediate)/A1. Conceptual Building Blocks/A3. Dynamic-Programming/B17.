@@ -1,0 +1,17 @@
+Number Of Bsts
+
+1. You are given a number n, representing the number of elements.
+2. You are required to find the number of Binary Search Trees you can create using the elements.
+Input Format
+A number n
+Output Format
+A number representing the number of Binary Search Trees you can create using the elements.
+
+Constraints
+0 <= n <= 15
+Sample Input
+4
+Sample Output
+14
+
+Code:

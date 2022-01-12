@@ -49,7 +49,7 @@ public class LowestCommonAncestor {
 		     // i and j ko -- krte rahenge
 		}
 		
-		// iss loop ke bahar agye honge to hume pehle unequal banda mil chuka hoga so akhri bande keliye i++ aur j++ kr skte hai
+		// iss loop ke bahar agye honge to hume pehla unequal banda mil chuka hoga so akhri bande keliye i++ aur j++ kr skte hai
 		i++;
 		j++;
 		

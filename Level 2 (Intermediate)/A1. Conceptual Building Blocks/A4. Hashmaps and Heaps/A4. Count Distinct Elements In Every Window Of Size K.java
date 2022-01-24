@@ -78,3 +78,67 @@ public class Main {
 		}
 	}
 }
+
+//===================================using while loop (thoda acha hai)======================================================
+
+import java.util.*;
+
+public class Main {
+
+  public static ArrayList<Integer> solution(int[] arr, int k) {
+
+    //hume arraylist of integer banakr return karni hai
+    ArrayList<Integer> list = new ArrayList<>();
+
+    //apna kam karne keliye chahiye hashmap
+    HashMap<Integer, Integer> map = new HashMap<>();//hashmap mai store karenge frequency har integer ki
+
+    int i = 0;
+
+    while (i <= k - 2) {
+      map.put(arr[i], map.getOrDefault(arr[i], 0) + 1); // arr[i] pe uski old frequency nikalkr usme +1 add kr rha hu, isme agar pehlese pda hua nhi hai to exception ayegi isliye getOrDefault use karenge
+      i++;
+    }
+
+    i--;
+    int j = -1;
+
+    while ( i < arr.length - 1) {
+
+      i++;//acquire karne se pehle badha denge
+
+      //pehla kam i pe acquire karo
+      map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+
+      //fir print karo means answer list mai add karo
+      list.add(map.size()); //humne map mai abhi kitne distict elements hai map mai dal diya
+
+      //ab jth element ko release krdo
+      j++; //j jahapr aaya hai usko release krdo
+      int freq = map.get(arr[j]);// arr[i] ki kitni frequency hai
+      if ( freq == 1) { //agar frequency 1 hui to matlab woh udega
+        map.remove(arr[j]);
+      } else {
+        //aur agar frequency 1 se jada hui to frequency kam karenge
+        map.put(arr[j], freq - 1);
+      }
+    }
+
+    return list;
+  }
+
+  public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+    int[] arr = new int[scn.nextInt()];
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = scn.nextInt();
+    }
+    int k = scn.nextInt();
+    ArrayList<Integer> ans = solution(arr, k);
+    for (int a : ans) {
+      System.out.print(a + " ");
+    }
+  }
+
+
+}

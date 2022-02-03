@@ -24,3 +24,52 @@ Sample Output
 true
 
 Code:
+
+import java.util.*;
+
+public class Main {
+	public static boolean areKAnagrams(String str1, String str2, int k) {
+	    if( str1.length() != str2.length()){ //agar dono ki length equal nhi hai to waisebhi false hai fir woh k anagram nhi ho skte, hume sirf replace karna allowed hai add or remove krna allowed nhi hai
+	        return false;
+	    }
+	    
+		// pehli string ko parse krte hue hashmap banayenge
+		HashMap<Character, Integer> map = new HashMap<>();
+		for( int i =0 ;i < str1.length(); i++){ //aur pehle string pe loop laga diya
+		    char ch = str1.charAt(i);
+		    map.put(ch, map.getOrDefault(ch, 0)+ 1);
+		}
+		
+		//ab dusre string pe loop lagayenge
+		for( int i=0; i< str2.length(); i++){ //ab substract karenge
+		    char ch = str2.charAt(i);
+		    if( map.getOrDefault(ch, 0) > 0){ //agar yeh 0 se bada hai to ise use karenge
+		      map.put(ch, map.get(ch) - 1); //agar hai to uski frequency ek se kam krde aur agar 0 ho chuka hai to hume kuch nhi karna 
+		        
+		    }
+		}
+		
+		//fir last mai jitne bhi humare pas positive frequencies bach jayegi unka sum karlunga
+		int count = 0;
+		for(char ch: map.keySet()){
+		    count += map.get(ch);// frequencies ko add krle
+		}
+		
+		if( count > k){ //last mai agar yeh count apka greater than k hai to false hai aur less than equal to k hai to true hai
+		    return false;
+		}else{
+		    return true;
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		String str1 = s.next();
+		String str2 = s.next();
+		int k = s.nextInt();
+		System.out.println(areKAnagrams(str1, str2, k));
+
+	}
+
+}

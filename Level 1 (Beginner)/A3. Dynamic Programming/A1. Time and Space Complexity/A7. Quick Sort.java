@@ -65,7 +65,7 @@ public class QuickSort {
 		quickSort(arr, lo, pi-1); // low se lekar pivot index-1 tak sort kardo, aur maine faith rakha ki woh sort hokar ayenge
 		
 		//ab mai bade elements ko bolunga ki aap sort hokar aaiye
-		quickSort(arr, pivot+1, hi);
+		quickSort(arr, pi+1, hi);
 		
 	}
 

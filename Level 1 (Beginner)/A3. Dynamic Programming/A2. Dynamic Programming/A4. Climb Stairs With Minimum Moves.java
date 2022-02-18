@@ -47,7 +47,7 @@ public class ClimbingStairswithMinimumMoves {
 	    for(int i = arr.length - 2; i >= 0; i-- ) {
 	    	int min = Integer.MAX_VALUE - 1; //hume min nikalna hai. manlo maximum jump4 ka allowed hai to agle 4 spots ka minimum nikalna hai  
 	        for(int jump = 1; jump <= arr[i]; jump++ ) { // jump 1 se maximum kitna jump allowed hai yeh arr[idx] pe store hoga 
-	        	if(i + jump < arr.length) { // yeh range mai hona chahiye
+	        	if(i + jump < dp.length) { // yeh range mai hona chahiye
 	        	   min = Math.min(min, dp[jump + i]); // min will be minimum abtak ka min aur dp[i+1] 
 	            }
 	        }

@@ -35,8 +35,9 @@ public class Main {
 	int oa[] = data; ..old array
 	data = new int[2 * oa.length];
 
-	for (int i = front; i < size; i++) {
-            data[i] = oa[(front + i) % oa.length];
+	for (int i = 0; i < size; i++) {
+	    int idx = (front + i) % oa.length;
+            data[i] = oa[idx];
           }
 		front = 0;
      }

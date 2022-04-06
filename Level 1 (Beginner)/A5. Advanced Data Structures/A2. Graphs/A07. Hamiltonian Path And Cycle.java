@@ -75,7 +75,7 @@ public class Main {
    
    //hume original source bhi rakhna hoga jo hume help karega yeh dhundne mai ki yeh path hai ya cycle. vvsf: vertex visited so far. mai asf ko length ke sath compare nhi kr skta coz neighbour kitne bhi digit ka ho skta hai isliye vertex visited so far rakh liya maine
     public static void hamiltonianPathAndCycle(ArrayList< Edge>[] graph, int src, int osrc, boolean[] visited, String asf, int vvsf) {
-    if (vvsf == graph.length - 1) { //agar aap n-1 vertex visit kr chuke ho aur aakhri vertex ke upar aaye ho to yahape apko apna answer print karna hai 
+    if (vvsf == graph.length - 1) { // isme basecase yeh rahegi ki jab sare vertexes visit hojaye, agar aap n-1 vertex visit kr chuke ho aur aakhri vertex ke upar aaye ho to yahape apko apna answer print karna hai 
       System.out.print(asf);
 
      // ab iss answer ke piche * lagega ya . yeh hume decide karna hai 

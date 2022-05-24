@@ -89,6 +89,20 @@ public class BalancedBrackets {
 		}
 		
 	}
-	
-
 }
+ 
+ Analysis -:
+Time Complexity : O(n)
+
+The time complexity of the above algorithm is O(n) as we are traversing a string of length n once. 
+What about the push and pop operations then? Come on, you already know they take O(1) time, right? 
+ So, the only thing affecting the time complexity is the traversing of the string.
+
+
+Space Complexity : O(1)
+
+The space complexity is O(n). Why? We are continuously popping and pushing the elements from the stack. 
+ So why O(n)? Well, let me ask you a question. What can be the maximum size of the stack? 
+ Yes, it can be equal to the length of the string if we can input the string with all opening brackets. 
+ It is after the string gets completely scanned that we will realize that the brackets are not balanced. 
+ Otherwise, we keep on pushing all the opening brackets into the stack.

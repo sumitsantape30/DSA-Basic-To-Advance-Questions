@@ -115,3 +115,11 @@ public class nextGeneratorElement {
 		print(ans);
 	}
 }
+
+Analysis: 
+
+Time Complexity:
+O(n)
+
+5. Space Complexity:
+O(n)

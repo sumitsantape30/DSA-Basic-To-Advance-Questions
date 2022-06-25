@@ -181,3 +181,12 @@ public class Code {
 	}
 
 }
+
+Time Complexity: O(n)
+
+Calculating NSE is O(n) we already know that. And to calculate the maximum area we are just doing a single loop. Hence that too results in O(n).
+
+
+Space Complexity: O(n)
+
+We are just using stacks for calculating the NSEs but for the maximum area we are not using any auxiliary space, so the space complexity will still be O(n).

@@ -118,3 +118,12 @@ public class SlidingWindowMaximum {
 
 }
 
+Analysis:
+Time Complexity :
+
+First, we are generating the NGE array of size n, which takes O(n) time and O(n) space for the NGE array and stack as auxiliary space. Since, we need not start from the first index of every window, thus skipping all smaller elements in the previous window, and we are jumping from one element to the next greater and skipping all the smaller elements in the current window, the two pointers w and i only move for at maximum n steps independently. Hence, the time complexity will be O(n + 2 * n) = O(3 * n) = O(n) only.
+
+
+Space Complexity:
+
+We require the NGE array, which accounts for the extra O(n). We have not studied DEQUE data structure, but this problem can also be solved using it, in similar O(n) time complexity but O(k) space complexity. Please try to come up with this solution as well, after you learn about deque. O(n) space and O(k) space solution does not bring any difference in the worst case, as k can be as maximum as n. Though, in best case, when k = 1, the deque solution will be equivalent to constant space.

@@ -107,3 +107,13 @@ public class StockSpan {
 		
 	}
 }
+
+Analysis:
+Time Complexity:
+
+You'll have to figure out why it's O(n). Let's take a look at one element's life cycle. Every element in the stack will be pushed into it once. In addition, the element will only be popped one time. Because it is lost from the stack once it is popped. As a result, each element is linked to two events. There was only one push and one pop. Both are operations that take place in the same amount of time. When we do the same thing with n elements, we get n*O(1), or O(n) operations. As a result, the time complexity is O(n).
+
+
+Space Complexity:
+
+We're using an auxiliary stack, which will be completely filled with n numbers in the worst-case scenario. Could you please explain what that is? If the numbers are in ascending order, yes. There will be nothing to pop then, only elements to push. There's also a span array where we had to store the span results. As a result, the overall space complexity is O(n). Hopefully, you've grasped the concept of the Algorithm. If you're not sure what you're doing, watch the entire video and run the code by hand. That way, you'll be able to grasp the algorithm's logic. Best wishes and keep learning!!

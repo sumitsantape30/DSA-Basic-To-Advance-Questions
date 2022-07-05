@@ -121,6 +121,7 @@ public class Main {
     } else if (node.data < d1 && node.data < d2) {
       pir(node.right, d1, d2);
     } else { //agar merese ek chota aur ek bada hai matlab mai range mai hu to muje print hona hai but increasing order mai print hona hai to inorder mai jake print hounga
+      //ek chota aur ek bda hai means dono side mai range mai elements ho skte hai to dono side call karenge, aur current element bhi range mai hai so usko bhi print karenge, sorted order mai print krna hai so inorder mai print krna hoga, as we inorder mai visit krte hue elements sorted order mai hote hai
       pir(node.left, d1, d2);
       System.out.println(node.data);
       pir(node.right, d1, d2);

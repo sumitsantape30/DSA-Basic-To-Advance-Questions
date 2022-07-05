@@ -1,4 +1,6 @@
+We will be given an array of integers and we have to construct a tree using the values in that array.
 
+	
 package GenericTree;
 
 import java.util.ArrayList;
@@ -122,3 +124,10 @@ public class GenericTreeConstructor {
 
 }
 
+Analysis:
+Time Complexity:
+The time complexity of the above solution is O(n) as we are traversing the array which is filled with data of the nodes of the generic tree.
+
+Space Complexity:
+The space complexity of the above code is also O(n) as we have used a stack to create the tree. But, you may wonder why O(n). 
+	Can the stack have n elements in it at a time? Yes, it can. How? Think about this yourself!!!. (We will study this when we will study skewed trees)

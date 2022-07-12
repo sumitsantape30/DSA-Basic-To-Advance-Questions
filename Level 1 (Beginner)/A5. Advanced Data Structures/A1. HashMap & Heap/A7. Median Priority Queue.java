@@ -67,13 +67,13 @@ public class Main {
       if (left.size() == 0 && right.size() == 0) { //agar dono pq khali hai to left mai add kardenge
         left.add(val);
       } else if (left.size() == 0) { //agar left ka size 0 hua aur right ka size non zero hua
-        if (val < right.peek()) { //agar value choti hoti hai right ke peek se to left mai add karenge nhito right mai add karenge
+        if (val < right.peek()) { //agar value choti hoti hai right ke peek se to left mai add karenge nhito right mai add karenge coz sorted array aarha input mai jo agar yeh value right pe peek se choti hai to boviously right mai dalni chahiye
           left.add(val);
-        } else {
+        } else { 
           right.add(val);
         }
-      } else {
-        if ( val < left.peek()) {
+      } else { // agar left ki queue non zero hai 
+        if ( val < left.peek()) { //aur yeh values left ke peek se choti hai to left mai add krdo nhito right mai add krdo
           left.add(val);
         } else {
           right.add(val);
@@ -97,7 +97,7 @@ public class Main {
         return -1;
       }
 
-      if ( left.size() >= right.size()) { 
+      if ( left.size() >= right.size()) { //agar left ki size equal yafir jada ho to median left side mai exist karega to usko remove krdo
         return left.remove();
       }else{
           return right.remove(); 
@@ -110,7 +110,7 @@ public class Main {
         return -1;
       }
 
-      if ( left.size() >= right.size()) { 
+      if ( left.size() >= right.size()) { //agar left ki size jada or equal hai to median left ke peek pe hi rahega
          return left.peek();
       }else{
           return right.peek(); 

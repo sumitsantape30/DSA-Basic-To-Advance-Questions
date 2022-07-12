@@ -97,7 +97,7 @@ public class Main {
         return -1;
       }
 
-      if ( left.size() >= right.size()) { //agar left ki size equal yafir jada ho to median left side mai exist karega to usko remove krdo
+      if ( left.size() >= right.size()) { //agar left ki size equal yafir jada ho to median left side mai exist karega to usko remove krdo. left side ki queue badi tab rahegi jab odd number of elements rahenge even number of elements mai same hi size rahega
         return left.remove();
       }else{
           return right.remove(); 

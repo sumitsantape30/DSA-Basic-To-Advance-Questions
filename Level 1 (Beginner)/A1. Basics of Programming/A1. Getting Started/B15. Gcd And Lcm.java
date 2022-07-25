@@ -42,7 +42,7 @@ public class GCDAndLCM {
 		int div= n1;
 		int dvd= n2;
 		
-		while( div % dvd != 0) { //jabtak remainder 0 nhi ata tabtak hum un dono number pe kam krte rahenge
+		while( dvd % div != 0) { //jabtak remainder 0 nhi ata tabtak hum un dono number pe kam krte rahenge
 			
 			//yad karo: ek divisor tha ek dividend tha, divisor ne divide kiya to remainder aya agli division keliye yeh remainder divisor ban jayega aur purana divisor dividend ban jayega *book dekho*
 			int rem= dvd % div;

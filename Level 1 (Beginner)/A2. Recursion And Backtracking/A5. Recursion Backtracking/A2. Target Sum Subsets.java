@@ -61,7 +61,7 @@ public class Problems {
 	// sos is sum of subset
 	// tar is target
 	public static void printTargetSumSubsets(int[] arr, int idx, String set, int sos, int tar) {
-		if( ssf > tar){ // agar sum so far ki value target se badi hogyi to bas return kardo
+		if( ssf > tar){ // agar sum so far ki value target se badi hogyi to bas return kardo, agar negative values rhi to yeh basecase help karega
 			return;
 		}
 		

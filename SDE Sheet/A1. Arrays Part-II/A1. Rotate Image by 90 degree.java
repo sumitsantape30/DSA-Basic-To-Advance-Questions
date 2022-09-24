@@ -7,7 +7,7 @@ class TUF {
         int rotated[][] = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                rotated[j][n - i - 1] = matrix[i][j];
+                rotated[j][n - i - 1] = matrix[i][j]; //rotated[j] as a row kam kr rha hai aur n-1-i column no, sabse last column mai dalega so on
             }
         }
         return rotated;

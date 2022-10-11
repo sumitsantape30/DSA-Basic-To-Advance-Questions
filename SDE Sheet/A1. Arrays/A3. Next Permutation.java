@@ -1,3 +1,12 @@
+Problem Statement: Given an array Arr[] of integers, rearrange the numbers of the given array into the lexicographically next greater permutation of numbers.
+  
+Input format: Arr[] = {1,3,2}
+
+Output: Arr[] = {2,1,3}
+
+Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2} is {2,1,3}.
+
+
 class Solution {
     public void nextPermutation(int[] A) {
         if(A == null || A.length <= 1) return; // if length of array is null or has single element the next permutation will be he himself
@@ -20,5 +29,6 @@ public void swap(int[] A, int i, int j) {
 
 public void reverse(int[] A, int i, int j) {
     while(i < j) swap(A, i++, j--);
-}
+  }
+  
 }

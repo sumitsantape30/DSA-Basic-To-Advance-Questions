@@ -12,7 +12,7 @@ class Solution {
         if(A == null || A.length <= 1) return; // if length of array is null or has single element the next permutation will be he himself
         
         int i = A.length - 2;
-        while(i >= 0 && A[i] >= A[i + 1]) i--; 
+        while(i >= 0 && A[i] >= A[i + 1]) i--; //yeh loop tabtak chalega jabtak yeh condition false nhi hot, jaisehi yeh false hogi means arr[i] < arr[i+1] wala element mil gya
         if(i >= 0) { // only if we ge the break points, then we again linearly iterate back and we try to find some who is greater than i               
             int j = A.length - 1;              
             while(A[j] <= A[i]) j--;      

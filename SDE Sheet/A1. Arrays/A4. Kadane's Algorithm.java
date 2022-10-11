@@ -112,3 +112,74 @@ class TUF{
         
     }
 }
+
+//===================================== my code================================================
+
+package Arrays;
+
+import java.util.Arrays;
+
+public class setMatrixZeroes {
+	
+	//n^3
+	public static void kadane( int arr[]) {
+		int maxSum= 0;
+		for( int i=0; i< arr.length; i++) {
+			
+			for( int j= i; j< arr.length; j++) {
+				int subsum = 0;
+				for( int k= i; k <= j; k++) {
+					subsum += arr[k];
+					if( subsum > maxSum) {
+						maxSum = subsum;
+					}
+				}
+				
+			}
+		}
+		System.out.println(maxSum);
+	}
+
+	//n^2
+	public static void kadane1( int arr[]) {
+		int sum= 0;
+		for( int i=0; i < arr.length; i++) {
+			int subsum = 0;
+			for( int j= i; j< arr.length; j++) {
+				 subsum += arr[j];
+				 if( subsum > sum) {
+					 sum = subsum;
+				 }
+			}
+		}
+		System.out.println(sum);
+	}
+	
+	//n
+	public static void kadane2( int arr[]) {
+		
+		int sum= 0;
+		int maxi = arr[0];
+		
+		for( int i=0; i< arr.length; i++) {
+			
+			sum += arr[i];
+			if( sum > maxi) {
+				maxi = sum;
+			}
+			
+			if( sum < 0) {
+				sum = 0;
+			}
+			
+		}
+		System.out.println(maxi);
+	}
+	
+
+	public static void main(String[] args) {
+		int arr[]= {1,3,5,4,2};
+		kadane2(arr);
+	}
+
+}

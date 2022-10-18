@@ -20,3 +20,44 @@ Output: 9.26100
 Explanation: You need to calculate 2.10000 raised to 3 which gives ans 9.26100
   
 Code:
+
+package Arrays;
+
+import java.util.Scanner;
+
+public class pow {
+	
+	public static double pow( int x, int n) {
+		
+		double ans= 1.0;
+		long nn = n;
+		
+		if( nn < 0) {
+			nn = -1 * nn;
+		}
+		
+		while( nn > 0) {
+			if( nn % 2 == 1) {
+				ans = ans * x;
+				nn = nn - 1;
+			}else {
+				x = x * x;
+				nn = nn / 2;
+			}
+		}
+		
+		if( n < 0) {
+			ans= (double)(1.0)/ (double)(ans);
+		}
+		
+		return ans;
+	}
+
+	public static void main(String[] args) {
+
+		Scanner s= new Scanner(System.in);
+		int x= s.nextInt();
+		int n = s.nextInt();
+		
+	}
+}

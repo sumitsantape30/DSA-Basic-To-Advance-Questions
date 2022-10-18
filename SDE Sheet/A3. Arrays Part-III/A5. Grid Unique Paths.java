@@ -6,3 +6,4 @@ Input Format: m = 2, n= 2
 Output: 2
 Explanation: From the top left corner there are total 2 ways to reach the bottom right corner
 
+Code:

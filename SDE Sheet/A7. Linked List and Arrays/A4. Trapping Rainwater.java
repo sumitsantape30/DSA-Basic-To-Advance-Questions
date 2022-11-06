@@ -39,7 +39,7 @@ class Solution {
     }
 }
 
-//===================================== Optimised - prefix and suffix arrays =================================
+//===================================== better - prefix and suffix arrays =================================
 
 import java.util.*;
 class TUF {

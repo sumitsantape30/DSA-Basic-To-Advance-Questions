@@ -67,3 +67,47 @@ class TUF {
         System.out.println("The duplicate element is " + trap(arr));
     }
 }
+
+//=========================================== Optimised- two pointers ===========================================
+
+import java.util.*;
+class TUF {
+    static int trap(int[] height) {
+        int n = height.length;
+        //take left and right pointer
+        int left = 0, right = n - 1;
+        int res = 0;//amout of water stored is 0 initially
+        
+        int maxLeft = 0, maxRight = 0; //leftmax and rightmax is 0 initially
+        
+        while (left <= right) {
+            
+            if (height[left] <= height[right]) {//if height of left is lesses than height of right
+                
+                if (height[left] >= maxLeft) {//then we check if current height is grater than maxleft then uodate maxleft
+                    maxLeft = height[left];
+                } else { //if height is lesser than I can say it stores water so add in result
+                    res += maxLeft - height[left];
+                }
+                //and move the left pointer by 1
+                left++;
+                
+            } else {//left height is greater than right
+                
+                if (height[right] >= maxRight) {
+                    maxRight = height[right];
+                } else {
+                    res += maxRight - height[right];
+                }
+                right--;
+            }
+        }
+        return res;
+    }
+
+
+    public static void main(String args[]) {
+        int arr[] = {0,1,0,2,1,0,1,3,2,1,2,1};
+        System.out.println("The duplicate element is " + trap(arr));
+    }
+}

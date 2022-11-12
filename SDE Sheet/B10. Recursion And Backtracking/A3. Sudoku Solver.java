@@ -49,7 +49,7 @@ class Solution {
       if (board[row][i] == c) //pure row mai check karenge
         return false;
 
-      if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) //3*3 ke matrix mai check karenge
+      if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) //3*3 ke matrix mai check karenge. 3 * (row / 3) gives the first block. and i/3 and i%3 gives change in row numbers and change in column numbers
         return false;
     }
     return true;

@@ -8,7 +8,7 @@ Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
 
 Code:
 
-//======================================== Approach 1 =================================
+//======================================== Approach 1 - hum isme column wise queen placed krhe haii =================================
 
 import java.util.*;
 class TUF {
@@ -71,6 +71,7 @@ class TUF {
         }
         return res;
     }
+    
     public static void main(String args[]) {
         int N = 4;
         List < List < String >> queen = solveNQueens(N);

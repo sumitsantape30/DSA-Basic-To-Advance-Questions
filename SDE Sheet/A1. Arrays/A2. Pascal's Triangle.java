@@ -1,3 +1,24 @@
+Example 1:
+
+Input Format: N = 5
+
+Result:
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+
+Explanation: There are 5 rows in the output matrix. Each row corresponds to each one of the rows in the image shown above.
+Example 2:
+
+Input Format: N = 1
+
+Result: 
+    1
+
+Code: 
+
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         

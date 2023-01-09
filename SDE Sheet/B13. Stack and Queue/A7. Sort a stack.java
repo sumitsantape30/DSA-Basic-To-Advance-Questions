@@ -61,3 +61,9 @@ public class code {
 	}
 
 }
+
+//input & output
+Stack before sorting:
+9 3 5 10 
+Stack after sorting:
+3 5 9 10 

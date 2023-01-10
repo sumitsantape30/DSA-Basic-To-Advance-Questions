@@ -92,32 +92,32 @@ class LFUCache {
   
     public void put(int key, int value) { 
         // corner case: check cache capacity initialization
-        if (capacity == 0) {
+        if (capacity == 0) { //if initial capacity given is 0 then return
             return;
         }
 
-        if (cache.containsKey(key)) {
-            DLLNode curNode = cache.get(key);
+        if (cache.containsKey(key)) { //we check if our cache contains this key
+            DLLNode curNode = cache.get(key); //we'll take it and initialise the new value
             curNode.val = value;
-            updateNode(curNode);
+            updateNode(curNode); //since we have accessed this key so frequency will be increased, it'll go the next frequencies list
         }
         else {
-            curSize++;
-            if (curSize > capacity) {
+            curSize++; //currSize will increase coz new element is coming
+            if (curSize > capacity) { //if currSize is grater than capacity means its already full so need to remove someone
                 // get minimum frequency list
-                DoubleLinkedList minFreqList = frequencyMap.get(minFrequency);
-                cache.remove(minFreqList.tail.prev.key);
-                minFreqList.removeNode(minFreqList.tail.prev);
-                curSize--;
+                DoubleLinkedList minFreqList = frequencyMap.get(minFrequency);// whatever is the LFU we'll get that frequency's list
+                cache.remove(minFreqList.tail.prev.key); //in that frequency list there can be multiple variables so make sure to remove the previous of the tail. tail ke previous is the least recently used
+                minFreqList.removeNode(minFreqList.tail.prev); 
+                curSize--; //after removing curreSize will decrease by 1
             }
             // reset min frequency to 1 because of adding new node
-            minFrequency = 1;
-            DLLNode newNode = new DLLNode(key, value);
+            minFrequency = 1; //its a new element so frequency wil be set to 1, it'll be definitely minimum frequency
+            DLLNode newNode = new DLLNode(key, value); //will keep the key and value in doubly linkedlist
 
             // get the list with frequency 1, and then add new node into the list, as well as into LFU cache
-            DoubleLinkedList curList = frequencyMap.getOrDefault(1, new DoubleLinkedList());
-            curList.addNode(newNode);
-            frequencyMap.put(1, curList);
+            DoubleLinkedList curList = frequencyMap.getOrDefault(1, new DoubleLinkedList());//if there exist a list which has frequency 1 we'll take it or we'll make a new doublyLL
+            curList.addNode(newNode);//we'll add this node
+            frequencyMap.put(1, curList);// put in frequencyMap and cache
             cache.put(key, newNode);
         }
     }

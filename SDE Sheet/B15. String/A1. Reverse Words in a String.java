@@ -40,6 +40,7 @@ public class code {
 		int i=0;
 		while(i < str.length()) {
 			
+			//starting mai jo spaces hai unko chhode age badhre
 			while(i < str.length() && str.charAt(i) == ' ')i++;
 			
 			if( i >= str.length()) { //agar i badhake string ki length ke barabr or cross kargya to break the loop
@@ -48,6 +49,7 @@ public class code {
 			
 			int j= i+1;
 			
+			//first word
 			while( j < str.length() && str.charAt(j) != ' ')j++;
 			
 			String word = str.substring(i, j);

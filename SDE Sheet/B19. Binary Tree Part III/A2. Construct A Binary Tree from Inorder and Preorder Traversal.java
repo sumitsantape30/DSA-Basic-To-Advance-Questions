@@ -1,3 +1,9 @@
+Construct A Binary Tree from Inorder and Preorder Traversal
+In this article we will solve the most asked coding interview problem: Construct A Binary Tree from Inorder and Preorder Traversal.
+
+Construct A Binary Tree from Inorder and Preorder Traversal
+
+Given the Inorder and Preorder Traversal of a binary tree, we need to construct the unique binary tree represented by them.
 
 Code:
 

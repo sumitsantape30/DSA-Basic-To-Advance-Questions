@@ -17,7 +17,7 @@ Explanation: The answer is "b", with the length of 1.
   
 Code:
 
-//=================================== Brute Force ==================================
+//=================================== Brute Force (prepare krte time better and optimal hi kiya tha) ==================================
 
 import java.util.*;
 public class Main {

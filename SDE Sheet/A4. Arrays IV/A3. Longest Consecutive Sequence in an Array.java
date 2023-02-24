@@ -33,7 +33,7 @@ public static int longestConsecutive(int[] nums) {
             if(nums[i] == prev+1){
                 cur++;
             }
-            else if(nums[i] != prev){
+            else if(nums[i] != prev){ //bina condition ke bhi you can set cur to 1
                 cur = 1;
             }
             prev = nums[i];
@@ -63,15 +63,15 @@ class TUF {
         int longestStreak = 0;
 
         for (int num: nums) {
-            if (!hashSet.contains(num - 1)) {
-                int currentNum = num;
+            if (!hashSet.contains(num - 1)) { //agar hashset mai piche wala number nhi hai to hi yeh operation karenge aur agar piche wala number hai present to kuch nhi karenge
+                int currentNum = num; //iske piche wala number nhi hai means yahase ek new shuruwat ho skti hai
                 int currentStreak = 1;
 
-                while (hashSet.contains(currentNum + 1)) {
+                while (hashSet.contains(currentNum + 1)) { //jabtak aage wala number exsit krta hai aagr badhte rahenge
                     currentNum += 1;
                     currentStreak += 1;
                 }
-
+                
                 longestStreak = Math.max(longestStreak, currentStreak);
             }
         }

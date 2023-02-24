@@ -62,13 +62,14 @@ public class Main {
         int l = 0;
         for (int r = 0; r < str.length(); r++) // outer loop for traversing the string
         {
-            if (set.contains(str.charAt(r))) //if duplicate element is found
+            if (set.contains(str.charAt(r))) //if duplicate element is found. duplicate element hai iss range mai to l ko aage badhao, then jo new range hogi usme repeating character nhi hoga
             {
-                while (l < r && set.contains(str.charAt(r))) { 
+                while (l < r && set.contains(str.charAt(r))) {  //jabtak yeh r present hai set mai means duplicate hai to l ko remove krte rahenge aur l ko aage badhate rahenge
                     set.remove(str.charAt(l));
                     l++;
                 }
             }
+         //agar r exist nhi krta set mai means l-r ek range hai jisme character repeat nhi hai to iss character ko set mai daldo aur length update karo
             set.add(str.charAt(r));
             maxans = Math.max(maxans, r - l + 1);
         }

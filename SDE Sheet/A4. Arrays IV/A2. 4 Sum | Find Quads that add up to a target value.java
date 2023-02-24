@@ -61,6 +61,7 @@ class Solution {
                         res.add(quad);
                     
                         // Processing the duplicates of number 3, quad mai jo front pe element dala hai aur abhi jo aya hai agar same hai to just move forward
+                      //abhi jo element dala hai uske bad mai bhi agar uske duplicates honge to unke aage jayenge
                         while (front < back && num[front] == quad.get(2)) ++front;
                     
                         // Processing the duplicates of number 4

@@ -39,27 +39,30 @@ class TUF {
 }
 
 //===================================== Optimised Approach ================================
-
+//xor nikalenge then check karenge ki Y (xor^b) map mai present hai ya nhi, agar present nhi hai to kuch nhi karenge aur present hai to uski value count mai dalenge
+				   
 import java.io.*;
 import java.util.*;
 public class Solution {
     public int solve(int[] A, int B) {
-     HashMap<Integer,Integer> visited = new HashMap<Integer,Integer>(); 
+     HashMap<Integer,Integer> visited = new HashMap<Integer,Integer>(); //it'll store prefix xor and how many times does it appear
         int c = 0; //count
         int cpx = 0; //will store prefix xor
         int n = A.length;
         for(int i = 0;i<n;i++) { //linearly traverse in the array
             cpx = cpx ^ A[i]; //we'll keep taking XOR whenever we have new element
             
-            //after this we'll check for value Y 
+            //after this we'll check for value Y. Y= XR ^ K  agar yeh Y map mai present hai to 
             if(visited.get(cpx^B) != null) //prefix xor aur B ka xor agar hashamap mai already hai to uski value not null hai to usko count mai dal denge
                 c += visited.get(cpx ^ B); // how many times cpx^B appears you can get it and add in count
           
             if(cpx == B) { // aur agar current prefix xor B ke equal hai tonhi count badhana padega because you need to consider prefix subarray also
+		    //cpx ek subarray ka xor hai
                 c++; 
             }
-          //after this you need to add it in hashmap, simply get the previous value and add 1 to it else keep the frequency as it is
-            if(visited.get(cpx) != null) 
+		
+          //after this you need to add current prefix xor in hashmap, simply get the previous value and add 1 to it else keep the frequency as it is
+            if(visited.get(cpx) != null) //agar yeh 
                 visited.put(cpx, visited.get(cpx) + 1); 
             else 
                 visited.put(cpx, 1); 

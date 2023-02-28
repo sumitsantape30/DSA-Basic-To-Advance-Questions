@@ -59,8 +59,9 @@ class GfG
                 if(mpp.get(sum) != null) { // checking if sum exists in hashmap or not
 
                     maxi = Math.max(maxi, i - mpp.get(sum)); //if it does exsit I'll get the index where it is existing and substract it with current index to get the length and I simply compare it with previous maximum and if it is excceeds I'll update maximum
-                }
-                else {//if not present i'll put it in hashmap
+                  //map mai yeh already present hai matlab yeh sum pehle aayi hai to last sum ka index and current index se length nikalo and compare. coz pehle sum aayi means bichka subarray ki sum 0 hui.
+		}
+                else {//if not present matlab yeh sum pehli bar arha hai to map mai push krdo
 
                     mpp.put(sum, i); 
                 }

@@ -97,8 +97,13 @@ Code:
 		
 		return result*sign;
     }
-}                                                                                            
+} 
+											     
+In the context of the code you provided earlier, Integer.MAX_VALUE/10 is used as a threshold value to check if adding the next digit to the result will 
+cause an integer overflow. If the result is already greater than Integer.MAX_VALUE/10, adding the next digit will definitely cause an overflow, so the 
+code checks the next digit to determine if an overflow will occur or not.											   
 
+Detailed Info											     
 When we divide Integer.MAX_VALUE by 10, we get the maximum value that result can have without overflowing when we add the next digit. 
 This is because the maximum value of a digit is 9, so if result is less than Integer.MAX_VALUE / 10, then we know that adding any digit to result will not cause an overflow.
 

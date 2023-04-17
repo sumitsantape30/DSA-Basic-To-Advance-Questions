@@ -84,6 +84,7 @@ Code:
 			int digit = s.charAt(i)- '0';
 			//ab overflow check karenge
 			if(result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE/10 && digit > Integer.MAX_VALUE % 10)) {
+				// 
 				//yeh conditions true hui means overflow
 				return (sign == 1)? Integer.MAX_VALUE: Integer.MIN_VALUE; //agar positive number hai to max number return karo. negative number hai to min value return krdo
 			}
@@ -96,3 +97,17 @@ Code:
 		return result*sign;
     }
 }                                                                                            
+
+When we divide Integer.MAX_VALUE by 10, we get the maximum value that result can have without overflowing when we add the next digit. 
+This is because the maximum value of a digit is 9, so if result is less than Integer.MAX_VALUE / 10, then we know that adding any digit to result will not cause an overflow.
+
+For example, if result is 214748364, which is less than Integer.MAX_VALUE / 10 (i.e., 214748364.7), then we can safely add any digit from 0 to 9 to result 
+without causing an overflow. If we add a digit less than or equal to 7, then the result will be less than Integer.MAX_VALUE, and if we add a digit greater 
+than 7, then the result will overflow to a value greater than Integer.MAX_VALUE.
+
+On the other hand, if result is equal to Integer.MAX_VALUE / 10, then we need to check the next digit to determine if adding it would cause an overflow. 
+This is because the maximum value of the last digit that can be added to result without causing an overflow is 7. If the next digit is less than or equal to 7, 
+ then adding it will not cause an overflow, but if it is greater than 7, then adding it will result in an overflow.
+
+Therefore, by checking if result is less than Integer.MAX_VALUE / 10, and also checking the next digit if result is equal to Integer.MAX_VALUE / 10, 
+we can determine if adding the next digit will result in an overflow or not, without actually adding the next digit.											     

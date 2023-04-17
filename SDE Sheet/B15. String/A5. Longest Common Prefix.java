@@ -57,14 +57,16 @@ public class code {
 		for( int i=0; i< minLen; i++) {
 			
 			char curr = strs[0].charAt(i); //har string ka 0th character same rehna chahiye. apn yaha 0th index pe rakhi string ka har ek character baki strings mai dekh rhe hai
+			//curr mai first string ka first character dal diya.
 			
 			System.out.println(curr);
-			for( int j= 1; j< n; j++) {
+			for( int j= 1; j< n; j++) { //yeh jo first character hai curr isko rest of string ke first character ke sath compare krhe
 				
-				if(strs[j].charAt(i) != curr) {
+				if(strs[j].charAt(i) != curr) { // agar yeh character same nhi hai to jitne character same the woh result mai honge to use return krdo
 					return result;
 				}
 			}
+			//curr yeh pehla character agar sari string ke first character ke equal hai to yeh character humare result ka part banega to ise result mai daldo.
 			
 			result += curr;
 			

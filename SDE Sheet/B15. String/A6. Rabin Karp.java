@@ -83,3 +83,27 @@ class Solution {
         return hashValue;
     }
 }
+
+//=========================================== Chatgpt ==============================================
+
+public static int repeatedStringMatch(String a, String b) {
+    // Calculate the hash value of the pattern
+    int bHash = b.hashCode();
+
+    int aLen = a.length(), bLen = b.length();
+    int maxRepeats = (bLen / aLen) + 2; // Maximum number of times a can be repeated to obtain b
+    int aHash = a.hashCode();
+
+    // Repeat a and compare the hash values until the hash values match or the maximum number of repeats is reached
+    for (int i = 1; i <= maxRepeats; i++) {
+        if (aHash == bHash && b.startsWith(a)) {
+            return i;
+        }
+        aHash = (aHash * 31 + a.hashCode()) % 1000000007; // Using a prime number to avoid hash collisions
+        a += a;
+    }
+
+    return -1;
+}
+
+

@@ -8,7 +8,12 @@ Read in next the characters until the next non-digit character or the end of the
 Convert these digits into an integer (i.e. "123" -> 123, "0032" -> 32). If no digits were read, then the integer is 0. Change the sign as necessary (from step 2).
 If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then clamp the integer so that it remains in the range. Specifically, integers less than -231 should be clamped to -231, and integers greater than 231 - 1 should be clamped to 231 - 1.
 Return the integer as the final result.
+			
+The range of integers that can be represented using a 32-bit signed integer in computing is from -2,147,483,648 (-2^31) to 2,147,483,647 (2^31 - 1).
+This range is because a signed 32-bit integer uses 31 bits for the actual number and 1 bit for the sign (positive or negative).
+											     
 Note:
+										
 
 Only the space character ' ' is considered a whitespace character.
 Do not ignore any characters other than the leading whitespace or the rest of the string after the digits.

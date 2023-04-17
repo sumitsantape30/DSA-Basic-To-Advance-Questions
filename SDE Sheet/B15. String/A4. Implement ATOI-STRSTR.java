@@ -87,6 +87,7 @@ Code:
 				// 
 				//yeh conditions true hui means overflow
 				return (sign == 1)? Integer.MAX_VALUE: Integer.MIN_VALUE; //agar positive number hai to max number return karo. negative number hai to min value return krdo
+				//yaha aaye means overflow hua hai ab dekhenge positive side overflow hua yafir negative. sign=1 hai means negative side overflow hua to return Integer.MIN_VALUE
 			}
 			
 			//aur agar yeh overflow nhi hota hai to digit ko result mai daldo

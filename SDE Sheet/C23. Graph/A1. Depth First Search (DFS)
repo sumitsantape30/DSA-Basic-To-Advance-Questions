@@ -1,0 +1,88 @@
+Problem Statement: Given an undirected graph, return a vector of all nodes by traversing the graph using depth-first search (DFS).
+
+Pre-req: Recursion, Graph Representation
+
+Examples:
+
+Example 1:
+Input:
+
+Output: 1 2 4 5 3
+Example 2:
+Input:
+
+Output: 1 2 3 4 5 6 7 8 9 10
+Solution
+Disclaimer: Don’t jump directly to the solution, try it out yourself first.
+
+Approach:
+DFS is a traversal technique which involves the idea of recursion and backtracking. DFS goes in-depth, i.e., traverses all nodes by going ahead, and when there are no further nodes to traverse in the current path, then it backtracks on the same path and traverses other unvisited nodes. 
+
+In DFS, we start with a node ‘v’, mark it as visited and store it in the solution vector. It is unexplored as its adjacent nodes are not visited.
+We run through all the adjacent nodes, and call the recursive dfs function to explore the node ‘v’ which has not been visited previously. This leads to the exploration of another node ‘u’ which is its adjacent node and is not visited. 
+The adjacency list stores the list of neighbours for any node. Pick the neighbour list of node ‘v’ and run a for loop on the list of neighbours (say nodes ‘u’ and ‘w’ are in the list). We go in-depth with each node. When node ‘u’ is explored completely then it backtracks and explores node ‘w’.
+This traversal terminates when all the nodes are completely explored. 
+
+Code:
+package Codes;
+
+import java.util.*;
+import java.io.*;
+
+public class ques {
+	
+	
+	public static void dfs(int node, boolean visited[], ArrayList<Integer> ans, ArrayList<ArrayList<Integer>> adj ) {
+		//aatehi usko visited mark krdenge, ans mai daldenge aur unvisited neighbours pe call karenge.
+		
+		visited[node]= true;
+		ans.add(node);
+		
+		for(Integer neibhour : adj.get(node)) {
+			
+			if( visited[neibhour] == false) {
+				dfs(neibhour, visited, ans, adj);
+			}
+		}
+	}
+	
+	//v is the total number of nodes.
+    // Function to return a list containing the DFS traversal of the graph.
+	public static ArrayList<Integer> dfsOfGraph(int v, ArrayList<ArrayList<Integer>> adj){
+		
+		boolean visited[]= new boolean[v+1];
+		ArrayList<Integer> ans = new ArrayList<>();
+		//0 is my starting node. starting node kuch bhi reh skta hai
+		dfs(0, visited, ans, adj);
+		return ans;
+		
+	}//In Java, when you initialize an array of objects (such as Boolean[]), the default value for each element is null. In your dfsOfGraph method, you are creating the visited array with Boolean objects, but you haven't assigned any values to the elements.
+     //To fix the issue, you need to explicitly initialize each element of the visited array to false before using it in the dfs method. 
+
+	public static void main(String[] args) {
+		
+		//pehle adjacancy matrix banayenge
+		
+		 ArrayList < ArrayList < Integer >> adj = new ArrayList < > ();
+	        for (int i = 0; i < 5; i++) {
+	            adj.add(new ArrayList < > ());
+	        }
+	        adj.get(0).add(2);
+	        adj.get(2).add(0);
+	        adj.get(0).add(1);
+	        adj.get(1).add(0);
+	        adj.get(0).add(3);
+	        adj.get(3).add(0);
+	        adj.get(2).add(4);
+	        adj.get(4).add(2);
+	        
+	        //visited array banane keliye number of nodes bhi pass karenge
+	        ArrayList < Integer > ans = dfsOfGraph(5, adj);
+	        int n = ans.size(); 
+	        for(int i = 0;i<n;i++) {
+	            System.out.print(ans.get(i)+" "); 
+	        }
+	        
+	}
+
+}

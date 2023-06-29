@@ -1,8 +1,7 @@
+Problem Statement: Given a DAG( Directed Acyclic Graph ), print all the vertex of the graph in a topologically sorted order. If there are multiple solutions, print any.
 
-//Summary
-
-
-
+Pre-req: DFS traversal, Graphs, Stack data structure.
+	
 Code:
 
 package Codes;

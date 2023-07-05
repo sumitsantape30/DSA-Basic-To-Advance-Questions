@@ -3,7 +3,7 @@ Problem Statement: Given an adjacency list of a graph adj of V no. of vertices h
 If we are able to colour a graph with two colours such that no adjacent nodes have the same colour, it is called a bipartite graph.
 
 Code:
-
+	
 package Codes;
 
 import java.util.*;
@@ -34,7 +34,7 @@ public class ques {
 				
 				//if adjacent node is yet not coloured you will give the opposite colour to that node
 				if( colour[adjacent] == -1) {
-					colour[adjacent] = colour[node];
+					colour[adjacent] = 1- colour[node]; //// Assign opposite color to adjacent vertex
 					que.add(adjacent);
 					
 				}else if(colour[adjacent] == colour[node]) { //but agar woh already coloured hai then we'll check if adjacent nodes colour is equal to my colour

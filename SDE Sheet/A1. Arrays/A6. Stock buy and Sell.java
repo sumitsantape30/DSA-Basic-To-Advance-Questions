@@ -22,14 +22,16 @@ class Solution {
 class Solution {
     public int maxProfit(int[] prices) {
         
-        int maxProf = 0;
-        int minPrice = Integer.MAX_VALUE;
+        int maxProf = 0; //represents the maximum profit that can be achieved.
+        int minPrice = Integer.MAX_VALUE; //This variable is used to keep track of the minimum price seen so far while iterating through the prices array. It is initialized to Integer.MAX_VALUE, which is the maximum possible value for an integer in Java.
+       
         for( int i=0; i< prices.length; i++){
             
-            if( prices[i] < minPrice){
+            if( prices[i] < minPrice){ //jo minPrice rahegi uspe mai kharidunga
                 minPrice = prices[i];
                 
-            }else if( prices[i] - minPrice > maxProf){
+            }else if( prices[i] - minPrice > maxProf){ //agar current day ki price mere minimun se jada hai means iss din mai bech skta hu agar woh profit jada dega to
+                //so profit jada dega ki nhi check karenge
                 maxProf = prices[i] - minPrice;
             } 
         }

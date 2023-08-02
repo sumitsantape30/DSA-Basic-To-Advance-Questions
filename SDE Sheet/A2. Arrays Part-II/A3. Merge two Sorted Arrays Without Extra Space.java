@@ -213,13 +213,13 @@ public class setMatrixZeroes {
 		      }
 		      j++;
 		      i++;
-		    }
+		    } // j m+n ko cross krgya means humne ek gap ke liye ek operation perform krliya ab gap ko update krna pdega
 		    if (gap == 1) {
 		      gap = 0;
 		    } else {
 		      gap =(int) Math.ceil((double) gap / 2.0);
 		    }
-		  }
+	       }
 	}
 
 	public static void main(String[] args) {

@@ -82,12 +82,12 @@ public class MergeOverlapInterview {
 			//agar this aur other barabr hai to return karenge 0
 			// this < other se to aap return karenge -ve value
 			if( this.st != other.st) { // agar donoke start time equal nhi hai
-				return this.st - other.st;
-			}else {
-				return this.et - other.et;
+				return this.st - other.st; //this.st bada rha to positive value return hogi means decreasing, this.st chota rha to negative value return hogi means increaing
+			}else { //agar donoka start time same hai to unka difference 0 hoga so end time ka difference return karenge
+				return this.et - other.et; // [1,2] [1,4] isme st same hai donoka
 			}
 		}
-	}
+	} //By implementing the Comparable interface and providing the compareTo method, you enable Java's built-in sorting methods to work with instances of your Pair class seamlessly.
 	
 	
 	public static void mergeOverlappingIntervals(int arr[][]) {
@@ -99,7 +99,7 @@ public class MergeOverlapInterview {
 		}
 		
 		//ab mai chahta hu isko sort karna
-		Arrays.sort(pairs); // mai chhata hu pairs array sort hojaye aur start time pe sort hojaye
+		Arrays.sort(pairs); // mai chhata hu pairs array sort hojaye aur start time pe sort hojaye. Arrays.sort() internally compareTo method use krti hai sort krne keliye so humne nayi compareTo method implement ki hai humare tarike se
 		//java ek integers ke array ko sort krdeti hai but woh apke objects ke array ko sort nhi kr skti to aapko usko batana padega ki sort karo aur kisko chota manna aur kisko bada manna
 	   //see comparable
 		

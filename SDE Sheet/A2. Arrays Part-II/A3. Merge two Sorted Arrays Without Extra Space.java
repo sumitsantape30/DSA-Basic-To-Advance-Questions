@@ -240,3 +240,18 @@ public class setMatrixZeroes {
 
 }
 
+if (j < n && arr1[i] > arr1[j]): This condition checks if the variable j is less than n (where n is the size of the array arr1). 
+It also verifies whether the element at index i in arr1 is greater than the element at index j in arr1. If both conditions are true, 
+the code executes the swap operation between arr1[i] and arr1[j]. This means that if the current element at index i in arr1 is greater than 
+the element at index j, it swaps the positions of these two elements to maintain a non-decreasing order in arr1.
+
+else if (j >= n && i < n && arr1[i] > arr2[j - n]): This condition checks if j is greater than or equal to n (indicating we have moved beyond 
+the elements of arr1) and if i is less than n (indicating we are still within the elements of arr1). 
+Additionally, it verifies whether the element at index i in arr1 is greater than the element at index j - n in arr2 (since we have moved to 
+the elements of arr2). If all these conditions are true, the code executes the swap operation between arr1[i] and arr2[j - n]. This means that if the current element at index i in arr1 is greater than the element at index j - n in arr2, it swaps the positions of these two elements to maintain a non-decreasing order in both arrays.
+
+else if (j >= n && i >= n && arr2[i - n] > arr2[j - n]): This condition checks if both j and i are greater than or equal to n 
+(indicating we are within the elements of arr2). It also verifies whether the element at index i - n in arr2 (to access elements of arr2 
+correctly) is greater than the element at index j - n in arr2. If both conditions are true, the code executes the swap operation between 
+arr2[i - n] and arr2[j - n]. This means that if the current element at index i - n in arr2 is greater than the element at index j - n in arr2, 
+it swaps the positions of these two elements to maintain a non-decreasing order in arr2.

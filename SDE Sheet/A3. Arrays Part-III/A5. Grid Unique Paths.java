@@ -73,9 +73,11 @@ public class uniqueGrids {
     
     //optimised solution - combination
     public  int uniquePaths3(int m, int n) {
-        int N = n + m - 2;
-        int r = m - 1;
-        double res = 1;
+        int N = n + m - 2; //Calculate the total number of steps required to reach the destination (bottom-right corner) from the top-left corner, considering only right and down movements. Since there are m-1 right moves and n-1 down moves, the total number of steps required is m-1 + n-1 = m + n - 2, which is stored in the variable N.
+        int r = m - 1; //Calculate the number of right moves (r) required to reach the bottom-right corner from the top-left corner. The number of right moves is equal to m - 1, as there are m columns and you start at the first column (0-indexed). The variable r holds this value.
+	//left moves bhi le skte ho right ki jagah
+	    
+        double res = 1; //Initialize a variable res with a value of 1. This variable will store the result, representing the total number of unique paths.
 
          for( int i = 1; i<= r; i++){
              res = res * (N - r + i) / i;

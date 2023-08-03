@@ -32,6 +32,36 @@ Explanation: As the given integer(target) does not exist in the given 2D matrix,
   
 Code:
 
+	//========================Optimal ===============================
+
+public static void searchin2D( int arr[][], int data) {
+		int n= arr.length;
+		// mai bottom left se start karunga
+		int i= arr.length-1;
+		int j= 0;
+		
+		while( i >=0 && j < n) { // hum niche i-- kr rhe so -- krte krte 0 na hojaye aur j++ krte krte range ke bahar to nhi gyi dekhna padega and tabtak kam karenge
+			//so tabtak kam karenge jabtak i and j range mai honge
+			
+			if( arr[i][j] == data ){ //agar aar[i][j] == data hai to i and j print kar denge aur return kar denge
+				System.out.print(i);
+				System.out.print(j);
+				return;
+			}else if( arr[i][j] < data) { //agar arr[i][j] data se chota hai, usse upar ussebhi chote elements honge isliye right mai jao so j++
+				j++;
+				
+			}else {
+				i--;
+			}
+			
+		}
+		
+		//element nhi mila to not found
+		System.out.print("Not Found");
+		
+	}
+
+//=========================Optimised ======================================================================
 
 	public boolean searchMatrix( int matrix[][], int target) {
 		

@@ -39,15 +39,15 @@ public class Main {
     }
     ArrayList < Integer > ans = new ArrayList < Integer > ();
 
-    //count already krliya to firse krne ki jarurat nhi hai
-    /*count1 = 0;
+    // [2,2,1,3] hum donoka count decrease krhe hote hai upar to jo majority element hai uska bhi kam hojata hai isliye jo potential numbers mile hai unko firse count nikalenge aur jo > n/3 hoga unko answer mai dalenge
+    count1 = 0;
     count2 = 0;
     for (int i = 0; i < len; i++) {
       if (nums[i] == number1)
         count1++;
       else if (nums[i] == number2)
         count2++;
-    } */
+    } 
     
     if (count1 > len / 3)
       ans.add(number1);

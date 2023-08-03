@@ -17,6 +17,10 @@ public class Main {
   public static ArrayList < Integer > majorityElement(int[] nums) {
 
     int number1 = -1, number2 = -1, count1 = 0, count2 = 0, len = nums.length;
+    //The reason for having variable is because there can be at most two elements that appear more than n/3 times in the array.
+   // consider the case where there are more than three elements that appear more than n/3 times. In this scenario, it's not possible for each of those elements to appear strictly more than n/3 times, as that would make the total count of those elements greater than n, which is not possible in a valid array. 
+    //  Hence, there can be at most two elements that appear more than n/3 times hence we take two variables.
+    
     for (int i = 0; i < len; i++) {
       if (nums[i] == number1)
         count1++;

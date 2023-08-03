@@ -26,13 +26,28 @@ package Arrays;
 import java.util.Scanner;
 
 public class pow {
+
+	//recursion
+       public static int powerLinear(int x, int n) {
+		
+		if( n == 0) {
+			return 1;
+		}
+		
+		int xnm1= powerLinear(x , n-1);
+		int pow= xnm1 * x;
+		return pow;
+	}
+
+	//logarithmic
+
 	
 	public static double pow( int x, int n) {
 		
 		double ans= 1.0;
 		long nn = n;
 		
-		if( nn < 0) {
+		if( nn < 0) { 
 			nn = -1 * nn;
 		}
 		
@@ -46,7 +61,7 @@ public class pow {
 			}
 		}
 		
-		if( n < 0) {
+		if( n < 0) { //agar n pehle negative tha to reciprocal of ans return hoga. n^-3 = 1 / x^3
 			ans= (double)(1.0)/ (double)(ans);
 		}
 		

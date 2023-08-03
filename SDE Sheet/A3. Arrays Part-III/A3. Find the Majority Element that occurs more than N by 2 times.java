@@ -43,6 +43,10 @@ class Solution {
     //most optimal - TC: n, SC: 1
     public int majorityElement(int[] nums) {
 
+	    //In the case of a n/2 majority element, there can be only one element that appears more than n/2 times in the array. 
+	    // In other words, the majority element must have a count strictly greater than half of the array size.
+	    //hence we take only one variable to collect that one element.
+	    
         int count =0; //It keeps track of the current candidate element's count.
         int ele=0; //It keeps track of the current candidate element itself.
 

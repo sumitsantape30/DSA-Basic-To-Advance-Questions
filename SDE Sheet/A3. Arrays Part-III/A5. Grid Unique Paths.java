@@ -80,7 +80,7 @@ public class uniqueGrids {
         double res = 1; //Initialize a variable res with a value of 1. This variable will store the result, representing the total number of unique paths.
 
          for( int i = 1; i<= r; i++){
-             res = res * (N - r + i) / i;
+             res = res * (N - r + i) / i; //The binomial coefficient C(N - r + i, i) represents the number of ways to choose i right movements out of N - r + i total movements required to reach the destination. It is calculated using the formula C(n, k) = n! / (k! * (n - k)!).
          }
          return (int)res;
 

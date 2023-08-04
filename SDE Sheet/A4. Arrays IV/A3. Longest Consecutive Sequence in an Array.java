@@ -33,7 +33,7 @@ public static int longestConsecutive(int[] nums) {
             if(nums[i] == prev+1){
                 cur++;
             }
-            else if(nums[i] != prev){ //bina condition ke bhi you can set cur to 1
+            else  {                      //if(nums[i] != prev){ //bina condition ke bhi you can set cur to 1
                 cur = 1;
             }
             prev = nums[i];

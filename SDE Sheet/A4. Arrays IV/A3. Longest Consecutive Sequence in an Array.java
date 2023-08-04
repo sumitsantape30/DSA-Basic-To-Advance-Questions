@@ -19,7 +19,7 @@ Code:
 import java.util.*;
 class TUF{
 public static int longestConsecutive(int[] nums) {
-        if(nums.length == 0 || nums == null){
+        if(nums == null || nums.length == 0 ){
             return 0;
         }
         

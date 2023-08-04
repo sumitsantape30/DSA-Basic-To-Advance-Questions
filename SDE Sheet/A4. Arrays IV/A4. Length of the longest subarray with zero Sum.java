@@ -64,6 +64,7 @@ class GfG
                 else {//if not present matlab yeh sum pehli bar arha hai to map mai push krdo
 
                     mpp.put(sum, i); 
+			//sum abtak ka sum means prefix sum hi hai jo store horha hai map mai with its index
                 }
             }
         }

@@ -27,7 +27,7 @@ public static int longestConsecutive(int[] nums) {
         
         int ans = 1;
         int prev = nums[0];
-        int cur = 1;
+        int cur = 1; //this is the length of longest sequence
         
         for(int i = 1;i < nums.length;i++){
             if(nums[i] == prev+1){

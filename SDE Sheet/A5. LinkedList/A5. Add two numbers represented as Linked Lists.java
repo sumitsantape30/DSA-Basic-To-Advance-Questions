@@ -48,4 +48,34 @@ class Solution {
         }
         return dummy.next;
     }
+
+    public static void display(Node head) {
+		Node temp = head;
+		
+		while( temp != null) {
+			
+			System.out.print(temp.data);
+			if(temp.next != null) {
+				System.out.print("->");
+			}
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		
+		Node node= new Node(2);
+		node.next = new Node(4);
+		node.next.next = new Node(3);
+		
+		Node node2= new Node(5);
+		node2.next = new Node(6);
+		node2.next.next = new Node(4);
+		
+		Node ans = addLinkedList(node, node2);
+		display(ans);
+
+	}
+
 }

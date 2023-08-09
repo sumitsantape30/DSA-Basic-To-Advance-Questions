@@ -37,3 +37,6 @@ class Solution {
         return slow;
     }
 }
+
+//[1,2,3,4,5,6] iss case mai hum chahte hai mid 4 ho and not 3 isiliye fast.next != null use kiya 
+//agar hume 3 mid chahiye hota to fast.next != null && fast.next.next != null yeh conditions dalte

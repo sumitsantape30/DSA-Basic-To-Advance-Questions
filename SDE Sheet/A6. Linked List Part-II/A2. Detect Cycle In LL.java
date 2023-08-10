@@ -20,7 +20,7 @@ Code:
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        
+        //ll pe traverse karenge aur woh node set mai already hai means cycle hai, agar already present nhi hai to set mai dalenge
         HashSet<ListNode> set = new HashSet<>();
         ListNode temp = head;
         while( temp != null){

@@ -44,17 +44,18 @@ class Solution {
 
 //===================================== Optimal Approach ==================================
 
-static Node reverse(Node ptr) {
-    Node pre=null;
-    Node nex=null;
-    while(ptr!=null) {
-        nex = ptr.next;
-        ptr.next = pre;
-        pre=ptr;
-        ptr=nex;
-    }
-    return pre;
-}
+public static Node reverse(Node curr) { // pointer iterative
+
+		Node pre = null; // This will store the previous node in the reversed list
+		Node nex = null; // This will temporarily store the next node of the current node
+		while (curr != null) {
+			nex = curr.next; // Store the next node of the current node
+			curr.next = pre; // Update the next pointer of the current node to point to the previous node
+			pre = curr; // Move the 'pre' pointer to the current node
+			curr = nex; // Move the 'ptr' pointer to the next node
+		}
+		return pre;
+	}
 
 static boolean isPalindrome(Node head) {
     if(head==null||head.next==null) return true; //if LL is null or if its consisting of single element

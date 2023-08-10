@@ -61,3 +61,48 @@ static Node intersectionPresent(Node head1,Node head2) {
     
     return d1;
 }
+
+//=============================== Optimal 2 =============================================
+
+public static int size(Node head) {
+		Node temp = head;
+		int size= 0;
+		while( temp != null) {
+			size++;
+			temp = temp.next;
+		}
+		return size;
+	}
+	
+	public static Node intersectionOptimised(Node head1, Node head2) {
+		
+		int size1 = size(head1);
+		int size2 = size(head2);
+		
+		int delta = Math.abs(size2- size1);
+		
+		Node d1= head1;
+		Node d2= head2;
+		
+		if( size1 > size2) {
+			
+			for( int i=0; i< size1; i++) {
+				d1 = d1.next;
+			}
+			
+		}else {
+			
+			for( int i=0; i< size2; i++) {
+				d2 = d2.next;
+			}
+			
+		}
+		
+		while( d1 != d2) {
+			d1 = d1.next;
+			d2 = d2.next;
+		}
+		
+		return d1;
+		
+	}

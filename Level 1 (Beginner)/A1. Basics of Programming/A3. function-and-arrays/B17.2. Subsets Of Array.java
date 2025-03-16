@@ -25,11 +25,13 @@ public class Problems {
 			
 			// iske bad har ek number(index) ka binary conversion chahiye
 			int bn= decTobn(2, i);
+			//The binary representation of the integer i needs to have the same number of bits as the number of elements in the array (arr.length).
 			
 			// ab woh binary number ke upar traverse karna hai left to right aur decide karna hai woh digit print hoga ya nhi
 			
 			int div= (int)Math.pow(10, arr.length-1 ); //pehli bar keliye divisor ki yeh value hogi
-			
+
+			//Why the Binary Length Matches the Array Length? read at the bottom of this page
 			for( int j=0; j< arr.length; j++) { // yeh loop utni bar chalega jitne array ke elements hai
 				// ab quotient aur remainder nikalunga
 				int q= bn / div;
@@ -75,4 +77,10 @@ public class Problems {
 		subset(arr);
 	}
 }
+
+//Why the Binary Length Matches the Array Length:
+//The key is the number of bits required to represent the number i:
+
+//A binary number i will always be padded with leading zeroes to match the length of the array. This is what ensures that every subset has a binary representation with exactly n bits.
+//If you are converting i into a binary number, i will be treated as a base-2 number, and the number of bits needed to represent it will be padded to match the length of the array (arr.length).
 

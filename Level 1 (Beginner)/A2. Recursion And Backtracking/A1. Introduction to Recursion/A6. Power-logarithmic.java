@@ -41,7 +41,7 @@ public class logarithmicPower {
 		//yeh kaafi hai jab n even hai
 		
 		// but agar yeh odd hai to ek bar x se multiply karna padega
-		if( x % 2 == 1) { 
+		if( n % 2 == 1) { 
 			xn *= x;
 		}
 		return xn;

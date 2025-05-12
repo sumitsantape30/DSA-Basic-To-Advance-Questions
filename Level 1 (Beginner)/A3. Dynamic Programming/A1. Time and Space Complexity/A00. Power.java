@@ -21,7 +21,7 @@ public static int Power(int x, int n) {
 		
 		int xn= Power(x, n/2)*Power(x, n/2); 
 		
-		if( x % 2 != 1) { 
+		if( n % 2 != 1) { 
 			xn *= x;
 		}
 		return xn;
@@ -36,7 +36,7 @@ public static int Power(int x, int n) {
 		int xpnb2= Power(x, n/2); 
 		int xn= xpnb2* xpnb2;
 		
-		if( x % 2 == 1) { 
+		if( n % 2 == 1) { 
 			xn *= x;
 		}
 		return xn;

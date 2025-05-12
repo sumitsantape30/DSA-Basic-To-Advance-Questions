@@ -1,0 +1,25 @@
+====================1==================================
+int xn = Power(x, n/2) * Power(x, n/2);
+You're calling Power(x, n/2) twice, so the recurrence becomes:
+
+T(n)=2T(n/2)+O(1)
+
+This solves to:
+T(n)=O(n)
+
+==================2=============================
+for 3 recursive calls
+
+T(n) = number of recursive calls made to printStairPaths(n, asf)
+
+Each call branches into three recursive calls:
+
+T(n)=T(n−1)+T(n−2)+T(n−3)
+
+The time complexity of this recurrence grows exponentially, specifically:
+T(n)=O(3^n)
+This is because at each level of recursion, there are up to 3 calls, and the recursion depth is proportional to n.
+
+=========================3============================
+
+

@@ -35,6 +35,9 @@ import java.util.Scanner;
 
 public class CountSort {
 
+	//When to use Counting Sort? : You have lots of numbers, but they lie within a small range.\
+	//For example: 10 lakh students giving JEE, but scores are between 0–360.
+
 	//simple chatgpt code
 	public static void countSort(int arr[]) {
 	        int max = Integer.MIN_VALUE;

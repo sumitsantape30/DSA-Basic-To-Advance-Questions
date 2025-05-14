@@ -34,6 +34,34 @@ package TimeAnsSpace;
 import java.util.Scanner;
 
 public class CountSort {
+
+	//simple chatgpt code
+	public static void countSort(int arr[]) {
+	        int max = Integer.MIN_VALUE;
+	        int min = Integer.MAX_VALUE;
+	
+	        // Step 1: Find max and min
+	        for (int val : arr) {
+	            if (val > max) max = val;
+	            if (val < min) min = val;
+	        }
+	
+	        // Step 2: Create frequency array of size (max - min + 1)
+	        int[] freqarr = new int[max - min + 1];
+	        for (int val : arr) {
+	            freqarr[val - min]++;  // Shift index to be 0-based
+	        }
+	
+	        // Step 3: Build sorted array
+	        int idx = 0;
+	        for (int i = 0; i < freqarr.length; i++) {
+	            while (freqarr[i] > 0) {
+	                arr[idx] = i + min;  // Shift value back
+	                idx++;
+	                freqarr[i]--;
+	            }
+	        }
+       }
 	
 	//count sort kab lafgaya jata hai? jab bohot saari values ho lekin range kam ho means jee ka exam to 12lakh dete hai but number 0 to 360 ke bich mai hi aate hai
 	public static void countSort(int arr[], int min, int max) {

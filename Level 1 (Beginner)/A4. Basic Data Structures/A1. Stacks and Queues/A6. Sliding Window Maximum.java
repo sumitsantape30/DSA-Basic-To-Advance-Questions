@@ -84,26 +84,31 @@ public class SlidingWindowMaximum {
 			// first k elements keliye kya karenge? next grater wali approch, apne se chote bando ko pop karao
 			
 			while(dq.size() > 0 && arr[dq.peek()] < arr[i]) { //jabtak dq size > 0 hai aur jabtak current elements se chote elements milte rahenge tabtak last element pop krte rho
-				dq.removeLast();
+				dq.removeLast();  // //Remove smaller elements from the back of deque.
 			}
 			//fir current index ko dq ke last mai add krdo
-			dq.add(i);	
+			dq.add(i);  //Add current index to the back.	
 		}
 		
 		//so pehle k bando ka maxm aachuka hai print krdo
 		System.out.println(arr[dq.peek()]);
+		//The front of deque always has index of max element of the window.
+		// After this loop, you've found the max for the first window.
 		
 		//ab k se aage wale elements ki kahanai
+		//now Sliding the window
 		for( int i=k; i < arr.length; i++) {
+			//now do same, remove smaller elements from the back and add the current index at the back.
 			while(dq.size() > 0 && arr[dq.peek()] < arr[i]) { 
 				dq.removeLast();
 			}
 			dq.addLast(i);
-			
+
+			//Check if front index is out of the current window (i - k). If yes, remove it.
 			if(dq.peek() <= i-k) {
 				dq.removeFirst();
 			}
-			System.out.println(arr[dq.peek()]);
+			System.out.println(arr[dq.peek()]); //The max is always at the front of deque → print arr[dq.peek()].
 		}
 		
 	}

@@ -188,4 +188,20 @@ public class Main {
     }
 }
 
+/*
+ (a, b) -> a[0] - b[0]
+This is a lambda expression, short for:
 
+new Comparator<int[]>() {
+    public int compare(int[] a, int[] b) {
+        return a[0] - b[0];
+    }
+}
+This tells Java:
+
+When comparing two intervals (a and b), compare their start times (a[0] and b[0]).
+
+If:
+a[0] < b[0]: it keeps a before b
+a[0] > b[0]: it places b before a
+a[0] == b[0]: order doesn't change */

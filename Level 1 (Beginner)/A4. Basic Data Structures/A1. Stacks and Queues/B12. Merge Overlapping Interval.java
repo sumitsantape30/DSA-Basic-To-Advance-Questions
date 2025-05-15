@@ -142,3 +142,50 @@ public class MergeOverlapInterview {
 	}
 }
 
+
+=============================== Chatgpt=======================================================
+
+import java.util.*;
+
+public class Main {
+
+    public static void mergeIntervals(int[][] intervals) {
+        // Step 1: Sort by start time
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        List<int[]> merged = new ArrayList<>();
+
+        for (int[] interval : intervals) {
+            // If no overlap, or first interval
+            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+                merged.add(interval); // Just add it
+            } else {
+                // Merge with last interval in list
+                merged.get(merged.size() - 1)[1] = Math.max(
+                    merged.get(merged.size() - 1)[1],
+                    interval[1]
+                );
+            }
+        }
+
+        // Print merged intervals
+        for (int[] inter : merged) {
+            System.out.println(inter[0] + " " + inter[1]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] intervals = {
+            {22, 28},
+            {1, 8},
+            {25, 27},
+            {14, 19},
+            {27, 30},
+            {5, 12}
+        };
+
+        mergeIntervals(intervals);
+    }
+}
+
+

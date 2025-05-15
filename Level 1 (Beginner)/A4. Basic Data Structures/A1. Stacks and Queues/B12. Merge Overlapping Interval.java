@@ -151,16 +151,17 @@ public class Main {
 
     public static void mergeIntervals(int[][] intervals) {
         // Step 1: Sort by start time
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]); //shortcut of comparable
 
         List<int[]> merged = new ArrayList<>();
 
         for (int[] interval : intervals) {
             // If no overlap, or first interval
-            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) { // agar last interval ka end time chota hai next interval ke starttime se to overlapping nhi hai so just add the current interval 
                 merged.add(interval); // Just add it
             } else {
                 // Merge with last interval in list
+		
                 merged.get(merged.size() - 1)[1] = Math.max(
                     merged.get(merged.size() - 1)[1],
                     interval[1]
@@ -205,3 +206,67 @@ If:
 a[0] < b[0]: it keeps a before b
 a[0] > b[0]: it places b before a
 a[0] == b[0]: order doesn't change */
+
+/* ********************** Dry Run *****************************
+ Step-by-step Explanation
+✅ Step 1: Sort the intervals by start time
+Before merging, sort the array by start time — because overlapping can only be checked from left to right.
+
+Sorted version:
+
+{1, 8}
+{5, 12}
+{14, 19}
+{22, 28}
+{25, 27}
+{27, 30}
+✅ Why sort?
+Because we want to compare current interval with the previous merged interval to see if they overlap.
+
+✅ Step 2: Initialize empty list for merged intervals
+We create a new list called merged where we will add the final merged intervals.
+
+Start by adding the first interval to it.
+
+merged = [{1, 8}]
+✅ Step 3: Go through each interval and check:
+Now we move to the next interval {5, 12} and compare it with the last one in merged, which is {1, 8}.
+
+Check if they overlap:
+
+start of current: 5
+end of previous: 8
+
+Since 5 <= 8 → they overlap!
+✅ So merge them:
+
+New interval = {1, max(8, 12)} = {1, 12}
+merged = [{1, 12}]
+Next: {14, 19}
+Compare with {1, 12} → no overlap because 14 > 12, so just add it.
+
+merged = [{1, 12}, {14, 19}]
+Next: {22, 28}
+No overlap with {14, 19} → add it.
+
+merged = [{1, 12}, {14, 19}, {22, 28}]
+Next: {25, 27}
+Compare with {22, 28}
+→ Overlaps because 25 <= 28
+
+Merge:
+
+{22, max(28, 27)} = {22, 28} → already same, no change
+Next: {27, 30}
+Compare with {22, 28}
+→ Overlaps because 27 <= 28
+
+Merge:
+
+{22, max(28, 30)} = {22, 30}
+merged = [{1, 12}, {14, 19}, {22, 30}]
+✅ Final Merged Intervals:
+{1, 12}
+{14, 19}
+{22, 30}
+	*/

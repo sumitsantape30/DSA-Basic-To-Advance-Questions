@@ -243,6 +243,25 @@ class LinkedList {
 		tail= temp;
 		
 	}
+
+	public void reversePI() {
+	    Node prev = null;
+	    Node curr = head;
+	
+	    while (curr != null) {
+	        Node next = curr.next;  // Save next node
+	        curr.next = prev;       // Reverse the link
+	        prev = curr;            // Move prev to current
+	        curr = next;            // Move curr to next
+	    }
+	
+	    // After loop, prev is the new head
+	    // Update head and tail
+	    tail = head;
+	    head = prev;
+	}
+	// We move through the list one node at a time, reversing each link.
+	// At the end, we just update head and tail — because their positions have flipped.
 }
 
 public class LLQues {

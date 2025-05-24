@@ -36,18 +36,18 @@ Code:
 		 
 		 while( ms.size() > 0){
 			 node= ms.pop(); //main stack se pop karenge
-			 System.out.println(node.data +" ");
+			 System.out.print(node.data +" ");
 			 
 			 //ab add children magr depend karega ki level odd wala hai ya nhi
 			 if( level % 2 == 0) {
-				 //agar level odd wala hai to badhta hua loop
+				 //agar level even wala hai to badhta hua loop
 				 for( int i=0; i< node.children.size(); i++) {
 					 Node child= node.children.get(i);
 					 //aur isko child stack mai push karenge
 					 cs.push(child);
 				 }
 			 }else {
-				 // agar odd nhi hai
+				 // agar odd hai
 				 for( int i= node.children.size()- 1; i>= 0; i--) {
 					 Node child= node.children.get(i);
 					 cs.push(child);

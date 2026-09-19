@@ -112,7 +112,8 @@ public class Main {
     
     // two data memebers hai
     private int size; //yeh btayaega ki kitne key-value pairs hai
-    private LinkedList<HMNode>[] buckets; // buckets is linkedlists ka array. aur linkedlist HMNode type ki information store krti hai
+    private LinkedList<HMNode>[] buckets; // buckets is linkedlists ka array. aur linkedlist HMNode type ki information store krti hai. sare operation O(1) mai achieve krne keliye aisa use krte hai.
+    // buckets ek array hai usme har index means one bucket and har bucket ke andar ek linkedlist rahegi HMNodes ki. HMNode means key, value pair rakhega.
 
     public HashMap() {  //HashMap ka constuctor
       initbuckets(4); //initbuckets function ko call laga rakhi hai
@@ -128,7 +129,7 @@ public class Main {
 
     public void put(K key, V value)  {
        //sabse pehle bucket index nikalo
-       int bi = hashFunction(key); // iss function se is key ka muje bucket index mil jayega ki konsi bucket mai add hoga 
+       int bi = hashFunction(key); // iss function se is key ka muje bucket index mil jayega ki konsi bucket mai add hoga. agar already nhi hai to konse bucket mai jana chahiye uska index dega.
        int di = findWithInBucket(key, bi); // ab mai iss key ko iss bucket index mi dhundunga to muje data index mil jayga aur nhi milti hai to data index -1 ajayega. dekh rhe hai ki kya yeh key already present hai or pehli bar aa rha hai 
        
        if( di == -1){ //agar data index -1 ajata hai means key doesnt exists
@@ -140,7 +141,8 @@ public class Main {
            buckets[bi].get(di).value = value; // buckets[bi] ek link list hai so uss data index pe HMNode rahega so uski value ko change karenge
        }
        
-       //fir lambda calculate karenge
+       //fir lambda calculate karenge. lambda is the number of elements divided by the number of buckets. It's already less than some threshold value. This makes the complexity of put O(lambda). 
+      // put ke bad hi lambda change ho skta hai so harbar check karenge ki apni threshld value se bada to nhi hogya.
        double lambda = (double)size / (double)buckets.length; //integer/integer= integer value milti hai so isko 1.0 se multiply karo or double mai typecaste karlo
        if( lambda > 2.0){ //agar lambda ki value grater than 2.0 hojati hai to resize krdenge
          resize();

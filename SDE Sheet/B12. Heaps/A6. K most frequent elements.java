@@ -14,7 +14,7 @@ Code:
 //======================================= Optimised - o(logk)===================
 class Solution {
 
-    public static class Pair implements Comparable<Pair>{
+    public static class Pair implements Comparable<Pair>{ // here we're telling how two pair of priority queue should be compared
         int data;
         int count;
 
@@ -23,6 +23,7 @@ class Solution {
             this.count =  count;
         }
 
+        //we define comparison here, we're comparing based on count and not on data. eg. Pair(1,3) and Pair(2,2), thus 3-2=1 therefore Pair(1,3) has higher count.
         public int compareTo(Pair o){
             return this.count- o.count;
         }
@@ -34,8 +35,7 @@ class Solution {
         //creating map takes o(n)
         for(int i=0; i< nums.length; i++)map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
 
-        PriorityQueue<Pair> pq= new PriorityQueue<>(Collections.reverseOrder());
-
+        PriorityQueue<Pair> pq= new PriorityQueue<>(Collections.reverseOrder()); //by default priority queue is min heap so after comparison Pair(3,1) Pair(2,2) Pair(1,3), (3,1) will be at the top coz it has  minimum count. so use reverseorder that will reverse the order. and it becomes max- heap
         for( int i=0; i< nums.length; i++){
             if( map.containsKey(nums[i])){
                 pq.add(new Pair(nums[i], map.get(nums[i])));
